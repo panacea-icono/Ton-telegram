@@ -53,7 +53,7 @@ jobs:
         run: npm run audit:run
 
       - name: 📤 Upload Bot Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: telegram-bots-report
           path: audits/telegram-bots-report-latest.md
