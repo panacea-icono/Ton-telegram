@@ -1,0 +1,470 @@
+{
+  "generatedAt": "2025-09-07T19:08:49.270Z",
+  "tag": "v0.1.0-ecosystem-20250907",
+  "items": [
+    {
+      "name": "Ton-telegram",
+      "fullName": "panacea-icono/Ton-telegram",
+      "language": "JavaScript",
+      "type": "node",
+      "npm": "@panacea-icono/ton-telegram",
+      "ghcr": "ghcr.io/panacea-icono/ton-telegram"
+    },
+    {
+      "name": "repositorio-modular-fibonacci-ia-integrado",
+      "fullName": "panacea-icono/repositorio-modular-fibonacci-ia-integrado",
+      "language": "Sin especificar",
+      "type": "container",
+      "npm": "@panacea-icono/repositorio-modular-fibonacci-ia-integrado",
+      "ghcr": "ghcr.io/panacea-icono/repositorio-modular-fibonacci-ia-integrado"
+    },
+    {
+      "name": "dr_tv_GPT",
+      "fullName": "panacea-icono/dr_tv_GPT",
+      "language": "TypeScript",
+      "type": "node",
+      "npm": "@panacea-icono/dr_tv_gpt",
+      "ghcr": "ghcr.io/panacea-icono/dr_tv_gpt"
+    },
+    {
+      "name": "dr_tv_gp",
+      "fullName": "panacea-icono/dr_tv_gp",
+      "language": "TypeScript",
+      "type": "node",
+      "npm": "@panacea-icono/dr_tv_gp",
+      "ghcr": "ghcr.io/panacea-icono/dr_tv_gp"
+    },
+    {
+      "name": "panas_pay",
+      "fullName": "panacea-icono/panas_pay",
+      "language": "TypeScript",
+      "type": "node",
+      "npm": "@panacea-icono/panas_pay",
+      "ghcr": "ghcr.io/panacea-icono/panas_pay"
+    },
+    {
+      "name": "dr-de-la-tvr",
+      "fullName": "panacea-icono/dr-de-la-tvr",
+      "language": "TypeScript",
+      "type": "node",
+      "npm": "@panacea-icono/dr-de-la-tvr",
+      "ghcr": "ghcr.io/panacea-icono/dr-de-la-tvr"
+    },
+    {
+      "name": "panas_token",
+      "fullName": "panacea-icono/panas_token",
+      "language": "TypeScript",
+      "type": "node",
+      "npm": "@panacea-icono/panas_token",
+      "ghcr": "ghcr.io/panacea-icono/panas_token"
+    },
+    {
+      "name": "panas-app",
+      "fullName": "panacea-icono/panas-app",
+      "language": "TypeScript",
+      "type": "node",
+      "npm": "@panacea-icono/panas-app",
+      "ghcr": "ghcr.io/panacea-icono/panas-app"
+    },
+    {
+      "name": "Dr_dela_TV",
+      "fullName": "panacea-icono/Dr_dela_TV",
+      "language": "Sin especificar",
+      "type": "container",
+      "npm": "@panacea-icono/dr_dela_tv",
+      "ghcr": "ghcr.io/panacea-icono/dr_dela_tv"
+    },
+    {
+      "name": "tutor_academico_CIRUGIA_I-II-III",
+      "fullName": "panacea-icono/tutor_academico_CIRUGIA_I-II-III",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/tutor_academico_cirugia_i-ii-iii",
+      "ghcr": "ghcr.io/panacea-icono/tutor_academico_cirugia_i-ii-iii"
+    },
+    {
+      "name": "HUGGING_FACE",
+      "fullName": "panacea-icono/HUGGING_FACE",
+      "language": "JavaScript",
+      "type": "node",
+      "npm": "@panacea-icono/hugging_face",
+      "ghcr": "ghcr.io/panacea-icono/hugging_face"
+    },
+    {
+      "name": "modelos_civitai",
+      "fullName": "https-panacea-icono-org/modelos_civitai",
+      "language": "Sin especificar",
+      "type": "container",
+      "npm": "@panacea-icono/modelos_civitai",
+      "ghcr": "ghcr.io/panacea-icono/modelos_civitai"
+    },
+    {
+      "name": "HUGGING_FACE",
+      "fullName": "https-panacea-icono-org/HUGGING_FACE",
+      "language": "Sin especificar",
+      "type": "container",
+      "npm": "@panacea-icono/hugging_face",
+      "ghcr": "ghcr.io/panacea-icono/hugging_face"
+    },
+    {
+      "name": "civitAI",
+      "fullName": "panacea-icono/civitAI",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/civitai",
+      "ghcr": "ghcr.io/panacea-icono/civitai"
+    },
+    {
+      "name": "Marilyn_Monroe",
+      "fullName": "panacea-icono/Marilyn_Monroe",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/marilyn_monroe",
+      "ghcr": "ghcr.io/panacea-icono/marilyn_monroe"
+    },
+    {
+      "name": "dua_lipa_model_image_ia",
+      "fullName": "panacea-icono/dua_lipa_model_image_ia",
+      "language": "Sin especificar",
+      "type": "container",
+      "npm": "@panacea-icono/dua_lipa_model_image_ia",
+      "ghcr": "ghcr.io/panacea-icono/dua_lipa_model_image_ia"
+    },
+    {
+      "name": "api_modelo_piloto",
+      "fullName": "panacea-icono/api_modelo_piloto",
+      "language": "Shell",
+      "type": "container",
+      "npm": "@panacea-icono/api_modelo_piloto",
+      "ghcr": "ghcr.io/panacea-icono/api_modelo_piloto"
+    },
+    {
+      "name": "FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+      "fullName": "panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/fibonacci-final-modulos-api-maestro",
+      "ghcr": "ghcr.io/panacea-icono/fibonacci-final-modulos-api-maestro"
+    },
+    {
+      "name": "fibonacci_maestro",
+      "fullName": "panacea-icono/fibonacci_maestro",
+      "language": "Shell",
+      "type": "container",
+      "npm": "@panacea-icono/fibonacci_maestro",
+      "ghcr": "ghcr.io/panacea-icono/fibonacci_maestro"
+    },
+    {
+      "name": "vite-react",
+      "fullName": "panacea-icono/vite-react",
+      "language": "CSS",
+      "type": "container",
+      "npm": "@panacea-icono/vite-react",
+      "ghcr": "ghcr.io/panacea-icono/vite-react"
+    },
+    {
+      "name": "biblioteca-kuchiuya",
+      "fullName": "panacea-icono/biblioteca-kuchiuya",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/biblioteca-kuchiuya",
+      "ghcr": "ghcr.io/panacea-icono/biblioteca-kuchiuya"
+    },
+    {
+      "name": "panas-pay",
+      "fullName": "panacea-icono/panas-pay",
+      "language": "TypeScript",
+      "type": "node",
+      "npm": "@panacea-icono/panas-pay",
+      "ghcr": "ghcr.io/panacea-icono/panas-pay"
+    },
+    {
+      "name": "panas_multichain",
+      "fullName": "panacea-icono/panas_multichain",
+      "language": "PHP",
+      "type": "container",
+      "npm": "@panacea-icono/panas_multichain",
+      "ghcr": "ghcr.io/panacea-icono/panas_multichain"
+    },
+    {
+      "name": "PANAS_TOKENIZER_SURGERY",
+      "fullName": "panacea-icono/PANAS_TOKENIZER_SURGERY",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/panas_tokenizer_surgery",
+      "ghcr": "ghcr.io/panacea-icono/panas_tokenizer_surgery"
+    },
+    {
+      "name": "aiadult-platform",
+      "fullName": "panacea-icono/aiadult-platform",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/aiadult-platform",
+      "ghcr": "ghcr.io/panacea-icono/aiadult-platform"
+    },
+    {
+      "name": "kuchiuyas",
+      "fullName": "panacea-icono/kuchiuyas",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/kuchiuyas",
+      "ghcr": "ghcr.io/panacea-icono/kuchiuyas"
+    },
+    {
+      "name": "codex-github",
+      "fullName": "panacea-icono/codex-github",
+      "language": "Shell",
+      "type": "container",
+      "npm": "@panacea-icono/codex-github",
+      "ghcr": "ghcr.io/panacea-icono/codex-github"
+    },
+    {
+      "name": "iaadult",
+      "fullName": "panacea-icono/iaadult",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/iaadult",
+      "ghcr": "ghcr.io/panacea-icono/iaadult"
+    },
+    {
+      "name": "PANAS-TOKEN",
+      "fullName": "panacea-icono/PANAS-TOKEN",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/panas-token",
+      "ghcr": "ghcr.io/panacea-icono/panas-token"
+    },
+    {
+      "name": "fibonacci",
+      "fullName": "panacea-icono/fibonacci",
+      "language": "CSS",
+      "type": "container",
+      "npm": "@panacea-icono/fibonacci",
+      "ghcr": "ghcr.io/panacea-icono/fibonacci"
+    },
+    {
+      "name": "panacea-icono",
+      "fullName": "panacea-icono/panacea-icono",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/panacea-icono",
+      "ghcr": "ghcr.io/panacea-icono/panacea-icono"
+    },
+    {
+      "name": "REDES",
+      "fullName": "panacea-icono/REDES",
+      "language": "TypeScript",
+      "type": "node",
+      "npm": "@panacea-icono/redes",
+      "ghcr": "ghcr.io/panacea-icono/redes"
+    },
+    {
+      "name": "gpt-local",
+      "fullName": "panacea-icono/gpt-local",
+      "language": "Shell",
+      "type": "container",
+      "npm": "@panacea-icono/gpt-local",
+      "ghcr": "ghcr.io/panacea-icono/gpt-local"
+    },
+    {
+      "name": "kuchiuyasM",
+      "fullName": "panacea-icono/kuchiuyasM",
+      "language": "TypeScript",
+      "type": "node",
+      "npm": "@panacea-icono/kuchiuyasm",
+      "ghcr": "ghcr.io/panacea-icono/kuchiuyasm"
+    },
+    {
+      "name": "Panas-Pay.M",
+      "fullName": "panacea-icono/Panas-Pay.M",
+      "language": "TypeScript",
+      "type": "node",
+      "npm": "@panacea-icono/panas-pay.m",
+      "ghcr": "ghcr.io/panacea-icono/panas-pay.m"
+    },
+    {
+      "name": "panas-token.M",
+      "fullName": "panacea-icono/panas-token.M",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/panas-token.m",
+      "ghcr": "ghcr.io/panacea-icono/panas-token.m"
+    },
+    {
+      "name": "PANACEA-API-CENTRAL-CODEX",
+      "fullName": "panacea-icono/PANACEA-API-CENTRAL-CODEX",
+      "language": "Sin especificar",
+      "type": "container",
+      "npm": "@panacea-icono/panacea-api-central-codex",
+      "ghcr": "ghcr.io/panacea-icono/panacea-api-central-codex"
+    },
+    {
+      "name": "home",
+      "fullName": "panacea-icono/home",
+      "language": "Sin especificar",
+      "type": "container",
+      "npm": "@panacea-icono/home",
+      "ghcr": "ghcr.io/panacea-icono/home"
+    },
+    {
+      "name": "FIBONACCI_LAB",
+      "fullName": "panacea-icono/FIBONACCI_LAB",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/fibonacci_lab",
+      "ghcr": "ghcr.io/panacea-icono/fibonacci_lab"
+    },
+    {
+      "name": "codex-main",
+      "fullName": "panacea-icono/codex-main",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/codex-main",
+      "ghcr": "ghcr.io/panacea-icono/codex-main"
+    },
+    {
+      "name": "MODELOS",
+      "fullName": "panacea-icono/MODELOS",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/modelos",
+      "ghcr": "ghcr.io/panacea-icono/modelos"
+    },
+    {
+      "name": "voice",
+      "fullName": "panacea-icono/voice",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/voice",
+      "ghcr": "ghcr.io/panacea-icono/voice"
+    },
+    {
+      "name": "panacea_smart_contracts",
+      "fullName": "panacea-icono/panacea_smart_contracts",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/panacea_smart_contracts",
+      "ghcr": "ghcr.io/panacea-icono/panacea_smart_contracts"
+    },
+    {
+      "name": "PANAS_PAY_APP",
+      "fullName": "panacea-icono/PANAS_PAY_APP",
+      "language": "TypeScript",
+      "type": "node",
+      "npm": "@panacea-icono/panas_pay_app",
+      "ghcr": "ghcr.io/panacea-icono/panas_pay_app"
+    },
+    {
+      "name": "privacidad_seguridad",
+      "fullName": "panacea-icono/privacidad_seguridad",
+      "language": "Sin especificar",
+      "type": "container",
+      "npm": "@panacea-icono/privacidad_seguridad",
+      "ghcr": "ghcr.io/panacea-icono/privacidad_seguridad"
+    },
+    {
+      "name": "CASA-RED-SRL",
+      "fullName": "panacea-icono/CASA-RED-SRL",
+      "language": "Sin especificar",
+      "type": "container",
+      "npm": "@panacea-icono/casa-red-srl",
+      "ghcr": "ghcr.io/panacea-icono/casa-red-srl"
+    },
+    {
+      "name": "PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+      "fullName": "panacea-icono/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+      "language": "Solidity",
+      "type": "container",
+      "npm": "@panacea-icono/panacea-icono-sociedad-anonima--bank",
+      "ghcr": "ghcr.io/panacea-icono/panacea-icono-sociedad-anonima--bank"
+    },
+    {
+      "name": "Super-code-tasker",
+      "fullName": "https-panacea-icono-org/Super-code-tasker",
+      "language": "TypeScript",
+      "type": "node",
+      "npm": "@panacea-icono/super-code-tasker",
+      "ghcr": "ghcr.io/panacea-icono/super-code-tasker"
+    },
+    {
+      "name": "coca",
+      "fullName": "panacea-icono/coca",
+      "language": "TypeScript",
+      "type": "node",
+      "npm": "@panacea-icono/coca",
+      "ghcr": "ghcr.io/panacea-icono/coca"
+    },
+    {
+      "name": "macuquina_proyecto",
+      "fullName": "panacea-icono/macuquina_proyecto",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/macuquina_proyecto",
+      "ghcr": "ghcr.io/panacea-icono/macuquina_proyecto"
+    },
+    {
+      "name": "nextjs-with-supabase",
+      "fullName": "panacea-icono/nextjs-with-supabase",
+      "language": "TypeScript",
+      "type": "node",
+      "npm": "@panacea-icono/nextjs-with-supabase",
+      "ghcr": "ghcr.io/panacea-icono/nextjs-with-supabase"
+    },
+    {
+      "name": "UNIVERSOLIFE",
+      "fullName": "panacea-icono/UNIVERSOLIFE",
+      "language": "TypeScript",
+      "type": "node",
+      "npm": "@panacea-icono/universolife",
+      "ghcr": "ghcr.io/panacea-icono/universolife"
+    },
+    {
+      "name": "GPT-MAESTRO-PANACEA",
+      "fullName": "https-panacea-icono-org/GPT-MAESTRO-PANACEA",
+      "language": "Sin especificar",
+      "type": "container",
+      "npm": "@panacea-icono/gpt-maestro-panacea",
+      "ghcr": "ghcr.io/panacea-icono/gpt-maestro-panacea"
+    },
+    {
+      "name": "GPTApi",
+      "fullName": "panacea-icono/GPTApi",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/gptapi",
+      "ghcr": "ghcr.io/panacea-icono/gptapi"
+    },
+    {
+      "name": "TOKENIZER-NFT",
+      "fullName": "panacea-icono/TOKENIZER-NFT",
+      "language": "Sin especificar",
+      "type": "container",
+      "npm": "@panacea-icono/tokenizer-nft",
+      "ghcr": "ghcr.io/panacea-icono/tokenizer-nft"
+    },
+    {
+      "name": "PANACEA-GPT-I",
+      "fullName": "panacea-icono/PANACEA-GPT-I",
+      "language": "Python",
+      "type": "container",
+      "npm": "@panacea-icono/panacea-gpt-i",
+      "ghcr": "ghcr.io/panacea-icono/panacea-gpt-i"
+    },
+    {
+      "name": "MEDIOS-REDES",
+      "fullName": "panacea-icono/MEDIOS-REDES",
+      "language": "Sin especificar",
+      "type": "container",
+      "npm": "@panacea-icono/medios-redes",
+      "ghcr": "ghcr.io/panacea-icono/medios-redes"
+    },
+    {
+      "name": "PANACEA_MD",
+      "fullName": "panacea-icono/PANACEA_MD",
+      "language": "HTML",
+      "type": "container",
+      "npm": "@panacea-icono/panacea_md",
+      "ghcr": "ghcr.io/panacea-icono/panacea_md"
+    }
+  ]
+}
