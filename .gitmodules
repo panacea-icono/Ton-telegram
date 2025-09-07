@@ -1,0 +1,57 @@
+# Panas Token Ecosystem - Git Submodules Configuration
+# This file defines the repositories that are part of the Panas Token ecosystem
+
+[submodule "ecosystem/ton-contracts"]
+	path = ecosystem/ton-contracts
+	url = https://github.com/panacea-icono/ton-contracts.git
+	branch = main
+
+[submodule "ecosystem/solana-contracts"]
+	path = ecosystem/solana-contracts
+	url = https://github.com/panacea-icono/solana-contracts.git
+	branch = main
+
+[submodule "ecosystem/algorand-contracts"]
+	path = ecosystem/algorand-contracts
+	url = https://github.com/panacea-icono/algorand-contracts.git
+	branch = main
+
+[submodule "ecosystem/bsc-contracts"]
+	path = ecosystem/bsc-contracts
+	url = https://github.com/panacea-icono/bsc-contracts.git
+	branch = main
+
+[submodule "ecosystem/gs-token"]
+	path = ecosystem/gs-token
+	url = https://github.com/panacea-icono/gs-token.git
+	branch = main
+
+[submodule "ecosystem/vaser-token"]
+	path = ecosystem/vaser-token
+	url = https://github.com/panacea-icono/vaser-token.git
+	branch = main
+
+[submodule "ecosystem/kuchi-token"]
+	path = ecosystem/kuchi-token
+	url = https://github.com/panacea-icono/kuchi-token.git
+	branch = main
+
+[submodule "ecosystem/nf-domains"]
+	path = ecosystem/nf-domains
+	url = https://github.com/panacea-icono/nf-domains.git
+	branch = main
+
+[submodule "ecosystem/router-backend"]
+	path = ecosystem/router-backend
+	url = https://github.com/panacea-icono/router-backend.git
+	branch = main
+
+[submodule "ecosystem/dashboard"]
+	path = ecosystem/dashboard
+	url = https://github.com/panacea-icono/dashboard.git
+	branch = main
+
+[submodule "ecosystem/telegram-bot"]
+	path = ecosystem/telegram-bot
+	url = https://github.com/panacea-icono/telegram-bot.git
+	branch = main
