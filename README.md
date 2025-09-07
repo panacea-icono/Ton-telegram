@@ -43,31 +43,35 @@ Convertirse en el **hub de pagos médicos global** con identidad digital legible
 ### Instalación
 
 1. **Clonar el repositorio**
+
    ```bash
    git clone https://github.com/panacea-icono/Ton-telegram.git
    cd Ton-telegram
    ```
 
 2. **Configurar el ecosistema completo**
+
    ```bash
    chmod +x setup.sh
    ./setup.sh
    ```
 
 3. **Configurar variables de entorno**
+
    ```bash
    cp env.example .env
    # Editar .env con tus configuraciones
    ```
 
 4. **Iniciar todos los servicios**
+
    ```bash
    npm run dev
    ```
 
 ### Estructura del Proyecto
 
-```
+```text
 Ton-telegram/
 ├── 📁 tokens/                    # Repositorios de tokens
 │   ├── panas-token/             # Token principal (Jetton TON)
@@ -158,6 +162,7 @@ Ton-telegram/
 ## 🛠️ Scripts Disponibles
 
 ### Desarrollo
+
 ```bash
 npm run dev                 # Iniciar todos los servicios
 npm run dev:backend         # Solo backend
@@ -166,6 +171,7 @@ npm run dev:bot            # Solo bot de Telegram
 ```
 
 ### Construcción
+
 ```bash
 npm run build              # Construir todo
 npm run build:backend      # Solo backend
@@ -173,6 +179,7 @@ npm run build:frontend     # Solo frontend
 ```
 
 ### Testing
+
 ```bash
 npm run test               # Ejecutar tests
 npm run test:watch         # Tests en modo watch
@@ -180,6 +187,7 @@ npm run test:coverage      # Tests con cobertura
 ```
 
 ### Calidad de Código
+
 ```bash
 npm run lint               # Linter
 npm run lint:fix           # Linter con auto-fix
@@ -188,6 +196,7 @@ npm run format:check       # Verificar formato
 ```
 
 ### Docker
+
 ```bash
 npm run docker:build       # Construir imágenes
 npm run docker:up          # Iniciar contenedores
@@ -196,6 +205,7 @@ npm run docker:logs        # Ver logs
 ```
 
 ### Submódulos
+
 ```bash
 npm run submodules:init    # Inicializar submódulos
 npm run submodules:update  # Actualizar submódulos
@@ -203,6 +213,7 @@ npm run submodules:status  # Estado de submódulos
 ```
 
 ### Utilidades
+
 ```bash
 npm run clean              # Limpiar node_modules
 npm run install:all        # Instalar todas las dependencias
@@ -218,20 +229,24 @@ npm run health             # Verificar salud del sistema
 Copia `env.example` a `.env` y configura las siguientes variables:
 
 #### Blockchain
+
 - `TON_RPC_URL` - URL del nodo TON
 - `SOLANA_RPC_URL` - URL del nodo Solana
 - `ALGORAND_RPC_URL` - URL del nodo Algorand
 - `BSC_RPC_URL` - URL del nodo BSC
 
 #### Telegram
+
 - `TELEGRAM_BOT_TOKEN` - Token del bot de Telegram
 - `TELEGRAM_WEBHOOK_URL` - URL del webhook
 
 #### Base de Datos
+
 - `DATABASE_URL` - URL de PostgreSQL
 - `REDIS_URL` - URL de Redis
 
 #### Seguridad
+
 - `JWT_SECRET` - Secreto para JWT
 - `ENCRYPTION_KEY` - Clave de encriptación
 
@@ -292,7 +307,7 @@ npm run test:coverage
 
 ### Estructura de Tests
 
-```
+```text
 tests/
 ├── unit/                   # Tests unitarios
 ├── integration/            # Tests de integración
@@ -408,21 +423,25 @@ Asegúrate de configurar las siguientes variables para producción:
 ## 🗺️ Roadmap
 
 ### Q1 2024
+
 - [x] Deploy Panas Token (Jetton TON + SPL Solana + ASA Algorand)
 - [x] Reserva dominios oficiales: `panas.ton`, `panas.sol`, `panas.algo`
 - [x] Integración con Telegram Bot + TonConnect
 
 ### Q2 2024
+
 - [ ] Pools iniciales de liquidez bloqueados
 - [ ] Dashboard público → métricas de supply, holders, LP
 - [ ] Vinculación de clínicas y doctores vía dominios `.algo`
 
 ### Q3 2024
+
 - [ ] Expansión regional en clínicas asociadas
 - [ ] Integración con rampas fiat
 - [ ] Mobile app nativa
 
 ### Q4 2024
+
 - [ ] Integración con más blockchains
 - [ ] Sistema de reputación avanzado
 - [ ] Marketplace médico
@@ -443,7 +462,7 @@ El proyecto **Panas Token** es desarrollado y respaldado por **Icono SA**, empre
 
 - 🌐 **Web**: [próximamente]
 - 💬 **Telegram**: [Bot oficial Panas Token — en desarrollo]
-- ✉️ **Email**: info@iconosa.com
+- ✉️ **Email**: <info@iconosa.com>
 - 🐦 **Twitter**: [@PanaceaIcono](https://twitter.com/PanaceaIcono)
 - 📱 **LinkedIn**: [Panacea Icono SA](https://linkedin.com/company/panacea-icono)
 
@@ -465,12 +484,8 @@ Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](L
 
 ---
 
-<div align="center">
-
 **Desarrollado con ❤️ por [Panacea | Icono SA](https://iconosa.com)**
 
 [![Made with TypeScript](https://img.shields.io/badge/Made%20with-TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Powered by Node.js](https://img.shields.io/badge/Powered%20by-Node.js-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Built with Docker](https://img.shields.io/badge/Built%20with-Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
-
-</div>
