@@ -78,7 +78,19 @@
     "heroku:restart": "heroku ps:restart",
     "heroku:config": "heroku config",
     "worker": "node scripts/worker.js",
-    "migrate": "node scripts/migrate.js"
+    "migrate": "node scripts/migrate.js",
+    "publish:packages": "node scripts/publish-packages.js",
+    "publish:version": "node scripts/publish-packages.js",
+    "publish:patch": "node scripts/publish-packages.js patch",
+    "publish:minor": "node scripts/publish-packages.js minor",
+    "publish:major": "node scripts/publish-packages.js major",
+    "release:create": "git tag -a v$(node -p \"require('./package.json').version\") -m \"Release v$(node -p \"require('./package.json').version\")\" && git push origin v$(node -p \"require('./package.json').version\")",
+    "release:push": "git push origin --tags",
+    "docker:build:release": "docker build -t panas-token-ecosystem:$(node -p \"require('./package.json').version\") . && docker build -t panas-token-ecosystem:latest .",
+    "docker:tag:release": "docker tag panas-token-ecosystem:$(node -p \"require('./package.json').version\") ghcr.io/panacea-icono/panas-token-ecosystem:$(node -p \"require('./package.json').version\") && docker tag panas-token-ecosystem:latest ghcr.io/panacea-icono/panas-token-ecosystem:latest",
+    "docker:push:release": "docker push ghcr.io/panacea-icono/panas-token-ecosystem:$(node -p \"require('./package.json').version\") && docker push ghcr.io/panacea-icono/panas-token-ecosystem:latest",
+    "generate:changelog": "node scripts/generate-changelog.js",
+    "changelog": "node scripts/generate-changelog.js"
   },
   "keywords": [
     "blockchain",
