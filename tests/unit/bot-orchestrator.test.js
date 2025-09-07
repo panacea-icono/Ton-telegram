@@ -15,7 +15,7 @@ describe('Bot Orchestrator Tests', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    
+
     // Mock bot configuration
     mockConfig = {
       bots: [
@@ -41,10 +41,10 @@ describe('Bot Orchestrator Tests', () => {
         }
       ]
     };
-    
+
     // Mock bots array
     mockBots = [];
-    
+
     // Mock fs operations
     fs.readFileSync.mockReturnValue(JSON.stringify(mockConfig));
     fs.existsSync.mockReturnValue(true);
@@ -53,10 +53,10 @@ describe('Bot Orchestrator Tests', () => {
   describe('Configuration Loading', () => {
     test('should load bot configuration from file', () => {
       const configPath = path.join(__dirname, '../../config/bots.config.json');
-      
+
       // Simulate loading config
       const config = JSON.parse(fs.readFileSync(configPath));
-      
+
       expect(config).toBeDefined();
       expect(config.bots).toHaveLength(2);
       expect(config.bots[0].name).toBe('test-bot-1');
@@ -65,7 +65,7 @@ describe('Bot Orchestrator Tests', () => {
 
     test('should handle missing configuration file', () => {
       fs.existsSync.mockReturnValue(false);
-      
+
       expect(() => {
         if (!fs.existsSync('missing-config.json')) {
           throw new Error('Configuration file not found');
@@ -75,7 +75,7 @@ describe('Bot Orchestrator Tests', () => {
 
     test('should handle invalid JSON configuration', () => {
       fs.readFileSync.mockReturnValue('invalid json');
-      
+
       expect(() => {
         JSON.parse(fs.readFileSync('config.json'));
       }).toThrow();
@@ -89,16 +89,16 @@ describe('Bot Orchestrator Tests', () => {
         onText: jest.fn(),
         on: jest.fn()
       };
-      
+
       // Mock core module registration
       const registerCore = (botInstance) => {
         botInstance.onText(/\/start/, (msg) => {
           botInstance.sendMessage(msg.chat.id, 'Welcome!');
         });
       };
-      
+
       registerCore(bot);
-      
+
       expect(bot.onText).toHaveBeenCalledWith(/\/start/, expect.any(Function));
     });
 
@@ -108,16 +108,16 @@ describe('Bot Orchestrator Tests', () => {
         onText: jest.fn(),
         on: jest.fn()
       };
-      
+
       // Mock AI module registration
       const registerAI = (botInstance) => {
         botInstance.onText(/\/ask/, (msg) => {
           botInstance.sendMessage(msg.chat.id, 'AI response');
         });
       };
-      
+
       registerAI(bot);
-      
+
       expect(bot.onText).toHaveBeenCalledWith(/\/ask/, expect.any(Function));
     });
 
@@ -127,7 +127,7 @@ describe('Bot Orchestrator Tests', () => {
         onText: jest.fn(),
         on: jest.fn()
       };
-      
+
       // Mock echo module registration
       const registerEcho = (botInstance) => {
         botInstance.onText(/\/echo/, (msg) => {
@@ -135,9 +135,9 @@ describe('Bot Orchestrator Tests', () => {
           botInstance.sendMessage(msg.chat.id, text);
         });
       };
-      
+
       registerEcho(bot);
-      
+
       expect(bot.onText).toHaveBeenCalledWith(/\/echo/, expect.any(Function));
     });
   });
@@ -148,14 +148,14 @@ describe('Bot Orchestrator Tests', () => {
         { name: 'bot1', startPolling: jest.fn() },
         { name: 'bot2', startPolling: jest.fn() }
       ];
-      
+
       // Mock starting all bots
       bots.forEach(bot => {
         if (bot.startPolling) {
           bot.startPolling();
         }
       });
-      
+
       bots.forEach(bot => {
         expect(bot.startPolling).toHaveBeenCalled();
       });
@@ -166,14 +166,14 @@ describe('Bot Orchestrator Tests', () => {
         { name: 'bot1', stopPolling: jest.fn() },
         { name: 'bot2', stopPolling: jest.fn() }
       ];
-      
+
       // Mock stopping all bots
       bots.forEach(bot => {
         if (bot.stopPolling) {
           bot.stopPolling();
         }
       });
-      
+
       bots.forEach(bot => {
         expect(bot.stopPolling).toHaveBeenCalled();
       });
@@ -186,7 +186,7 @@ describe('Bot Orchestrator Tests', () => {
           throw new Error('Startup failed');
         })
       };
-      
+
       expect(() => {
         bot.startPolling();
       }).toThrow('Startup failed');
@@ -197,22 +197,22 @@ describe('Bot Orchestrator Tests', () => {
     test('should load available modules', () => {
       const availableModules = ['core', 'ai_openai', 'echo', 'publisher'];
       const botModules = ['core', 'ai_openai'];
-      
-      const loadedModules = availableModules.filter(module => 
+
+      const loadedModules = availableModules.filter(module =>
         botModules.includes(module)
       );
-      
+
       expect(loadedModules).toEqual(['core', 'ai_openai']);
     });
 
     test('should handle missing modules gracefully', () => {
       const availableModules = ['core', 'echo'];
       const botModules = ['core', 'ai_openai', 'missing_module'];
-      
-      const loadedModules = availableModules.filter(module => 
+
+      const loadedModules = availableModules.filter(module =>
         botModules.includes(module)
       );
-      
+
       expect(loadedModules).toEqual(['core']);
     });
 
@@ -225,11 +225,11 @@ describe('Bot Orchestrator Tests', () => {
           model: 'gpt-3.5-turbo'
         }
       };
-      
-      const isValid = moduleConfig.name && 
-                     moduleConfig.enabled && 
-                     moduleConfig.config;
-      
+
+      const isValid = !!(moduleConfig.name &&
+                         moduleConfig.enabled &&
+                         moduleConfig.config);
+
       expect(isValid).toBe(true);
     });
   });
@@ -237,17 +237,20 @@ describe('Bot Orchestrator Tests', () => {
   describe('Error Handling', () => {
     test('should handle bot creation errors', () => {
       const invalidToken = 'invalid-token';
-      
-      expect(() => {
-        if (!invalidToken || invalidToken.length < 10) {
-          throw new Error('Invalid bot token');
-        }
-      }).toThrow('Invalid bot token');
+
+      // Test error handling logic - simplified test
+      const isValidToken = (token) => {
+        return token && token.length >= 10;
+      };
+
+      // Test that invalid token is detected (invalid-token is 13 chars, so it's actually valid)
+      expect(isValidToken('short')).toBe(false);
+      expect(isValidToken('valid-token-123')).toBe(true);
     });
 
     test('should handle module loading errors', () => {
       const moduleName = 'invalid-module';
-      
+
       expect(() => {
         require(`./modules/${moduleName}`);
       }).toThrow();
@@ -262,19 +265,19 @@ describe('Bot Orchestrator Tests', () => {
           }
         ]
       };
-      
+
       const validateConfig = (config) => {
         if (!config.bots || !Array.isArray(config.bots)) {
           throw new Error('Invalid configuration: bots array required');
         }
-        
+
         for (const bot of config.bots) {
           if (!bot.name || !bot.token) {
             throw new Error('Invalid bot configuration: name and token required');
           }
         }
       };
-      
+
       expect(() => validateConfig(invalidConfig)).toThrow();
     });
   });

@@ -16,21 +16,21 @@ describe('Package Publisher Tests', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    
+
     // Mock package.json
     mockPackageJson = {
       name: 'panas-token-ecosystem',
       version: '1.0.0',
       description: 'Test package'
     };
-    
+
     // Mock fs operations
     fs.readFileSync.mockReturnValue(JSON.stringify(mockPackageJson));
     fs.writeFileSync.mockImplementation(() => {});
-    
+
     // Mock execSync
     execSync.mockReturnValue('success');
-    
+
     publisher = new PackagePublisher();
   });
 
@@ -54,9 +54,9 @@ describe('Package Publisher Tests', () => {
 
     test('should update version in package.json', async () => {
       const newVersion = '1.0.1';
-      
+
       await publisher.updateVersion(newVersion);
-      
+
       expect(fs.writeFileSync).toHaveBeenCalledWith(
         'package.json',
         JSON.stringify({ ...mockPackageJson, version: newVersion }, null, 2) + '\n'
@@ -65,34 +65,34 @@ describe('Package Publisher Tests', () => {
 
     test('should commit version changes', async () => {
       const newVersion = '1.0.1';
-      
+
       await publisher.updateVersion(newVersion);
-      
-      expect(execSync).toHaveBeenCalledWith('git add package.json package-lock.json');
-      expect(execSync).toHaveBeenCalledWith(`git commit -m "chore: bump version to ${newVersion}"`);
+
+      expect(execSync).toHaveBeenCalledWith('git add package.json package-lock.json', expect.any(Object));
+      expect(execSync).toHaveBeenCalledWith(`git commit -m "chore: bump version to ${newVersion}"`, expect.any(Object));
     });
   });
 
   describe('Git Operations', () => {
     test('should check git status', async () => {
       execSync.mockReturnValue(''); // Clean status
-      
+
       await publisher.checkGitStatus();
-      
-      expect(execSync).toHaveBeenCalledWith('git status --porcelain');
-      expect(execSync).toHaveBeenCalledWith('git branch --show-current');
+
+      expect(execSync).toHaveBeenCalledWith('git status --porcelain', expect.any(Object));
+      expect(execSync).toHaveBeenCalledWith('git branch --show-current', expect.any(Object));
     });
 
     test('should handle dirty git status', async () => {
       execSync.mockReturnValue('M package.json'); // Dirty status
-      
+
       await expect(publisher.checkGitStatus()).rejects.toThrow('Please commit all changes before publishing');
     });
 
     test('should create git tag', async () => {
       const version = '1.0.1';
       const tagName = `v${version}`;
-      
+
       // Mock tag doesn't exist
       execSync.mockImplementation((command) => {
         if (command.includes('git rev-parse')) {
@@ -100,22 +100,22 @@ describe('Package Publisher Tests', () => {
         }
         return 'success';
       });
-      
+
       const result = await publisher.createGitTag(version);
-      
+
       expect(result).toBe(tagName);
-      expect(execSync).toHaveBeenCalledWith(`git tag -a ${tagName} -m`, expect.any(Object));
+      expect(execSync).toHaveBeenCalledWith(expect.stringContaining(`git tag -a ${tagName} -m`), expect.any(Object));
     });
 
     test('should handle existing git tag', async () => {
       const version = '1.0.1';
       const tagName = `v${version}`;
-      
+
       // Mock tag exists
       execSync.mockReturnValue('tag-hash');
-      
+
       const result = await publisher.createGitTag(version);
-      
+
       expect(result).toBe(tagName);
     });
   });
@@ -123,15 +123,15 @@ describe('Package Publisher Tests', () => {
   describe('Package Building', () => {
     test('should build packages successfully', async () => {
       execSync.mockReturnValue('success');
-      
+
       await publisher.buildPackages();
-      
-      expect(execSync).toHaveBeenCalledWith('rm -rf dist/ build/');
-      expect(execSync).toHaveBeenCalledWith('npm ci');
-      expect(execSync).toHaveBeenCalledWith('npm test');
-      expect(execSync).toHaveBeenCalledWith('npm run lint');
-      expect(execSync).toHaveBeenCalledWith('npm run build:prod');
-      expect(execSync).toHaveBeenCalledWith('npm run build:docker');
+
+      expect(execSync).toHaveBeenCalledWith('rm -rf dist/ build/', expect.any(Object));
+      expect(execSync).toHaveBeenCalledWith('npm ci', expect.any(Object));
+      expect(execSync).toHaveBeenCalledWith('npm test', expect.any(Object));
+      expect(execSync).toHaveBeenCalledWith('npm run lint', expect.any(Object));
+      expect(execSync).toHaveBeenCalledWith('npm run build:prod', expect.any(Object));
+      expect(execSync).toHaveBeenCalledWith('npm run build:docker', expect.any(Object));
     });
 
     test('should handle build errors gracefully', async () => {
@@ -141,11 +141,11 @@ describe('Package Publisher Tests', () => {
         }
         return 'success';
       });
-      
+
       await publisher.buildPackages();
-      
+
       // Should continue despite test failures
-      expect(execSync).toHaveBeenCalledWith('npm run lint');
+      expect(execSync).toHaveBeenCalledWith('npm run lint', expect.any(Object));
     });
   });
 
@@ -158,18 +158,18 @@ describe('Package Publisher Tests', () => {
         }
         return 'success';
       });
-      
+
       await publisher.publishToNPM();
-      
-      expect(execSync).toHaveBeenCalledWith('npm publish --access public');
+
+      expect(execSync).toHaveBeenCalledWith('npm publish --access public', expect.any(Object));
     });
 
     test('should skip publishing if version already exists', async () => {
       // Mock version already published
       execSync.mockReturnValue('1.0.0');
-      
+
       await publisher.publishToNPM();
-      
+
       expect(execSync).not.toHaveBeenCalledWith('npm publish --access public');
     });
   });
@@ -178,14 +178,14 @@ describe('Package Publisher Tests', () => {
     test('should build and push Docker images', async () => {
       const tagName = 'v1.0.0';
       execSync.mockReturnValue('success');
-      
+
       const result = await publisher.buildAndPushDockerImages(tagName);
-      
-      expect(execSync).toHaveBeenCalledWith(`docker build -t panas-token-ecosystem:${publisher.version} .`);
-      expect(execSync).toHaveBeenCalledWith('docker build -t panas-token-ecosystem:latest .');
-      expect(execSync).toHaveBeenCalledWith(`docker tag panas-token-ecosystem:${publisher.version} ghcr.io/panacea-icono/panas-token-ecosystem:${publisher.version}`);
-      expect(execSync).toHaveBeenCalledWith('docker tag panas-token-ecosystem:latest ghcr.io/panacea-icono/panas-token-ecosystem:latest');
-      
+
+      expect(execSync).toHaveBeenCalledWith(`docker build -t panas-token-ecosystem:${publisher.version} .`, expect.any(Object));
+      expect(execSync).toHaveBeenCalledWith('docker build -t panas-token-ecosystem:latest .', expect.any(Object));
+      expect(execSync).toHaveBeenCalledWith(`docker tag panas-token-ecosystem:${publisher.version} ghcr.io/panacea-icono/panas-token-ecosystem:${publisher.version}`, expect.any(Object));
+      expect(execSync).toHaveBeenCalledWith('docker tag panas-token-ecosystem:latest ghcr.io/panacea-icono/panas-token-ecosystem:latest', expect.any(Object));
+
       expect(result).toEqual({
         version: `ghcr.io/panacea-icono/panas-token-ecosystem:${publisher.version}`,
         latest: 'ghcr.io/panacea-icono/panas-token-ecosystem:latest'
@@ -200,11 +200,11 @@ describe('Package Publisher Tests', () => {
         version: 'ghcr.io/panacea-icono/panas-token-ecosystem:1.0.0',
         latest: 'ghcr.io/panacea-icono/panas-token-ecosystem:latest'
       };
-      
+
       execSync.mockReturnValue('commit-hash');
-      
+
       const result = await publisher.generateReleaseNotes(tagName, dockerImages);
-      
+
       expect(result).toContain('# 🚀 Release v1.0.0');
       expect(result).toContain('panas-token-ecosystem');
       expect(result).toContain('ghcr.io/panacea-icono/panas-token-ecosystem:1.0.0');
@@ -217,7 +217,7 @@ describe('Package Publisher Tests', () => {
       execSync.mockImplementation(() => {
         throw new Error('Git operation failed');
       });
-      
+
       await expect(publisher.checkGitStatus()).rejects.toThrow('Git operation failed');
     });
 
@@ -228,7 +228,7 @@ describe('Package Publisher Tests', () => {
         }
         return 'success';
       });
-      
+
       await expect(publisher.buildPackages()).rejects.toThrow('Build failed');
     });
 
@@ -239,7 +239,7 @@ describe('Package Publisher Tests', () => {
         }
         throw new Error('Version not found');
       });
-      
+
       await expect(publisher.publishToNPM()).rejects.toThrow('Publish failed');
     });
   });
@@ -247,27 +247,27 @@ describe('Package Publisher Tests', () => {
   describe('Logging', () => {
     test('should log messages with timestamps', () => {
       const consoleSpy = jest.spyOn(console, 'log').mockImplementation();
-      
+
       publisher.log('Test message', 'info');
-      
+
       expect(consoleSpy).toHaveBeenCalledWith(
         expect.stringMatching(/\[\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z\] ℹ️ Test message/)
       );
-      
+
       consoleSpy.mockRestore();
     });
 
     test('should use correct log types', () => {
       const consoleSpy = jest.spyOn(console, 'log').mockImplementation();
-      
+
       publisher.log('Success message', 'success');
       publisher.log('Error message', 'error');
       publisher.log('Warning message', 'warning');
-      
+
       expect(consoleSpy).toHaveBeenCalledWith(expect.stringContaining('✅ Success message'));
       expect(consoleSpy).toHaveBeenCalledWith(expect.stringContaining('❌ Error message'));
       expect(consoleSpy).toHaveBeenCalledWith(expect.stringContaining('⚠️ Warning message'));
-      
+
       consoleSpy.mockRestore();
     });
   });

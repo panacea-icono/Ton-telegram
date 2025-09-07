@@ -1,9 +1,60 @@
 {
-  "name": "panas-frontend-dashboard",
+  "name": "panas-token-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard React para el ecosistema Panas Token",
   "private": true,
-  "version": "0.1.0",
-  "main": "server.js",
+  "dependencies": {
+    "@headlessui/react": "^1.7.15",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "autoprefixer": "^10.4.14",
+    "axios": "^1.4.0",
+    "clsx": "^1.2.1",
+    "lucide-react": "^0.263.1",
+    "postcss": "^8.4.24",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "recharts": "^2.5.0",
+    "tailwindcss": "^3.3.0",
+    "web-vitals": "^2.1.4"
+  },
   "scripts": {
-    "dev": "node server.js"
-  }
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md}",
+    "analyze": "npm run build && npx bundle-analyzer build/static/js/*.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "eslint": "^8.42.0",
+    "prettier": "^2.8.8",
+    "webpack-bundle-analyzer": "^4.9.0"
+  },
+  "proxy": "http://localhost:3001"
 }

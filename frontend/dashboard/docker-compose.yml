@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: .
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_API_URL=http://localhost:3001/api
+    depends_on:
+      - backend
+    networks:
+      - panas-network
+
+  backend:
+    image: panas-token-ecosystem:latest
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+    volumes:
+      - ./../.env.production:/app/.env
+    networks:
+      - panas-network
+
+networks:
+  panas-network:
+    driver: bridge

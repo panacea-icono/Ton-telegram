@@ -18,7 +18,7 @@ describe('Telegram Bot Tests', () => {
   beforeEach(() => {
     // Reset mocks
     jest.clearAllMocks();
-    
+
     // Mock bot instance
     mockBot = {
       onText: jest.fn(),
@@ -35,9 +35,9 @@ describe('Telegram Bot Tests', () => {
       stopPolling: jest.fn(),
       isPolling: jest.fn(() => false)
     };
-    
+
     TelegramBot.mockImplementation(() => mockBot);
-    
+
     // Mock config
     mockConfig = {
       bots: [
@@ -52,7 +52,7 @@ describe('Telegram Bot Tests', () => {
         }
       ]
     };
-    
+
     // Mock fs operations
     fs.readFileSync.mockReturnValue(JSON.stringify(mockConfig));
     fs.existsSync.mockReturnValue(true);
@@ -62,8 +62,8 @@ describe('Telegram Bot Tests', () => {
     test('should create bot instance with correct token', () => {
       const token = 'test-bot-token';
       new TelegramBot(token);
-      
-      expect(TelegramBot).toHaveBeenCalledWith(token, { polling: true });
+
+      expect(TelegramBot).toHaveBeenCalledWith(token);
     });
 
     test('should handle bot creation errors gracefully', () => {
@@ -71,7 +71,7 @@ describe('Telegram Bot Tests', () => {
       TelegramBot.mockImplementationOnce(() => {
         throw error;
       });
-      
+
       expect(() => {
         new TelegramBot('invalid-token');
       }).toThrow('Invalid token');
@@ -83,9 +83,9 @@ describe('Telegram Bot Tests', () => {
       const bot = new TelegramBot('test-token');
       const regex = /\/start/;
       const callback = jest.fn();
-      
+
       bot.onText(regex, callback);
-      
+
       expect(mockBot.onText).toHaveBeenCalledWith(regex, callback);
     });
 
@@ -93,9 +93,9 @@ describe('Telegram Bot Tests', () => {
       const bot = new TelegramBot('test-token');
       const event = 'message';
       const callback = jest.fn();
-      
+
       bot.on(event, callback);
-      
+
       expect(mockBot.on).toHaveBeenCalledWith(event, callback);
     });
   });
@@ -105,12 +105,12 @@ describe('Telegram Bot Tests', () => {
       const bot = new TelegramBot('test-token');
       const chatId = 123456789;
       const text = 'Hello, world!';
-      
+
       mockBot.sendMessage.mockResolvedValue({ message_id: 1 });
-      
+
       await bot.sendMessage(chatId, text);
-      
-      expect(mockBot.sendMessage).toHaveBeenCalledWith(chatId, text, {});
+
+      expect(mockBot.sendMessage).toHaveBeenCalledWith(chatId, text);
     });
 
     test('should handle send message errors', async () => {
@@ -118,9 +118,9 @@ describe('Telegram Bot Tests', () => {
       const chatId = 123456789;
       const text = 'Hello, world!';
       const error = new Error('Send failed');
-      
+
       mockBot.sendMessage.mockRejectedValue(error);
-      
+
       await expect(bot.sendMessage(chatId, text)).rejects.toThrow('Send failed');
     });
 
@@ -128,11 +128,11 @@ describe('Telegram Bot Tests', () => {
       const bot = new TelegramBot('test-token');
       const callbackQueryId = 'test-callback-id';
       const text = 'Callback answered';
-      
+
       mockBot.answerCallbackQuery.mockResolvedValue(true);
-      
+
       await bot.answerCallbackQuery(callbackQueryId, { text });
-      
+
       expect(mockBot.answerCallbackQuery).toHaveBeenCalledWith(callbackQueryId, { text });
     });
   });
@@ -140,25 +140,25 @@ describe('Telegram Bot Tests', () => {
   describe('Bot Lifecycle', () => {
     test('should start polling', () => {
       const bot = new TelegramBot('test-token');
-      
+
       bot.startPolling();
-      
+
       expect(mockBot.startPolling).toHaveBeenCalled();
     });
 
     test('should stop polling', () => {
       const bot = new TelegramBot('test-token');
-      
+
       bot.stopPolling();
-      
+
       expect(mockBot.stopPolling).toHaveBeenCalled();
     });
 
     test('should check polling status', () => {
       const bot = new TelegramBot('test-token');
-      
+
       const isPolling = bot.isPolling();
-      
+
       expect(mockBot.isPolling).toHaveBeenCalled();
       expect(isPolling).toBe(false);
     });
@@ -168,32 +168,32 @@ describe('Telegram Bot Tests', () => {
     test('should set webhook', async () => {
       const bot = new TelegramBot('test-token');
       const url = 'https://example.com/webhook';
-      
+
       mockBot.setWebHook.mockResolvedValue(true);
-      
+
       await bot.setWebHook(url);
-      
+
       expect(mockBot.setWebHook).toHaveBeenCalledWith(url);
     });
 
     test('should delete webhook', async () => {
       const bot = new TelegramBot('test-token');
-      
+
       mockBot.deleteWebHook.mockResolvedValue(true);
-      
+
       await bot.deleteWebHook();
-      
+
       expect(mockBot.deleteWebHook).toHaveBeenCalled();
     });
 
     test('should get webhook info', async () => {
       const bot = new TelegramBot('test-token');
       const webhookInfo = { url: 'https://example.com/webhook', has_custom_certificate: false };
-      
+
       mockBot.getWebHookInfo.mockResolvedValue(webhookInfo);
-      
+
       const result = await bot.getWebHookInfo();
-      
+
       expect(mockBot.getWebHookInfo).toHaveBeenCalled();
       expect(result).toEqual(webhookInfo);
     });
@@ -208,11 +208,11 @@ describe('Telegram Bot Tests', () => {
         first_name: 'Test Bot',
         username: 'testbot'
       };
-      
+
       mockBot.getMe.mockResolvedValue(botInfo);
-      
+
       const result = await bot.getMe();
-      
+
       expect(mockBot.getMe).toHaveBeenCalled();
       expect(result).toEqual(botInfo);
     });

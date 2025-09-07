@@ -363,6 +363,54 @@ async function start() {
   }
 }
 
+function registerTON_Wallet(bot, options = {}) {
+  try {
+    const TONWalletModule = require('./modules/ton_wallet');
+    const tonModule = new TONWalletModule(bot, options);
+    tonModule.registerCommands();
+
+    // Validar configuración
+    const validation = tonModule.validateConfig();
+    if (!validation.valid) {
+      console.log(
+        '⚠️ Módulo TON_Wallet con problemas:',
+        validation.issues.join(', ')
+      );
+    } else {
+      console.log('✅ Módulo TON_Wallet registrado correctamente');
+    }
+
+    return tonModule;
+  } catch (error) {
+    console.error('❌ Error registrando módulo TON_Wallet:', error.message);
+    return null;
+  }
+}
+
+function registerMulti_Wallet(bot, options = {}) {
+  try {
+    const MultiWalletModule = require('./modules/multi_wallet');
+    const multiWalletModule = new MultiWalletModule(bot, options);
+    multiWalletModule.registerCommands();
+
+    // Validar configuración
+    const validation = multiWalletModule.validateConfig();
+    if (!validation.valid) {
+      console.log(
+        '⚠️ Módulo Multi_Wallet con problemas:',
+        validation.issues.join(', ')
+      );
+    } else {
+      console.log('✅ Módulo Multi_Wallet registrado correctamente');
+    }
+
+    return multiWalletModule;
+  } catch (error) {
+    console.error('❌ Error registrando módulo Multi_Wallet:', error.message);
+    return null;
+  }
+}
+
 if (require.main === module) {
   start().catch((e) => {
     console.error('❌ Error iniciando orchestrator:', e.message);
@@ -370,4 +418,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { start };
+module.exports = { start, registerTON_Wallet, registerMulti_Wallet };
