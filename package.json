@@ -46,6 +46,7 @@
     "packages:readme:plan": "node scripts/github-readme-packages-sync.js plan",
     "packages:readme:apply": "node scripts/github-readme-packages-sync.js apply",
     "telegram:id": "node scripts/bots/get-my-id.js --once",
+    "env:validate": "node scripts/validate-local-env.js"
     "telegram:compliance:check": "node scripts/telegram-compliance-check.js",
     "bots:start": "node scripts/bots/orchestrator.js",
     "bots:validate": "node scripts/bots/validate-bots.js",

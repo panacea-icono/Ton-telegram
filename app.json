@@ -1,0 +1,15 @@
+{
+  "name": "panas-bots-orchestrator",
+  "description": "Orquestador de múltiples bots de Telegram (Panacea | Icono SA)",
+  "env": {
+    "TELEGRAM_OFFICIAL_CHANNEL": { "required": true },
+    "TELEGRAM_BOT_ADMINS": { "required": true },
+    "OPENAI_API_KEY": { "required": false },
+    "OPENAI_MODEL": { "required": false, "value": "gpt-4o-mini" },
+    "LLAMA_API_URL": { "required": false },
+    "LLAMA_API_KEY": { "required": false }
+  },
+  "formation": {
+    "worker": { "quantity": 1, "size": "basic" }
+  }
+}

@@ -115,6 +115,54 @@ function registerAI_OpenAI(bot, options = {}) {
   });
 }
 
+// IA: Llama endpoint (/ask <pregunta>)
+function registerAI_Llama(bot, options = {}) {
+  const axios = require('axios');
+  const apiUrl = options.url || process.env.LLAMA_API_URL;
+  const apiKey = options.apiKey || process.env.LLAMA_API_KEY;
+  if (!apiUrl) {
+    console.warn('ℹ️  AI(Llama): LLAMA_API_URL no configurado. Módulo deshabilitado.');
+    return;
+  }
+  async function askLlama(prompt) {
+    try {
+      const res = await axios.post(apiUrl, { prompt }, {
+        headers: apiKey ? { Authorization: `Bearer ${apiKey}` } : {}
+      });
+      const text = res.data?.text || res.data?.completion || JSON.stringify(res.data);
+      return String(text).slice(0, 3500);
+    } catch (e) {
+      return `Error IA(Llama): ${e.response?.data?.error || e.message}`;
+    }
+  }
+  bot.onText(/^\/ask\s+([\s\S]+)/, async (msg, match) => {
+    const chatId = msg.chat.id;
+    const q = (match && match[1] || '').trim();
+    if (!q) return bot.sendMessage(chatId, 'Uso: /ask <pregunta>');
+    bot.sendMessage(chatId, '🦙 Pensando...');
+    const ans = await askLlama(q);
+    bot.sendMessage(chatId, ans);
+  });
+}
+
+// Aplica metadatos del bot (nombre, descripciones) vía Bot API
+async function applyBotMetadata(token, persona) {
+  const axios = require('axios');
+  const base = `https://api.telegram.org/bot${token}`;
+  if (persona?.displayName) {
+    try { await axios.post(`${base}/setMyName`, { name: persona.displayName }); } catch (_) {}
+  }
+  if (persona?.shortDescription) {
+    try { await axios.post(`${base}/setMyShortDescription`, { short_description: persona.shortDescription }); } catch (_) {}
+  }
+  if (persona?.description) {
+    try { await axios.post(`${base}/setMyDescription`, { description: persona.description }); } catch (_) {}
+  }
+  if (Array.isArray(persona?.commands) && persona.commands.length) {
+    try { await axios.post(`${base}/setMyCommands`, { commands: persona.commands }); } catch (_) {}
+  }
+}
+
 function parseAdmins() {
   const raw = process.env.TELEGRAM_BOT_ADMINS || '';
   return raw
@@ -204,6 +252,16 @@ async function start() {
     const me = await bot.getMe().catch(() => ({ username: def.name }));
     console.log(`🤖 Iniciado bot @${me.username} (${def.name})`);
 
+    // Aplicar metadatos de persona
+    if (def.persona) {
+      applyBotMetadata(token, def.persona).catch(()=>{});
+      if (def.persona.welcome) {
+        bot.onText(/^\/start$/, (msg) => {
+          bot.sendMessage(msg.chat.id, def.persona.welcome);
+        });
+      }
+    }
+
     if (def.modules?.core) registerCore(bot);
     if (def.modules?.paysupport) registerPaySupport(bot);
     if (def.modules?.echo) registerEcho(bot);
@@ -211,6 +269,23 @@ async function start() {
     // AI providers
     if (def.ai?.provider === 'openai' || def.modules?.ai_openai) {
       registerAI_OpenAI(bot, { model: def.ai?.model });
+    }
+    if (def.ai?.provider === 'llama' || def.modules?.ai_llama) {
+      registerAI_Llama(bot, { url: def.ai?.urlEnv ? process.env[def.ai.urlEnv] : process.env.LLAMA_API_URL, apiKey: def.ai?.apiKeyEnv ? process.env[def.ai.apiKeyEnv] : process.env.LLAMA_API_KEY });
+    }
+
+    // Respuesta general con IA si se activa el modo chat
+    if (def.ai?.chatFallback) {
+      bot.on('message', async (msg) => {
+        if (msg.text && !/^\//.test(msg.text)) {
+          if (def.ai?.provider === 'openai' || def.modules?.ai_openai) {
+            // reutiliza /ask pipeline
+            const match = [msg.text, msg.text];
+            const fake = { chat: { id: msg.chat.id } };
+            bot.emit('text', msg.text);
+          }
+        }
+      });
     }
 
     running.push({ def, bot });
