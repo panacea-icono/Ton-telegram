@@ -1,0 +1,60 @@
+# 🔵 VASER TOKEN — Informe Técnico
+
+## 📖 Resumen
+**VASER TOKEN** es un activo digital desplegado en la blockchain de **Solana**, bajo el programa estándar **SPL Token**.  
+Su diseño es simple y directo, sin mecanismos de impuestos ni contratos complejos, lo que lo hace apto como token de utilidad o colateral dentro del ecosistema.
+
+---
+
+## 📑 Datos Vitales
+- **Mint Address:** `FrsW6JC2Em2iEjNyKtEmFpw5jRdjcuZ1Gbx4kAK4xX1S`
+- **Programa:** SPL Token Program (estándar)
+- **Update Authority:** `FMH8E4GKJKubqjevEER4ZqDpkWtFyRUw1rVGj2TpYhH5`
+- **Metadata URI:**  
+  [https://file.dexlab.space/file/5e74bc92b2fa42798dff293639caf61a](https://file.dexlab.space/file/5e74bc92b2fa42798dff293639caf61a)
+- **Primera emisión:** 16 marzo 2025 — 23:58:55 UTC
+- **Royalties (sellerFeeBasisPoints):** 0
+- **isMutable:** TRUE (se puede actualizar metadata)
+- **Holders:** ~78 (según Solscan, septiembre 2025)
+- **Distribución:** 99.99% del supply en circulación
+- **Mercados activos:**
+  - **Raydium (LIPO-VASER)**
+  - **Meteora (VASER-USDT)**
+
+---
+
+## 📊 Observaciones de la Red
+- **Concentración:** alta concentración de tokens en pocos holders (riesgo de control centralizado).  
+- **Pools activas:** VASER-USDT en Meteora y LIPO-VASER en Raydium aseguran liquidez mínima.  
+- **Uso actual:** principalmente trading y experimentación, no adopción masiva.
+
+---
+
+## ⚠️ Riesgos Identificados
+1. **Alta concentración:** facilita manipulación de precio por grandes holders.  
+2. **Liquidez limitada:** dependencia de pocas pools.  
+3. **Mutable metadata:** permite cambios visuales y de branding, pero no afecta supply.  
+4. **Falta de integraciones:** aún sin casos de uso más allá de trading.
+
+---
+
+## 🔧 Integración en el Ecosistema Panas
+- Puede usarse como **colateral** en pools iniciales de **Panas Token** (ej. PANAS-VASER en Raydium).  
+- El router backend puede aceptar **VASER** como método de pago y convertirlo en **Panas Token** o USDC.  
+- Dashboard: mostrar **holders top-10**, **concentración** y **precios** desde Raydium/Meteora.
+
+---
+
+## 📍 Recomendaciones
+- Mantener actualizado el **metadata URI** en Arweave/IPFS para branding oficial.  
+- Incentivar más **liquidez en Meteora/Raydium** para evitar slippage alto.  
+- Usar **multisig** para custodiar posiciones estratégicas de VASER.  
+- No modificar supply ni decimals: mantener estabilidad y confianza.
+
+---
+
+## ✅ Conclusión
+**VASER TOKEN** es un activo sencillo en Solana que puede servir como **apoyo estratégico** dentro del ecosistema Panas, especialmente como liquidez en pools y medio de intercambio temporal.  
+Aunque presenta riesgos de concentración y liquidez limitada, su simplicidad lo hace útil como puente hacia el **Panas Token**, sin necesidad de cambios en su contrato base.
+
+---
