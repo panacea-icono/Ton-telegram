@@ -1,0 +1,126 @@
+{
+  "bots": [
+    {
+      "name": "dr_tapia_bot",
+      "token": "BOT_DR_TAPIA_TOKEN",
+      "mode": "polling",
+      "modules": ["core", "ai_openai"],
+      "persona": {
+        "name": "Dr. Tapia",
+        "description": "Medical AI assistant specialized in healthcare and medical advice",
+        "personality": "Professional, knowledgeable, and empathetic",
+        "greeting": "Hello! I'm Dr. Tapia, your medical AI assistant. How can I help you today?",
+        "capabilities": [
+          "Medical information and advice",
+          "Health assessment guidance",
+          "Medication information",
+          "Symptom analysis"
+        ]
+      },
+      "ai": {
+        "provider": "openai",
+        "model": "gpt-4o-mini",
+        "apiKey": "OPENAI_API_KEY",
+        "temperature": 0.7,
+        "maxTokens": 1000
+      },
+      "commands": {
+        "/start": "Welcome message and bot introduction",
+        "/help": "List of available commands and features",
+        "/ask": "Ask medical questions to the AI assistant",
+        "/symptoms": "Analyze symptoms and provide guidance"
+      }
+    },
+    {
+      "name": "panas_token_bot",
+      "token": "BOT_PANAS_TOKEN_TOKEN",
+      "mode": "webhook",
+      "modules": ["core", "paysupport"],
+      "persona": {
+        "name": "Panas Token Bot",
+        "description": "Token management and payment support assistant",
+        "personality": "Friendly, helpful, and transaction-focused",
+        "greeting": "Hi! I'm here to help you with Panas Token transactions and payments.",
+        "capabilities": [
+          "Token balance checking",
+          "Transaction history",
+          "Payment processing",
+          "Wallet management"
+        ]
+      },
+      "commands": {
+        "/start": "Welcome message and bot introduction",
+        "/balance": "Check token balance",
+        "/send": "Send tokens to another user",
+        "/history": "View transaction history",
+        "/wallet": "Manage wallet settings"
+      }
+    },
+    {
+      "name": "anastasia_panacea_bot",
+      "token": "BOT_ANASTASIA_PANACEA_TOKEN",
+      "mode": "polling",
+      "modules": ["core", "ai_openai", "publisher"],
+      "persona": {
+        "name": "Anastasia",
+        "description": "Panacea ecosystem assistant and content publisher",
+        "personality": "Warm, knowledgeable, and community-focused",
+        "greeting": "Hello! I'm Anastasia, your guide to the Panacea ecosystem. Welcome!",
+        "capabilities": [
+          "Ecosystem information",
+          "Content publishing",
+          "Community management",
+          "AI-powered assistance"
+        ]
+      },
+      "ai": {
+        "provider": "openai",
+        "model": "gpt-4o-mini",
+        "apiKey": "OPENAI_API_KEY",
+        "temperature": 0.8,
+        "maxTokens": 1500
+      },
+      "commands": {
+        "/start": "Welcome message and ecosystem overview",
+        "/ask": "Ask questions about the Panacea ecosystem",
+        "/publish": "Publish content to channels",
+        "/ecosystem": "Learn about Panacea ecosystem features",
+        "/community": "Community information and resources"
+      }
+    }
+  ],
+  "globalSettings": {
+    "maxBotsPerUser": 3,
+    "defaultLanguage": "en",
+    "timezone": "UTC",
+    "logLevel": "info"
+  },
+  "modules": {
+    "core": {
+      "enabled": true,
+      "features": ["start", "help", "status"]
+    },
+    "ai_openai": {
+      "enabled": true,
+      "features": ["ask", "chat", "analysis"],
+      "rateLimit": {
+        "requestsPerMinute": 60,
+        "requestsPerHour": 1000
+      }
+    },
+    "paysupport": {
+      "enabled": true,
+      "features": ["balance", "send", "receive", "history"],
+      "supportedTokens": ["PANAS", "USDT", "BTC"]
+    },
+    "publisher": {
+      "enabled": true,
+      "features": ["publish", "schedule", "analytics"],
+      "channels": ["@panacea_news", "@panacea_updates"]
+    },
+    "echo": {
+      "enabled": false,
+      "features": ["echo", "repeat"]
+    }
+  }
+}

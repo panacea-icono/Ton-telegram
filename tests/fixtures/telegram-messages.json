@@ -1,0 +1,173 @@
+{
+  "messages": {
+    "start": {
+      "message_id": 1,
+      "from": {
+        "id": 123456789,
+        "is_bot": false,
+        "first_name": "Test",
+        "last_name": "User",
+        "username": "testuser",
+        "language_code": "en"
+      },
+      "chat": {
+        "id": 123456789,
+        "first_name": "Test",
+        "last_name": "User",
+        "username": "testuser",
+        "type": "private"
+      },
+      "date": 1694112000,
+      "text": "/start"
+    },
+    "help": {
+      "message_id": 2,
+      "from": {
+        "id": 123456789,
+        "is_bot": false,
+        "first_name": "Test",
+        "last_name": "User",
+        "username": "testuser",
+        "language_code": "en"
+      },
+      "chat": {
+        "id": 123456789,
+        "first_name": "Test",
+        "last_name": "User",
+        "username": "testuser",
+        "type": "private"
+      },
+      "date": 1694112001,
+      "text": "/help"
+    },
+    "ask": {
+      "message_id": 3,
+      "from": {
+        "id": 123456789,
+        "is_bot": false,
+        "first_name": "Test",
+        "last_name": "User",
+        "username": "testuser",
+        "language_code": "en"
+      },
+      "chat": {
+        "id": 123456789,
+        "first_name": "Test",
+        "last_name": "User",
+        "username": "testuser",
+        "type": "private"
+      },
+      "date": 1694112002,
+      "text": "/ask What is blockchain technology?"
+    },
+    "balance": {
+      "message_id": 4,
+      "from": {
+        "id": 123456789,
+        "is_bot": false,
+        "first_name": "Test",
+        "last_name": "User",
+        "username": "testuser",
+        "language_code": "en"
+      },
+      "chat": {
+        "id": 123456789,
+        "first_name": "Test",
+        "last_name": "User",
+        "username": "testuser",
+        "type": "private"
+      },
+      "date": 1694112003,
+      "text": "/balance"
+    },
+    "callback_query": {
+      "id": "test-callback-id",
+      "from": {
+        "id": 123456789,
+        "is_bot": false,
+        "first_name": "Test",
+        "last_name": "User",
+        "username": "testuser"
+      },
+      "message": {
+        "message_id": 5,
+        "from": {
+          "id": 987654321,
+          "is_bot": true,
+          "first_name": "Test Bot",
+          "username": "testbot"
+        },
+        "chat": {
+          "id": 123456789,
+          "type": "private"
+        },
+        "date": 1694112004,
+        "text": "Choose an option:",
+        "reply_markup": {
+          "inline_keyboard": [
+            [
+              {
+                "text": "Option 1",
+                "callback_data": "option_1"
+              },
+              {
+                "text": "Option 2",
+                "callback_data": "option_2"
+              }
+            ]
+          ]
+        }
+      },
+      "data": "option_1"
+    }
+  },
+  "responses": {
+    "start": {
+      "text": "Welcome to the Panas Token Ecosystem! I'm here to help you with various services including AI assistance, token management, and more. Use /help to see available commands.",
+      "reply_markup": {
+        "keyboard": [
+          [
+            { "text": "🤖 Ask AI" },
+            { "text": "💰 Check Balance" }
+          ],
+          [
+            { "text": "📊 View History" },
+            { "text": "❓ Help" }
+          ]
+        ],
+        "resize_keyboard": true,
+        "one_time_keyboard": false
+      }
+    },
+    "help": {
+      "text": "Available commands:\n\n/start - Welcome message\n/help - Show this help\n/ask <question> - Ask AI assistant\n/balance - Check token balance\n/send <amount> <user> - Send tokens\n/history - View transaction history\n\nFor more information, visit our website or contact support.",
+      "parse_mode": "Markdown"
+    },
+    "ask": {
+      "text": "Blockchain technology is a distributed ledger system that maintains a continuously growing list of records, called blocks, which are linked and secured using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data.",
+      "parse_mode": "Markdown"
+    },
+    "balance": {
+      "text": "💰 *Your Token Balance*\n\nPANAS: 1,000.00\nUSDT: 500.00\nBTC: 0.025\n\nTotal Value: $1,500.00 USD",
+      "parse_mode": "Markdown"
+    }
+  },
+  "errors": {
+    "invalid_command": {
+      "text": "❌ Unknown command. Use /help to see available commands.",
+      "parse_mode": "Markdown"
+    },
+    "insufficient_balance": {
+      "text": "❌ Insufficient balance. You need at least 10 PANAS tokens to perform this transaction.",
+      "parse_mode": "Markdown"
+    },
+    "ai_error": {
+      "text": "❌ Sorry, I'm having trouble processing your request right now. Please try again later.",
+      "parse_mode": "Markdown"
+    },
+    "rate_limit": {
+      "text": "⏰ You've reached the rate limit. Please wait a moment before making another request.",
+      "parse_mode": "Markdown"
+    }
+  }
+}
