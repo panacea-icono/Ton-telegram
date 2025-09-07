@@ -1,0 +1,54 @@
+# 🟡 KUCHI — Kuchicoin (BEP-20) — Informe Técnico
+
+## 📖 Resumen
+**Kuchicoin (KUCHI)** es un token desplegado en la blockchain de **Binance Smart Chain (BSC)** bajo el estándar **BEP-20 (ERC-20 compatible)**.  
+Incluye mecánicas de **reflection**, liquidez automática y comisiones de desarrollo. Fue diseñado como un token comunitario experimental.
+
+---
+
+## 📑 Datos Vitales
+- **Contrato:** `0x21b227d8085b4522805b6ad6c83...82068baa91`
+- **Decimals:** 18
+- **Max Supply:** 21,000,000 KUCHI
+- **Holders:** 29 (según BscScan, septiembre 2025)
+- **Transferencias:** ~331 desde el lanzamiento (junio 2024)
+- **DEX principal:** PancakeSwap V2 (router tipo UniswapV2)
+
+---
+
+## ⚙️ Mecánicas del Contrato
+- **Reflection (_taxFee):** redistribución automática a holders.  
+- **Liquidity auto (_liquidityFee):** parte de las transacciones se añade a liquidez.  
+- **Dev fee (_devFee):** porcentaje asignado a una wallet de desarrollo.  
+- **Funciones especiales del owner:**
+  - Pausa global (`Pause`)
+  - Blacklist de direcciones (`_isEnemy`)
+  - Ajuste de fees, router y wallet de desarrollo
+
+---
+
+## ⚠️ Riesgos Identificados
+1. **`onlyOwner` basado en `tx.origin`:** mala práctica de seguridad.  
+2. **Blacklist y Pause:** pueden hacer que el token sea catalogado como “honeypot”.  
+3. **Dependencia de la dev wallet:** riesgo de centralización.  
+4. **Liquidez limitada:** bajo número de holders y pools pequeñas.
+
+---
+
+## 🔧 Integración en el Ecosistema Panas
+- No recomendable como **medio de pago directo** (por las funciones de blacklist/pause).  
+- Puede usarse como **colateral en pools PANAS-KUCHI** para liquidez cruzada.  
+- Router backend: aceptar KUCHI y convertir a USDC o PANAS antes de pagos.
+
+---
+
+## 📍 Recomendaciones
+- Transparencia en fees y estado de pausa/blacklist.  
+- Evitar usarlo como token de pago → mantener solo como par de liquidez.  
+- Migrar a un contrato más limpio en caso de adopción real.  
+
+---
+
+## ✅ Conclusión
+**KUCHI** es un token comunitario en BSC con mecánicas experimentales de reflection y control de owner.  
+Su diseño implica riesgos reputacionales, pero puede servir como **liquidez auxiliar** en el ecosistema Panas Token.
