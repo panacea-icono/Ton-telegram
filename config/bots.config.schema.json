@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Panas Token – Multi Bot Config",
+  "type": "object",
+  "properties": {
+    "bots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "Internal name (no spaces)" },
+          "tokenEnv": { "type": "string", "description": "Env var name with the bot token" },
+          "mode": { "type": "string", "enum": ["polling", "webhook"], "default": "polling" },
+          "modules": {
+            "type": "object",
+            "properties": {
+              "core": { "type": "boolean", "default": true },
+              "paysupport": { "type": "boolean", "default": true },
+              "echo": { "type": "boolean", "default": false },
+              "publisher": { "type": "boolean", "default": false }
+            },
+            "required": ["core"]
+          }
+        },
+        "required": ["name", "tokenEnv"]
+      }
+    }
+  },
+  "required": ["bots"]
+}
+

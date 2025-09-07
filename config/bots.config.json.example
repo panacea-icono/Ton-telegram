@@ -1,0 +1,24 @@
+{
+  "bots": [
+    {
+      "name": "panas_main_bot",
+      "tokenEnv": "TELEGRAM_BOT_TOKEN",
+      "mode": "polling",
+      "modules": {
+        "core": true,
+        "paysupport": true,
+        "echo": true
+      }
+    },
+    {
+      "name": "payments_bot",
+      "tokenEnv": "TELEGRAM_BOT_TOKEN_PAYMENTS",
+      "mode": "polling",
+      "modules": {
+        "core": true,
+        "paysupport": true,
+        "publisher": true
+      }
+    }
+  ]
+}

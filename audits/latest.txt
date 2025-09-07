@@ -1,0 +1,22 @@
+# Auditoría Rápida — 2025-09-07T17:26:27.670Z
+
+## Estado general
+- Pruebas automatizadas: pendientes (no hay tests)
+- Archivo .env presente: sí (ignorado por git)
+- Scripts clave presentes:
+  - Multi-bot orchestrator: scripts/bots/orchestrator.js
+  - Cumplimiento Telegram: scripts/telegram-compliance-check.js
+  - GitHub manager: scripts/github-repos-manager.js
+  - GitHub org sync: scripts/github-org-sync.js
+  - Auditoría v2: docs/auditoria-proyecto-v2.txt
+
+## Posibles secretos (heurística)
+- .env: JWT Secret
+- config/.env.schema: JWT Secret
+- env.example: JWT Secret
+
+## Recomendaciones
+- Añadir tests y pipeline CI (lint + test).
+- Implementar pagos con Stars y enforcement TON-only si la Mini App usa cripto.
+- Añadir anti-spam y módulo admin/broadcast seguro.
+- Agregar Dockerfiles por servicio y revisar compose.

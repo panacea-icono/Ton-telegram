@@ -1,74 +1,296 @@
-[submodule "tokens/panas-token"]
-	path = tokens/panas-token
-	url = https://github.com/panacea-icono/panas-token.git
-	branch = main
+# =============================================================================
+# GIT SUBMODULES - AUTO SYNC
+# =============================================================================
+# Generado automáticamente por scripts/github-org-sync.js
 
-[submodule "tokens/gs-token"]
-	path = tokens/gs-token
-	url = https://github.com/panacea-icono/gs-token.git
-	branch = main
+[submodule "apps/PANAS_PAY_APP"]
+    path = apps/PANAS_PAY_APP
+    url = https://github.com/panacea-icono/PANAS_PAY_APP.git
+    branch = main
 
-[submodule "tokens/vaser-token"]
-	path = tokens/vaser-token
-	url = https://github.com/panacea-icono/vaser-token.git
-	branch = main
+[submodule "apps/panas-app"]
+    path = apps/panas-app
+    url = https://github.com/panacea-icono/panas-app.git
+    branch = main
 
-[submodule "tokens/kuchi-token"]
-	path = tokens/kuchi-token
-	url = https://github.com/panacea-icono/kuchi-token.git
-	branch = main
+[submodule "apps/Ton-telegram"]
+    path = apps/Ton-telegram
+    url = https://github.com/panacea-icono/Ton-telegram.git
+    branch = main
 
-[submodule "backend/router"]
-	path = backend/router
-	url = https://github.com/panacea-icono/panas-router.git
-	branch = main
+[submodule "contracts/panacea_smart_contracts"]
+    path = contracts/panacea_smart_contracts
+    url = https://github.com/panacea-icono/panacea_smart_contracts.git
+    branch = main
 
-[submodule "backend/ton-connect"]
-	path = backend/ton-connect
-	url = https://github.com/panacea-icono/ton-connect-integration.git
-	branch = main
+[submodule "infra/civitAI"]
+    path = infra/civitAI
+    url = https://github.com/panacea-icono/civitAI.git
+    branch = master
 
-[submodule "frontend/dashboard"]
-	path = frontend/dashboard
-	url = https://github.com/panacea-icono/panas-dashboard.git
-	branch = main
+[submodule "infra/fibonacci"]
+    path = infra/fibonacci
+    url = https://github.com/panacea-icono/fibonacci.git
+    branch = main
 
-[submodule "frontend/telegram-bot"]
-	path = frontend/telegram-bot
-	url = https://github.com/panacea-icono/panas-telegram-bot.git
-	branch = main
+[submodule "infra/FIBONACCI_LAB"]
+    path = infra/FIBONACCI_LAB
+    url = https://github.com/panacea-icono/FIBONACCI_LAB.git
+    branch = main
 
-[submodule "contracts/ton"]
-	path = contracts/ton
-	url = https://github.com/panacea-icono/panas-ton-contracts.git
-	branch = main
+[submodule "infra/fibonacci_maestro"]
+    path = infra/fibonacci_maestro
+    url = https://github.com/panacea-icono/fibonacci_maestro.git
+    branch = main
 
-[submodule "contracts/solana"]
-	path = contracts/solana
-	url = https://github.com/panacea-icono/panas-solana-contracts.git
-	branch = main
+[submodule "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO"]
+    path = infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO
+    url = https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git
+    branch = main
 
-[submodule "contracts/algorand"]
-	path = contracts/algorand
-	url = https://github.com/panacea-icono/panas-algorand-contracts.git
-	branch = main
+[submodule "infra/modelos_civitai"]
+    path = infra/modelos_civitai
+    url = https://github.com/https-panacea-icono-org/modelos_civitai.git
+    branch = main
 
-[submodule "contracts/bsc"]
-	path = contracts/bsc
-	url = https://github.com/panacea-icono/panas-bsc-contracts.git
-	branch = main
+[submodule "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK"]
+    path = infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK
+    url = https://github.com/panacea-icono/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK.git
+    branch = main
 
-[submodule "infrastructure/docker"]
-	path = infrastructure/docker
-	url = https://github.com/panacea-icono/panas-docker.git
-	branch = main
+[submodule "infra/privacidad_seguridad"]
+    path = infra/privacidad_seguridad
+    url = https://github.com/panacea-icono/privacidad_seguridad.git
+    branch = main
 
-[submodule "infrastructure/ci-cd"]
-	path = infrastructure/ci-cd
-	url = https://github.com/panacea-icono/panas-ci-cd.git
-	branch = main
+[submodule "infra/repositorio-modular-fibonacci-ia-integrado"]
+    path = infra/repositorio-modular-fibonacci-ia-integrado
+    url = https://github.com/panacea-icono/repositorio-modular-fibonacci-ia-integrado.git
+    branch = main
 
-[submodule "docs/api"]
-	path = docs/api
-	url = https://github.com/panacea-icono/panas-api-docs.git
-	branch = main
+[submodule "infra/tutor_academico_CIRUGIA_I-II-III"]
+    path = infra/tutor_academico_CIRUGIA_I-II-III
+    url = https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git
+    branch = main
+
+[submodule "labs/aiadult-platform"]
+    path = labs/aiadult-platform
+    url = https://github.com/panacea-icono/aiadult-platform.git
+    branch = main
+
+[submodule "labs/api_modelo_piloto"]
+    path = labs/api_modelo_piloto
+    url = https://github.com/panacea-icono/api_modelo_piloto.git
+    branch = main
+
+[submodule "labs/biblioteca-kuchiuya"]
+    path = labs/biblioteca-kuchiuya
+    url = https://github.com/panacea-icono/biblioteca-kuchiuya.git
+    branch = main
+
+[submodule "labs/CASA-RED-SRL"]
+    path = labs/CASA-RED-SRL
+    url = https://github.com/panacea-icono/CASA-RED-SRL.git
+    branch = main
+
+[submodule "labs/coca"]
+    path = labs/coca
+    url = https://github.com/panacea-icono/coca.git
+    branch = master
+
+[submodule "labs/codex-github"]
+    path = labs/codex-github
+    url = https://github.com/panacea-icono/codex-github.git
+    branch = main
+
+[submodule "labs/codex-main"]
+    path = labs/codex-main
+    url = https://github.com/panacea-icono/codex-main.git
+    branch = main
+
+[submodule "labs/Dr_dela_TV"]
+    path = labs/Dr_dela_TV
+    url = https://github.com/panacea-icono/Dr_dela_TV.git
+    branch = main
+
+[submodule "labs/dr_tv_gp"]
+    path = labs/dr_tv_gp
+    url = https://github.com/panacea-icono/dr_tv_gp.git
+    branch = main
+
+[submodule "labs/dr_tv_GPT"]
+    path = labs/dr_tv_GPT
+    url = https://github.com/panacea-icono/dr_tv_GPT.git
+    branch = main
+
+[submodule "labs/dr-de-la-tvr"]
+    path = labs/dr-de-la-tvr
+    url = https://github.com/panacea-icono/dr-de-la-tvr.git
+    branch = main
+
+[submodule "labs/dua_lipa_model_image_ia"]
+    path = labs/dua_lipa_model_image_ia
+    url = https://github.com/panacea-icono/dua_lipa_model_image_ia.git
+    branch = main
+
+[submodule "labs/gpt-local"]
+    path = labs/gpt-local
+    url = https://github.com/panacea-icono/gpt-local.git
+    branch = main
+
+[submodule "labs/GPT-MAESTRO-PANACEA"]
+    path = labs/GPT-MAESTRO-PANACEA
+    url = https://github.com/https-panacea-icono-org/GPT-MAESTRO-PANACEA.git
+    branch = main
+
+[submodule "labs/GPTApi"]
+    path = labs/GPTApi
+    url = https://github.com/panacea-icono/GPTApi.git
+    branch = main
+
+[submodule "labs/home"]
+    path = labs/home
+    url = https://github.com/panacea-icono/home.git
+    branch = main
+
+[submodule "labs/HUGGING_FACE"]
+    path = labs/HUGGING_FACE
+    url = https://github.com/panacea-icono/HUGGING_FACE.git
+    branch = main
+
+[submodule "labs/HUGGING_FACE"]
+    path = labs/HUGGING_FACE
+    url = https://github.com/https-panacea-icono-org/HUGGING_FACE.git
+    branch = main
+
+[submodule "labs/iaadult"]
+    path = labs/iaadult
+    url = https://github.com/panacea-icono/iaadult.git
+    branch = examples
+
+[submodule "labs/kuchiuyas"]
+    path = labs/kuchiuyas
+    url = https://github.com/panacea-icono/kuchiuyas.git
+    branch = main
+
+[submodule "labs/kuchiuyasM"]
+    path = labs/kuchiuyasM
+    url = https://github.com/panacea-icono/kuchiuyasM.git
+    branch = main
+
+[submodule "labs/macuquina_proyecto"]
+    path = labs/macuquina_proyecto
+    url = https://github.com/panacea-icono/macuquina_proyecto.git
+    branch = main
+
+[submodule "labs/Marilyn_Monroe"]
+    path = labs/Marilyn_Monroe
+    url = https://github.com/panacea-icono/Marilyn_Monroe.git
+    branch = main
+
+[submodule "labs/MEDIOS-REDES"]
+    path = labs/MEDIOS-REDES
+    url = https://github.com/panacea-icono/MEDIOS-REDES.git
+    branch = main
+
+[submodule "labs/MODELOS"]
+    path = labs/MODELOS
+    url = https://github.com/panacea-icono/MODELOS.git
+    branch = main
+
+[submodule "labs/nextjs-with-supabase"]
+    path = labs/nextjs-with-supabase
+    url = https://github.com/panacea-icono/nextjs-with-supabase.git
+    branch = main
+
+[submodule "labs/PANACEA_MD"]
+    path = labs/PANACEA_MD
+    url = https://github.com/panacea-icono/PANACEA_MD.git
+    branch = main
+
+[submodule "labs/PANACEA-API-CENTRAL-CODEX"]
+    path = labs/PANACEA-API-CENTRAL-CODEX
+    url = https://github.com/panacea-icono/PANACEA-API-CENTRAL-CODEX.git
+    branch = main
+
+[submodule "labs/PANACEA-GPT-I"]
+    path = labs/PANACEA-GPT-I
+    url = https://github.com/panacea-icono/PANACEA-GPT-I.git
+    branch = main
+
+[submodule "labs/panacea-icono"]
+    path = labs/panacea-icono
+    url = https://github.com/panacea-icono/panacea-icono.git
+    branch = main
+
+[submodule "labs/panas_multichain"]
+    path = labs/panas_multichain
+    url = https://github.com/panacea-icono/panas_multichain.git
+    branch = main
+
+[submodule "labs/panas_pay"]
+    path = labs/panas_pay
+    url = https://github.com/panacea-icono/panas_pay.git
+    branch = main
+
+[submodule "labs/panas-pay"]
+    path = labs/panas-pay
+    url = https://github.com/panacea-icono/panas-pay.git
+    branch = master
+
+[submodule "labs/Panas-Pay.M"]
+    path = labs/Panas-Pay.M
+    url = https://github.com/panacea-icono/Panas-Pay.M.git
+    branch = master
+
+[submodule "labs/REDES"]
+    path = labs/REDES
+    url = https://github.com/panacea-icono/REDES.git
+    branch = main
+
+[submodule "labs/Super-code-tasker"]
+    path = labs/Super-code-tasker
+    url = https://github.com/https-panacea-icono-org/Super-code-tasker.git
+    branch = main
+
+[submodule "labs/UNIVERSOLIFE"]
+    path = labs/UNIVERSOLIFE
+    url = https://github.com/panacea-icono/UNIVERSOLIFE.git
+    branch = main
+
+[submodule "labs/vite-react"]
+    path = labs/vite-react
+    url = https://github.com/panacea-icono/vite-react.git
+    branch = main
+
+[submodule "labs/voice"]
+    path = labs/voice
+    url = https://github.com/panacea-icono/voice.git
+    branch = main
+
+[submodule "tokens/panas_token"]
+    path = tokens/panas_token
+    url = https://github.com/panacea-icono/panas_token.git
+    branch = main
+
+[submodule "tokens/PANAS_TOKENIZER_SURGERY"]
+    path = tokens/PANAS_TOKENIZER_SURGERY
+    url = https://github.com/panacea-icono/PANAS_TOKENIZER_SURGERY.git
+    branch = main
+
+[submodule "tokens/PANAS-TOKEN"]
+    path = tokens/PANAS-TOKEN
+    url = https://github.com/panacea-icono/PANAS-TOKEN.git
+    branch = main
+
+[submodule "tokens/panas-token.M"]
+    path = tokens/panas-token.M
+    url = https://github.com/panacea-icono/panas-token.M.git
+    branch = main
+
+[submodule "tokens/TOKENIZER-NFT"]
+    path = tokens/TOKENIZER-NFT
+    url = https://github.com/panacea-icono/TOKENIZER-NFT.git
+    branch = main
+
+# =============================================================================

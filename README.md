@@ -218,7 +218,29 @@ npm run submodules:status  # Estado de submódulos
 npm run clean              # Limpiar node_modules
 npm run install:all        # Instalar todas las dependencias
 npm run health             # Verificar salud del sistema
+npm run github:repos:list  # Generar docs/ con lista de repos
+npm run github:repos:json  # Mostrar JSON de repos en consola
+npm run github:repos:clone # Mostrar script de clonación
+npm run github:repos:submodules # Mostrar config de submódulos
+npm run github:token:check # Verificar token y permisos de GitHub
+npm run org:sync           # Sincronizar submódulos desde GitHub (auto)
+npm run bots:start         # Iniciar múltiples bots (config o entorno)
 ```
+
+Para validar permisos mínimos de tu token:
+
+```bash
+GITHUB_REQUIRED_SCOPES="repo,read:org" npm run github:token:check
+# o
+node scripts/github-token-verify.js --require-scopes=repo,read:org
+```
+
+Cómo generar un nuevo PAT (fine-grained recomendado):
+- GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate
+- Owner: tu usuario u organización
+- Repository permissions: Metadata: Read, Contents: Read
+- Organization permissions: Members: Read (para listar repos privados de la org)
+- Copia el token y configúralo como `GITHUB_TOKEN`
 
 ---
 
@@ -226,7 +248,7 @@ npm run health             # Verificar salud del sistema
 
 ### Variables de Entorno
 
-Copia `env.example` a `.env` y configura las siguientes variables:
+Copia `env.example` a `.env` y configura las siguientes variables. Para ajustes locales que no deseas commitear, usa `.env.local` (ver `.env.local.example`).
 
 #### Blockchain
 
@@ -239,6 +261,9 @@ Copia `env.example` a `.env` y configura las siguientes variables:
 
 - `TELEGRAM_BOT_TOKEN` - Token del bot de Telegram
 - `TELEGRAM_WEBHOOK_URL` - URL del webhook
+- `BOTS_LIST` y `BOT_<NAME>_TOKEN` - Orquestador multi‑bot (alternativa a config/bots.config.json)
+- `TELEGRAM_OFFICIAL_CHANNEL` - Canal destino (ej.: `@drtapiavargas_of` o `https://t.me/drtapiavargas_of`)
+- `TELEGRAM_BOT_ADMINS` - IDs de administradores permitidos (coma‑separados)
 
 #### Base de Datos
 
@@ -249,6 +274,19 @@ Copia `env.example` a `.env` y configura las siguientes variables:
 
 - `JWT_SECRET` - Secreto para JWT
 - `ENCRYPTION_KEY` - Clave de encriptación
+
+#### GitHub (para listar repositorios)
+
+- `GITHUB_TOKEN` - Token de acceso (PAT o token de instalación). No lo publiques.
+- `GITHUB_ORG` - Organización a consultar (ej.: `panacea-icono`).
+- `GITHUB_USERNAME` - Usuario a consultar si no usas organización.
+- `GITHUB_REPOS_SCOPE` - Opcional: `org` o `user` para forzar el ámbito.
+- `GITHUB_REQUIRED_SCOPES` - Opcional: scopes esperados (coma-separados) para validar el token.
+
+Comportamiento del script:
+- Si defines `GITHUB_ORG`, lista los repos de la organización.
+- Si no defines `GITHUB_ORG` pero defines `GITHUB_USERNAME`, lista los del usuario.
+- Si no defines ninguno, lista los del usuario autenticado (requiere `GITHUB_TOKEN`).
 
 ### Configuración de Submódulos
 
@@ -465,6 +503,101 @@ El proyecto **Panas Token** es desarrollado y respaldado por **Icono SA**, empre
 - ✉️ **Email**: <info@iconosa.com>
 - 🐦 **Twitter**: [@PanaceaIcono](https://twitter.com/PanaceaIcono)
 - 📱 **LinkedIn**: [Panacea Icono SA](https://linkedin.com/company/panacea-icono)
+
+---
+
+
+## 🎯 Repositorio Principal
+
+### [Ton-telegram](https://github.com/panacea-icono/Ton-telegram)
+
+> **Bot de telegram wallet interfaz de pagos**
+
+- **Lenguaje**: JavaScript
+- **Estrellas**: ⭐ 0 | **Forks**: 🍴 0 | **Watchers**: 👀 0
+- **Última actualización**: 7/9/2025
+- **Licencia**: MIT
+- **Temas**: `telegram`, `ton`, `wallet`, `payments`, `bot`, `blockchain`
+- **URL**: [https://github.com/panacea-icono/Ton-telegram](https://github.com/panacea-icono/Ton-telegram)
+
+```bash
+# Clonar repositorio principal
+git clone https://github.com/panacea-icono/Ton-telegram.git
+cd Ton-telegram
+```
+
+---
+
+## 📋 Otros Repositorios
+
+
+### 1. [HUGGING_FACE](https://github.com/panacea-icono/HUGGING_FACE)
+
+- **Descripción**: Modelos de IA y machine learning para aplicaciones médicas
+- **Lenguaje**: Python
+- **Estrellas**: ⭐ 0 | **Forks**: 🍴 0 | **Watchers**: 👀 0
+- **Última actualización**: 7/9/2025
+- **Licencia**: MIT
+- **Temas**: `ai`, `ml`, `huggingface`, `medical`, `healthcare`, `python`
+- **URL**: [https://github.com/panacea-icono/HUGGING_FACE](https://github.com/panacea-icono/HUGGING_FACE)
+
+```bash
+# Clonar repositorio
+git clone https://github.com/panacea-icono/HUGGING_FACE.git
+cd HUGGING_FACE
+```
+
+
+### 2. [FIBONACCI-FINAL-MODULOS-API-MAESTRO](https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO)
+
+- **Descripción**: API maestra con módulos finales del sistema Fibonacci
+- **Lenguaje**: JavaScript
+- **Estrellas**: ⭐ 0 | **Forks**: 🍴 0 | **Watchers**: 👀 0
+- **Última actualización**: 7/9/2025
+- **Licencia**: MIT
+- **Temas**: `api`, `fibonacci`, `modules`, `master`, `backend`, `nodejs`
+- **URL**: [https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO](https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO)
+
+```bash
+# Clonar repositorio
+git clone https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git
+cd FIBONACCI-FINAL-MODULOS-API-MAESTRO
+```
+
+
+### 3. [tutor_academico_CIRUGIA_I-II-III](https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III)
+
+- **Descripción**: Sistema tutor académico para cirugía I, II y III
+- **Lenguaje**: JavaScript
+- **Estrellas**: ⭐ 0 | **Forks**: 🍴 0 | **Watchers**: 👀 0
+- **Última actualización**: 7/9/2025
+- **Licencia**: MIT
+- **Temas**: `education`, `surgery`, `tutor`, `academic`, `medical`, `learning`
+- **URL**: [https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III](https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III)
+
+```bash
+# Clonar repositorio
+git clone https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git
+cd tutor_academico_CIRUGIA_I-II-III
+```
+
+
+### 4. [kuchiuyas](https://github.com/panacea-icono/kuchiuyas)
+
+- **Descripción**: Sistema de gestión y monitoreo de pacientes
+- **Lenguaje**: TypeScript
+- **Estrellas**: ⭐ 0 | **Forks**: 🍴 0 | **Watchers**: 👀 0
+- **Última actualización**: 7/9/2025
+- **Licencia**: MIT
+- **Temas**: `patient-management`, `monitoring`, `healthcare`, `typescript`, `medical`
+- **URL**: [https://github.com/panacea-icono/kuchiuyas](https://github.com/panacea-icono/kuchiuyas)
+
+```bash
+# Clonar repositorio
+git clone https://github.com/panacea-icono/kuchiuyas.git
+cd kuchiuyas
+```
+
 
 ---
 

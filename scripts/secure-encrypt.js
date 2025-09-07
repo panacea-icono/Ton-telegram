@@ -16,9 +16,9 @@ const path = require('path');
 class SecureEncryption {
     constructor() {
         this.algorithm = 'aes-256-gcm';
-        this.keyLength = 32;
-        this.ivLength = 16;
-        this.tagLength = 16;
+        this.keyLength = 32; // 32 bytes = 256 bits
+        this.ivLength = 12;  // 12 bytes recomendado para GCM
+        this.tagLength = 16; // 16 bytes (128 bits)
     }
 
     /**
@@ -38,18 +38,25 @@ class SecureEncryption {
     /**
      * Encripta un texto usando AES-256-GCM
      */
-    encrypt(text, key) {
+    encrypt(text, keyInput) {
+        if (typeof text !== 'string' || !text.length) {
+            throw new Error('Texto a encriptar inválido');
+        }
+        const key = Buffer.isBuffer(keyInput)
+            ? keyInput
+            : Buffer.from(String(keyInput || ''), 'hex');
+        if (key.length !== this.keyLength) {
+            throw new Error(`Clave inválida: se requieren ${this.keyLength} bytes (hex de 64 chars)`);
+        }
         const iv = this.generateIV();
-        const cipher = crypto.createCipher(this.algorithm, key);
+        const cipher = crypto.createCipheriv(this.algorithm, key, iv, { authTagLength: this.tagLength });
         cipher.setAAD(Buffer.from('panas-token-ecosystem', 'utf8'));
-        
-        let encrypted = cipher.update(text, 'utf8', 'hex');
-        encrypted += cipher.final('hex');
-        
+
+        const ciphertext = Buffer.concat([cipher.update(text, 'utf8'), cipher.final()]);
         const tag = cipher.getAuthTag();
-        
+
         return {
-            encrypted,
+            encrypted: ciphertext.toString('hex'),
             iv: iv.toString('hex'),
             tag: tag.toString('hex')
         };
@@ -58,15 +65,28 @@ class SecureEncryption {
     /**
      * Desencripta un texto usando AES-256-GCM
      */
-    decrypt(encryptedData, key) {
-        const decipher = crypto.createDecipher(this.algorithm, key);
+    decrypt(encryptedData, keyInput) {
+        if (!encryptedData || !encryptedData.encrypted || !encryptedData.iv || !encryptedData.tag) {
+            throw new Error('Datos encriptados inválidos');
+        }
+        const key = Buffer.isBuffer(keyInput)
+            ? keyInput
+            : Buffer.from(String(keyInput || ''), 'hex');
+        if (key.length !== this.keyLength) {
+            throw new Error(`Clave inválida: se requieren ${this.keyLength} bytes (hex de 64 chars)`);
+        }
+        const iv = Buffer.from(encryptedData.iv, 'hex');
+        const tag = Buffer.from(encryptedData.tag, 'hex');
+
+        const decipher = crypto.createDecipheriv(this.algorithm, key, iv, { authTagLength: this.tagLength });
         decipher.setAAD(Buffer.from('panas-token-ecosystem', 'utf8'));
-        decipher.setAuthTag(Buffer.from(encryptedData.tag, 'hex'));
-        
-        let decrypted = decipher.update(encryptedData.encrypted, 'hex', 'utf8');
-        decrypted += decipher.final('utf8');
-        
-        return decrypted;
+        decipher.setAuthTag(tag);
+
+        const plaintext = Buffer.concat([
+            decipher.update(Buffer.from(encryptedData.encrypted, 'hex')),
+            decipher.final()
+        ]);
+        return plaintext.toString('utf8');
     }
 
     /**
@@ -198,7 +218,8 @@ if (require.main === module) {
     switch (command) {
         case 'encrypt':
             const mnemonic = process.argv[3];
-            const key = process.argv[4] || encryption.generateKey();
+            const keyArg = process.argv[4];
+            const keyBuf = keyArg ? Buffer.from(keyArg, 'hex') : encryption.generateKey();
             
             if (!mnemonic) {
                 console.error('❌ Error: Especifica el mnemónico a encriptar');
@@ -206,9 +227,13 @@ if (require.main === module) {
             }
             
             try {
-                const encrypted = encryption.encryptMnemonic(mnemonic, Buffer.from(key, 'hex'));
+                const encrypted = encryption.encryptMnemonic(mnemonic, keyBuf);
                 console.log('🔐 Mnemónico encriptado:');
                 console.log(JSON.stringify(encrypted, null, 2));
+                if (!keyArg) {
+                    console.log('\n🔑 Clave (HEX, guárdala en un lugar seguro):');
+                    console.log(keyBuf.toString('hex'));
+                }
             } catch (error) {
                 console.error(`❌ Error: ${error.message}`);
                 process.exit(1);

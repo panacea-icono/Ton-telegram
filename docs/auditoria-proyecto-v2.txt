@@ -1,0 +1,112 @@
+AUDITORÍA TÉCNICA INTEGRAL (v2) — Panas Token Ecosystem
+Fecha: $(date -u +%Y-%m-%dT%H:%M:%SZ)
+
+1) Resumen Ejecutivo
+- Estado: Repositorio evolucionado con orquestador multi‑bot, utilidades GitHub, cifrado corregido AES‑256‑GCM, documentación de cumplimiento y plantillas de configuración. Aún faltan pruebas, CI/CD, Dockerfiles y módulos clave (pagos Stars, anti‑spam, TON‑only enforcement en Mini App).
+- Riesgos altos: tokens sensibles residuales en archivos de ejemplo y en código (wallet manager), uso de token GitHub de alto privilegio (aceptado por el propietario). Sin tests automatizados.
+- Prioridades:
+  1) Secretos y datos sensibles: retirar del código/archivos de ejemplo, mover a entorno/gestor de secretos.
+  2) Añadir pruebas mínimas + flujo CI (lint+test).
+  3) Implementar pagos con Telegram Stars y TON‑only guard en Mini App.
+  4) Dockerfiles por servicio y compose estable.
+  5) Módulos anti‑spam/rate‑limit y admin/broadcast con confirmaciones.
+
+2) Cambios positivos desde la v1
+- Cifrado: scripts/secure-encrypt.js:1 usa createCipheriv/createDecipheriv con IV de 12 bytes GCM, tag, validación de longitud de clave.
+- Gestión GitHub: scripts/github-repos-manager.js:1 ahora usa entorno y fallback (org → usuario → autenticado), sin exponer token.
+- Eliminación de token hardcodeado: borrado scripts/github-repos-fetcher.js.
+- Multi‑bot: scripts/bots/orchestrator.js:1 con módulos core/paysupport/echo/publisher; publisher integra publicación a canal oficial.
+- Cumplimiento: docs/telegram/privacy-policy.md:1 y docs/telegram/telegram-bot-compliance.md:1; script de verificación scripts/telegram-compliance-check.js:1.
+- Organización: scripts/github-org-sync.js:1 y docs/REPOS-STRUCTURE.md:1 para sincronizar `.gitmodules` dinámicamente.
+- Esquemas: config/.env.schema:1 y config/bots.config.schema.json:1 para captura de variables.
+
+3) Hallazgos de Seguridad
+- P0 — Tokenes/secretos residuales en repo (revisar):
+  - .env presente localmente (ignorado por git). Verificar que no está en historial. Si estuvo versionado, limpiar historial (BFG/git filter‑repo).
+  - scripts/wallet-manager.js:1 incluye `accessToken` dummy y direcciones; mover cualquier secreto real a entorno o cifrado con secure-encrypt.
+  - DR_TAPIA_ACCESS_TOKEN observado previamente en .env (local). Mantener fuera de control de versiones y rotar si se filtró.
+- P1 — GitHub token full access: Aceptado por el propietario. Recomendaciones operativas:
+  - Restringir su uso a runners/hosts de confianza; no imprimir ni loggear; rotación periódica planificada.
+  - Mantenerlo fuera de CLI (evitar `--token=`). Usar sólo entorno/secret manager.
+- P1 — Data privacy y retención:
+  - /delete_data existe a nivel UX, pero no hay capa de persistencia ni flujo de borrado real (no necesario si no se almacena PII). Si se almacena PII, implementar endpoints/procesos formales.
+- P2 — Anti‑abuso: falta módulo anti‑spam/rate limiting a nivel bot (complementario al rate general del proyecto).
+
+4) Cumplimiento Telegram (Bot Developer Terms)
+- Política de privacidad: docs/telegram/privacy-policy.md:1 presente. Registrar URL en @BotFather.
+- /paysupport implementado en bots (scripts/bots/orchestrator.js:1 y frontend/telegram-bot/bot.js:1).
+- Mini App + cripto (cláusula 7): se añadió bandera `TELEGRAM_MINIAPP_TON_ONLY` (config/.env.schema:1). Falta enforcement en el código de la Mini App para bloquear cadenas no‑TON dentro del contexto Telegram.
+- Credentials: credenciales sólo por entorno; no hardcodear. Cumplido en nuevas piezas.
+- Business Chatbot: si aplica, documentar servicios adicionales (no requerido hoy).
+
+5) Arquitectura y Orquestación
+- Multi‑bot: scripts/bots/orchestrator.js:1
+  - Módulos: core (/start,/help,/whoami,/delete_data); paysupport; echo; publisher (/post,/post_html,/schedule). Admins por `TELEGRAM_BOT_ADMINS`.
+  - Recomendado: añadir módulos admin (ACL granular), broadcast con confirmación doble, anti‑spam (flood control por usuario/chat), logger con scrub de PII.
+- Canal oficial: integrado por `TELEGRAM_OFFICIAL_CHANNEL` (ej.: @drtapiavargas_of). Asegurar bot como admin del canal.
+- Validación de bots: scripts/bots/validate-bots.js:1 valida tokens (getMe, webhook, comandos) sin exponerlos.
+
+6) GitHub y documentación
+- Repos manager: scripts/github-repos-manager.js:1 genera JSON/README/submódulos/clone script con enlaces dinámicos.
+- Org sync: scripts/github-org-sync.js:1 genera `.gitmodules` agrupado y docs/REPOS-STRUCTURE.md:1 desde tus repos accesibles con el token.
+- Recomendado: paginación (Link header) si >100 repos; caché local y backoff rate‑limit.
+
+7) Entorno/Configuración
+- Esquema unificado: config/.env.schema:1 lista completa de variables (GitHub, Telegram, Bots, TON/Solana/Algorand/BSC, DB, seguridad, DEXs, notificaciones, backup, CI/CD).
+- Acciones:
+  - Completar `.env` a partir de `config/.env.schema`.
+  - Para multi‑bot: usar `BOTS_LIST` + `BOT_<NAME>_TOKEN` o `config/bots.config.json` (seguir config/bots.config.schema.json:1).
+
+8) Pagos con Stars y Mini Apps
+- Falta el módulo de pagos con Stars (Bot API). Propuesta:
+  - Añadir endpoints/métodos para iniciar compra, procesar `successful_payment`, reportes y reembolsos (según API).
+  - Actualizar /paysupport para adjuntar contexto de transacción y verificación.
+- Mini App (WebApp) de Telegram:
+  - Verificar `initData` con HMAC y firmar requests al backend.
+  - Si hay cripto, aplicar TON‑only enforcement (whitelist de acciones; bloquear otras cadenas en contexto Telegram; permitir bridges como excepción documentada).
+
+9) Docker y despliegue
+- docker-compose.yml se autogenera en scripts/setup-ecosystem.sh:1, pero faltan Dockerfiles mínimos en:
+  - backend/router (ahora hay server http minimal)
+  - frontend/dashboard (server http minimal)
+  - frontend/telegram-bot (depende de node-telegram-bot-api)
+- Recomendado: agregar Dockerfiles, variables de build, y healthchecks.
+
+10) Pruebas y CI/CD
+- Jest configurado en package.json:1, pero no hay tests. Añadir:
+  - Tests para: encrypt/decrypt (scripts/secure-encrypt.js:1), bots:validate, publisher (mock de Telegram API), health-check.
+  - Workflow CI: lint+test, secret scan, (opcional) SAST.
+
+11) Observabilidad
+- logs: establecer niveles por módulo; redacción de PII; rotación.
+- métricas: exponer contadores básicos (mensajes, errores, publicaciones, pagos) en /metrics si procede.
+- alertas: integración con Logtail/Sentry (variables ya previstas en schema).
+
+12) Lista de Tareas Priorizadas
+- P0
+  - [ ] Confirmar que `.env` no está en historial. Si sí: limpiar y rotar secretos.
+  - [ ] Quitar cualquier secreto residual de scripts/wallet-manager.js:1 (mover a entorno/cifrado).
+- P1
+  - [ ] Añadir módulo pagos con Stars (bot seleccionado). Validar /paysupport con contexto.
+  - [ ] Implementar TON‑only enforcement en Mini App (si aplica cripto).
+  - [ ] Añadir módulo anti‑spam y admin/broadcast seguro.
+  - [ ] Dockerfiles por servicio + compose estable.
+- P2
+  - [ ] Añadir tests mínimos y CI (GitHub Actions).
+  - [ ] Mejorar GitHub manager con paginación y backoff.
+  - [ ] Persistencia y reintentos en /schedule (publisher) con almacenamiento.
+
+13) Archivos Clave (referencias)
+- scripts/secure-encrypt.js:1 — Cifrado AES‑GCM corregido.
+- scripts/github-repos-manager.js:1 — Listado repos (org/usuario/autenticado).
+- scripts/github-org-sync.js:1 — Sincroniza .gitmodules + docs.
+- scripts/bots/orchestrator.js:1 — Orquestador multi‑bot (core/paysupport/echo/publisher).
+- scripts/bots/validate-bots.js:1 — Valida tokens y configuración por bot.
+- docs/telegram/privacy-policy.md:1 — Plantilla política de privacidad.
+- docs/telegram/telegram-bot-compliance.md:1 — Checklist de cumplimiento.
+- config/.env.schema:1 — Esquema variables de entorno.
+- config/bots.config.schema.json:1 — Esquema de bots multi‑config.
+
+14) Conclusión
+El proyecto ahora cuenta con cimientos más sólidos: seguridad de cifrado, organización GitHub automatizada, orquestación multi‑bot, y documentación de cumplimiento. El siguiente salto de calidad pasa por pagos con Stars, enforcement TON‑only en Mini App, anti‑spam/admin, Docker y CI con pruebas. Con estas piezas, la operación escalará de forma segura y alineada a los términos de Telegram.
+

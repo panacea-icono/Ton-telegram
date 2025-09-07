@@ -1,0 +1,45 @@
+# =============================================================================
+# GIT SUBMODULES - PANACEA ICONO SA REPOSITORIES
+# =============================================================================
+# Configuración automática de submódulos para todos los repositorios
+# de la organización panacea-icono
+# =============================================================================
+
+[submodule "Ton-telegram"]
+    path = Ton-telegram
+    url = https://github.com/panacea-icono/Ton-telegram.git
+    branch = main
+
+[submodule "HUGGING_FACE"]
+    path = HUGGING_FACE
+    url = https://github.com/panacea-icono/HUGGING_FACE.git
+    branch = main
+
+[submodule "FIBONACCI-FINAL-MODULOS-API-MAESTRO"]
+    path = FIBONACCI-FINAL-MODULOS-API-MAESTRO
+    url = https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git
+    branch = main
+
+[submodule "tutor_academico_CIRUGIA_I-II-III"]
+    path = tutor_academico_CIRUGIA_I-II-III
+    url = https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git
+    branch = main
+
+[submodule "kuchiuyas"]
+    path = kuchiuyas
+    url = https://github.com/panacea-icono/kuchiuyas.git
+    branch = main
+
+# =============================================================================
+# INSTRUCCIONES DE USO
+# =============================================================================
+# Para inicializar todos los submódulos:
+# git submodule init
+# git submodule update --recursive --remote
+#
+# Para actualizar todos los submódulos:
+# git submodule update --remote --recursive
+#
+# Para agregar un submódulo específico:
+# git submodule add https://github.com/panacea-icono/REPO_NAME.git
+# =============================================================================

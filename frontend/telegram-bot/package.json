@@ -1,0 +1,10 @@
+{
+  "name": "panas-telegram-bot",
+  "private": true,
+  "version": "0.1.0",
+  "main": "bot.js",
+  "scripts": {
+    "dev": "node bot.js"
+  }
+}
+

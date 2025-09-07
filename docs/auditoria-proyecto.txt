@@ -1,0 +1,205 @@
+AUDITORÍA TÉCNICA INTEGRAL — Panas Token Ecosystem (Ton‑telegram)
+Fecha: $(date -u +%Y-%m-%dT%H:%M:%SZ)
+
+1) Resumen Ejecutivo
+- Estado: Monorepo esqueleto con múltiples utilidades y documentación, pero sin servicios implementados (backend/frontend/bots) aún.
+- Riesgos críticos: exposición de secretos (PAT de GitHub y tokens de acceso) en código y en .env versionado; cifrado inseguro; referencias a scripts/servicios inexistentes.
+- Priorización de remediación:
+  1. Rotar y eliminar secretos expuestos (GitHub PAT, access tokens) y sacar .env del repo.
+  2. Arreglar utilidades de cifrado (usar AES-GCM con createCipheriv/createDecipheriv e IV/tag correctos).
+  3. Completar estructura modular con repos/submódulos o eliminar comandos que fallan.
+  4. Añadir tests básicos y CI mínimo; revisar dependencias declaradas vs uso real.
+
+2) Inventario del Repositorio (alto nivel)
+- Raíz
+  - README.md: guía extensa de uso, scripts, Docker, submódulos y configuración.
+  - env.example: plantilla de entorno bien estructurada por dominios (blockchains, seguridad, APIs, etc.).
+  - .env: archivo de entorno real COMMITTEADO (riesgo). Contiene placeholders y al menos un token real.
+  - .gitmodules: configuración de 5 submódulos (Ton-telegram, HUGGING_FACE, FIBONACCI-…, tutor_…, kuchiuyas).
+  - setup.sh: script orquestador que crea estructura, .env/.env.local, docker-compose.yml, etc.
+  - docs/: contiene REPOSITORIES.md, repositories.json, git-submodules.txt, clone-all-repos.sh, ecosystem-config.env (generados por scripts).
+  - backend/, frontend/, contracts/, infrastructure/, tokens/: carpetas con README.md placeholders (sin código funcional).
+- scripts/
+  - start-all.js: inicia 3 servicios (backend/router, frontend/dashboard, frontend/telegram-bot). Verifica puertos y health.
+  - health-check.js: healthchecks locales + conectividad blockchain.
+  - init-submodules.sh: inicializa y verifica submódulos; crea carpetas con README si faltan.
+  - github-repos-manager.js: lista repos desde GitHub (ahora usa variables de entorno, soporta org/usuario).
+  - github-repos-fetcher.js: similar pero con token incrustado (riesgo alto) y logging de prefijo de token.
+  - panacea-repos-generator.js: genera documentación de repos “conocidos” (estático) + ecosystem-config.env.
+  - secure-encrypt.js: utilidad de cifrado para wallets (implementación insegura; ver hallazgos).
+  - wallet-manager.js: maneja wallets públicas y un accessToken incrustado (riesgo), genera reportes/export público.
+  - update-main-readme.js: injerta sección de repos en README principal.
+  - setup-ecosystem.sh: automatiza generación de docs y .gitmodules + permisos.
+
+3) Hallazgos de Seguridad (prioridad)
+- P0 — Secreto GitHub PAT expuesto
+  - Archivo: scripts/github-repos-fetcher.js
+  - Detalle: define this.token con valor PAT real y lo imprime parcialmente al ejecutar.
+  - Riesgo: acceso a repos privados, acciones en nombre de la cuenta, escalamiento.
+  - Acción: REVOCAR/rotar inmediatamente el PAT en GitHub; eliminar del repo; usar solo GITHUB_TOKEN desde entorno/secrets.
+
+- P0 — Archivo .env versionado con secretos
+  - Archivo: .env
+  - Detalle: contiene DR_TAPIA_ACCESS_TOKEN real y múltiples credenciales/config sensibles.
+  - Riesgo: exfiltración de tokens; uso malicioso.
+  - Acción: eliminar .env del control de versiones; añadir a .gitignore; rotar/invalidar cualquier token clave.
+
+- P0 — Cifrado inseguro en scripts/secure-encrypt.js
+  - Uso de crypto.createCipher y createDecipher (deprecated) sin IV pasado; se genera iv pero NO se utiliza; GCM requiere createCipheriv/createDecipheriv con IV y tag.
+  - setAAD y setAuthTag usados, pero sin asociar el IV; el esquema actual puede fallar o dar falsa sensación de seguridad.
+  - Acción: reescribir con crypto.createCipheriv('aes-256-gcm', key, iv); almacenar {ciphertext, iv, tag}; y simétricamente al descifrar.
+
+- P1 — Token/Access data incrustados en wallet-manager
+  - Archivo: scripts/wallet-manager.js
+  - Detalle: accessToken largo en claro; URLs y listas de direcciones en claro (estas últimas pueden ser públicas, pero el token no).
+  - Acción: mover todo token a variables de entorno o a un gestor de secretos; si se requiere persistencia, usar secure-encrypt (una vez corregido).
+
+- P1 — Fugas accidentales en logs
+  - Archivo: scripts/github-repos-fetcher.js
+  - Detalle: imprime prefijo del token en consola (“Usando token: xxxxxxxx…”).
+  - Acción: no loggear ningún fragmento de credenciales.
+
+- P2 — Falta de validación de inputs / rate limiting en utilidades CLI
+  - Scripts CLI reciben parámetros y tocan red/sistema; carecen de validaciones robustas.
+  - Acción: validar argumentos, añadir safe defaults y manejo de errores uniforme.
+
+4) Calidad de Configuración y Entorno
+- env.example: bien organizado; cubre blockchains, APIs, seguridad, notificaciones, etc.
+- .env: no debe estar versionado; mover a .gitignore; usar .env.local para desarrollo.
+- Variables nuevas para GitHub agregadas: GITHUB_TOKEN, GITHUB_ORG, GITHUB_USERNAME, GITHUB_REPOS_SCOPE; documentadas en README.
+- setup.sh: crea docker-compose.yml dinámicamente y .env/.env.local si faltan; útil, pero conviene no generar .env pre-llenado en repos públicos.
+
+5) Implementación de Scripts y Mantenibilidad
+- start-all.js
+  - Bien estructurado para spawn de servicios, con banners y health checks básicos.
+  - Riesgo: carpetas destino no tienen package.json; comandos fallarán.
+  - Mejora: detectar falta de “npm run dev” en subproyectos y sugerir scaffolding.
+
+- health-check.js
+  - Verifica endpoints locales y conectividad a endpoints de redes (TON, Solana, Algorand, BSC).
+  - Mejora: parametrizar URLs desde .env; salida JSON ya soportada; añadir retries/backoff.
+
+- init-submodules.sh
+  - Inicializa submódulos y crea directorios con README si no existen.
+  - Mejora: sincronizar dinámicamente con .gitmodules generado; abortar en repos no alcanzables si se requiere estricto.
+
+- github-repos-manager.js
+  - Actualizado para usar .env (token opcional), soporta org/usuario, genera docs/json/submódulos/clone script.
+  - Limitaciones: sin paginación si >100 repos; no maneja rate-limit/backoff; asume API v3 por defecto.
+  - Mejora: añadir paginación “Link” header; caché local; selector de ramas.
+
+- github-repos-fetcher.js
+  - Duplicado funcional de manager con token hardcodeado y branding fijo “panacea-icono”.
+  - Recomendación: eliminar este archivo o hacerlo espejo del manager usando .env; NUNCA hardcodear tokens.
+
+- panacea-repos-generator.js
+  - Generación estática de “repos conocidos”; útil como placeholder.
+  - Mejora: consolidar con manager/fetcher o retirar para evitar duplicidad.
+
+- secure-encrypt.js
+  - Implementación insegura (ver sección Seguridad). No usar en producción hasta corregir.
+  - Mejora: añadir pruebas unitarias de cifrado y KMS/HSM en producción.
+
+- wallet-manager.js
+  - Mapa en memoria con wallets y direcciones, validadores regex básicos, exportación pública.
+  - Problemas: accessToken incrustado; ENCRYPTION_KEY generado pero no usado realmente; no hay almacenamiento seguro.
+  - Mejora: integrar con secure-encrypt corregido o gestor de secretos; quitar tokens del código.
+
+- update-main-readme.js / setup-ecosystem.sh
+  - Útiles para automatizar documentación; revisar que no sobrescriban manualmente contenido relevante del README.
+
+6) Estructura de Módulos/Servicios
+- backend/router, backend/ton-connect, frontend/dashboard, frontend/telegram-bot
+  - Solo contienen README.md; no hay package.json ni código.
+  - Scripts de npm en package.json de la raíz referencian estos subproyectos (dev/build), por lo que fallarán.
+  - Acción: scaffold mínimo (package.json, dev scripts, hello world) o comentar scripts hasta tenerlos.
+
+- contracts/{ton,solana,algorand,bsc}
+  - Solo README.md; sin código. Útiles como place­holders.
+
+- infrastructure/{docker,ci-cd}
+  - README.md placeholders. No hay pipelines ni archivos CI.
+
+- tokens/{panas-token,gs-token,vaser-token,kuchi-token}
+  - README placeholders; plan de integrarlos como submódulos.
+
+7) Dependencias y Tooling (package.json)
+- Dependencias declaradas numerosas: @ton/*, @solana/*, algosdk, web3/ethers, express, mongoose/pg/redis, nodemailer, swagger, jest, typescript, eslint, prettier.
+- Sin uso actual en el código del repo (no hay backend/servicios implementados).
+- Riesgos:
+  - Bloat de dependencias no usadas (seguridad/supply chain), mantenimiento innecesario.
+  - Config de Jest apunta a tests/setup.js que no existe.
+  - Scripts de deploy (scripts/deploy.js) no existen.
+- Acciones recomendadas:
+  - Podar dependencias hasta que haya uso real.
+  - Crear carpeta tests/ con setup.js o ajustar jest config.
+  - Implementar scripts/deploy.js o eliminar scripts desde package.json temporalmente.
+
+8) Docker y Orquestación
+- docker-compose.yml se genera desde setup.sh; actualmente no está en repo salvo que se ejecute el script.
+- Servicios definidos: postgres, redis, api (build backend/router), dashboard, telegram-bot — pero esas rutas carecen de Dockerfile y package.json.
+- Acción: agregar Dockerfile y scaffolding mínimo en cada servicio antes de usar docker-compose.
+
+9) Documentación
+- README.md: completo y bien organizado; incluye comandos que hoy no funcionan por falta de subproyectos.
+- docs/: generado correctamente por scripts de repos.
+- Sugerencia: añadir “estado del proyecto” y advertencias de placeholders para alinear expectativas.
+
+10) Submódulos (.gitmodules)
+- Define 5 repos externos; si no existen o son privados, “git submodule update” falla parcialmente.
+- Acción: confirmar existencia/permiso de cada repo; si aún no existen, evitar bloquear la inicialización (ya manejado con warnings en init-submodules.sh).
+
+11) Gaps (qué falta para un entorno modular funcional)
+- Implementar esqueleto de cada servicio:
+  - backend/router: express + health + OpenAPI + conexión a DB/Redis; Dockerfile + npm scripts.
+  - frontend/dashboard: Vite/Next + .env.local; Dockerfile.
+  - frontend/telegram-bot: bot básico con node-telegram-bot-api; Dockerfile.
+  - scripts/deploy.js: placeholder de despliegue o retirar script.
+  - tests/: al menos smoke tests para health y CLI scripts.
+- Seguridad y secretos:
+  - Eliminar .env del repo; usar env.example; agregar .env a .gitignore.
+  - Rotar tokens expuestos (GitHub PAT y DR_TAPIA_ACCESS_TOKEN) y migrar a variables de entorno/secret manager.
+  - Arreglar secure-encrypt.js y usarlo realmente si se necesita persistencia.
+- GitHub integración:
+  - Unificar github-repos-manager.js y eliminar github-repos-fetcher.js (inseguro).
+  - Añadir paginación y manejo de rate limit.
+- CI/CD:
+  - Añadir workflows (lint/test/scan) y secrets en el proveedor CI.
+
+12) Recomendaciones de Remediación (paso a paso)
+1. Secretos
+   - Revocar y regenerar: GitHub PAT de scripts/github-repos-fetcher.js y DR_TAPIA_ACCESS_TOKEN en .env; eliminar historial si es necesario (BFG/filtrepo).
+   - Añadir .env a .gitignore y borrar del repo; conservar solo env.example.
+   - Revisar cualquier otro token/llave incrustada (grep "token"/"key").
+
+2. Cifrado
+   - Reescribir secure-encrypt.js con crypto.createCipheriv/createDecipheriv y uso correcto de IV/tag.
+   - Añadir tests unitarios para validar cifrado/descifrado y compatibilidad.
+
+3. Limpieza de scripts
+   - Eliminar github-repos-fetcher.js o rehacerlo para usar .env; no loggear tokens.
+   - Quitar o marcar como “WIP” los scripts npm que fallan (deploy:*, dev:backend/frontend/bot) hasta que haya código base.
+
+4. Scaffold de servicios
+   - Crear backend/router (Express) con health y /api-docs mínimos; Dockerfile.
+   - Crear frontend/dashboard (Vite/Next) con página básica; Dockerfile.
+   - Crear frontend/telegram-bot (node-telegram-bot-api) con comando /start; Dockerfile.
+
+5. Testing y calidad
+   - Añadir carpeta tests/ con setup.js y pruebas smoke para health-check.js y start-all.js (mocks).
+   - Activar ESLint/Prettier y hooks husky ya definidos.
+
+6. Documentación
+   - Actualizar README con “Estado: en construcción”, y tabla de módulos con % de avance.
+   - Documentar política de secretos y cómo usar .env.local.
+
+13) Validaciones rápidas realizadas
+- Conteo de archivos: 43. Presencia de docs y scripts; ausencia de código de servicios.
+- Lectura de .gitmodules: 5 submódulos definidos.
+- Revisión de scripts principales: start-all.js, health-check.js, init-submodules.sh, github-*.js, secure-encrypt.js, wallet-manager.js.
+- package.json: múltiples dependencias y scripts apuntando a rutas sin package.json.
+- setup.sh: genera docker-compose.yml; correcto a nivel de plantilla.
+
+14) Conclusión
+El repositorio sienta bases de un ecosistema modular multichain con utilidades y documentación sólida, pero aún carece de implementaciones concretas de servicios y presenta riesgos de seguridad serios por exposición de secretos y un módulo de cifrado incorrecto. Con las remediaciones priorizadas (rotación de secretos, saneamiento de .env, corrección de cifrado) y un plan de scaffolding para los módulos, el proyecto puede avanzar rápidamente hacia un entorno modular funcional y seguro.
+
