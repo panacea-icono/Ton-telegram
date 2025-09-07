@@ -225,6 +225,7 @@ bot.session-journal
 *.swp
 *.swo
 *~
+.codesight/
 
 # =============================================================================
 # SISTEMA OPERATIVO
