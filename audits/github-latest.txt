@@ -1,0 +1,27 @@
+# Auditoría de Repos GitHub — 2025-09-07T17:38:30.144Z
+
+## Resumen
+- Total repos: 58
+- Públicos: 28
+- Privados: 30
+- Estrellas totales: 8
+- Forks totales: 2
+- Tamaño total (KB aproximado API): 5585920
+- Lenguajes más usados: Python (20), TypeScript (15), Shell (4), JavaScript (2), CSS (2)
+
+## Repos recientes (actualizados)
+- panacea-icono/Ton-telegram | JavaScript | ⭐ 0 | public | 2025-09-07T17:28:42.000Z
+- panacea-icono/repositorio-modular-fibonacci-ia-integrado | Sin especificar | ⭐ 0 | public | 2025-09-06T04:59:07.000Z
+- panacea-icono/dr_tv_GPT | TypeScript | ⭐ 0 | public | 2025-09-05T14:50:34.000Z
+- panacea-icono/dr_tv_gp | TypeScript | ⭐ 0 | public | 2025-09-05T14:47:22.000Z
+- panacea-icono/panas_pay | TypeScript | ⭐ 0 | private | 2025-09-05T14:08:01.000Z
+- panacea-icono/dr-de-la-tvr | TypeScript | ⭐ 0 | private | 2025-09-05T13:52:33.000Z
+- panacea-icono/panas_token | TypeScript | ⭐ 0 | private | 2025-09-05T13:46:37.000Z
+- panacea-icono/panas-app | TypeScript | ⭐ 0 | private | 2025-09-05T13:17:05.000Z
+- panacea-icono/Dr_dela_TV | Sin especificar | ⭐ 0 | public | 2025-09-05T09:56:27.000Z
+- panacea-icono/tutor_academico_CIRUGIA_I-II-III | Python | ⭐ 0 | private | 2025-09-05T09:50:06.000Z
+
+## Recomendaciones
+- Revisar repos sin licencia o descripción y completarlos.
+- Archivar repos obsoletos; activar protección de ramas en repos críticos.
+- Habilitar CI en repos principales.
