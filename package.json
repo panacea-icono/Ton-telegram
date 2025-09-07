@@ -40,6 +40,8 @@
     "org:sync": "node scripts/github-org-sync.js",
     "github:releases:plan": "node scripts/github-release-orchestrator.js plan",
     "github:releases:apply": "node scripts/github-release-orchestrator.js apply",
+    "github:readme:plan": "node scripts/github-readme-sync.js plan",
+    "github:readme:apply": "node scripts/github-readme-sync.js apply",
     "telegram:compliance:check": "node scripts/telegram-compliance-check.js",
     "bots:start": "node scripts/bots/orchestrator.js",
     "bots:validate": "node scripts/bots/validate-bots.js",
