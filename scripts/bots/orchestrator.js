@@ -81,6 +81,40 @@ function registerEcho(bot) {
   });
 }
 
+// IA: OpenAI Chat (/ask <pregunta>)
+function registerAI_OpenAI(bot, options = {}) {
+  const axios = require('axios');
+  const apiKey = process.env.OPENAI_API_KEY;
+  const model = options.model || process.env.OPENAI_MODEL || 'gpt-4o-mini';
+  if (!apiKey) {
+    console.warn('ℹ️  AI(OpenAI): OPENAI_API_KEY no configurado. Módulo deshabilitado.');
+    return;
+  }
+  async function askOpenAI(prompt) {
+    try {
+      const res = await axios.post('https://api.openai.com/v1/chat/completions', {
+        model,
+        messages: [{ role: 'user', content: prompt }],
+        temperature: 0.3,
+      }, {
+        headers: { Authorization: `Bearer ${apiKey}` }
+      });
+      const text = res.data?.choices?.[0]?.message?.content || 'Sin respuesta';
+      return text.slice(0, 3500);
+    } catch (e) {
+      return `Error IA: ${e.response?.data?.error?.message || e.message}`;
+    }
+  }
+  bot.onText(/^\/ask\s+([\s\S]+)/, async (msg, match) => {
+    const chatId = msg.chat.id;
+    const q = (match && match[1] || '').trim();
+    if (!q) return bot.sendMessage(chatId, 'Uso: /ask <pregunta>');
+    bot.sendMessage(chatId, '🤖 Pensando...');
+    const ans = await askOpenAI(q);
+    bot.sendMessage(chatId, ans);
+  });
+}
+
 function parseAdmins() {
   const raw = process.env.TELEGRAM_BOT_ADMINS || '';
   return raw
@@ -174,6 +208,10 @@ async function start() {
     if (def.modules?.paysupport) registerPaySupport(bot);
     if (def.modules?.echo) registerEcho(bot);
     if (def.modules?.publisher) registerPublisher(bot);
+    // AI providers
+    if (def.ai?.provider === 'openai' || def.modules?.ai_openai) {
+      registerAI_OpenAI(bot, { model: def.ai?.model });
+    }
 
     running.push({ def, bot });
   }
