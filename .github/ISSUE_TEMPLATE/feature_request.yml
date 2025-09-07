@@ -1,0 +1,131 @@
+# =============================================================================
+# PANAS TOKEN ECOSYSTEM - FEATURE REQUEST TEMPLATE
+# Panacea | Icono SA
+# =============================================================================
+
+name: ✨ Feature Request
+description: Suggest a new feature or enhancement
+title: '[FEATURE] '
+labels: ['enhancement', 'needs-triage']
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ✨ Feature Request
+
+        Please provide the following information to help us understand and implement your feature request.
+
+        **Before submitting, please check:**
+        - [ ] This is not a duplicate request
+        - [ ] You have searched existing issues
+        - [ ] This aligns with our project goals
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 Feature Description
+      description: A clear and concise description of the feature you'd like to see
+      placeholder: Describe the feature...
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 🤔 Problem Statement
+      description: What problem does this feature solve?
+      placeholder: Describe the problem this feature would solve...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: 💡 Proposed Solution
+      description: Describe your proposed solution
+      placeholder: Describe how you think this feature should work...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 🔄 Alternative Solutions
+      description: Any alternative solutions or workarounds you've considered
+      placeholder: Describe any alternatives you've considered...
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 🎯 Priority
+      description: How important is this feature to you?
+      options:
+        - Low
+        - Medium
+        - High
+        - Critical
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 📂 Category
+      description: What category does this feature belong to?
+      options:
+        - Telegram Bots
+        - Blockchain Integration
+        - AI Features
+        - Payment Processing
+        - User Interface
+        - API
+        - Security
+        - Performance
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: 🎯 Use Cases
+      description: Describe specific use cases for this feature
+      placeholder: |
+        1. Use case 1: ...
+        2. Use case 2: ...
+        3. Use case 3: ...
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: ✅ Acceptance Criteria
+      description: Define what "done" looks like for this feature
+      placeholder: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+        - [ ] Criterion 3
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 📎 Additional Context
+      description: Any other context, mockups, or examples
+      placeholder: Add any other context, mockups, or examples here...
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched existing issues
+          required: true
+        - label: I have provided all required information
+          required: true
+        - label: This feature aligns with project goals
+          required: true
+        - label: I am willing to help implement this feature
+          required: false

@@ -28,8 +28,8 @@ if (!TOKEN) {
   bot.onText(/\/delete_data/, (msg) => {
     bot.sendMessage(
       msg.chat.id,
-      'Solicitud de borrado registrada. Procederemos a eliminar tus datos conforme nuestras políticas. '
-      + 'Si no almacenamos PII, esta acción no es necesaria.'
+      'Solicitud de borrado registrada. Procederemos a eliminar tus datos conforme nuestras políticas. ' +
+        'Si no almacenamos PII, esta acción no es necesaria.'
     );
   });
 

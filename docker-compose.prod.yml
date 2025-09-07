@@ -1,0 +1,137 @@
+# =============================================================================
+# PANAS TOKEN ECOSYSTEM - PRODUCTION DOCKER COMPOSE
+# Panacea | Icono SA
+# =============================================================================
+
+version: '3.8'
+
+services:
+  # =============================================================================
+  # MAIN APPLICATION
+  # =============================================================================
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: panas-token-app-prod
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+      - DEBUG=false
+    env_file:
+      - .env.production
+    depends_on:
+      - redis
+      - postgres
+    networks:
+      - panas-network
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '0.5'
+        reservations:
+          memory: 512M
+          cpus: '0.25'
+
+  # =============================================================================
+  # TELEGRAM BOTS
+  # =============================================================================
+  telegram-bots:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: panas-telegram-bots-prod
+    command: npm run bots:start
+    environment:
+      - NODE_ENV=production
+      - DEBUG=false
+    env_file:
+      - .env.production
+      - .env.telegram.local
+    depends_on:
+      - redis
+    networks:
+      - panas-network
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.25'
+        reservations:
+          memory: 256M
+          cpus: '0.1'
+
+  # =============================================================================
+  # REDIS CACHE
+  # =============================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: panas-redis-prod
+    volumes:
+      - redis_data:/data
+    networks:
+      - panas-network
+    restart: unless-stopped
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.1'
+
+  # =============================================================================
+  # POSTGRESQL DATABASE
+  # =============================================================================
+  postgres:
+    image: postgres:15-alpine
+    container_name: panas-postgres-prod
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - panas-network
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '0.5'
+
+  # =============================================================================
+  # NGINX REVERSE PROXY
+  # =============================================================================
+  nginx:
+    image: nginx:alpine
+    container_name: panas-nginx-prod
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./docker/nginx.prod.conf:/etc/nginx/nginx.conf
+      - ./docker/ssl:/etc/nginx/ssl
+    depends_on:
+      - app
+    networks:
+      - panas-network
+    restart: unless-stopped
+
+# =============================================================================
+# VOLUMES
+# =============================================================================
+volumes:
+  redis_data:
+  postgres_data:
+
+# =============================================================================
+# NETWORKS
+# =============================================================================
+networks:
+  panas-network:
+    driver: bridge

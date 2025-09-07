@@ -1,0 +1,169 @@
+# =============================================================================
+# PANAS TOKEN ECOSYSTEM - DOCKER COMPOSE
+# Panacea | Icono SA
+# =============================================================================
+
+version: '3.8'
+
+services:
+  # =============================================================================
+  # MAIN APPLICATION
+  # =============================================================================
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dev
+    container_name: panas-token-app
+    ports:
+      - '3000:3000'
+      - '3001:3001'
+      - '3002:3002'
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - ./logs:/app/logs
+    environment:
+      - NODE_ENV=development
+      - DEBUG=true
+    env_file:
+      - .env.local
+    depends_on:
+      - redis
+      - postgres
+    networks:
+      - panas-network
+    restart: unless-stopped
+
+  # =============================================================================
+  # TELEGRAM BOTS
+  # =============================================================================
+  telegram-bots:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dev
+    container_name: panas-telegram-bots
+    command: npm run bots:start
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - ./logs:/app/logs
+    environment:
+      - NODE_ENV=development
+      - DEBUG=true
+    env_file:
+      - .env.local
+      - .env.telegram.local
+    depends_on:
+      - redis
+    networks:
+      - panas-network
+    restart: unless-stopped
+
+  # =============================================================================
+  # REDIS CACHE
+  # =============================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: panas-redis
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+    networks:
+      - panas-network
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+
+  # =============================================================================
+  # POSTGRESQL DATABASE
+  # =============================================================================
+  postgres:
+    image: postgres:15-alpine
+    container_name: panas-postgres
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: panas_token
+      POSTGRES_USER: panas
+      POSTGRES_PASSWORD: panas_secure_2024
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - panas-network
+    restart: unless-stopped
+
+  # =============================================================================
+  # NGINX REVERSE PROXY
+  # =============================================================================
+  nginx:
+    image: nginx:alpine
+    container_name: panas-nginx
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/ssl:/etc/nginx/ssl
+    depends_on:
+      - app
+    networks:
+      - panas-network
+    restart: unless-stopped
+
+  # =============================================================================
+  # MONITORING - PROMETHEUS
+  # =============================================================================
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: panas-prometheus
+    ports:
+      - '9090:9090'
+    volumes:
+      - ./docker/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - panas-network
+    restart: unless-stopped
+
+  # =============================================================================
+  # MONITORING - GRAFANA
+  # =============================================================================
+  grafana:
+    image: grafana/grafana:latest
+    container_name: panas-grafana
+    ports:
+      - '3001:3000'
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./docker/grafana/provisioning:/etc/grafana/provisioning
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin123
+    depends_on:
+      - prometheus
+    networks:
+      - panas-network
+    restart: unless-stopped
+
+# =============================================================================
+# VOLUMES
+# =============================================================================
+volumes:
+  redis_data:
+  postgres_data:
+  prometheus_data:
+  grafana_data:
+
+# =============================================================================
+# NETWORKS
+# =============================================================================
+networks:
+  panas-network:
+    driver: bridge

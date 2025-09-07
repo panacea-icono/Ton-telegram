@@ -15,13 +15,48 @@ const path = require('path');
 // Manifiesto de estructura recomendada
 const STRUCTURE = [
   // Core apps/bots
-  { name: 'Ton-telegram', url: 'https://github.com/panacea-icono/Ton-telegram.git', path: 'apps/ton-telegram-bot', branch: 'main', group: 'apps', desc: 'Bot Telegram TON (pagos)' },
+  {
+    name: 'Ton-telegram',
+    url: 'https://github.com/panacea-icono/Ton-telegram.git',
+    path: 'apps/ton-telegram-bot',
+    branch: 'main',
+    group: 'apps',
+    desc: 'Bot Telegram TON (pagos)',
+  },
 
   // Labs / académicos (no core)
-  { name: 'HUGGING_FACE', url: 'https://github.com/panacea-icono/HUGGING_FACE.git', path: 'labs/HUGGING_FACE', branch: 'main', group: 'labs', desc: 'Modelos IA / ML' },
-  { name: 'FIBONACCI-FINAL-MODULOS-API-MAESTRO', url: 'https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git', path: 'labs/FIBONACCI-FINAL-MODULOS-API-MAESTRO', branch: 'main', group: 'labs', desc: 'API Maestra Fibonacci' },
-  { name: 'tutor_academico_CIRUGIA_I-II-III', url: 'https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git', path: 'labs/tutor_academico_CIRUGIA_I-II-III', branch: 'main', group: 'labs', desc: 'Tutor académico cirugía' },
-  { name: 'kuchiuyas', url: 'https://github.com/panacea-icono/kuchiuyas.git', path: 'labs/kuchiuyas', branch: 'main', group: 'labs', desc: 'Gestión/monitoreo pacientes' },
+  {
+    name: 'HUGGING_FACE',
+    url: 'https://github.com/panacea-icono/HUGGING_FACE.git',
+    path: 'labs/HUGGING_FACE',
+    branch: 'main',
+    group: 'labs',
+    desc: 'Modelos IA / ML',
+  },
+  {
+    name: 'FIBONACCI-FINAL-MODULOS-API-MAESTRO',
+    url: 'https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git',
+    path: 'labs/FIBONACCI-FINAL-MODULOS-API-MAESTRO',
+    branch: 'main',
+    group: 'labs',
+    desc: 'API Maestra Fibonacci',
+  },
+  {
+    name: 'tutor_academico_CIRUGIA_I-II-III',
+    url: 'https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git',
+    path: 'labs/tutor_academico_CIRUGIA_I-II-III',
+    branch: 'main',
+    group: 'labs',
+    desc: 'Tutor académico cirugía',
+  },
+  {
+    name: 'kuchiuyas',
+    url: 'https://github.com/panacea-icono/kuchiuyas.git',
+    path: 'labs/kuchiuyas',
+    branch: 'main',
+    group: 'labs',
+    desc: 'Gestión/monitoreo pacientes',
+  },
 ];
 
 function renderGitmodules(items) {
@@ -31,14 +66,20 @@ function renderGitmodules(items) {
 # Estructura recomendada por dominios (apps, libs, tokens, contracts, infra, labs)
 # =============================================================================\n\n`;
   const blocks = items
-    .map(it => `
+    .map((it) =>
+      `
 [submodule "${it.path}"]
     path = ${it.path}
     url = ${it.url}
     branch = ${it.branch}
-`.trim())
+`.trim()
+    )
     .join('\n\n');
-  return header + blocks + '\n\n# =============================================================================\n';
+  return (
+    header +
+    blocks +
+    '\n\n# =============================================================================\n'
+  );
 }
 
 function renderDocs(items) {
@@ -66,16 +107,18 @@ async function sync() {
   const gitmodules = renderGitmodules(STRUCTURE);
   fs.writeFileSync(path.resolve('.gitmodules'), gitmodules);
   fs.mkdirSync(path.resolve('docs'), { recursive: true });
-  fs.writeFileSync(path.resolve('docs/REPOS-STRUCTURE.md'), renderDocs(STRUCTURE));
+  fs.writeFileSync(
+    path.resolve('docs/REPOS-STRUCTURE.md'),
+    renderDocs(STRUCTURE)
+  );
   console.log('✅ .gitmodules y docs/REPOS-STRUCTURE.md actualizados');
 }
 
 if (require.main === module) {
-  sync().catch(err => {
+  sync().catch((err) => {
     console.error('❌ Error sincronizando estructura:', err.message);
     process.exit(1);
   });
 }
 
 module.exports = { sync };
-

@@ -10,6 +10,7 @@ Este directorio almacena informes de auditoría automatizados y manuales.
 - Ejecutar todas: `npm run audit:all`
 
 Contenido sugerido del informe:
+
 - Estado de seguridad (posibles secretos, archivos sensibles)
 - Configuración y variables requeridas
 - Salud de scripts (presencia, versión, uso de entorno)

@@ -29,9 +29,20 @@ function checkContains(path, needle, desc) {
 async function main() {
   let ok = true;
   ok &= checkFile('docs/telegram/privacy-policy.md', 'Política de privacidad');
-  ok &= checkFile('docs/telegram/telegram-bot-compliance.md', 'Checklist de cumplimiento');
-  ok &= checkContains('frontend/telegram-bot/bot.js', '/paysupport', 'Comando /paysupport');
-  ok &= checkContains('scripts/secure-encrypt.js', 'createCipheriv', 'Cifrado AES-256-GCM seguro');
+  ok &= checkFile(
+    'docs/telegram/telegram-bot-compliance.md',
+    'Checklist de cumplimiento'
+  );
+  ok &= checkContains(
+    'frontend/telegram-bot/bot.js',
+    '/paysupport',
+    'Comando /paysupport'
+  );
+  ok &= checkContains(
+    'scripts/secure-encrypt.js',
+    'createCipheriv',
+    'Cifrado AES-256-GCM seguro'
+  );
 
   // Placeholder: TON-only señales (puede basarse en env/flag cuando Mini App cripto esté activa)
   // Sugerencia: usar TELEGRAM_MINIAPP_TON_ONLY=true para activar modo estricto en app.
@@ -43,5 +54,7 @@ async function main() {
   }
 }
 
-main().catch((e) => { console.error('❌ Error en compliance check:', e.message); process.exit(1); });
-
+main().catch((e) => {
+  console.error('❌ Error en compliance check:', e.message);
+  process.exit(1);
+});

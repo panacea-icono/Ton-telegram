@@ -1,0 +1,60 @@
+# =============================================================================
+# PANAS TOKEN ECOSYSTEM - SECURITY POLICY
+# Panacea | Icono SA
+# =============================================================================
+
+# Security policy for vulnerability reporting
+name: Security Policy
+about: Security policy for Panas Token Ecosystem
+title: Security Vulnerability
+labels: security, bug
+assignees: panacea-icono
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🛡️ Security Vulnerability Report
+
+        Thank you for taking the time to report a security vulnerability. We take security seriously and appreciate your help in keeping our ecosystem safe.
+
+        **Please do not create a public issue for security vulnerabilities.**
+
+        Instead, please email us directly at: **security@iconosa.com**
+
+        ### 📋 What to Include
+
+        Please include the following information in your report:
+
+        - **Description**: Clear description of the vulnerability
+        - **Steps to Reproduce**: Detailed steps to reproduce the issue
+        - **Expected Behavior**: What should happen
+        - **Actual Behavior**: What actually happens
+        - **Environment**: OS, Node.js version, browser, etc.
+        - **Impact**: Potential impact of the vulnerability
+        - **Suggested Fix**: If you have any suggestions for fixing the issue
+
+        ### 🔒 Responsible Disclosure
+
+        We follow responsible disclosure practices:
+
+        1. **Report privately** to security@iconosa.com
+        2. **Wait for acknowledgment** (within 48 hours)
+        3. **Allow reasonable time** for us to fix the issue (typically 30-90 days)
+        4. **Coordinate public disclosure** after the fix is released
+
+        ### 🏆 Recognition
+
+        We appreciate security researchers who help us improve our security. Contributors who report valid vulnerabilities will be:
+
+        - Listed in our security acknowledgments
+        - Given credit in our security advisories
+        - Considered for our bug bounty program (if applicable)
+
+        ### 📞 Contact
+
+        - **Security Email**: security@iconosa.com
+        - **General Support**: repositorios.panacea@gmail.com
+        - **Website**: https://panacea-icono.org/
+
+        Thank you for helping keep Panas Token Ecosystem secure! 🚀

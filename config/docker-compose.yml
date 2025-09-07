@@ -1,0 +1,84 @@
+version: '3.8'
+
+services:
+  # API Principal Panacea
+  api-panacea:
+    image: registry.heroku.com/panacea-icono/api-panacea:latest
+    ports:
+      - '3001:3000'
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_URL=${DATABASE_URL}
+      - REDIS_URL=${REDIS_URL}
+    networks:
+      - panacea-network
+
+  # Fibonacci API
+  fibonacci:
+    image: registry.heroku.com/panacea-icono/fibonacci:latest
+    ports:
+      - '3002:3000'
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - API_PANACEA_URL=${API_PANACEA_URL}
+    networks:
+      - panacea-network
+
+  # Kuchiuyas Algorand
+  kuchiuyas-algorand:
+    image: registry.heroku.com/panacea-icono/kuchiuyas-algorand:latest
+    ports:
+      - '3003:3000'
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - ALGORAND_RPC_URL=${ALGORAND_RPC_URL}
+    networks:
+      - panacea-network
+
+  # Backend Developer
+  backend-developer:
+    image: registry.heroku.com/panacea-icono/backend-developer:latest
+    ports:
+      - '3004:3000'
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - API_PANACEA_URL=${API_PANACEA_URL}
+    networks:
+      - panacea-network
+
+  # TON Telegram Orquestador
+  ton-telegram-orquestador:
+    image: registry.heroku.com/panacea-icono/ton-telegram-orquestador:latest
+    ports:
+      - '3005:3000'
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TON_RPC_URL=${TON_RPC_URL}
+    networks:
+      - panacea-network
+
+  # Kuchiuyas Empresa
+  kuchiuyas-empresa:
+    image: registry.heroku.com/panacea-icono/kuchiuyas-empresa:latest
+    ports:
+      - '3006:3000'
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - API_PANACEA_URL=${API_PANACEA_URL}
+    networks:
+      - panacea-network
+
+networks:
+  panacea-network:
+    driver: bridge
+
+volumes:
+  panacea-data:
+    driver: local

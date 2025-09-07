@@ -320,9 +320,7 @@
     "Sigue",
     "reglas"
   ],
-  "ignoreWords": [
-    "codesight"
-  ],
+  "ignoreWords": ["codesight"],
   "import": [
     "@cspell/dict-medicalterms/cspell-ext.json",
     "@cspell/dict-blockchain/cspell-ext.json"

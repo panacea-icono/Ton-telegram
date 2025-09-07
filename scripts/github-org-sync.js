@@ -10,7 +10,9 @@
  * =============================================================================
  */
 
-try { require('dotenv').config(); } catch (_) {}
+try {
+  require('dotenv').config();
+} catch (_) {}
 const fs = require('fs');
 const path = require('path');
 const GitHubReposManager = require('./github-repos-manager');
@@ -18,20 +20,40 @@ const GitHubReposManager = require('./github-repos-manager');
 // Reglas simples de clasificación por nombre/tema
 function classifyRepo(repo) {
   const name = (repo.name || '').toLowerCase();
-  const topics = (repo.topics || []).map(t => t.toLowerCase());
+  const topics = (repo.topics || []).map((t) => t.toLowerCase());
 
   const has = (s) => name.includes(s) || topics.includes(s);
 
-  if (has('bot') || has('telegram') || has('dashboard') || has('frontend') || has('backend') || has('app')) {
+  if (
+    has('bot') ||
+    has('telegram') ||
+    has('dashboard') ||
+    has('frontend') ||
+    has('backend') ||
+    has('app')
+  ) {
     return { group: 'apps', path: `apps/${repo.name}` };
   }
   if (has('token') && !has('bot')) {
     return { group: 'tokens', path: `tokens/${repo.name}` };
   }
-  if (has('contract') || has('ton') || has('solana') || has('algorand') || has('bsc') || has('evm')) {
+  if (
+    has('contract') ||
+    has('ton') ||
+    has('solana') ||
+    has('algorand') ||
+    has('bsc') ||
+    has('evm')
+  ) {
     return { group: 'contracts', path: `contracts/${repo.name}` };
   }
-  if (has('infra') || has('docker') || has('ci') || has('cd') || has('pipeline')) {
+  if (
+    has('infra') ||
+    has('docker') ||
+    has('ci') ||
+    has('cd') ||
+    has('pipeline')
+  ) {
     return { group: 'infra', path: `infra/${repo.name}` };
   }
   if (has('lib') || has('sdk') || has('utils')) {
@@ -78,7 +100,14 @@ async function run() {
   const repos = await mgr.fetchRepositories();
 
   const entries = [];
-  const groups = { apps: [], libs: [], tokens: [], contracts: [], infra: [], labs: [] };
+  const groups = {
+    apps: [],
+    libs: [],
+    tokens: [],
+    contracts: [],
+    infra: [],
+    labs: [],
+  };
 
   for (const repo of repos) {
     const cls = classifyRepo(repo);
@@ -87,7 +116,7 @@ async function run() {
       url: repo.cloneUrl,
       branch: repo.defaultBranch || 'main',
       group: cls.group,
-      desc: repo.description || ''
+      desc: repo.description || '',
     };
     entries.push(entry);
     groups[cls.group].push(entry);
@@ -106,7 +135,9 @@ async function run() {
   fs.mkdirSync(path.resolve('docs'), { recursive: true });
   fs.writeFileSync(path.resolve('docs/REPOS-STRUCTURE.md'), buildDocs(groups));
 
-  console.log('✅ Estructura sincronizada (.gitmodules + docs/REPOS-STRUCTURE.md)');
+  console.log(
+    '✅ Estructura sincronizada (.gitmodules + docs/REPOS-STRUCTURE.md)'
+  );
 }
 
 if (require.main === module) {
@@ -117,4 +148,3 @@ if (require.main === module) {
 }
 
 module.exports = { run };
-

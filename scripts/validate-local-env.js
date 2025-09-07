@@ -1,49 +1,203 @@
 #!/usr/bin/env node
 
-// Valida variables críticas del entorno local (sin imprimir valores)
+/**
+ * =============================================================================
+ * VALIDATE LOCAL ENVIRONMENT - PANACEA ICONO SA
+ * =============================================================================
+ * Script para validar la configuración del entorno local
+ * =============================================================================
+ */
 
-try { require('dotenv').config(); } catch (_) {}
 const fs = require('fs');
 const path = require('path');
 
-function ok(v) { return v && String(v).trim().length > 0; }
-
-function checkEnv(names, title) {
-  const rows = names.map(n => ({ name: n, present: ok(process.env[n]) }));
-  const present = rows.filter(r => r.present).length;
-  console.log(`\n## ${title}: ${present}/${rows.length}`);
-  for (const r of rows) console.log(`- ${r.name}: ${r.present ? '✔' : '—'}`);
-}
-
-function main() {
-  console.log('# Validación de entorno local (.env.local / .env.telegram.local)');
-  // Telegram básicos
-  checkEnv(['TELEGRAM_OFFICIAL_CHANNEL','TELEGRAM_BOT_ADMINS'], 'Telegram (canal y admins)');
-
-  // OpenAI global
-  checkEnv(['OPENAI_API_KEY','OPENAI_MODEL'], 'OpenAI (global)');
-
-  // Claves por proyecto (opcionales)
-  checkEnv([
-    'OPENAI_API_KEY_KUCHIUYAS','OPENAI_API_KEY_FIBONACCI','OPENAI_API_KEY_CODIGO',
-    'OPENAI_API_KEY_HF','OPENAI_API_KEY_CIRUGIAPLASTICA'
-  ], 'OpenAI por proyecto (opc)');
-
-  // Bots: verifica al menos uno configurado
-  const envLocalTelegram = path.resolve('.env.telegram.local');
-  if (fs.existsSync(envLocalTelegram)) {
-    const lines = fs.readFileSync(envLocalTelegram,'utf8').split(/\r?\n/).filter(l=>/BOT_.*_TOKEN=/.test(l));
-    console.log(`\n## Bots (.env.telegram.local): ${lines.length > 0 ? '✔' : '—'}`);
-    console.log(`- Detectados: ${lines.length}`);
-  } else {
-    console.log('\n## Bots (.env.telegram.local): —');
-    console.log('- Archivo no encontrado');
+class LocalEnvValidator {
+  constructor() {
+    this.envFile = './env.local';
+    this.requiredVars = [
+      'TELEGRAM_BOT_ADMINS',
+      'TELEGRAM_OFFICIAL_CHANNEL',
+      'TELEGRAM_AUTH_TOKEN',
+      'TELEGRAM_API_KEY',
+      'FIBONACCI_HEROKU_URL',
+      'KUCHIUYAS_ALGORAND_URL',
+      'BACKEND_DEVELOPER_URL',
+      'API_PANACEA_URL',
+      'TON_TELEGRAM_ORQUESTADOR_URL',
+      'KUCHIUYAS_EMPRESA_URL',
+    ];
   }
 
-  console.log('\nSugerencia: copia config/.env.local.template → .env.local y completa valores privados.');
+  /**
+   * Lee el archivo de entorno local
+   */
+  readEnvFile() {
+    try {
+      if (!fs.existsSync(this.envFile)) {
+        throw new Error(`Archivo ${this.envFile} no encontrado`);
+      }
+      return fs.readFileSync(this.envFile, 'utf8');
+    } catch (error) {
+      console.error(`❌ Error leyendo ${this.envFile}:`, error.message);
+      return null;
+    }
+  }
+
+  /**
+   * Parsea las variables de entorno
+   */
+  parseEnvVars(envContent) {
+    const vars = {};
+    const lines = envContent.split('\n');
+
+    for (const line of lines) {
+      const trimmedLine = line.trim();
+
+      // Saltar comentarios y líneas vacías
+      if (trimmedLine.startsWith('#') || trimmedLine === '') {
+        continue;
+      }
+
+      // Buscar variables de entorno
+      const match = trimmedLine.match(/^([A-Z_][A-Z0-9_]*)=(.*)$/);
+      if (match) {
+        const [, key, value] = match;
+        vars[key] = value.replace(/^["']|["']$/g, ''); // Remover comillas
+      }
+    }
+
+    return vars;
+  }
+
+  /**
+   * Valida las variables requeridas
+   */
+  validateRequiredVars(envVars) {
+    const results = {
+      valid: true,
+      missing: [],
+      present: [],
+      warnings: [],
+    };
+
+    for (const varName of this.requiredVars) {
+      if (envVars[varName]) {
+        results.present.push(varName);
+
+        // Validaciones específicas
+        if (varName === 'TELEGRAM_BOT_ADMINS') {
+          if (!/^\d+$/.test(envVars[varName])) {
+            results.warnings.push(
+              `${varName} debe ser un número (tu ID de Telegram)`
+            );
+          }
+        }
+
+        if (varName.includes('TOKEN') || varName.includes('KEY')) {
+          if (envVars[varName].length < 10) {
+            results.warnings.push(`${varName} parece ser muy corto`);
+          }
+        }
+
+        if (varName.includes('URL')) {
+          if (!envVars[varName].startsWith('http')) {
+            results.warnings.push(`${varName} debe ser una URL válida`);
+          }
+        }
+      } else {
+        results.missing.push(varName);
+        results.valid = false;
+      }
+    }
+
+    return results;
+  }
+
+  /**
+   * Muestra el resumen de validación
+   */
+  displayResults(results, envVars) {
+    console.log('🔍 Validación del Entorno Local - Panacea Icono SA');
+    console.log('='.repeat(60));
+
+    // Variables presentes
+    console.log('\n✅ Variables Configuradas:');
+    for (const varName of results.present) {
+      const value = envVars[varName];
+      const displayValue =
+        varName.includes('TOKEN') || varName.includes('KEY')
+          ? `${value.substring(0, 8)}...`
+          : value;
+      console.log(`  ✔ ${varName}=${displayValue}`);
+    }
+
+    // Variables faltantes
+    if (results.missing.length > 0) {
+      console.log('\n❌ Variables Faltantes:');
+      for (const varName of results.missing) {
+        console.log(`  ✗ ${varName}`);
+      }
+    }
+
+    // Advertencias
+    if (results.warnings.length > 0) {
+      console.log('\n⚠️ Advertencias:');
+      for (const warning of results.warnings) {
+        console.log(`  ⚠ ${warning}`);
+      }
+    }
+
+    // Resumen
+    console.log('\n📊 Resumen:');
+    console.log(
+      `  Variables configuradas: ${results.present.length}/${this.requiredVars.length}`
+    );
+    console.log(`  Variables faltantes: ${results.missing.length}`);
+    console.log(`  Advertencias: ${results.warnings.length}`);
+
+    if (results.valid) {
+      console.log('\n🎉 ¡Entorno local configurado correctamente!');
+    } else {
+      console.log('\n❌ Hay variables faltantes. Revisa la configuración.');
+    }
+
+    return results.valid;
+  }
+
+  /**
+   * Ejecuta la validación completa
+   */
+  run() {
+    try {
+      console.log('🔍 Iniciando validación del entorno local...');
+
+      const envContent = this.readEnvFile();
+      if (!envContent) {
+        return false;
+      }
+
+      const envVars = this.parseEnvVars(envContent);
+      const results = this.validateRequiredVars(envVars);
+
+      return this.displayResults(results, envVars);
+    } catch (error) {
+      console.error('❌ Error en la validación:', error.message);
+      return false;
+    }
+  }
 }
 
-if (require.main === module) main();
+// =============================================================================
+// CLI INTERFACE
+// =============================================================================
 
-module.exports = { };
+if (require.main === module) {
+  const validator = new LocalEnvValidator();
+  const isValid = validator.run();
 
+  if (!isValid) {
+    process.exit(1);
+  }
+}
+
+module.exports = LocalEnvValidator;

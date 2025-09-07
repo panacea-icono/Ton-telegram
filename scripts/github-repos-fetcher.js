@@ -15,151 +15,154 @@ const path = require('path');
 require('dotenv').config();
 
 class GitHubReposFetcher {
-    constructor() {
-        this.organization = process.env.GITHUB_ORG || 'panacea-icono';
-        this.apiBase = 'api.github.com';
-        this.repos = [];
-        this.outputDir = './docs';
-        this.token = process.env.GITHUB_TOKEN || '';
-    }
+  constructor() {
+    this.organization = process.env.GITHUB_ORG || 'panacea-icono';
+    this.apiBase = 'api.github.com';
+    this.repos = [];
+    this.outputDir = './docs';
+    this.token = process.env.GITHUB_TOKEN || '';
+  }
 
-    /**
-     * Realiza una petición HTTP autenticada a la API de GitHub
-     */
-    async makeRequest(url) {
-        return new Promise((resolve, reject) => {
-            const options = {
-                hostname: this.apiBase,
-                path: url,
-                method: 'GET',
-                headers: {
-                    'User-Agent': 'Panas-Token-Ecosystem/1.0.0',
-                    'Accept': 'application/vnd.github.v3+json'
-                }
-            };
-            if (this.token) {
-                options.headers.Authorization = `token ${this.token}`;
-            }
+  /**
+   * Realiza una petición HTTP autenticada a la API de GitHub
+   */
+  async makeRequest(url) {
+    return new Promise((resolve, reject) => {
+      const options = {
+        hostname: this.apiBase,
+        path: url,
+        method: 'GET',
+        headers: {
+          'User-Agent': 'Panas-Token-Ecosystem/1.0.0',
+          Accept: 'application/vnd.github.v3+json',
+        },
+      };
+      if (this.token) {
+        options.headers.Authorization = `token ${this.token}`;
+      }
 
-            const req = https.request(options, (res) => {
-                let data = '';
+      const req = https.request(options, (res) => {
+        let data = '';
 
-                res.on('data', (chunk) => {
-                    data += chunk;
-                });
-
-                res.on('end', () => {
-                    try {
-                        if (res.statusCode === 200) {
-                            const jsonData = JSON.parse(data);
-                            resolve(jsonData);
-                        } else {
-                            reject(new Error(`HTTP ${res.statusCode}: ${data}`));
-                        }
-                    } catch (error) {
-                        reject(new Error(`Error parsing JSON: ${error.message}`));
-                    }
-                });
-            });
-
-            req.on('error', (error) => {
-                reject(new Error(`Request error: ${error.message}`));
-            });
-
-            req.end();
+        res.on('data', (chunk) => {
+          data += chunk;
         });
-    }
 
-    /**
-     * Obtiene todos los repositorios de la organización
-     */
-    async fetchRepositories() {
-        try {
-            console.log(`🔍 Obteniendo repositorios de la organización ${this.organization}...`);
-            
-            const url = `/orgs/${this.organization}/repos?per_page=100&sort=updated&direction=desc`;
-            const response = await this.makeRequest(url);
-            
-            // Verificar si la respuesta es un array
-            if (!Array.isArray(response)) {
-                throw new Error(`Respuesta inesperada de la API: ${JSON.stringify(response)}`);
+        res.on('end', () => {
+          try {
+            if (res.statusCode === 200) {
+              const jsonData = JSON.parse(data);
+              resolve(jsonData);
+            } else {
+              reject(new Error(`HTTP ${res.statusCode}: ${data}`));
             }
-            
-            this.repos = response.map(repo => ({
-                name: repo.name,
-                fullName: repo.full_name,
-                description: repo.description || 'Sin descripción',
-                url: repo.html_url,
-                cloneUrl: repo.clone_url,
-                sshUrl: repo.ssh_url,
-                language: repo.language || 'Sin especificar',
-                stars: repo.stargazers_count,
-                forks: repo.forks_count,
-                watchers: repo.watchers_count,
-                openIssues: repo.open_issues_count,
-                size: repo.size,
-                createdAt: repo.created_at,
-                updatedAt: repo.updated_at,
-                pushedAt: repo.pushed_at,
-                isPrivate: repo.private,
-                isFork: repo.fork,
-                topics: repo.topics || [],
-                defaultBranch: repo.default_branch,
-                license: repo.license ? repo.license.name : 'Sin licencia',
-                mainRepo: repo.name === 'Ton-telegram' // Marcar como principal
-            }));
+          } catch (error) {
+            reject(new Error(`Error parsing JSON: ${error.message}`));
+          }
+        });
+      });
 
-            console.log(`✅ Se encontraron ${this.repos.length} repositorios`);
-            return this.repos;
+      req.on('error', (error) => {
+        reject(new Error(`Request error: ${error.message}`));
+      });
 
-        } catch (error) {
-            console.error(`❌ Error obteniendo repositorios: ${error.message}`);
-            
-            // Si falla la API, usar datos estáticos como fallback
-            console.log('🔄 Usando datos estáticos como fallback...');
-            return this.getStaticRepositories();
-        }
+      req.end();
+    });
+  }
+
+  /**
+   * Obtiene todos los repositorios de la organización
+   */
+  async fetchRepositories() {
+    try {
+      console.log(
+        `🔍 Obteniendo repositorios de la organización ${this.organization}...`
+      );
+
+      const url = `/orgs/${this.organization}/repos?per_page=100&sort=updated&direction=desc`;
+      const response = await this.makeRequest(url);
+
+      // Verificar si la respuesta es un array
+      if (!Array.isArray(response)) {
+        throw new Error(
+          `Respuesta inesperada de la API: ${JSON.stringify(response)}`
+        );
+      }
+
+      this.repos = response.map((repo) => ({
+        name: repo.name,
+        fullName: repo.full_name,
+        description: repo.description || 'Sin descripción',
+        url: repo.html_url,
+        cloneUrl: repo.clone_url,
+        sshUrl: repo.ssh_url,
+        language: repo.language || 'Sin especificar',
+        stars: repo.stargazers_count,
+        forks: repo.forks_count,
+        watchers: repo.watchers_count,
+        openIssues: repo.open_issues_count,
+        size: repo.size,
+        createdAt: repo.created_at,
+        updatedAt: repo.updated_at,
+        pushedAt: repo.pushed_at,
+        isPrivate: repo.private,
+        isFork: repo.fork,
+        topics: repo.topics || [],
+        defaultBranch: repo.default_branch,
+        license: repo.license ? repo.license.name : 'Sin licencia',
+        mainRepo: repo.name === 'Ton-telegram', // Marcar como principal
+      }));
+
+      console.log(`✅ Se encontraron ${this.repos.length} repositorios`);
+      return this.repos;
+    } catch (error) {
+      console.error(`❌ Error obteniendo repositorios: ${error.message}`);
+
+      // Si falla la API, usar datos estáticos como fallback
+      console.log('🔄 Usando datos estáticos como fallback...');
+      return this.getStaticRepositories();
     }
+  }
 
-    /**
-     * Datos estáticos como fallback
-     */
-    getStaticRepositories() {
-        return [
-            {
-                name: 'Ton-telegram',
-                fullName: 'panacea-icono/Ton-telegram',
-                description: 'Bot de telegram wallet interfaz de pagos',
-                url: 'https://github.com/panacea-icono/Ton-telegram',
-                cloneUrl: 'https://github.com/panacea-icono/Ton-telegram.git',
-                sshUrl: 'git@github.com:panacea-icono/Ton-telegram.git',
-                language: 'JavaScript',
-                stars: 0,
-                forks: 0,
-                watchers: 0,
-                openIssues: 0,
-                size: 1000,
-                createdAt: '2024-01-01T00:00:00Z',
-                updatedAt: new Date().toISOString(),
-                pushedAt: new Date().toISOString(),
-                isPrivate: false,
-                isFork: false,
-                topics: ['telegram', 'ton', 'wallet', 'payments', 'bot'],
-                defaultBranch: 'main',
-                license: 'MIT',
-                mainRepo: true
-            }
-        ];
-    }
+  /**
+   * Datos estáticos como fallback
+   */
+  getStaticRepositories() {
+    return [
+      {
+        name: 'Ton-telegram',
+        fullName: 'panacea-icono/Ton-telegram',
+        description: 'Bot de telegram wallet interfaz de pagos',
+        url: 'https://github.com/panacea-icono/Ton-telegram',
+        cloneUrl: 'https://github.com/panacea-icono/Ton-telegram.git',
+        sshUrl: 'git@github.com:panacea-icono/Ton-telegram.git',
+        language: 'JavaScript',
+        stars: 0,
+        forks: 0,
+        watchers: 0,
+        openIssues: 0,
+        size: 1000,
+        createdAt: '2024-01-01T00:00:00Z',
+        updatedAt: new Date().toISOString(),
+        pushedAt: new Date().toISOString(),
+        isPrivate: false,
+        isFork: false,
+        topics: ['telegram', 'ton', 'wallet', 'payments', 'bot'],
+        defaultBranch: 'main',
+        license: 'MIT',
+        mainRepo: true,
+      },
+    ];
+  }
 
-    /**
-     * Genera un archivo README con la lista de repositorios
-     */
-    generateRepositoriesList() {
-        const mainRepo = this.repos.find(repo => repo.mainRepo) || this.repos[0];
-        const otherRepos = this.repos.filter(repo => !repo.mainRepo);
+  /**
+   * Genera un archivo README con la lista de repositorios
+   */
+  generateRepositoriesList() {
+    const mainRepo = this.repos.find((repo) => repo.mainRepo) || this.repos[0];
+    const otherRepos = this.repos.filter((repo) => !repo.mainRepo);
 
-        const readmeContent = `# 📚 Repositorios de Panacea Icono SA
+    const readmeContent = `# 📚 Repositorios de Panacea Icono SA
 
 > Lista completa de repositorios de la organización [panacea-icono](https://github.com/panacea-icono)
 
@@ -183,7 +186,7 @@ class GitHubReposFetcher {
 - **Estrellas**: ⭐ ${mainRepo.stars} | **Forks**: 🍴 ${mainRepo.forks} | **Watchers**: 👀 ${mainRepo.watchers}
 - **Última actualización**: ${new Date(mainRepo.updatedAt).toLocaleDateString('es-ES')}
 - **Licencia**: ${mainRepo.license}
-- **Temas**: ${mainRepo.topics.map(topic => `\`${topic}\``).join(', ')}
+- **Temas**: ${mainRepo.topics.map((topic) => `\`${topic}\``).join(', ')}
 - **URL**: [https://github.com/panacea-icono/${mainRepo.name}](https://github.com/panacea-icono/${mainRepo.name})
 
 \`\`\`bash
@@ -196,7 +199,11 @@ cd ${mainRepo.name}
 
 ## 📋 Otros Repositorios
 
-${otherRepos.length > 0 ? otherRepos.map((repo, index) => `
+${
+  otherRepos.length > 0
+    ? otherRepos
+        .map(
+          (repo, index) => `
 ### ${index + 1}. [${repo.name}](https://github.com/panacea-icono/${repo.name})
 
 - **Descripción**: ${repo.description}
@@ -204,7 +211,7 @@ ${otherRepos.length > 0 ? otherRepos.map((repo, index) => `
 - **Estrellas**: ⭐ ${repo.stars} | **Forks**: 🍴 ${repo.forks} | **Watchers**: 👀 ${repo.watchers}
 - **Última actualización**: ${new Date(repo.updatedAt).toLocaleDateString('es-ES')}
 - **Licencia**: ${repo.license}
-- **Temas**: ${repo.topics.length > 0 ? repo.topics.map(topic => `\`${topic}\``).join(', ') : 'Ninguno'}
+- **Temas**: ${repo.topics.length > 0 ? repo.topics.map((topic) => `\`${topic}\``).join(', ') : 'Ninguno'}
 - **URL**: [https://github.com/panacea-icono/${repo.name}](https://github.com/panacea-icono/${repo.name})
 
 \`\`\`bash
@@ -212,7 +219,11 @@ ${otherRepos.length > 0 ? otherRepos.map((repo, index) => `
 git clone https://github.com/panacea-icono/${repo.name}.git
 cd ${repo.name}
 \`\`\`
-`).join('\n') : 'No hay otros repositorios disponibles.'}
+`
+        )
+        .join('\n')
+    : 'No hay otros repositorios disponibles.'
+}
 
 ---
 
@@ -222,15 +233,15 @@ cd ${repo.name}
 - [${mainRepo.name}](https://github.com/panacea-icono/${mainRepo.name}) - ${mainRepo.description}
 
 ### Otros Repositorios
-${otherRepos.length > 0 ? otherRepos.map(repo => `- [${repo.name}](https://github.com/panacea-icono/${repo.name}) - ${repo.description}`).join('\n') : 'No hay otros repositorios disponibles.'}
+${otherRepos.length > 0 ? otherRepos.map((repo) => `- [${repo.name}](https://github.com/panacea-icono/${repo.name}) - ${repo.description}`).join('\n') : 'No hay otros repositorios disponibles.'}
 
 ---
 
 ## 📊 Estadísticas Generales
 
 - **Total de repositorios**: ${this.repos.length}
-- **Repositorios públicos**: ${this.repos.filter(r => !r.isPrivate).length}
-- **Repositorios privados**: ${this.repos.filter(r => r.isPrivate).length}
+- **Repositorios públicos**: ${this.repos.filter((r) => !r.isPrivate).length}
+- **Repositorios privados**: ${this.repos.filter((r) => r.isPrivate).length}
 - **Total de estrellas**: ${this.repos.reduce((sum, repo) => sum + repo.stars, 0)}
 - **Total de forks**: ${this.repos.reduce((sum, repo) => sum + repo.forks, 0)}
 - **Lenguajes más usados**: ${this.getTopLanguages()}
@@ -287,84 +298,88 @@ Para contribuir a cualquiera de estos repositorios:
 *Generado automáticamente por el script de gestión de repositorios de Panas Token Ecosystem*
 `;
 
-        return readmeContent;
-    }
+    return readmeContent;
+  }
 
-    /**
-     * Obtiene los lenguajes más utilizados
-     */
-    getTopLanguages() {
-        const languages = {};
-        this.repos.forEach(repo => {
-            if (repo.language && repo.language !== 'Sin especificar') {
-                languages[repo.language] = (languages[repo.language] || 0) + 1;
-            }
-        });
+  /**
+   * Obtiene los lenguajes más utilizados
+   */
+  getTopLanguages() {
+    const languages = {};
+    this.repos.forEach((repo) => {
+      if (repo.language && repo.language !== 'Sin especificar') {
+        languages[repo.language] = (languages[repo.language] || 0) + 1;
+      }
+    });
 
-        return Object.entries(languages)
-            .sort(([,a], [,b]) => b - a)
-            .slice(0, 5)
-            .map(([lang, count]) => `${lang} (${count})`)
-            .join(', ');
-    }
+    return Object.entries(languages)
+      .sort(([, a], [, b]) => b - a)
+      .slice(0, 5)
+      .map(([lang, count]) => `${lang} (${count})`)
+      .join(', ');
+  }
 
-    /**
-     * Obtiene los temas más populares
-     */
-    getPopularTopics() {
-        const topics = {};
-        this.repos.forEach(repo => {
-            repo.topics.forEach(topic => {
-                topics[topic] = (topics[topic] || 0) + 1;
-            });
-        });
+  /**
+   * Obtiene los temas más populares
+   */
+  getPopularTopics() {
+    const topics = {};
+    this.repos.forEach((repo) => {
+      repo.topics.forEach((topic) => {
+        topics[topic] = (topics[topic] || 0) + 1;
+      });
+    });
 
-        return Object.entries(topics)
-            .sort(([,a], [,b]) => b - a)
-            .slice(0, 10)
-            .map(([topic, count]) => `- \`${topic}\` (${count} repositorios)`)
-            .join('\n');
-    }
+    return Object.entries(topics)
+      .sort(([, a], [, b]) => b - a)
+      .slice(0, 10)
+      .map(([topic, count]) => `- \`${topic}\` (${count} repositorios)`)
+      .join('\n');
+  }
 
-    /**
-     * Genera un archivo JSON con la información de los repositorios
-     */
-    generateJSONOutput() {
-        return {
-            organization: {
-                name: this.organization,
-                displayName: 'Panacea Icono SA',
-                description: 'Empresa tecnológica enfocada en soluciones blockchain médicas',
-                url: `https://github.com/${this.organization}`,
-                email: 'info@iconosa.com',
-                website: 'https://iconosa.com'
-            },
-            repositories: this.repos,
-            statistics: {
-                total: this.repos.length,
-                public: this.repos.filter(r => !r.isPrivate).length,
-                private: this.repos.filter(r => r.isPrivate).length,
-                totalStars: this.repos.reduce((sum, repo) => sum + repo.stars, 0),
-                totalForks: this.repos.reduce((sum, repo) => sum + repo.forks, 0),
-                totalWatchers: this.repos.reduce((sum, repo) => sum + repo.watchers, 0),
-                languages: this.getTopLanguages(),
-                lastUpdated: new Date().toISOString()
-            }
-        };
-    }
+  /**
+   * Genera un archivo JSON con la información de los repositorios
+   */
+  generateJSONOutput() {
+    return {
+      organization: {
+        name: this.organization,
+        displayName: 'Panacea Icono SA',
+        description:
+          'Empresa tecnológica enfocada en soluciones blockchain médicas',
+        url: `https://github.com/${this.organization}`,
+        email: 'info@iconosa.com',
+        website: 'https://iconosa.com',
+      },
+      repositories: this.repos,
+      statistics: {
+        total: this.repos.length,
+        public: this.repos.filter((r) => !r.isPrivate).length,
+        private: this.repos.filter((r) => r.isPrivate).length,
+        totalStars: this.repos.reduce((sum, repo) => sum + repo.stars, 0),
+        totalForks: this.repos.reduce((sum, repo) => sum + repo.forks, 0),
+        totalWatchers: this.repos.reduce((sum, repo) => sum + repo.watchers, 0),
+        languages: this.getTopLanguages(),
+        lastUpdated: new Date().toISOString(),
+      },
+    };
+  }
 
-    /**
-     * Genera un archivo de configuración para submódulos
-     */
-    generateGitSubmodulesConfig() {
-        const submodulesContent = this.repos.map(repo => 
-            `[submodule "${repo.name}"]\n` +
-            `    path = ${repo.name}\n` +
-            `    url = https://github.com/panacea-icono/${repo.name}.git\n` +
-            `    branch = ${repo.defaultBranch}`
-        ).join('\n\n');
+  /**
+   * Genera un archivo de configuración para submódulos
+   */
+  generateGitSubmodulesConfig() {
+    const submodulesContent = this.repos
+      .map(
+        (repo) =>
+          `[submodule "${repo.name}"]\n` +
+          `    path = ${repo.name}\n` +
+          `    url = https://github.com/panacea-icono/${repo.name}.git\n` +
+          `    branch = ${repo.defaultBranch}`
+      )
+      .join('\n\n');
 
-        return `# =============================================================================
+    return `# =============================================================================
 # GIT SUBMODULES - PANACEA ICONO SA REPOSITORIES
 # =============================================================================
 # Configuración automática de submódulos para todos los repositorios
@@ -387,32 +402,34 @@ ${submodulesContent}
 # git submodule add https://github.com/panacea-icono/REPO_NAME.git
 # =============================================================================
 `;
-    }
+  }
 
-    /**
-     * Genera un script para clonar todos los repositorios
-     */
-    generateCloneScript() {
-        const mainRepo = this.repos.find(repo => repo.mainRepo) || this.repos[0];
-        const otherRepos = this.repos.filter(repo => !repo.mainRepo);
+  /**
+   * Genera un script para clonar todos los repositorios
+   */
+  generateCloneScript() {
+    const mainRepo = this.repos.find((repo) => repo.mainRepo) || this.repos[0];
+    const otherRepos = this.repos.filter((repo) => !repo.mainRepo);
 
-        const cloneCommands = [
-            `echo "🎯 Clonando repositorio principal: ${mainRepo.name}"`,
-            `git clone https://github.com/panacea-icono/${mainRepo.name}.git`,
-            `cd ${mainRepo.name}`,
-            `echo "✅ ${mainRepo.name} clonado exitosamente"`,
-            `cd ..`,
-            `echo ""`,
-            ...otherRepos.map(repo => [
-                `echo "📁 Clonando ${repo.name}..."`,
-                `git clone https://github.com/panacea-icono/${repo.name}.git`,
-                `cd ${repo.name}`,
-                `echo "✅ ${repo.name} clonado exitosamente"`,
-                `cd ..`
-            ]).flat()
-        ].join('\n');
+    const cloneCommands = [
+      `echo "🎯 Clonando repositorio principal: ${mainRepo.name}"`,
+      `git clone https://github.com/panacea-icono/${mainRepo.name}.git`,
+      `cd ${mainRepo.name}`,
+      `echo "✅ ${mainRepo.name} clonado exitosamente"`,
+      `cd ..`,
+      `echo ""`,
+      ...otherRepos
+        .map((repo) => [
+          `echo "📁 Clonando ${repo.name}..."`,
+          `git clone https://github.com/panacea-icono/${repo.name}.git`,
+          `cd ${repo.name}`,
+          `echo "✅ ${repo.name} clonado exitosamente"`,
+          `cd ..`,
+        ])
+        .flat(),
+    ].join('\n');
 
-        return `#!/bin/bash
+    return `#!/bin/bash
 
 # =============================================================================
 # CLONE ALL REPOSITORIES - PANACEA ICONO SA
@@ -440,64 +457,63 @@ echo ""
 echo "🔗 Repositorio principal: https://github.com/panacea-icono/${mainRepo.name}"
 echo "📚 Lista completa: https://github.com/panacea-icono"
 `;
+  }
+
+  /**
+   * Guarda los archivos generados
+   */
+  async saveFiles() {
+    // Crear directorio de salida si no existe
+    if (!fs.existsSync(this.outputDir)) {
+      fs.mkdirSync(this.outputDir, { recursive: true });
     }
 
-    /**
-     * Guarda los archivos generados
-     */
-    async saveFiles() {
-        // Crear directorio de salida si no existe
-        if (!fs.existsSync(this.outputDir)) {
-            fs.mkdirSync(this.outputDir, { recursive: true });
-        }
+    // Generar y guardar README
+    const readmeContent = this.generateRepositoriesList();
+    const readmePath = path.join(this.outputDir, 'REPOSITORIES.md');
+    fs.writeFileSync(readmePath, readmeContent);
+    console.log(`📄 README generado: ${readmePath}`);
 
-        // Generar y guardar README
-        const readmeContent = this.generateRepositoriesList();
-        const readmePath = path.join(this.outputDir, 'REPOSITORIES.md');
-        fs.writeFileSync(readmePath, readmeContent);
-        console.log(`📄 README generado: ${readmePath}`);
+    // Generar y guardar JSON
+    const jsonContent = this.generateJSONOutput();
+    const jsonPath = path.join(this.outputDir, 'repositories.json');
+    fs.writeFileSync(jsonPath, JSON.stringify(jsonContent, null, 2));
+    console.log(`📊 JSON generado: ${jsonPath}`);
 
-        // Generar y guardar JSON
-        const jsonContent = this.generateJSONOutput();
-        const jsonPath = path.join(this.outputDir, 'repositories.json');
-        fs.writeFileSync(jsonPath, JSON.stringify(jsonContent, null, 2));
-        console.log(`📊 JSON generado: ${jsonPath}`);
+    // Generar y guardar configuración de submódulos
+    const submodulesContent = this.generateGitSubmodulesConfig();
+    const submodulesPath = path.join(this.outputDir, 'git-submodules.txt');
+    fs.writeFileSync(submodulesPath, submodulesContent);
+    console.log(`🔗 Configuración de submódulos: ${submodulesPath}`);
 
-        // Generar y guardar configuración de submódulos
-        const submodulesContent = this.generateGitSubmodulesConfig();
-        const submodulesPath = path.join(this.outputDir, 'git-submodules.txt');
-        fs.writeFileSync(submodulesPath, submodulesContent);
-        console.log(`🔗 Configuración de submódulos: ${submodulesPath}`);
+    // Generar script de clonación
+    const cloneScript = this.generateCloneScript();
+    const cloneScriptPath = path.join(this.outputDir, 'clone-all-repos.sh');
+    fs.writeFileSync(cloneScriptPath, cloneScript);
+    fs.chmodSync(cloneScriptPath, '755');
+    console.log(`🚀 Script de clonación: ${cloneScriptPath}`);
+  }
 
-        // Generar script de clonación
-        const cloneScript = this.generateCloneScript();
-        const cloneScriptPath = path.join(this.outputDir, 'clone-all-repos.sh');
-        fs.writeFileSync(cloneScriptPath, cloneScript);
-        fs.chmodSync(cloneScriptPath, '755');
-        console.log(`🚀 Script de clonación: ${cloneScriptPath}`);
+  /**
+   * Ejecuta el proceso completo
+   */
+  async run() {
+    try {
+      console.log('🌐 GitHub Repositories Fetcher - Panacea Icono SA');
+      console.log('='.repeat(60));
+
+      await this.fetchRepositories();
+      await this.saveFiles();
+
+      console.log('');
+      console.log('✅ Proceso completado exitosamente!');
+      console.log(`📊 Se procesaron ${this.repos.length} repositorios`);
+      console.log('📁 Archivos generados en: ./docs/');
+    } catch (error) {
+      console.error('❌ Error en el proceso:', error.message);
+      process.exit(1);
     }
-
-    /**
-     * Ejecuta el proceso completo
-     */
-    async run() {
-        try {
-            console.log('🌐 GitHub Repositories Fetcher - Panacea Icono SA');
-            console.log('=' .repeat(60));
-            
-            await this.fetchRepositories();
-            await this.saveFiles();
-            
-            console.log('');
-            console.log('✅ Proceso completado exitosamente!');
-            console.log(`📊 Se procesaron ${this.repos.length} repositorios`);
-            console.log('📁 Archivos generados en: ./docs/');
-            
-        } catch (error) {
-            console.error('❌ Error en el proceso:', error.message);
-            process.exit(1);
-        }
-    }
+  }
 }
 
 // =============================================================================
@@ -505,35 +521,35 @@ echo "📚 Lista completa: https://github.com/panacea-icono"
 // =============================================================================
 
 if (require.main === module) {
-    const fetcher = new GitHubReposFetcher();
-    const command = process.argv[2];
+  const fetcher = new GitHubReposFetcher();
+  const command = process.argv[2];
 
-    switch (command) {
-        case 'fetch':
-        case 'list':
-            fetcher.run();
-            break;
+  switch (command) {
+    case 'fetch':
+    case 'list':
+      fetcher.run();
+      break;
 
-        case 'json':
-            fetcher.fetchRepositories().then(() => {
-                console.log(JSON.stringify(fetcher.generateJSONOutput(), null, 2));
-            });
-            break;
+    case 'json':
+      fetcher.fetchRepositories().then(() => {
+        console.log(JSON.stringify(fetcher.generateJSONOutput(), null, 2));
+      });
+      break;
 
-        case 'submodules':
-            fetcher.fetchRepositories().then(() => {
-                console.log(fetcher.generateGitSubmodulesConfig());
-            });
-            break;
+    case 'submodules':
+      fetcher.fetchRepositories().then(() => {
+        console.log(fetcher.generateGitSubmodulesConfig());
+      });
+      break;
 
-        case 'clone':
-            fetcher.fetchRepositories().then(() => {
-                console.log(fetcher.generateCloneScript());
-            });
-            break;
+    case 'clone':
+      fetcher.fetchRepositories().then(() => {
+        console.log(fetcher.generateCloneScript());
+      });
+      break;
 
-        default:
-            console.log(`
+    default:
+      console.log(`
 🌐 GitHub Repositories Fetcher - Panacea Icono SA
 
 Uso: node github-repos-fetcher.js <comando>
@@ -551,7 +567,7 @@ Ejemplos:
   node github-repos-fetcher.js submodules
   node github-repos-fetcher.js clone
             `);
-    }
+  }
 }
 
 module.exports = GitHubReposFetcher;

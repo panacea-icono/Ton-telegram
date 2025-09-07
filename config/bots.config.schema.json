@@ -8,9 +8,19 @@
       "items": {
         "type": "object",
         "properties": {
-          "name": { "type": "string", "description": "Internal name (no spaces)" },
-          "tokenEnv": { "type": "string", "description": "Env var name with the bot token" },
-          "mode": { "type": "string", "enum": ["polling", "webhook"], "default": "polling" },
+          "name": {
+            "type": "string",
+            "description": "Internal name (no spaces)"
+          },
+          "tokenEnv": {
+            "type": "string",
+            "description": "Env var name with the bot token"
+          },
+          "mode": {
+            "type": "string",
+            "enum": ["polling", "webhook"],
+            "default": "polling"
+          },
           "modules": {
             "type": "object",
             "properties": {
@@ -28,4 +38,3 @@
   },
   "required": ["bots"]
 }
-

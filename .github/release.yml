@@ -1,0 +1,109 @@
+# =============================================================================
+# PANAS TOKEN ECOSYSTEM - RELEASE TEMPLATE
+# Panacea | Icono SA
+# =============================================================================
+
+name: Create Release
+about: Create a new release
+title: 'Release v'
+labels: ['release']
+assignees: ['panacea-icono']
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🚀 Create New Release
+
+        Please provide the following information to create a new release.
+
+        **Before creating a release, please ensure:**
+        - [ ] All tests pass
+        - [ ] Documentation is updated
+        - [ ] Changelog is updated
+        - [ ] Version number is incremented
+        - [ ] Security review completed
+
+  - type: input
+    id: version
+    attributes:
+      label: 📦 Version
+      description: Version number (e.g., 1.0.0, 1.1.0, 2.0.0)
+      placeholder: '1.0.0'
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: 🎯 Release Type
+      description: Type of release
+      options:
+        - Major (breaking changes)
+        - Minor (new features)
+        - Patch (bug fixes)
+        - Pre-release (alpha/beta)
+    validations:
+      required: true
+
+  - type: textarea
+    id: changelog
+    attributes:
+      label: 📋 Changelog
+      description: List of changes in this release
+      placeholder: |
+        ## What's New
+        - ✨ New feature 1
+        - 🐛 Bug fix 1
+        - 🔧 Improvement 1
+
+        ## Breaking Changes
+        - ⚠️ Breaking change 1
+
+        ## Security
+        - 🔒 Security improvement 1
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 Release Description
+      description: Brief description of this release
+      placeholder: 'Brief description of what this release includes...'
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Pre-Release Checklist
+      description: Please confirm the following
+      options:
+        - label: All tests pass
+          required: true
+        - label: Documentation is updated
+          required: true
+        - label: Changelog is updated
+          required: true
+        - label: Version number is incremented
+          required: true
+        - label: Security review completed
+          required: true
+        - label: Performance impact assessed
+          required: true
+        - label: Backward compatibility maintained
+          required: true
+        - label: Database migrations included (if needed)
+          required: false
+        - label: Environment variables documented
+          required: false
+        - label: Rollback plan prepared
+          required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 📎 Additional Notes
+      description: Any additional notes for this release
+      placeholder: 'Any additional notes, warnings, or important information...'

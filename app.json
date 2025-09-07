@@ -1,15 +1,116 @@
 {
-  "name": "panas-bots-orchestrator",
-  "description": "Orquestador de múltiples bots de Telegram (Panacea | Icono SA)",
-  "env": {
-    "TELEGRAM_OFFICIAL_CHANNEL": { "required": true },
-    "TELEGRAM_BOT_ADMINS": { "required": true },
-    "OPENAI_API_KEY": { "required": false },
-    "OPENAI_MODEL": { "required": false, "value": "gpt-4o-mini" },
-    "LLAMA_API_URL": { "required": false },
-    "LLAMA_API_KEY": { "required": false }
-  },
+  "name": "Panas Token Ecosystem",
+  "description": "Multi-chain blockchain platform with Telegram bot integration",
+  "repository": "https://github.com/panacea-icono/Ton-telegram",
+  "logo": "https://raw.githubusercontent.com/panacea-icono/Ton-telegram/main/docs/logo.png",
+  "keywords": [
+    "blockchain",
+    "ton",
+    "solana",
+    "algorand",
+    "bsc",
+    "telegram",
+    "bot",
+    "defi",
+    "panacea"
+  ],
+  "stack": "heroku-22",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
   "formation": {
-    "worker": { "quantity": 1, "size": "basic" }
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:mini",
+      "as": "DATABASE"
+    },
+    {
+      "plan": "heroku-redis:mini",
+      "as": "REDIS"
+    },
+    {
+      "plan": "papertrail:choklad",
+      "as": "PAPERTRAIL"
+    }
+  ],
+  "env": {
+    "NODE_ENV": {
+      "description": "Node.js environment",
+      "value": "production"
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "description": "Install production dependencies only",
+      "value": "true"
+    },
+    "TELEGRAM_BOT_ADMINS": {
+      "description": "Telegram bot admin user IDs (comma-separated)",
+      "required": true
+    },
+    "TELEGRAM_OFFICIAL_CHANNEL": {
+      "description": "Official Telegram channel for bot publishing",
+      "value": "@drtapiavargas_of"
+    },
+    "OPENAI_API_KEY": {
+      "description": "OpenAI API key for AI features",
+      "required": false
+    },
+    "JWT_SECRET": {
+      "description": "JWT secret for authentication",
+      "generator": "secret"
+    },
+    "ENCRYPTION_KEY": {
+      "description": "Encryption key for sensitive data",
+      "generator": "secret"
+    }
+  },
+  "scripts": {
+    "postdeploy": "npm run migrate && npm run bots:validate"
+  },
+  "environments": {
+    "staging": {
+      "addons": [
+        {
+          "plan": "heroku-postgresql:mini",
+          "as": "DATABASE"
+        },
+        {
+          "plan": "heroku-redis:mini",
+          "as": "REDIS"
+        }
+      ],
+      "env": {
+        "NODE_ENV": "staging"
+      }
+    },
+    "production": {
+      "addons": [
+        {
+          "plan": "heroku-postgresql:standard-0",
+          "as": "DATABASE"
+        },
+        {
+          "plan": "heroku-redis:premium-0",
+          "as": "REDIS"
+        },
+        {
+          "plan": "newrelic:wayne",
+          "as": "NEWRELIC"
+        }
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
   }
 }

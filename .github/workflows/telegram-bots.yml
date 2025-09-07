@@ -1,0 +1,132 @@
+name: 🤖 Telegram Bots Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'scripts/bots/**'
+      - 'config/bots.config.json'
+      - '.env.telegram.local'
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Action to perform'
+        required: true
+        default: 'validate'
+        type: choice
+        options:
+          - validate
+          - deploy
+          - restart
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  # =============================================================================
+  # VALIDATE BOTS
+  # =============================================================================
+  validate-bots:
+    name: 🔍 Validate Bots
+    runs-on: ubuntu-latest
+    if: github.event.inputs.action == 'validate' || github.event.inputs.action == '' || github.event_name == 'push'
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📥 Install dependencies
+        run: npm ci
+
+      - name: 🔍 Validate Telegram Bots
+        run: npm run bots:validate
+        env:
+          TELEGRAM_BOT_ADMINS: ${{ secrets.TELEGRAM_BOT_ADMINS }}
+          TELEGRAM_OFFICIAL_CHANNEL: ${{ secrets.TELEGRAM_OFFICIAL_CHANNEL }}
+
+      - name: 📊 Generate Bot Report
+        run: npm run audit:run
+
+      - name: 📤 Upload Bot Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: telegram-bots-report
+          path: audits/telegram-bots-report-latest.md
+
+  # =============================================================================
+  # DEPLOY BOTS
+  # =============================================================================
+  deploy-bots:
+    name: 🚀 Deploy Bots
+    runs-on: ubuntu-latest
+    needs: [validate-bots]
+    if: github.event.inputs.action == 'deploy' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    environment: production
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📥 Install dependencies
+        run: npm ci
+
+      - name: 🚀 Deploy to Heroku Bots App
+        uses: akhileshns/heroku-deploy@v3.12.14
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_BOTS_APP_NAME }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          appdir: '.'
+          procfile: 'web: npm run bots:start'
+
+      - name: 🔧 Restart Bots
+        run: |
+          heroku ps:restart --app ${{ secrets.HEROKU_BOTS_APP_NAME }}
+
+      - name: 📊 Check Bot Status
+        run: |
+          heroku logs --tail --app ${{ secrets.HEROKU_BOTS_APP_NAME }} --num 50
+
+  # =============================================================================
+  # RESTART BOTS
+  # =============================================================================
+  restart-bots:
+    name: 🔄 Restart Bots
+    runs-on: ubuntu-latest
+    if: github.event.inputs.action == 'restart'
+    environment: production
+    steps:
+      - name: 🔄 Restart Heroku Bots App
+        run: |
+          heroku ps:restart --app ${{ secrets.HEROKU_BOTS_APP_NAME }}
+
+      - name: 📊 Check Bot Status
+        run: |
+          heroku logs --tail --app ${{ secrets.HEROKU_BOTS_APP_NAME }} --num 50
+
+  # =============================================================================
+  # NOTIFICATIONS
+  # =============================================================================
+  notify:
+    name: 📢 Notify
+    runs-on: ubuntu-latest
+    needs: [validate-bots, deploy-bots, restart-bots]
+    if: always()
+    steps:
+      - name: 📢 Send Slack Notification
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          channel: '#telegram-bots'
+          webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow

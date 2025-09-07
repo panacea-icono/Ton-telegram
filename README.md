@@ -1,4 +1,5 @@
 <!-- PANACEA_ECOSYSTEM_HEADER -->
+
 # Ton-telegram
 
 > Parte del ecosistema Panacea | Icono SA. Hub: [Ton-telegram](https://github.com/panacea-icono/Ton-telegram)
@@ -150,12 +151,12 @@ Ton-telegram/
 
 ## 🪙 Tokens Integrados
 
-| Token | Blockchain | Propósito | Liquidez |
-|-------|------------|-----------|----------|
-| **🟣 GS** | Solana (SPL) | Colateral principal | Dexlab, Raydium |
-| **🔵 VASER** | Solana (SPL) | Pool PANAS-VASER | Raydium, Meteora |
-| **🟡 KUCHI** | BSC (BEP-20) | Liquidez auxiliar | PancakeSwap |
-| **🟢 PANAS** | TON (Jetton) | Token principal | DeDust, STON.fi |
+| Token        | Blockchain   | Propósito           | Liquidez         |
+| ------------ | ------------ | ------------------- | ---------------- |
+| **🟣 GS**    | Solana (SPL) | Colateral principal | Dexlab, Raydium  |
+| **🔵 VASER** | Solana (SPL) | Pool PANAS-VASER    | Raydium, Meteora |
+| **🟡 KUCHI** | BSC (BEP-20) | Liquidez auxiliar   | PancakeSwap      |
+| **🟢 PANAS** | TON (Jetton) | Token principal     | DeDust, STON.fi  |
 
 ---
 
@@ -245,6 +246,7 @@ node scripts/github-token-verify.js --require-scopes=repo,read:org
 ```
 
 Cómo generar un nuevo PAT (fine-grained recomendado):
+
 - GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate
 - Owner: tu usuario u organización
 - Repository permissions: Metadata: Read, Contents: Read
@@ -293,6 +295,7 @@ Copia `env.example` a `.env` y configura las siguientes variables. Para ajustes 
 - `GITHUB_REQUIRED_SCOPES` - Opcional: scopes esperados (coma-separados) para validar el token.
 
 Comportamiento del script:
+
 - Si defines `GITHUB_ORG`, lista los repos de la organización.
 - Si no defines `GITHUB_ORG` pero defines `GITHUB_USERNAME`, lista los del usuario.
 - Si no defines ninguno, lista los del usuario autenticado (requiere `GITHUB_TOKEN`).
@@ -515,7 +518,6 @@ El proyecto **Panas Token** es desarrollado y respaldado por **Icono SA**, empre
 
 ---
 
-
 ## 🎯 Repositorio Principal
 
 ### [Ton-telegram](https://github.com/panacea-icono/Ton-telegram)
@@ -539,7 +541,6 @@ cd Ton-telegram
 
 ## 📋 Otros Repositorios
 
-
 ### 1. [HUGGING_FACE](https://github.com/panacea-icono/HUGGING_FACE)
 
 - **Descripción**: Modelos de IA y machine learning para aplicaciones médicas
@@ -555,7 +556,6 @@ cd Ton-telegram
 git clone https://github.com/panacea-icono/HUGGING_FACE.git
 cd HUGGING_FACE
 ```
-
 
 ### 2. [FIBONACCI-FINAL-MODULOS-API-MAESTRO](https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO)
 
@@ -573,7 +573,6 @@ git clone https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.g
 cd FIBONACCI-FINAL-MODULOS-API-MAESTRO
 ```
 
-
 ### 3. [tutor_academico_CIRUGIA_I-II-III](https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III)
 
 - **Descripción**: Sistema tutor académico para cirugía I, II y III
@@ -590,7 +589,6 @@ git clone https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git
 cd tutor_academico_CIRUGIA_I-II-III
 ```
 
-
 ### 4. [kuchiuyas](https://github.com/panacea-icono/kuchiuyas)
 
 - **Descripción**: Sistema de gestión y monitoreo de pacientes
@@ -606,7 +604,6 @@ cd tutor_academico_CIRUGIA_I-II-III
 git clone https://github.com/panacea-icono/kuchiuyas.git
 cd kuchiuyas
 ```
-
 
 ---
 

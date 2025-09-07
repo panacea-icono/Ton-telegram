@@ -11,7 +11,9 @@
  *  - apply: escribe los cambios via GitHub Contents API
  */
 
-try { require('dotenv').config(); } catch (_) {}
+try {
+  require('dotenv').config();
+} catch (_) {}
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
@@ -23,7 +25,7 @@ function http(method, urlPath, body) {
   return new Promise((resolve, reject) => {
     const headers = {
       'User-Agent': 'Panas-Readme-Sync/1.0',
-      'Accept': 'application/vnd.github+json',
+      Accept: 'application/vnd.github+json',
     };
     if (TOKEN) headers.Authorization = `token ${TOKEN}`;
     let data;
@@ -32,14 +34,23 @@ function http(method, urlPath, body) {
       headers['Content-Type'] = 'application/json';
       headers['Content-Length'] = Buffer.byteLength(data);
     }
-    const req = https.request({ method, hostname: 'api.github.com', path: urlPath, headers }, (res) => {
-      let buf = '';
-      res.on('data', c => buf += c);
-      res.on('end', () => {
-        try { resolve({ status: res.statusCode, data: buf ? JSON.parse(buf) : {} }); }
-        catch { resolve({ status: res.statusCode, data: buf }); }
-      });
-    });
+    const req = https.request(
+      { method, hostname: 'api.github.com', path: urlPath, headers },
+      (res) => {
+        let buf = '';
+        res.on('data', (c) => (buf += c));
+        res.on('end', () => {
+          try {
+            resolve({
+              status: res.statusCode,
+              data: buf ? JSON.parse(buf) : {},
+            });
+          } catch {
+            resolve({ status: res.statusCode, data: buf });
+          }
+        });
+      }
+    );
     req.on('error', reject);
     if (data) req.write(data);
     req.end();
@@ -48,12 +59,12 @@ function http(method, urlPath, body) {
 
 function headerBlock(owner, name) {
   return (
-`<!-- PANACEA_ECOSYSTEM_HEADER -->\n`+
-`# ${name}\n\n`+
-`> Parte del ecosistema Panacea | Icono SA. Hub: [Ton-telegram](https://github.com/panacea-icono/Ton-telegram)\n\n`+
-`- Organización: [@${owner}](https://github.com/${owner})\n`+
-`- Documentación de repos: [/docs/REPOSITORIES.md](https://github.com/panacea-icono/Ton-telegram/tree/main/docs/REPOSITORIES.md)\n`+
-`- Estructura y submódulos: [/docs/REPOS-STRUCTURE.md](https://github.com/panacea-icono/Ton-telegram/tree/main/docs/REPOS-STRUCTURE.md)\n\n`
+    `<!-- PANACEA_ECOSYSTEM_HEADER -->\n` +
+    `# ${name}\n\n` +
+    `> Parte del ecosistema Panacea | Icono SA. Hub: [Ton-telegram](https://github.com/panacea-icono/Ton-telegram)\n\n` +
+    `- Organización: [@${owner}](https://github.com/${owner})\n` +
+    `- Documentación de repos: [/docs/REPOSITORIES.md](https://github.com/panacea-icono/Ton-telegram/tree/main/docs/REPOSITORIES.md)\n` +
+    `- Estructura y submódulos: [/docs/REPOS-STRUCTURE.md](https://github.com/panacea-icono/Ton-telegram/tree/main/docs/REPOS-STRUCTURE.md)\n\n`
   );
 }
 
@@ -61,8 +72,12 @@ function needsHeader(md) {
   return !/<!--\s*PANACEA_ECOSYSTEM_HEADER\s*-->/.test(md);
 }
 
-function b64decode(b64) { return Buffer.from(b64, 'base64').toString('utf8'); }
-function b64encode(txt) { return Buffer.from(txt, 'utf8').toString('base64'); }
+function b64decode(b64) {
+  return Buffer.from(b64, 'base64').toString('utf8');
+}
+function b64encode(txt) {
+  return Buffer.from(txt, 'utf8').toString('base64');
+}
 
 async function processRepo(fullName) {
   const [owner, repo] = fullName.split('/');
@@ -73,11 +88,18 @@ async function processRepo(fullName) {
     const current = b64decode(res.data.content);
     if (!needsHeader(current)) return { repo: fullName, action: 'skip' };
     const updated = headerBlock(owner, repo) + current;
-    return { repo: fullName, action: 'update', sha, content: b64encode(updated) };
+    return {
+      repo: fullName,
+      action: 'update',
+      sha,
+      content: b64encode(updated),
+    };
   }
   // Si no hay README, crear uno mínimo
   if (res.status === 404) {
-    const content = headerBlock(owner, repo) + `\n_Este repositorio forma parte del ecosistema Panacea._\n`;
+    const content =
+      headerBlock(owner, repo) +
+      `\n_Este repositorio forma parte del ecosistema Panacea._\n`;
     return { repo: fullName, action: 'create', content: b64encode(content) };
   }
   return { repo: fullName, action: 'error', status: res.status };
@@ -89,10 +111,14 @@ async function applyChange(change) {
     message: 'chore(docs): sync ecosystem header',
     content: change.content,
     sha: change.sha,
-    branch: 'main'
+    branch: 'main',
   };
   if (change.action === 'create') delete body.sha;
-  const res = await http('PUT', `/repos/${owner}/${repo}/contents/README.md`, body);
+  const res = await http(
+    'PUT',
+    `/repos/${owner}/${repo}/contents/README.md`,
+    body
+  );
   return res.status === 201 || res.status === 200;
 }
 
@@ -105,22 +131,37 @@ async function main() {
     const ch = await processRepo(r.fullName || r.name);
     changes.push(ch);
   }
-  const plan = changes.filter(c => c.action === 'update' || c.action === 'create').map(c => c.repo);
+  const plan = changes
+    .filter((c) => c.action === 'update' || c.action === 'create')
+    .map((c) => c.repo);
   const dir = path.resolve('docs/releases');
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'README_SYNC_PLAN.md'), [
-    `# Plan de sincronización de README — ${new Date().toISOString()}`,
-    '',
-    ...plan.map(r => `- ${r}`)
-  ].join('\n'));
+  fs.writeFileSync(
+    path.join(dir, 'README_SYNC_PLAN.md'),
+    [
+      `# Plan de sincronización de README — ${new Date().toISOString()}`,
+      '',
+      ...plan.map((r) => `- ${r}`),
+    ].join('\n')
+  );
   console.log(`📝 Repos a modificar: ${plan.length}`);
   if (mode === 'apply') {
-    if (!TOKEN) { console.error('❌ Requiere GITHUB_TOKEN'); process.exit(2); }
-    let ok = 0, fail = 0;
+    if (!TOKEN) {
+      console.error('❌ Requiere GITHUB_TOKEN');
+      process.exit(2);
+    }
+    let ok = 0,
+      fail = 0;
     for (const ch of changes) {
       if (ch.action === 'update' || ch.action === 'create') {
         const res = await applyChange(ch);
-        if (res) { ok++; console.log(`✔ ${ch.repo}`); } else { fail++; console.log(`✖ ${ch.repo}`); }
+        if (res) {
+          ok++;
+          console.log(`✔ ${ch.repo}`);
+        } else {
+          fail++;
+          console.log(`✖ ${ch.repo}`);
+        }
       }
     }
     console.log(`✅ README sync completado. OK=${ok} FAIL=${fail}`);
@@ -130,8 +171,10 @@ async function main() {
 }
 
 if (require.main === module) {
-  main().catch(e => { console.error('❌', e.message); process.exit(1); });
+  main().catch((e) => {
+    console.error('❌', e.message);
+    process.exit(1);
+  });
 }
 
 module.exports = { main };
-

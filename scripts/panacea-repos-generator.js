@@ -13,134 +13,152 @@ const fs = require('fs');
 const path = require('path');
 
 class PanaceaReposGenerator {
-    constructor() {
-        this.organization = 'panacea-icono';
-        this.outputDir = './docs';
-        
-        // Repositorios conocidos de Panacea Icono SA
-        this.repositories = [
-            {
-                name: 'Ton-telegram',
-                fullName: 'panacea-icono/Ton-telegram',
-                description: 'Bot de telegram wallet interfaz de pagos',
-                url: 'https://github.com/panacea-icono/Ton-telegram',
-                cloneUrl: 'https://github.com/panacea-icono/Ton-telegram.git',
-                sshUrl: 'git@github.com:panacea-icono/Ton-telegram.git',
-                language: 'JavaScript',
-                stars: 0,
-                forks: 0,
-                watchers: 0,
-                openIssues: 0,
-                size: 1000,
-                createdAt: '2024-01-01T00:00:00Z',
-                updatedAt: new Date().toISOString(),
-                pushedAt: new Date().toISOString(),
-                isPrivate: false,
-                isFork: false,
-                topics: ['telegram', 'ton', 'wallet', 'payments', 'bot', 'blockchain'],
-                defaultBranch: 'main',
-                license: 'MIT',
-                mainRepo: true // Este es el repositorio principal
-            },
-            {
-                name: 'HUGGING_FACE',
-                fullName: 'panacea-icono/HUGGING_FACE',
-                description: 'Modelos de IA y machine learning para aplicaciones médicas',
-                url: 'https://github.com/panacea-icono/HUGGING_FACE',
-                cloneUrl: 'https://github.com/panacea-icono/HUGGING_FACE.git',
-                sshUrl: 'git@github.com:panacea-icono/HUGGING_FACE.git',
-                language: 'Python',
-                stars: 0,
-                forks: 0,
-                watchers: 0,
-                openIssues: 0,
-                size: 2000,
-                createdAt: '2024-01-01T00:00:00Z',
-                updatedAt: new Date().toISOString(),
-                pushedAt: new Date().toISOString(),
-                isPrivate: false,
-                isFork: false,
-                topics: ['ai', 'ml', 'huggingface', 'medical', 'healthcare', 'python'],
-                defaultBranch: 'main',
-                license: 'MIT'
-            },
-            {
-                name: 'FIBONACCI-FINAL-MODULOS-API-MAESTRO',
-                fullName: 'panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO',
-                description: 'API maestra con módulos finales del sistema Fibonacci',
-                url: 'https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO',
-                cloneUrl: 'https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git',
-                sshUrl: 'git@github.com:panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git',
-                language: 'JavaScript',
-                stars: 0,
-                forks: 0,
-                watchers: 0,
-                openIssues: 0,
-                size: 1500,
-                createdAt: '2024-01-01T00:00:00Z',
-                updatedAt: new Date().toISOString(),
-                pushedAt: new Date().toISOString(),
-                isPrivate: false,
-                isFork: false,
-                topics: ['api', 'fibonacci', 'modules', 'master', 'backend', 'nodejs'],
-                defaultBranch: 'main',
-                license: 'MIT'
-            },
-            {
-                name: 'tutor_academico_CIRUGIA_I-II-III',
-                fullName: 'panacea-icono/tutor_academico_CIRUGIA_I-II-III',
-                description: 'Sistema tutor académico para cirugía I, II y III',
-                url: 'https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III',
-                cloneUrl: 'https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git',
-                sshUrl: 'git@github.com:panacea-icono/tutor_academico_CIRUGIA_I-II-III.git',
-                language: 'JavaScript',
-                stars: 0,
-                forks: 0,
-                watchers: 0,
-                openIssues: 0,
-                size: 3000,
-                createdAt: '2024-01-01T00:00:00Z',
-                updatedAt: new Date().toISOString(),
-                pushedAt: new Date().toISOString(),
-                isPrivate: false,
-                isFork: false,
-                topics: ['education', 'surgery', 'tutor', 'academic', 'medical', 'learning'],
-                defaultBranch: 'main',
-                license: 'MIT'
-            },
-            {
-                name: 'kuchiuyas',
-                fullName: 'panacea-icono/kuchiuyas',
-                description: 'Sistema de gestión y monitoreo de pacientes',
-                url: 'https://github.com/panacea-icono/kuchiuyas',
-                cloneUrl: 'https://github.com/panacea-icono/kuchiuyas.git',
-                sshUrl: 'git@github.com:panacea-icono/kuchiuyas.git',
-                language: 'TypeScript',
-                stars: 0,
-                forks: 0,
-                watchers: 0,
-                openIssues: 0,
-                size: 2500,
-                createdAt: '2024-01-01T00:00:00Z',
-                updatedAt: new Date().toISOString(),
-                pushedAt: new Date().toISOString(),
-                isPrivate: false,
-                isFork: false,
-                topics: ['patient-management', 'monitoring', 'healthcare', 'typescript', 'medical'],
-                defaultBranch: 'main',
-                license: 'MIT'
-            }
-        ];
-    }
+  constructor() {
+    this.organization = 'panacea-icono';
+    this.outputDir = './docs';
 
-    /**
-     * Genera un archivo README con la lista de repositorios
-     */
-    generateRepositoriesList() {
-        const mainRepo = this.repositories.find(repo => repo.mainRepo);
-        const otherRepos = this.repositories.filter(repo => !repo.mainRepo);
+    // Repositorios conocidos de Panacea Icono SA
+    this.repositories = [
+      {
+        name: 'Ton-telegram',
+        fullName: 'panacea-icono/Ton-telegram',
+        description: 'Bot de telegram wallet interfaz de pagos',
+        url: 'https://github.com/panacea-icono/Ton-telegram',
+        cloneUrl: 'https://github.com/panacea-icono/Ton-telegram.git',
+        sshUrl: 'git@github.com:panacea-icono/Ton-telegram.git',
+        language: 'JavaScript',
+        stars: 0,
+        forks: 0,
+        watchers: 0,
+        openIssues: 0,
+        size: 1000,
+        createdAt: '2024-01-01T00:00:00Z',
+        updatedAt: new Date().toISOString(),
+        pushedAt: new Date().toISOString(),
+        isPrivate: false,
+        isFork: false,
+        topics: ['telegram', 'ton', 'wallet', 'payments', 'bot', 'blockchain'],
+        defaultBranch: 'main',
+        license: 'MIT',
+        mainRepo: true, // Este es el repositorio principal
+      },
+      {
+        name: 'HUGGING_FACE',
+        fullName: 'panacea-icono/HUGGING_FACE',
+        description:
+          'Modelos de IA y machine learning para aplicaciones médicas',
+        url: 'https://github.com/panacea-icono/HUGGING_FACE',
+        cloneUrl: 'https://github.com/panacea-icono/HUGGING_FACE.git',
+        sshUrl: 'git@github.com:panacea-icono/HUGGING_FACE.git',
+        language: 'Python',
+        stars: 0,
+        forks: 0,
+        watchers: 0,
+        openIssues: 0,
+        size: 2000,
+        createdAt: '2024-01-01T00:00:00Z',
+        updatedAt: new Date().toISOString(),
+        pushedAt: new Date().toISOString(),
+        isPrivate: false,
+        isFork: false,
+        topics: ['ai', 'ml', 'huggingface', 'medical', 'healthcare', 'python'],
+        defaultBranch: 'main',
+        license: 'MIT',
+      },
+      {
+        name: 'FIBONACCI-FINAL-MODULOS-API-MAESTRO',
+        fullName: 'panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO',
+        description: 'API maestra con módulos finales del sistema Fibonacci',
+        url: 'https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO',
+        cloneUrl:
+          'https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git',
+        sshUrl:
+          'git@github.com:panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git',
+        language: 'JavaScript',
+        stars: 0,
+        forks: 0,
+        watchers: 0,
+        openIssues: 0,
+        size: 1500,
+        createdAt: '2024-01-01T00:00:00Z',
+        updatedAt: new Date().toISOString(),
+        pushedAt: new Date().toISOString(),
+        isPrivate: false,
+        isFork: false,
+        topics: ['api', 'fibonacci', 'modules', 'master', 'backend', 'nodejs'],
+        defaultBranch: 'main',
+        license: 'MIT',
+      },
+      {
+        name: 'tutor_academico_CIRUGIA_I-II-III',
+        fullName: 'panacea-icono/tutor_academico_CIRUGIA_I-II-III',
+        description: 'Sistema tutor académico para cirugía I, II y III',
+        url: 'https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III',
+        cloneUrl:
+          'https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git',
+        sshUrl:
+          'git@github.com:panacea-icono/tutor_academico_CIRUGIA_I-II-III.git',
+        language: 'JavaScript',
+        stars: 0,
+        forks: 0,
+        watchers: 0,
+        openIssues: 0,
+        size: 3000,
+        createdAt: '2024-01-01T00:00:00Z',
+        updatedAt: new Date().toISOString(),
+        pushedAt: new Date().toISOString(),
+        isPrivate: false,
+        isFork: false,
+        topics: [
+          'education',
+          'surgery',
+          'tutor',
+          'academic',
+          'medical',
+          'learning',
+        ],
+        defaultBranch: 'main',
+        license: 'MIT',
+      },
+      {
+        name: 'kuchiuyas',
+        fullName: 'panacea-icono/kuchiuyas',
+        description: 'Sistema de gestión y monitoreo de pacientes',
+        url: 'https://github.com/panacea-icono/kuchiuyas',
+        cloneUrl: 'https://github.com/panacea-icono/kuchiuyas.git',
+        sshUrl: 'git@github.com:panacea-icono/kuchiuyas.git',
+        language: 'TypeScript',
+        stars: 0,
+        forks: 0,
+        watchers: 0,
+        openIssues: 0,
+        size: 2500,
+        createdAt: '2024-01-01T00:00:00Z',
+        updatedAt: new Date().toISOString(),
+        pushedAt: new Date().toISOString(),
+        isPrivate: false,
+        isFork: false,
+        topics: [
+          'patient-management',
+          'monitoring',
+          'healthcare',
+          'typescript',
+          'medical',
+        ],
+        defaultBranch: 'main',
+        license: 'MIT',
+      },
+    ];
+  }
 
-        const readmeContent = `# 📚 Repositorios de Panacea Icono SA
+  /**
+   * Genera un archivo README con la lista de repositorios
+   */
+  generateRepositoriesList() {
+    const mainRepo = this.repositories.find((repo) => repo.mainRepo);
+    const otherRepos = this.repositories.filter((repo) => !repo.mainRepo);
+
+    const readmeContent = `# 📚 Repositorios de Panacea Icono SA
 
 > Lista completa de repositorios de la organización [panacea-icono](https://github.com/panacea-icono)
 
@@ -164,7 +182,7 @@ class PanaceaReposGenerator {
 - **Estrellas**: ⭐ ${mainRepo.stars} | **Forks**: 🍴 ${mainRepo.forks} | **Watchers**: 👀 ${mainRepo.watchers}
 - **Última actualización**: ${new Date(mainRepo.updatedAt).toLocaleDateString('es-ES')}
 - **Licencia**: ${mainRepo.license}
-- **Temas**: ${mainRepo.topics.map(topic => `\`${topic}\``).join(', ')}
+- **Temas**: ${mainRepo.topics.map((topic) => `\`${topic}\``).join(', ')}
 - **URL**: [https://github.com/panacea-icono/${mainRepo.name}](https://github.com/panacea-icono/${mainRepo.name})
 
 \`\`\`bash
@@ -177,7 +195,9 @@ cd ${mainRepo.name}
 
 ## 📋 Otros Repositorios
 
-${otherRepos.map((repo, index) => `
+${otherRepos
+  .map(
+    (repo, index) => `
 ### ${index + 1}. [${repo.name}](https://github.com/panacea-icono/${repo.name})
 
 - **Descripción**: ${repo.description}
@@ -185,7 +205,7 @@ ${otherRepos.map((repo, index) => `
 - **Estrellas**: ⭐ ${repo.stars} | **Forks**: 🍴 ${repo.forks} | **Watchers**: 👀 ${repo.watchers}
 - **Última actualización**: ${new Date(repo.updatedAt).toLocaleDateString('es-ES')}
 - **Licencia**: ${repo.license}
-- **Temas**: ${repo.topics.length > 0 ? repo.topics.map(topic => `\`${topic}\``).join(', ') : 'Ninguno'}
+- **Temas**: ${repo.topics.length > 0 ? repo.topics.map((topic) => `\`${topic}\``).join(', ') : 'Ninguno'}
 - **URL**: [https://github.com/panacea-icono/${repo.name}](https://github.com/panacea-icono/${repo.name})
 
 \`\`\`bash
@@ -193,7 +213,9 @@ ${otherRepos.map((repo, index) => `
 git clone https://github.com/panacea-icono/${repo.name}.git
 cd ${repo.name}
 \`\`\`
-`).join('\n')}
+`
+  )
+  .join('\n')}
 
 ---
 
@@ -203,15 +225,15 @@ cd ${repo.name}
 - [${mainRepo.name}](https://github.com/panacea-icono/${mainRepo.name}) - ${mainRepo.description}
 
 ### Otros Repositorios
-${otherRepos.map(repo => `- [${repo.name}](https://github.com/panacea-icono/${repo.name}) - ${repo.description}`).join('\n')}
+${otherRepos.map((repo) => `- [${repo.name}](https://github.com/panacea-icono/${repo.name}) - ${repo.description}`).join('\n')}
 
 ---
 
 ## 📊 Estadísticas Generales
 
 - **Total de repositorios**: ${this.repositories.length}
-- **Repositorios públicos**: ${this.repositories.filter(r => !r.isPrivate).length}
-- **Repositorios privados**: ${this.repositories.filter(r => r.isPrivate).length}
+- **Repositorios públicos**: ${this.repositories.filter((r) => !r.isPrivate).length}
+- **Repositorios privados**: ${this.repositories.filter((r) => r.isPrivate).length}
 - **Total de estrellas**: ${this.repositories.reduce((sum, repo) => sum + repo.stars, 0)}
 - **Total de forks**: ${this.repositories.reduce((sum, repo) => sum + repo.forks, 0)}
 - **Lenguajes más usados**: ${this.getTopLanguages()}
@@ -268,84 +290,97 @@ Para contribuir a cualquiera de estos repositorios:
 *Generado automáticamente por el script de gestión de repositorios de Panas Token Ecosystem*
 `;
 
-        return readmeContent;
-    }
+    return readmeContent;
+  }
 
-    /**
-     * Obtiene los lenguajes más utilizados
-     */
-    getTopLanguages() {
-        const languages = {};
-        this.repositories.forEach(repo => {
-            if (repo.language && repo.language !== 'Sin especificar') {
-                languages[repo.language] = (languages[repo.language] || 0) + 1;
-            }
-        });
+  /**
+   * Obtiene los lenguajes más utilizados
+   */
+  getTopLanguages() {
+    const languages = {};
+    this.repositories.forEach((repo) => {
+      if (repo.language && repo.language !== 'Sin especificar') {
+        languages[repo.language] = (languages[repo.language] || 0) + 1;
+      }
+    });
 
-        return Object.entries(languages)
-            .sort(([,a], [,b]) => b - a)
-            .slice(0, 5)
-            .map(([lang, count]) => `${lang} (${count})`)
-            .join(', ');
-    }
+    return Object.entries(languages)
+      .sort(([, a], [, b]) => b - a)
+      .slice(0, 5)
+      .map(([lang, count]) => `${lang} (${count})`)
+      .join(', ');
+  }
 
-    /**
-     * Obtiene los temas más populares
-     */
-    getPopularTopics() {
-        const topics = {};
-        this.repositories.forEach(repo => {
-            repo.topics.forEach(topic => {
-                topics[topic] = (topics[topic] || 0) + 1;
-            });
-        });
+  /**
+   * Obtiene los temas más populares
+   */
+  getPopularTopics() {
+    const topics = {};
+    this.repositories.forEach((repo) => {
+      repo.topics.forEach((topic) => {
+        topics[topic] = (topics[topic] || 0) + 1;
+      });
+    });
 
-        return Object.entries(topics)
-            .sort(([,a], [,b]) => b - a)
-            .slice(0, 10)
-            .map(([topic, count]) => `- \`${topic}\` (${count} repositorios)`)
-            .join('\n');
-    }
+    return Object.entries(topics)
+      .sort(([, a], [, b]) => b - a)
+      .slice(0, 10)
+      .map(([topic, count]) => `- \`${topic}\` (${count} repositorios)`)
+      .join('\n');
+  }
 
-    /**
-     * Genera un archivo JSON con la información de los repositorios
-     */
-    generateJSONOutput() {
-        return {
-            organization: {
-                name: this.organization,
-                displayName: 'Panacea Icono SA',
-                description: 'Empresa tecnológica enfocada en soluciones blockchain médicas',
-                url: `https://github.com/${this.organization}`,
-                email: 'info@iconosa.com',
-                website: 'https://iconosa.com'
-            },
-            repositories: this.repositories,
-            statistics: {
-                total: this.repositories.length,
-                public: this.repositories.filter(r => !r.isPrivate).length,
-                private: this.repositories.filter(r => r.isPrivate).length,
-                totalStars: this.repositories.reduce((sum, repo) => sum + repo.stars, 0),
-                totalForks: this.repositories.reduce((sum, repo) => sum + repo.forks, 0),
-                totalWatchers: this.repositories.reduce((sum, repo) => sum + repo.watchers, 0),
-                languages: this.getTopLanguages(),
-                lastUpdated: new Date().toISOString()
-            }
-        };
-    }
+  /**
+   * Genera un archivo JSON con la información de los repositorios
+   */
+  generateJSONOutput() {
+    return {
+      organization: {
+        name: this.organization,
+        displayName: 'Panacea Icono SA',
+        description:
+          'Empresa tecnológica enfocada en soluciones blockchain médicas',
+        url: `https://github.com/${this.organization}`,
+        email: 'info@iconosa.com',
+        website: 'https://iconosa.com',
+      },
+      repositories: this.repositories,
+      statistics: {
+        total: this.repositories.length,
+        public: this.repositories.filter((r) => !r.isPrivate).length,
+        private: this.repositories.filter((r) => r.isPrivate).length,
+        totalStars: this.repositories.reduce(
+          (sum, repo) => sum + repo.stars,
+          0
+        ),
+        totalForks: this.repositories.reduce(
+          (sum, repo) => sum + repo.forks,
+          0
+        ),
+        totalWatchers: this.repositories.reduce(
+          (sum, repo) => sum + repo.watchers,
+          0
+        ),
+        languages: this.getTopLanguages(),
+        lastUpdated: new Date().toISOString(),
+      },
+    };
+  }
 
-    /**
-     * Genera un archivo de configuración para submódulos
-     */
-    generateGitSubmodulesConfig() {
-        const submodulesContent = this.repositories.map(repo => 
-            `[submodule "${repo.name}"]\n` +
-            `    path = ${repo.name}\n` +
-            `    url = https://github.com/panacea-icono/${repo.name}.git\n` +
-            `    branch = ${repo.defaultBranch}`
-        ).join('\n\n');
+  /**
+   * Genera un archivo de configuración para submódulos
+   */
+  generateGitSubmodulesConfig() {
+    const submodulesContent = this.repositories
+      .map(
+        (repo) =>
+          `[submodule "${repo.name}"]\n` +
+          `    path = ${repo.name}\n` +
+          `    url = https://github.com/panacea-icono/${repo.name}.git\n` +
+          `    branch = ${repo.defaultBranch}`
+      )
+      .join('\n\n');
 
-        return `# =============================================================================
+    return `# =============================================================================
 # GIT SUBMODULES - PANACEA ICONO SA REPOSITORIES
 # =============================================================================
 # Configuración automática de submódulos para todos los repositorios
@@ -368,32 +403,34 @@ ${submodulesContent}
 # git submodule add https://github.com/panacea-icono/REPO_NAME.git
 # =============================================================================
 `;
-    }
+  }
 
-    /**
-     * Genera un script para clonar todos los repositorios
-     */
-    generateCloneScript() {
-        const mainRepo = this.repositories.find(repo => repo.mainRepo);
-        const otherRepos = this.repositories.filter(repo => !repo.mainRepo);
+  /**
+   * Genera un script para clonar todos los repositorios
+   */
+  generateCloneScript() {
+    const mainRepo = this.repositories.find((repo) => repo.mainRepo);
+    const otherRepos = this.repositories.filter((repo) => !repo.mainRepo);
 
-        const cloneCommands = [
-            `echo "🎯 Clonando repositorio principal: ${mainRepo.name}"`,
-            `git clone https://github.com/panacea-icono/${mainRepo.name}.git`,
-            `cd ${mainRepo.name}`,
-            `echo "✅ ${mainRepo.name} clonado exitosamente"`,
-            `cd ..`,
-            `echo ""`,
-            ...otherRepos.map(repo => [
-                `echo "📁 Clonando ${repo.name}..."`,
-                `git clone https://github.com/panacea-icono/${repo.name}.git`,
-                `cd ${repo.name}`,
-                `echo "✅ ${repo.name} clonado exitosamente"`,
-                `cd ..`
-            ]).flat()
-        ].join('\n');
+    const cloneCommands = [
+      `echo "🎯 Clonando repositorio principal: ${mainRepo.name}"`,
+      `git clone https://github.com/panacea-icono/${mainRepo.name}.git`,
+      `cd ${mainRepo.name}`,
+      `echo "✅ ${mainRepo.name} clonado exitosamente"`,
+      `cd ..`,
+      `echo ""`,
+      ...otherRepos
+        .map((repo) => [
+          `echo "📁 Clonando ${repo.name}..."`,
+          `git clone https://github.com/panacea-icono/${repo.name}.git`,
+          `cd ${repo.name}`,
+          `echo "✅ ${repo.name} clonado exitosamente"`,
+          `cd ..`,
+        ])
+        .flat(),
+    ].join('\n');
 
-        return `#!/bin/bash
+    return `#!/bin/bash
 
 # =============================================================================
 # CLONE ALL REPOSITORIES - PANACEA ICONO SA
@@ -421,13 +458,13 @@ echo ""
 echo "🔗 Repositorio principal: https://github.com/panacea-icono/${mainRepo.name}"
 echo "📚 Lista completa: https://github.com/panacea-icono"
 `;
-    }
+  }
 
-    /**
-     * Genera un archivo de configuración para el ecosistema
-     */
-    generateEcosystemConfig() {
-        return `# =============================================================================
+  /**
+   * Genera un archivo de configuración para el ecosistema
+   */
+  generateEcosystemConfig() {
+    return `# =============================================================================
 # PANACEA ICONO ECOSYSTEM CONFIGURATION
 # =============================================================================
 # Configuración del ecosistema completo de Panacea Icono SA
@@ -470,69 +507,68 @@ CI_ENABLED=true
 CD_ENABLED=false
 DEPLOYMENT_ENVIRONMENT=development
 `;
+  }
+
+  /**
+   * Guarda los archivos generados
+   */
+  async saveFiles() {
+    // Crear directorio de salida si no existe
+    if (!fs.existsSync(this.outputDir)) {
+      fs.mkdirSync(this.outputDir, { recursive: true });
     }
 
-    /**
-     * Guarda los archivos generados
-     */
-    async saveFiles() {
-        // Crear directorio de salida si no existe
-        if (!fs.existsSync(this.outputDir)) {
-            fs.mkdirSync(this.outputDir, { recursive: true });
-        }
+    // Generar y guardar README
+    const readmeContent = this.generateRepositoriesList();
+    const readmePath = path.join(this.outputDir, 'REPOSITORIES.md');
+    fs.writeFileSync(readmePath, readmeContent);
+    console.log(`📄 README generado: ${readmePath}`);
 
-        // Generar y guardar README
-        const readmeContent = this.generateRepositoriesList();
-        const readmePath = path.join(this.outputDir, 'REPOSITORIES.md');
-        fs.writeFileSync(readmePath, readmeContent);
-        console.log(`📄 README generado: ${readmePath}`);
+    // Generar y guardar JSON
+    const jsonContent = this.generateJSONOutput();
+    const jsonPath = path.join(this.outputDir, 'repositories.json');
+    fs.writeFileSync(jsonPath, JSON.stringify(jsonContent, null, 2));
+    console.log(`📊 JSON generado: ${jsonPath}`);
 
-        // Generar y guardar JSON
-        const jsonContent = this.generateJSONOutput();
-        const jsonPath = path.join(this.outputDir, 'repositories.json');
-        fs.writeFileSync(jsonPath, JSON.stringify(jsonContent, null, 2));
-        console.log(`📊 JSON generado: ${jsonPath}`);
+    // Generar y guardar configuración de submódulos
+    const submodulesContent = this.generateGitSubmodulesConfig();
+    const submodulesPath = path.join(this.outputDir, 'git-submodules.txt');
+    fs.writeFileSync(submodulesPath, submodulesContent);
+    console.log(`🔗 Configuración de submódulos: ${submodulesPath}`);
 
-        // Generar y guardar configuración de submódulos
-        const submodulesContent = this.generateGitSubmodulesConfig();
-        const submodulesPath = path.join(this.outputDir, 'git-submodules.txt');
-        fs.writeFileSync(submodulesPath, submodulesContent);
-        console.log(`🔗 Configuración de submódulos: ${submodulesPath}`);
+    // Generar script de clonación
+    const cloneScript = this.generateCloneScript();
+    const cloneScriptPath = path.join(this.outputDir, 'clone-all-repos.sh');
+    fs.writeFileSync(cloneScriptPath, cloneScript);
+    fs.chmodSync(cloneScriptPath, '755');
+    console.log(`🚀 Script de clonación: ${cloneScriptPath}`);
 
-        // Generar script de clonación
-        const cloneScript = this.generateCloneScript();
-        const cloneScriptPath = path.join(this.outputDir, 'clone-all-repos.sh');
-        fs.writeFileSync(cloneScriptPath, cloneScript);
-        fs.chmodSync(cloneScriptPath, '755');
-        console.log(`🚀 Script de clonación: ${cloneScriptPath}`);
+    // Generar configuración del ecosistema
+    const ecosystemConfig = this.generateEcosystemConfig();
+    const ecosystemPath = path.join(this.outputDir, 'ecosystem-config.env');
+    fs.writeFileSync(ecosystemPath, ecosystemConfig);
+    console.log(`⚙️ Configuración del ecosistema: ${ecosystemPath}`);
+  }
 
-        // Generar configuración del ecosistema
-        const ecosystemConfig = this.generateEcosystemConfig();
-        const ecosystemPath = path.join(this.outputDir, 'ecosystem-config.env');
-        fs.writeFileSync(ecosystemPath, ecosystemConfig);
-        console.log(`⚙️ Configuración del ecosistema: ${ecosystemPath}`);
+  /**
+   * Ejecuta el proceso completo
+   */
+  async run() {
+    try {
+      console.log('🌐 Panacea Icono Repositories Generator');
+      console.log('='.repeat(60));
+
+      await this.saveFiles();
+
+      console.log('');
+      console.log('✅ Proceso completado exitosamente!');
+      console.log(`📊 Se procesaron ${this.repositories.length} repositorios`);
+      console.log('📁 Archivos generados en: ./docs/');
+    } catch (error) {
+      console.error('❌ Error en el proceso:', error.message);
+      process.exit(1);
     }
-
-    /**
-     * Ejecuta el proceso completo
-     */
-    async run() {
-        try {
-            console.log('🌐 Panacea Icono Repositories Generator');
-            console.log('=' .repeat(60));
-            
-            await this.saveFiles();
-            
-            console.log('');
-            console.log('✅ Proceso completado exitosamente!');
-            console.log(`📊 Se procesaron ${this.repositories.length} repositorios`);
-            console.log('📁 Archivos generados en: ./docs/');
-            
-        } catch (error) {
-            console.error('❌ Error en el proceso:', error.message);
-            process.exit(1);
-        }
-    }
+  }
 }
 
 // =============================================================================
@@ -540,33 +576,33 @@ DEPLOYMENT_ENVIRONMENT=development
 // =============================================================================
 
 if (require.main === module) {
-    const generator = new PanaceaReposGenerator();
-    const command = process.argv[2];
+  const generator = new PanaceaReposGenerator();
+  const command = process.argv[2];
 
-    switch (command) {
-        case 'generate':
-        case 'list':
-            generator.run();
-            break;
+  switch (command) {
+    case 'generate':
+    case 'list':
+      generator.run();
+      break;
 
-        case 'json':
-            console.log(JSON.stringify(generator.generateJSONOutput(), null, 2));
-            break;
+    case 'json':
+      console.log(JSON.stringify(generator.generateJSONOutput(), null, 2));
+      break;
 
-        case 'submodules':
-            console.log(generator.generateGitSubmodulesConfig());
-            break;
+    case 'submodules':
+      console.log(generator.generateGitSubmodulesConfig());
+      break;
 
-        case 'clone':
-            console.log(generator.generateCloneScript());
-            break;
+    case 'clone':
+      console.log(generator.generateCloneScript());
+      break;
 
-        case 'config':
-            console.log(generator.generateEcosystemConfig());
-            break;
+    case 'config':
+      console.log(generator.generateEcosystemConfig());
+      break;
 
-        default:
-            console.log(`
+    default:
+      console.log(`
 🌐 Panacea Icono Repositories Generator
 
 Uso: node panacea-repos-generator.js <comando>
@@ -586,7 +622,7 @@ Ejemplos:
   node panacea-repos-generator.js clone
   node panacea-repos-generator.js config
             `);
-    }
+  }
 }
 
 module.exports = PanaceaReposGenerator;

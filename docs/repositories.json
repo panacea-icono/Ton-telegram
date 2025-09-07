@@ -554,12 +554,7 @@
       "pushedAt": "2025-08-31T08:13:03Z",
       "isPrivate": true,
       "isFork": false,
-      "topics": [
-        "celery",
-        "fastapi",
-        "openai",
-        "python"
-      ],
+      "topics": ["celery", "fastapi", "openai", "python"],
       "defaultBranch": "main",
       "license": "Sin licencia"
     },
@@ -625,12 +620,7 @@
       "pushedAt": "2025-08-30T00:07:32Z",
       "isPrivate": false,
       "isFork": false,
-      "topics": [
-        "examples",
-        "nodejs",
-        "openai",
-        "python"
-      ],
+      "topics": ["examples", "nodejs", "openai", "python"],
       "defaultBranch": "examples",
       "license": "Sin licencia"
     },
@@ -872,10 +862,7 @@
       "pushedAt": "2025-08-31T23:26:22Z",
       "isPrivate": false,
       "isFork": false,
-      "topics": [
-        "3d",
-        "simulatorr"
-      ],
+      "topics": ["3d", "simulatorr"],
       "defaultBranch": "main",
       "license": "Sin licencia"
     },

@@ -26,13 +26,21 @@ function detectSecrets(content, file) {
     { name: 'GitHub PAT', re: /ghp_[A-Za-z0-9]{36,}/g },
     { name: 'Telegram Bot Token', re: /\b\d{7,12}:[A-Za-z0-9_-]{30,}\b/g },
     { name: 'JWT Secret', re: /JWT_SECRET\s*=\s*[^\n]+/g },
-    { name: 'Private Key (PEM)', re: /-----BEGIN (RSA |EC )?PRIVATE KEY-----/g },
-    { name: 'API Key', re: /api[_-]?key\s*[:=]\s*['\"][A-Za-z0-9_\-]{16,}['\"]/gi }
+    {
+      name: 'Private Key (PEM)',
+      re: /-----BEGIN (RSA |EC )?PRIVATE KEY-----/g,
+    },
+    {
+      name: 'API Key',
+      re: /api[_-]?key\s*[:=]\s*['\"][A-Za-z0-9_\-]{16,}['\"]/gi,
+    },
   ];
   for (const c of checks) {
     if (c.re.test(content)) findings.push(c.name);
   }
-  return findings.length ? { file, types: Array.from(new Set(findings)) } : null;
+  return findings.length
+    ? { file, types: Array.from(new Set(findings)) }
+    : null;
 }
 
 function run() {
@@ -54,10 +62,14 @@ function run() {
   sections.push('');
   sections.push('## Estado general');
   sections.push('- Pruebas automatizadas: pendientes (no hay tests)');
-  sections.push(`- Archivo .env presente: ${envPresent ? 'sí (ignorado por git)' : 'no detectado'}`);
+  sections.push(
+    `- Archivo .env presente: ${envPresent ? 'sí (ignorado por git)' : 'no detectado'}`
+  );
   sections.push('- Scripts clave presentes:');
   sections.push('  - Multi-bot orchestrator: scripts/bots/orchestrator.js');
-  sections.push('  - Cumplimiento Telegram: scripts/telegram-compliance-check.js');
+  sections.push(
+    '  - Cumplimiento Telegram: scripts/telegram-compliance-check.js'
+  );
   sections.push('  - GitHub manager: scripts/github-repos-manager.js');
   sections.push('  - GitHub org sync: scripts/github-org-sync.js');
   sections.push('  - Auditoría v2: docs/auditoria-proyecto-v2.txt');
@@ -65,12 +77,16 @@ function run() {
 
   sections.push('## Posibles secretos (heurística)');
   if (!findings.length) sections.push('- Sin hallazgos evidentes en el código');
-  else for (const f of findings) sections.push(`- ${f.file}: ${f.types.join(', ')}`);
+  else
+    for (const f of findings)
+      sections.push(`- ${f.file}: ${f.types.join(', ')}`);
   sections.push('');
 
   sections.push('## Recomendaciones');
   sections.push('- Añadir tests y pipeline CI (lint + test).');
-  sections.push('- Implementar pagos con Stars y enforcement TON-only si la Mini App usa cripto.');
+  sections.push(
+    '- Implementar pagos con Stars y enforcement TON-only si la Mini App usa cripto.'
+  );
   sections.push('- Añadir anti-spam y módulo admin/broadcast seguro.');
   sections.push('- Agregar Dockerfiles por servicio y revisar compose.');
   sections.push('');
@@ -87,4 +103,3 @@ function run() {
 if (require.main === module) run();
 
 module.exports = { run };
-

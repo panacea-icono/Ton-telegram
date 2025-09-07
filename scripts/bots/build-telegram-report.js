@@ -93,26 +93,37 @@ function main() {
   const withToken = rows.filter((r) => r.tokenPresent).length;
   const withPublisher = rows.filter((r) => r.publisher).length;
   md.push(`- Total bots: ${total}`);
-  md.push(`- Bots con token cargado (.env.telegram.local): ${withToken}/${total}`);
+  md.push(
+    `- Bots con token cargado (.env.telegram.local): ${withToken}/${total}`
+  );
   md.push(`- Bots con módulo publisher activo: ${withPublisher}/${total}`);
   md.push('');
-  md.push('| Bot | Handle | Env Var | Bot ID | Link | Módulos | Publisher | Token |');
+  md.push(
+    '| Bot | Handle | Env Var | Bot ID | Link | Módulos | Publisher | Token |'
+  );
   md.push('|---|---|---|---:|---|---|:---:|---|');
   for (const r of rows) {
-    md.push(`| ${r.name} | ${r.handle} | ${r.envVar} | ${r.botId} | ${r.link} | ${r.modules || '-'} | ${r.publisher ? '✔' : '—'} | ${r.tokenPresent ? '✔' : '—'} |`);
+    md.push(
+      `| ${r.name} | ${r.handle} | ${r.envVar} | ${r.botId} | ${r.link} | ${r.modules || '-'} | ${r.publisher ? '✔' : '—'} | ${r.tokenPresent ? '✔' : '—'} |`
+    );
   }
   md.push('');
   md.push('> Nota: los tokens no se muestran; sólo se indica presencia.');
 
   const outDir = path.resolve('audits');
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
-  const outFile = path.join(outDir, `telegram-bots-report-${now.replace(/[:]/g, '')}.md`);
+  const outFile = path.join(
+    outDir,
+    `telegram-bots-report-${now.replace(/[:]/g, '')}.md`
+  );
   fs.writeFileSync(outFile, md.join('\n'));
-  fs.writeFileSync(path.join(outDir, 'telegram-bots-report-latest.md'), md.join('\n'));
+  fs.writeFileSync(
+    path.join(outDir, 'telegram-bots-report-latest.md'),
+    md.join('\n')
+  );
   console.log(`✅ Reporte generado: ${outFile}`);
 }
 
 if (require.main === module) main();
 
 module.exports = { main };
-

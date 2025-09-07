@@ -3,7 +3,9 @@
 // Obtén tu ID numérico de Telegram en segundos.
 // Usa un bot token (BOT_TOKEN) o toma el primero de .env.telegram.local.
 
-try { require('dotenv').config(); } catch (_) {}
+try {
+  require('dotenv').config();
+} catch (_) {}
 const fs = require('fs');
 const path = require('path');
 
@@ -36,25 +38,39 @@ async function main() {
   let source = explicit ? 'BOT_TOKEN' : '';
   if (!token) {
     const picked = pickAnyToken();
-    if (picked) { token = picked.token; source = picked.key; }
+    if (picked) {
+      token = picked.token;
+      source = picked.key;
+    }
   }
   if (!token) {
-    console.error('❌ No se encontró BOT_TOKEN ni .env.telegram.local con BOT_*_TOKEN');
-    console.error('   Exporta BOT_TOKEN o crea .env.telegram.local con BOT_<HANDLE>_TOKEN=...');
+    console.error(
+      '❌ No se encontró BOT_TOKEN ni .env.telegram.local con BOT_*_TOKEN'
+    );
+    console.error(
+      '   Exporta BOT_TOKEN o crea .env.telegram.local con BOT_<HANDLE>_TOKEN=...'
+    );
     process.exit(2);
   }
 
   const TelegramBot = require('node-telegram-bot-api');
   const bot = new TelegramBot(token, { polling: true });
 
-  bot.getMe().then((me) => {
-    console.log(`🤖 Bot @${me.username} listo (token de: ${source}).`);
-    console.log('➡️  Envía un mensaje a este bot desde tu cuenta para capturar tu ID.');
-    console.log('   (Puedes escribir /start o /whoami si lo tienes disponible)');
-  }).catch((e) => {
-    console.error('❌ Error al inicializar el bot:', e.message);
-    process.exit(1);
-  });
+  bot
+    .getMe()
+    .then((me) => {
+      console.log(`🤖 Bot @${me.username} listo (token de: ${source}).`);
+      console.log(
+        '➡️  Envía un mensaje a este bot desde tu cuenta para capturar tu ID.'
+      );
+      console.log(
+        '   (Puedes escribir /start o /whoami si lo tienes disponible)'
+      );
+    })
+    .catch((e) => {
+      console.error('❌ Error al inicializar el bot:', e.message);
+      process.exit(1);
+    });
 
   const once = process.argv.includes('--once');
 
@@ -71,8 +87,10 @@ async function main() {
 }
 
 if (require.main === module) {
-  main().catch((e) => { console.error('❌', e.message); process.exit(1); });
+  main().catch((e) => {
+    console.error('❌', e.message);
+    process.exit(1);
+  });
 }
 
-module.exports = { };
-
+module.exports = {};

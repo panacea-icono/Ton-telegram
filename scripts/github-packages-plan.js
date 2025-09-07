@@ -1,12 +1,17 @@
 #!/usr/bin/env node
 
-try { require('dotenv').config(); } catch (_) {}
+try {
+  require('dotenv').config();
+} catch (_) {}
 const fs = require('fs');
 const path = require('path');
 
 function loadRepos() {
   const p = path.resolve('docs/repositories.json');
-  if (!fs.existsSync(p)) throw new Error('docs/repositories.json no encontrado. Ejecuta github:repos:list');
+  if (!fs.existsSync(p))
+    throw new Error(
+      'docs/repositories.json no encontrado. Ejecuta github:repos:list'
+    );
   const data = JSON.parse(fs.readFileSync(p, 'utf8'));
   return data.repositories || [];
 }
@@ -25,8 +30,18 @@ function packagePlan(repo) {
   const scope = '@panacea-icono';
   const npm = `${scope}/${pkg}`;
   const ghcr = `ghcr.io/panacea-icono/${pkg}`;
-  const type = lang.includes('javascript') || lang.includes('typescript') ? 'node' : 'container';
-  return { name, fullName: repo.fullName, language: repo.language, type, npm, ghcr };
+  const type =
+    lang.includes('javascript') || lang.includes('typescript')
+      ? 'node'
+      : 'container';
+  return {
+    name,
+    fullName: repo.fullName,
+    language: repo.language,
+    type,
+    npm,
+    ghcr,
+  };
 }
 
 function buildDocs(plans, tag) {
@@ -70,13 +85,27 @@ function main() {
   const tag = ecosystemTag();
   const dir = path.resolve('docs/releases');
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'PACKAGES_MANIFEST.json'), JSON.stringify({ generatedAt: new Date().toISOString(), tag, items: plans }, null, 2));
+  fs.writeFileSync(
+    path.join(dir, 'PACKAGES_MANIFEST.json'),
+    JSON.stringify(
+      { generatedAt: new Date().toISOString(), tag, items: plans },
+      null,
+      2
+    )
+  );
   fs.writeFileSync(path.join(dir, 'PACKAGES_PLAN.md'), buildDocs(plans, tag));
-  console.log(`✅ PACKAGES plan generado para ${plans.length} repos → docs/releases/PACKAGES_PLAN.md`);
+  console.log(
+    `✅ PACKAGES plan generado para ${plans.length} repos → docs/releases/PACKAGES_PLAN.md`
+  );
 }
 
 if (require.main === module) {
-  try { main(); } catch (e) { console.error('❌', e.message); process.exit(1); }
+  try {
+    main();
+  } catch (e) {
+    console.error('❌', e.message);
+    process.exit(1);
+  }
 }
 
 module.exports = { main };

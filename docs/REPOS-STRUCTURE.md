@@ -3,25 +3,29 @@
 Estructura generada automáticamente.
 
 ## APPS
+
 - apps/PANAS_PAY_APP → https://github.com/panacea-icono/PANAS_PAY_APP.git — INTERFACE DE PAGOS PARA EL ECOSISTEMA PANACES Y SUS AFILIADOS
 - apps/panas-app → https://github.com/panacea-icono/panas-app.git — tokenization app
-- apps/Ton-telegram → https://github.com/panacea-icono/Ton-telegram.git — Bot de telegram wallet interfaz de pagos 
+- apps/Ton-telegram → https://github.com/panacea-icono/Ton-telegram.git — Bot de telegram wallet interfaz de pagos
 
 ## TOKENS
+
 - tokens/panas_token → https://github.com/panacea-icono/panas_token.git — Sin descripción
 - tokens/PANAS_TOKENIZER_SURGERY → https://github.com/panacea-icono/PANAS_TOKENIZER_SURGERY.git — Tokenización médica y estética de cirugías reales en Algorand – NFTs redimibles, asegurables y transferibles. Bienvenidos a la clínica del futuro.
-- tokens/PANAS-TOKEN → https://github.com/panacea-icono/PANAS-TOKEN.git — PANACEA ALGORAND STABLE TOKEN 
+- tokens/PANAS-TOKEN → https://github.com/panacea-icono/PANAS-TOKEN.git — PANACEA ALGORAND STABLE TOKEN
 - tokens/panas-token.M → https://github.com/panacea-icono/panas-token.M.git — Sin descripción
 - tokens/TOKENIZER-NFT → https://github.com/panacea-icono/TOKENIZER-NFT.git — TOKENIZATION SISTEM
 
 ## CONTRACTS
+
 - contracts/panacea_smart_contracts → https://github.com/panacea-icono/panacea_smart_contracts.git — Este repositorio contiene un conjunto de smart contracts del ecosistema panacea icono, panas token y panas pay
 
 ## INFRA
+
 - infra/civitAI → https://github.com/panacea-icono/civitAI.git — modelo de negocios con ia
 - infra/fibonacci → https://github.com/panacea-icono/fibonacci.git — Sin descripción
 - infra/FIBONACCI_LAB → https://github.com/panacea-icono/FIBONACCI_LAB.git — 3D MODEL SIMULATOR PLASTIC SURGERY SIMULATOR WITH IA MODELS
-- infra/fibonacci_maestro → https://github.com/panacea-icono/fibonacci_maestro.git — repositorio maestro de la api medica de cirugia plastica 
+- infra/fibonacci_maestro → https://github.com/panacea-icono/fibonacci_maestro.git — repositorio maestro de la api medica de cirugia plastica
 - infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO → https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git — REFOSITORIO DE MODULOS FINAL, APPS MEDICAS IA INTEGRADA
 - infra/modelos_civitai → https://github.com/https-panacea-icono-org/modelos_civitai.git — DATASETS-MODELS-SPACE
 - infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK → https://github.com/panacea-icono/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK.git — LANDING PAGE DE LA EMPRESA PANACEA-ICONO.ORG, QUE CONCENTRA TRES SRL, EL CENTENIAL, CASARED Y BOMGO CLUB
@@ -30,9 +34,10 @@ Estructura generada automáticamente.
 - infra/tutor_academico_CIRUGIA_I-II-III → https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git — TUTOR ACADEMICO DE MEDICINA Y CIRUGIA PLASTICA
 
 ## LABS
+
 - labs/aiadult-platform → https://github.com/panacea-icono/aiadult-platform.git — AIAdult Platform: FastAPI + Celery backend with OpenAI integration
 - labs/api_modelo_piloto → https://github.com/panacea-icono/api_modelo_piloto.git — pornografia interactriva
-- labs/biblioteca-kuchiuya → https://github.com/panacea-icono/biblioteca-kuchiuya.git — kuchiuya file, kuchiuyas gpt, kuchiuyas ia 
+- labs/biblioteca-kuchiuya → https://github.com/panacea-icono/biblioteca-kuchiuya.git — kuchiuya file, kuchiuyas gpt, kuchiuyas ia
 - labs/CASA-RED-SRL → https://github.com/panacea-icono/CASA-RED-SRL.git — REAL STATE TOKENIZATION
 - labs/coca → https://github.com/panacea-icono/coca.git — Sin descripción
 - labs/codex-github → https://github.com/panacea-icono/codex-github.git — Proyecto de Asistente GitHub (Codex)
@@ -49,7 +54,7 @@ Estructura generada automáticamente.
 - labs/HUGGING_FACE → https://github.com/panacea-icono/HUGGING_FACE.git — DATASETS-MODELS-SPACE
 - labs/HUGGING_FACE → https://github.com/https-panacea-icono-org/HUGGING_FACE.git — DATASETS-MODELS-SPACE
 - labs/iaadult → https://github.com/panacea-icono/iaadult.git — OpenAI SDK examples (Python/Node) and Codex tooling
-- labs/kuchiuyas → https://github.com/panacea-icono/kuchiuyas.git — nft y contenido 
+- labs/kuchiuyas → https://github.com/panacea-icono/kuchiuyas.git — nft y contenido
 - labs/kuchiuyasM → https://github.com/panacea-icono/kuchiuyasM.git — Sin descripción
 - labs/macuquina_proyecto → https://github.com/panacea-icono/macuquina_proyecto.git — La Macuquina es un proyecto de tokenización patrimonial inspirado en las monedas coloniales de Potosí, orientado a rescatar el legado del Cerro Rico mediante blockchain. Utiliza NFTs, contratos inteligentes en Algorand, y un modelo de DAO para gobernanza comunitaria del patrimonio simbólico.
 - labs/Marilyn_Monroe → https://github.com/panacea-icono/Marilyn_Monroe.git — modelo de generación de imágenes de Marilyn Monroe
@@ -69,7 +74,6 @@ Estructura generada automáticamente.
 - labs/UNIVERSOLIFE → https://github.com/panacea-icono/UNIVERSOLIFE.git — Landing web app de empresas panacea icono sociedad anonima
 - labs/vite-react → https://github.com/panacea-icono/vite-react.git — Sin descripción
 - labs/voice → https://github.com/panacea-icono/voice.git — texto to voice
-
 
 ---
 
