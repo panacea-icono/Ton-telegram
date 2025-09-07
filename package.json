@@ -1,0 +1,223 @@
+{
+  "name": "panas-token-ecosystem",
+  "version": "1.0.0",
+  "description": "Ecosistema multichain Panas Token - Panacea | Icono SA",
+  "main": "index.js",
+  "scripts": {
+    "setup": "./setup.sh",
+    "start": "node scripts/start-all.js",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run dev:bot\"",
+    "dev:backend": "cd backend/router && npm run dev",
+    "dev:frontend": "cd frontend/dashboard && npm run dev",
+    "dev:bot": "cd frontend/telegram-bot && npm run dev",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd backend/router && npm run build",
+    "build:frontend": "cd frontend/dashboard && npm run build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint . --ext .js,.ts,.tsx,.jsx",
+    "lint:fix": "eslint . --ext .js,.ts,.tsx,.jsx --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "submodules:init": "git submodule init",
+    "submodules:update": "git submodule update --remote --recursive",
+    "submodules:status": "git submodule status",
+    "clean": "rm -rf node_modules && find . -name 'node_modules' -type d -exec rm -rf {} +",
+    "install:all": "npm install && npm run submodules:update && npm run install:submodules",
+    "install:submodules": "find . -name 'package.json' -not -path './node_modules/*' -execdir npm install \\;",
+    "health": "node scripts/health-check.js",
+    "deploy:staging": "node scripts/deploy.js --env=staging",
+    "deploy:production": "node scripts/deploy.js --env=production"
+  },
+  "keywords": [
+    "blockchain",
+    "multichain",
+    "ton",
+    "solana",
+    "algorand",
+    "bsc",
+    "telegram",
+    "wallet",
+    "defi",
+    "panacea",
+    "panas-token",
+    "medical-payments",
+    "nf-domains"
+  ],
+  "author": "Panacea | Icono SA <info@iconosa.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/panacea-icono/Ton-telegram.git"
+  },
+  "bugs": {
+    "url": "https://github.com/panacea-icono/Ton-telegram/issues"
+  },
+  "homepage": "https://github.com/panacea-icono/Ton-telegram#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "@ton/ton": "^13.0.0",
+    "@ton/crypto": "^3.0.0",
+    "@ton/tonweb": "^0.0.65",
+    "@solana/web3.js": "^1.87.6",
+    "@solana/spl-token": "^0.3.9",
+    "algosdk": "^2.7.0",
+    "web3": "^4.3.0",
+    "ethers": "^6.8.1",
+    "axios": "^1.6.2",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "dotenv": "^16.3.1",
+    "joi": "^17.11.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "redis": "^4.6.10",
+    "pg": "^8.11.3",
+    "mongoose": "^8.0.3",
+    "node-telegram-bot-api": "^0.64.0",
+    "ws": "^8.14.2",
+    "socket.io": "^4.7.4",
+    "winston": "^3.11.0",
+    "winston-daily-rotate-file": "^4.7.1",
+    "cron": "^3.1.6",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.7",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.32.6",
+    "compression": "^1.7.4",
+    "rate-limiter-flexible": "^4.0.1",
+    "express-rate-limit": "^7.1.5",
+    "swagger-ui-express": "^5.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.4",
+    "@types/express": "^4.17.21",
+    "@types/cors": "^2.8.17",
+    "@types/morgan": "^1.9.9",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/pg": "^8.10.9",
+    "@types/multer": "^1.4.11",
+    "@types/compression": "^1.7.5",
+    "@types/jest": "^29.5.8",
+    "@types/supertest": "^2.0.16",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.1.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.10",
+    "@types/node-cron": "^3.0.11",
+    "@types/nodemailer": "^6.4.14",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-security": "^1.7.1",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "jest-environment-node": "^29.7.0",
+    "ts-jest": "^29.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "**/*.{js,ts}",
+      "!**/node_modules/**",
+      "!**/coverage/**",
+      "!**/*.config.js",
+      "!**/dist/**",
+      "!**/build/**"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.{js,ts}",
+      "**/?(*.)+(spec|test).{js,ts}"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/tests/setup.js"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "@typescript-eslint/recommended",
+      "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "@typescript-eslint/no-unused-vars": "error",
+      "@typescript-eslint/explicit-function-return-type": "warn",
+      "no-console": "warn",
+      "no-debugger": "error"
+    },
+    "env": {
+      "node": true,
+      "es2021": true,
+      "jest": true
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
