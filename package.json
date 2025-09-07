@@ -38,6 +38,8 @@
     "github:token:check": "node scripts/github-token-verify.js",
     "org:structure": "node scripts/org-structure.js",
     "org:sync": "node scripts/github-org-sync.js",
+    "github:releases:plan": "node scripts/github-release-orchestrator.js plan",
+    "github:releases:apply": "node scripts/github-release-orchestrator.js apply",
     "telegram:compliance:check": "node scripts/telegram-compliance-check.js",
     "bots:start": "node scripts/bots/orchestrator.js",
     "bots:validate": "node scripts/bots/validate-bots.js",

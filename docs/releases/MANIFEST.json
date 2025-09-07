@@ -1,0 +1,529 @@
+{
+  "generatedAt": "2025-09-07T17:45:39.052Z",
+  "tag": "v0.1.0-ecosystem-20250907",
+  "count": 58,
+  "items": [
+    {
+      "name": "Ton-telegram",
+      "fullName": "panacea-icono/Ton-telegram",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "JavaScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "repositorio-modular-fibonacci-ia-integrado",
+      "fullName": "panacea-icono/repositorio-modular-fibonacci-ia-integrado",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Sin especificar",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "dr_tv_GPT",
+      "fullName": "panacea-icono/dr_tv_GPT",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "TypeScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "dr_tv_gp",
+      "fullName": "panacea-icono/dr_tv_gp",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "TypeScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "panas_pay",
+      "fullName": "panacea-icono/panas_pay",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "TypeScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "dr-de-la-tvr",
+      "fullName": "panacea-icono/dr-de-la-tvr",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "TypeScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "panas_token",
+      "fullName": "panacea-icono/panas_token",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "TypeScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "panas-app",
+      "fullName": "panacea-icono/panas-app",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "TypeScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "Dr_dela_TV",
+      "fullName": "panacea-icono/Dr_dela_TV",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Sin especificar",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "tutor_academico_CIRUGIA_I-II-III",
+      "fullName": "panacea-icono/tutor_academico_CIRUGIA_I-II-III",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "HUGGING_FACE",
+      "fullName": "panacea-icono/HUGGING_FACE",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "JavaScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "modelos_civitai",
+      "fullName": "https-panacea-icono-org/modelos_civitai",
+      "private": true,
+      "fork": true,
+      "defaultBranch": "main",
+      "language": "Sin especificar",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "HUGGING_FACE",
+      "fullName": "https-panacea-icono-org/HUGGING_FACE",
+      "private": true,
+      "fork": true,
+      "defaultBranch": "main",
+      "language": "Sin especificar",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "civitAI",
+      "fullName": "panacea-icono/civitAI",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "master",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "Marilyn_Monroe",
+      "fullName": "panacea-icono/Marilyn_Monroe",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "dua_lipa_model_image_ia",
+      "fullName": "panacea-icono/dua_lipa_model_image_ia",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Sin especificar",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "api_modelo_piloto",
+      "fullName": "panacea-icono/api_modelo_piloto",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Shell",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+      "fullName": "panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "fibonacci_maestro",
+      "fullName": "panacea-icono/fibonacci_maestro",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Shell",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "vite-react",
+      "fullName": "panacea-icono/vite-react",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "CSS",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "biblioteca-kuchiuya",
+      "fullName": "panacea-icono/biblioteca-kuchiuya",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "panas-pay",
+      "fullName": "panacea-icono/panas-pay",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "master",
+      "language": "TypeScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "panas_multichain",
+      "fullName": "panacea-icono/panas_multichain",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "PHP",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "PANAS_TOKENIZER_SURGERY",
+      "fullName": "panacea-icono/PANAS_TOKENIZER_SURGERY",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "aiadult-platform",
+      "fullName": "panacea-icono/aiadult-platform",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "kuchiuyas",
+      "fullName": "panacea-icono/kuchiuyas",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "codex-github",
+      "fullName": "panacea-icono/codex-github",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Shell",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "iaadult",
+      "fullName": "panacea-icono/iaadult",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "examples",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "PANAS-TOKEN",
+      "fullName": "panacea-icono/PANAS-TOKEN",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "fibonacci",
+      "fullName": "panacea-icono/fibonacci",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "CSS",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "panacea-icono",
+      "fullName": "panacea-icono/panacea-icono",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "REDES",
+      "fullName": "panacea-icono/REDES",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "TypeScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "gpt-local",
+      "fullName": "panacea-icono/gpt-local",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Shell",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "kuchiuyasM",
+      "fullName": "panacea-icono/kuchiuyasM",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "TypeScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "Panas-Pay.M",
+      "fullName": "panacea-icono/Panas-Pay.M",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "master",
+      "language": "TypeScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "panas-token.M",
+      "fullName": "panacea-icono/panas-token.M",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "PANACEA-API-CENTRAL-CODEX",
+      "fullName": "panacea-icono/PANACEA-API-CENTRAL-CODEX",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Sin especificar",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "home",
+      "fullName": "panacea-icono/home",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Sin especificar",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "FIBONACCI_LAB",
+      "fullName": "panacea-icono/FIBONACCI_LAB",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "codex-main",
+      "fullName": "panacea-icono/codex-main",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "MODELOS",
+      "fullName": "panacea-icono/MODELOS",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "voice",
+      "fullName": "panacea-icono/voice",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "panacea_smart_contracts",
+      "fullName": "panacea-icono/panacea_smart_contracts",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "PANAS_PAY_APP",
+      "fullName": "panacea-icono/PANAS_PAY_APP",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "TypeScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "privacidad_seguridad",
+      "fullName": "panacea-icono/privacidad_seguridad",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Sin especificar",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "CASA-RED-SRL",
+      "fullName": "panacea-icono/CASA-RED-SRL",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Sin especificar",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+      "fullName": "panacea-icono/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Solidity",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "Super-code-tasker",
+      "fullName": "https-panacea-icono-org/Super-code-tasker",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "TypeScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "coca",
+      "fullName": "panacea-icono/coca",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "master",
+      "language": "TypeScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "macuquina_proyecto",
+      "fullName": "panacea-icono/macuquina_proyecto",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "nextjs-with-supabase",
+      "fullName": "panacea-icono/nextjs-with-supabase",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "TypeScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "UNIVERSOLIFE",
+      "fullName": "panacea-icono/UNIVERSOLIFE",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "TypeScript",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "GPT-MAESTRO-PANACEA",
+      "fullName": "https-panacea-icono-org/GPT-MAESTRO-PANACEA",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Sin especificar",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "GPTApi",
+      "fullName": "panacea-icono/GPTApi",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "TOKENIZER-NFT",
+      "fullName": "panacea-icono/TOKENIZER-NFT",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Sin especificar",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "PANACEA-GPT-I",
+      "fullName": "panacea-icono/PANACEA-GPT-I",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Python",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "MEDIOS-REDES",
+      "fullName": "panacea-icono/MEDIOS-REDES",
+      "private": false,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "Sin especificar",
+      "tag": "v0.1.0-ecosystem-20250907"
+    },
+    {
+      "name": "PANACEA_MD",
+      "fullName": "panacea-icono/PANACEA_MD",
+      "private": true,
+      "fork": false,
+      "defaultBranch": "main",
+      "language": "HTML",
+      "tag": "v0.1.0-ecosystem-20250907"
+    }
+  ]
+}
