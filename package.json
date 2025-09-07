@@ -1,6 +1,6 @@
 {
   "name": "panas-token-ecosystem",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ecosistema multichain Panas Token - Panacea | Icono SA",
   "main": "index.js",
   "scripts": {
