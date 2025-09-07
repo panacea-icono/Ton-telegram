@@ -1,0 +1,56 @@
+# 🟣 GS — SMART GLOBAL TOKEN — Informe Técnico
+
+## 📖 Resumen
+**SMART GLOBAL TOKEN (GS)** es un token desplegado en **Solana**, utilizando el **Token 2022 Program**, que introduce extensiones avanzadas sobre el estándar SPL.  
+Se encuentra listado en varios pools de **Dexlab**, y sirve como un experimento de integración entre diferentes tokens comunitarios.
+
+---
+
+## 📑 Datos Vitales
+- **Mint Address:** `A1keUDicm5qfjjpjwhabK5EqVtBkkcdWGVjDXMqvbZ3w`
+- **Programa:** Token 2022 Program
+- **Update Authority / Creator:** `QLuFdPtfDrv3bAZfFZmb24aDQkKQfXUt2pPoD`
+- **Metadata URI:**  
+  [https://gateway.irys.xyz/j9gTD1XOP8j3OXpJ_uMSvrQ3totPZ0J6ue6iceaRDxC](https://gateway.irys.xyz/j9gTD1XOP8j3OXpJ_uMSvrQ3totPZ0J6ue6iceaRDxC)
+- **Nombre:** SMART GLOBAL TOKEN  
+- **Símbolo:** GS
+- **Holders:** ~67 (según Solscan, septiembre 2025)
+- **Pools Dexlab:**
+  - GS-Kuchicoin
+  - GS-SOL
+  - GS-USDC
+  - PUGCOIN-GS
+
+---
+
+## 📊 Observaciones de la Red
+- **Token 2022:** requiere librerías actualizadas de `@solana/spl-token` con soporte a extensiones.  
+- **Pools múltiples en Dexlab** → liquidez distribuida en varios pares.  
+- **Concentración de holders** relativamente alta.
+
+---
+
+## ⚠️ Riesgos Identificados
+1. **Extensiones Token-2022**: poco soporte en herramientas antiguas.  
+2. **Metadata mutable**: cambios posibles en branding, pero no en supply.  
+3. **No hay casos de uso concretos** más allá del trading y pruebas comunitarias.
+
+---
+
+## 🔧 Integración en el Ecosistema Panas
+- Puede servir como par experimental (ej. PANAS-GS en Dexlab).  
+- El router backend puede aceptar GS como pago y convertirlo en PANAS o USDC.  
+- Dashboard: mostrar **pools activas** y **estado de metadata**.
+
+---
+
+## 📍 Recomendaciones
+- Mantener metadata actualizada en Arweave/IPFS.  
+- Monitorear soporte de librerías Token-2022 en integraciones.  
+- Consolidar liquidez en un par estable (ej. GS-USDC).  
+
+---
+
+## ✅ Conclusión
+**GS** es un token experimental en Solana con extensiones avanzadas del programa Token-2022.  
+Aunque no es ideal como medio de pago, puede aportar liquidez y servir como punto de integración con el ecosistema **Panas Token**.

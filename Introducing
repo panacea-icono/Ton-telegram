@@ -1,0 +1,65 @@
+# 📘 Introducción
+
+## 🌍 Visión del Proyecto
+**Panas Token** nace como un ecosistema de pagos digitales enfocado en el sector médico y de cirugía plástica, con el objetivo de facilitar transacciones rápidas, seguras y transparentes a través de **Telegram TON Wallet**.
+
+El proyecto busca unir lo mejor de tres mundos:
+- **TON** (The Open Network): integración nativa con Telegram y Jettons.
+- **Solana**: alta velocidad, bajos costos y soporte DeFi (Raydium, Meteora).
+- **BSC**: liquidez extendida en PancakeSwap y compatibilidad EVM.
+
+---
+
+## 💡 Motivación
+Los tokens existentes en el ecosistema — **GS (SMART GLOBAL TOKEN)**, **VASER TOKEN** y **KUCHI (Kuchicoin)** — fueron creados como experimentos iniciales. Sin embargo, presentan limitaciones:
+- **GS y VASER (Solana)** → supply inmutable, metadata modificable, pero alta concentración de holders.
+- **KUCHI (BSC)** → contrato con reflection, blacklist y pause; funcional pero con riesgos de confianza.
+
+Con estas experiencias, **Panas Token** se diseña desde cero para evitar errores comunes:
+- Sin impuestos ni mecánicas ocultas.
+- Sin blacklist ni pausas globales.
+- Transparencia en supply, authorities y liquidez.
+- Uso de **multisig** para la tesorería y las funciones críticas.
+
+---
+
+## 🔑 Objetivos
+1. **Pagos en Telegram**  
+   - Integrar Panas Token como medio de pago directo en bots y mini-apps.  
+   - Usar **TonConnect** para firmas seguras.
+
+2. **Liquidez y Acceso**  
+   - Pools en Raydium/Meteora (Solana) y DeDust/STON.fi (TON).  
+   - LP tokens bloqueados en multisig o contratos de timelock.
+
+3. **Interoperabilidad**  
+   - Router off-chain que acepte GS, VASER, KUCHI y los convierta en PANAS o USDC.  
+   - Soporte cross-chain opcional vía bridges.
+
+4. **Identidad y Branding**  
+   - Dominios oficiales: `panas.ton` y `panas.sol`.  
+   - Metadata en Arweave/IPFS.  
+   - Vinculación con **nfdomains** para presencia digital.
+
+---
+
+## 🚀 Qué aporta Panas Token
+- **Simplicidad** → supply definido, sin funciones que generen dudas.  
+- **Confiabilidad** → contratos auditables, autoridades en multisig.  
+- **Multicadena** → interoperable entre TON, Solana y BSC.  
+- **Enfoque médico** → diseñado para clínicas, doctores y pacientes en entornos de cirugía plástica y medicina estética.
+
+---
+
+## 📍 Siguientes pasos
+- **Q1:** Deploy Panas Token (TON Jetton + SPL Solana).  
+- **Q2:** Integración de pagos en Telegram (TonConnect).  
+- **Q3:** Pools de liquidez bloqueados.  
+- **Q4:** Dashboard público con métricas de supply, holders y liquidez.
+
+---
+
+## 🤝 Conclusión
+Panas Token representa la evolución de las pruebas iniciales con GS, VASER y KUCHI, aplicando el aprendizaje de esos tokens para construir una infraestructura sólida, transparente y lista para integrarse en **Telegram TON Wallet** como medio de pago real y confiable.
+
+---

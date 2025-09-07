@@ -1,0 +1,89 @@
+# 🌐 Panas Token — Ficha Técnica Oficial
+
+## 📖 Definición
+**Panas Token** es el activo central del ecosistema multichain, diseñado para servir como medio de pago en el sector médico y de cirugía plástica, con integración directa en **Telegram Wallet (TON)**, interoperabilidad en **Solana**, identidad en **Algorand (NF Domains)** y rampas de liquidez en **BSC**.
+
+---
+
+## 🔑 Parámetros del Token
+
+- **Supply total propuesto:** 100,000,000 PANAS
+- **Decimals:**
+  - TON (Jetton): 9  
+  - Solana (SPL): 6  
+  - Algorand (ASA): 6  
+  - BSC (ERC-20 opcional): 18  
+- **Authorities:** Multisig (2/3 o 3/5) en todas las cadenas
+- **Liquidity:** pools bloqueadas en DEX principales
+- **Principios de diseño:**
+  - ✅ Supply fijo y transparente  
+  - ✅ Sin impuestos ocultos (0% fee)  
+  - ✅ Sin blacklist / pause global  
+  - ✅ Multisig para tesorería y authorities  
+  - ✅ Identidad digital con **NF Domains**  
+
+---
+
+## 🟢 Lista de **NF Domains** en Algorand
+
+Estos dominios .algo se vincularán a wallets oficiales del ecosistema Panas:
+
+- **panas.algo** → wallet oficial del proyecto  
+- **pay.algo** → cuenta de router de pagos  
+- **treasury.algo** → tesorería multisig  
+- **partners.algo** → cuenta de partners estratégicos  
+- **clinic.algo** → pagos generales de clínicas asociadas  
+- **doctor.algo** → pagos a médicos individuales  
+- **aesthetic.algo** → clínicas de cirugía plástica  
+- **usdc.algo** → puente/rampa de stablecoins  
+
+👉 Se podrán crear NF Domains personalizados para clínicas y médicos:  
+Ejemplo: `drperez.algo`, `clinicaabc.algo`.
+
+---
+
+## 🟣 Integración con Otros Tokens
+
+### GS — SMART GLOBAL TOKEN (Solana)
+- **Mint:** `A1keUDicm5qfjjpjwhabK5EqVtBkkcdWGVjDXMqvbZ3w`  
+- **Uso en Panas:** colateral en pools PANAS-GS (Dexlab).  
+
+### KUCHI — Kuchicoin (BSC)
+- **Contrato:** `0x21b227d8085b4522805b6ad6c83...`  
+- **Uso en Panas:** liquidez auxiliar en PancakeSwap (PANAS-KUCHI).  
+- **Nota:** no se usará como token de pago directo por riesgos de confianza.  
+
+### VASER TOKEN (Solana)
+- **Mint:** `FrsW6JC2Em2iEjNyKtEmFpw5jRdjcuZ1Gbx4kAK4xX1S`  
+- **Uso en Panas:** liquidez cruzada en pools PANAS-VASER (Raydium/Meteora).  
+
+---
+
+## ⚙️ Ecosistema Multichain
+
+- **TON (principal):** Jetton → pagos nativos en Telegram Wallet.  
+- **Solana (espejo):** SPL estándar → integración con Phantom, Raydium, Meteora.  
+- **Algorand (espejo):** ASA + NF Domains → pagos simplificados y branding médico.  
+- **BSC (opcional):** ERC-20 → rampas de liquidez vía PancakeSwap.  
+
+---
+
+## 📍 Pools Iniciales
+
+- PANAS-USDC (Solana y TON)  
+- PANAS-VASER (Solana)  
+- PANAS-KUCHI (BSC)  
+- PANAS-ALGO (Algorand, Tinyman DEX)  
+
+---
+
+## ✅ Conclusión
+**Panas Token** será el hub multichain de pagos médicos y estéticos:  
+- TON para pagos en Telegram  
+- Solana para interoperabilidad DeFi  
+- Algorand para identidad legible vía NF Domains  
+- BSC como soporte de liquidez  
+
+La estrategia es **sencillez, transparencia y branding unificado** en todas las cadenas.
+
+---
