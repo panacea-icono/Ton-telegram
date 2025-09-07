@@ -1,3 +1,12 @@
+<!-- PANACEA_ECOSYSTEM_HEADER -->
+# Ton-telegram
+
+> Parte del ecosistema Panacea | Icono SA. Hub: [Ton-telegram](https://github.com/panacea-icono/Ton-telegram)
+
+- Organización: [@panacea-icono](https://github.com/panacea-icono)
+- Documentación de repos: [/docs/REPOSITORIES.md](https://github.com/panacea-icono/Ton-telegram/tree/main/docs/REPOSITORIES.md)
+- Estructura y submódulos: [/docs/REPOS-STRUCTURE.md](https://github.com/panacea-icono/Ton-telegram/tree/main/docs/REPOS-STRUCTURE.md)
+
 # 🌐 Panas Token — Ecosistema Multichain & Telegram TON Wallet
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
