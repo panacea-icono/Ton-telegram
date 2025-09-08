@@ -6,10 +6,11 @@
   "scripts": {
     "setup": "./setup.sh",
     "start": "node scripts/start-all.js",
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run dev:bot\"",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run dev:bot\" \"npm run dev:fastapi\"",
     "dev:backend": "cd backend/router && npm run dev",
     "dev:frontend": "cd frontend/dashboard && npm start",
     "dev:bot": "cd frontend/telegram-bot && npm run dev",
+    "dev:fastapi": "cd backend/fastapi && python main.py",
     "build:backend": "cd backend/router && npm run build",
     "build:frontend": "cd frontend/dashboard && npm run build",
     "frontend:start": "cd frontend/dashboard && npm start",
