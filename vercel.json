@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "name": "panacea-ecosystem",
+  "builds": [
+    {
+      "src": "frontend/dashboard/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    },
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "scripts/bots/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/bots/(.*)",
+      "dest": "/scripts/bots/$1"
+    },
+    {
+      "src": "/webhook/(.*)",
+      "dest": "/api/webhook/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/dashboard/$1"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "VERCEL": "1"
+  },
+  "functions": {
+    "api/**/*.js": {
+      "maxDuration": 30
+    },
+    "scripts/bots/**/*.js": {
+      "maxDuration": 60
+    }
+  },
+  "regions": ["iad1"],
+  "framework": "create-react-app"
+}
