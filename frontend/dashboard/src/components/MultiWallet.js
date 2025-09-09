@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
 import { 
-  Wallet, 
   Send, 
   Copy, 
   Check, 
   ExternalLink,
   RefreshCw,
   Shield,
-  Zap,
-  Plus,
-  Settings,
-  TrendingUp,
-  Activity
+  Zap
 } from 'lucide-react';
 
 const MultiWallet = () => {
