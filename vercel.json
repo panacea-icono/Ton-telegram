@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "panacea-ecosystem",
+  "name": "panans-app-ecosystem",
   "builds": [
     {
       "src": "frontend/dashboard/package.json",

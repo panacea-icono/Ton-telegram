@@ -18,11 +18,11 @@
   ],
   "env": {
     "NODE_ENV": "production",
-    "REACT_APP_API_URL": "https://www.panas.app/api",
+    "REACT_APP_API_URL": "https://panans.app/api",
     "REACT_APP_TON_RPC": "https://toncenter.com/api/v2/jsonRPC",
     "REACT_APP_SOLANA_RPC": "https://api.mainnet-beta.solana.com",
     "REACT_APP_ALGORAND_RPC": "https://mainnet-api.algonode.cloud",
-    "REACT_APP_WEBSITE_URL": "https://www.panas.app",
+    "REACT_APP_WEBSITE_URL": "https://panans.app",
     "REACT_APP_TELEGRAM_BOT_URL": "https://t.me/panacea_icono_bot"
   },
   "regions": ["iad1"],

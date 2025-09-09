@@ -146,7 +146,7 @@
   "bugs": {
     "url": "https://github.com/panacea-icono/Ton-telegram/issues"
   },
-  "homepage": "https://github.com/panacea-icono/Ton-telegram#readme",
+  "homepage": "https://panans.app",
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=8.0.0"
