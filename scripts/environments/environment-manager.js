@@ -165,7 +165,7 @@ class EnvironmentManager {
   updateVercelConfig(env) {
     const vercelConfig = {
       version: 2,
-      name: `panacea-${env.name}`,
+      name: `panacea-ton-wallet-${env.name}`,
       builds: [
         {
           src: 'frontend/dashboard/package.json',
@@ -193,7 +193,15 @@ class EnvironmentManager {
         NODE_ENV: env.name,
         REACT_APP_API_URL: env.urls.api,
         REACT_APP_ENVIRONMENT: env.name,
+        REACT_APP_TON_NETWORK: env.name === 'production' ? 'mainnet' : 'testnet',
       },
+      functions: {
+        'api/**/*.js': {
+          maxDuration: 30
+        }
+      },
+      regions: ['iad1'],
+      framework: 'create-react-app'
     };
 
     fs.writeFileSync('vercel.json', JSON.stringify(vercelConfig, null, 2));

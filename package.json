@@ -17,6 +17,7 @@
     "frontend:test": "cd frontend/dashboard && npm test",
     "frontend:lint": "cd frontend/dashboard && npm run lint",
     "vercel:deploy": "node scripts/deploy/vercel-deploy.js",
+    "vercel:deploy:staging": "node scripts/deploy/vercel-deploy.js --staging",
     "vercel:install": "npm install -g vercel",
     "vercel:login": "vercel login",
     "vercel:link": "vercel link",
