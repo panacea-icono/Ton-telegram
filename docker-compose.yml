@@ -94,6 +94,32 @@ services:
     restart: unless-stopped
 
   # =============================================================================
+  # FASTAPI BACKEND
+  # =============================================================================
+  fastapi:
+    build:
+      context: .
+      dockerfile: backend/fastapi/Dockerfile
+    container_name: panas-fastapi
+    ports:
+      - '8000:8000'
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+    environment:
+      - NODE_ENV=development
+      - HOST=0.0.0.0
+      - PORT=8000
+    env_file:
+      - .env.local
+    depends_on:
+      - redis
+      - postgres
+    networks:
+      - panas-network
+    restart: unless-stopped
+
+  # =============================================================================
   # NGINX REVERSE PROXY
   # =============================================================================
   nginx:
@@ -107,6 +133,7 @@ services:
       - ./docker/ssl:/etc/nginx/ssl
     depends_on:
       - app
+      - fastapi
     networks:
       - panas-network
     restart: unless-stopped

@@ -586,6 +586,44 @@ module.exports = APIIntegration;
   }
 
   /**
+   * Genera configuración FastAPI para Docker Compose
+   */
+  generateFastAPIDockerService() {
+    return `
+  # FastAPI Backend Service
+  fastapi:
+    image: registry.heroku.com/panacea-icono/fastapi:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=production
+      - PORT=8000
+      - HOST=0.0.0.0
+      - HUGGINGFACE_API_KEY=\${HUGGINGFACE_API_KEY}
+    networks:
+      - panacea-network
+    restart: unless-stopped
+`;
+  }
+
+  /**
+   * Genera configuración Heroku para FastAPI
+   */
+  generateFastAPIHerokuConfig() {
+    return `
+    # FastAPI Service Deploy
+    - name: Deploy FastAPI Backend
+      uses: akhileshns/heroku-deploy@v3.12.14
+      with:
+        heroku_api_key: \${{ secrets.HEROKU_API_KEY }}
+        heroku_app_name: "panacea-fastapi-backend"
+        heroku_email: "repositorios.panacea@gmail.com"
+        appdir: "./backend/fastapi"
+        procfile: "web: uvicorn main:app --host 0.0.0.0 --port \$PORT"
+`;
+  }
+
+  /**
    * Ejecuta el proceso completo
    */
   async run() {

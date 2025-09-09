@@ -3,8 +3,11 @@
 # Panacea | Icono SA
 # =============================================================================
 
-# Web process - Main application
+# Web process - Main Node.js application
 web: npm start
+
+# FastAPI process - Python API backend
+fastapi: cd backend/fastapi && python main.py
 
 # Worker process - Background tasks
 worker: npm run worker
