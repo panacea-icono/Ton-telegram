@@ -1,0 +1,178 @@
+{
+  "api_endpoints": {
+    "health": {
+      "path": "/api/health",
+      "method": "GET",
+      "description": "Health check endpoint",
+      "services": ["vercel", "heroku", "fastapi"],
+      "authentication": false
+    },
+    "wallets": {
+      "ton": {
+        "path": "/api/ton/balance/:address",
+        "method": "GET",
+        "description": "Get TON wallet balance",
+        "services": ["vercel", "heroku", "fastapi"],
+        "authentication": true
+      },
+      "solana": {
+        "path": "/api/solana/balance/:address",
+        "method": "GET",
+        "description": "Get Solana wallet balance",
+        "services": ["vercel", "heroku", "fastapi"],
+        "authentication": true
+      },
+      "algorand": {
+        "path": "/api/algorand/balance/:address",
+        "method": "GET",
+        "description": "Get Algorand wallet balance",
+        "services": ["vercel", "heroku", "fastapi"],
+        "authentication": true
+      },
+      "bsc": {
+        "path": "/api/bsc/balance/:address",
+        "method": "GET",
+        "description": "Get BSC wallet balance",
+        "services": ["vercel", "heroku", "fastapi"],
+        "authentication": true
+      }
+    },
+    "bots": {
+      "status": {
+        "path": "/api/bots/status",
+        "method": "GET",
+        "description": "Get all bots status",
+        "services": ["vercel", "heroku"],
+        "authentication": false
+      },
+      "start": {
+        "path": "/api/bots/start",
+        "method": "POST",
+        "description": "Start specific bot",
+        "services": ["heroku"],
+        "authentication": true
+      },
+      "stop": {
+        "path": "/api/bots/stop",
+        "method": "POST",
+        "description": "Stop specific bot",
+        "services": ["heroku"],
+        "authentication": true
+      }
+    },
+    "ai": {
+      "chat": {
+        "path": "/api/ai/chat",
+        "method": "POST",
+        "description": "Chat with AI",
+        "services": ["vercel", "heroku", "fastapi"],
+        "authentication": true
+      },
+      "generate": {
+        "path": "/api/ai/generate",
+        "method": "POST",
+        "description": "Generate content with AI",
+        "services": ["vercel", "heroku", "fastapi"],
+        "authentication": true
+      },
+      "analyze": {
+        "path": "/api/ai/analyze",
+        "method": "POST",
+        "description": "Analyze medical data",
+        "services": ["heroku", "fastapi"],
+        "authentication": true
+      }
+    },
+    "analytics": {
+      "dashboard": {
+        "path": "/api/analytics",
+        "method": "GET",
+        "description": "Get analytics data",
+        "services": ["vercel", "heroku"],
+        "authentication": true
+      },
+      "metrics": {
+        "path": "/api/analytics/metrics",
+        "method": "GET",
+        "description": "Get detailed metrics",
+        "services": ["heroku"],
+        "authentication": true
+      }
+    },
+    "medical": {
+      "consultation": {
+        "path": "/api/medical/consultation",
+        "method": "POST",
+        "description": "Medical consultation endpoint",
+        "services": ["heroku", "fastapi"],
+        "authentication": true
+      },
+      "simulation": {
+        "path": "/api/medical/simulation",
+        "method": "POST",
+        "description": "Surgery simulation",
+        "services": ["heroku", "fastapi"],
+        "authentication": true
+      }
+    }
+  },
+  "webhook_endpoints": {
+    "telegram": {
+      "main": {
+        "path": "/webhook/telegram/main",
+        "method": "POST",
+        "description": "Main Telegram bot webhook",
+        "services": ["vercel", "heroku"],
+        "authentication": "telegram_secret"
+      },
+      "paysupport": {
+        "path": "/webhook/telegram/paysupport",
+        "method": "POST",
+        "description": "PaySupport bot webhook",
+        "services": ["vercel", "heroku"],
+        "authentication": "telegram_secret"
+      },
+      "ai": {
+        "path": "/webhook/telegram/ai",
+        "method": "POST",
+        "description": "AI bot webhook",
+        "services": ["vercel", "heroku"],
+        "authentication": "telegram_secret"
+      }
+    },
+    "payment": {
+      "ton": {
+        "path": "/webhook/payment/ton",
+        "method": "POST",
+        "description": "TON payment webhook",
+        "services": ["heroku"],
+        "authentication": "payment_secret"
+      },
+      "solana": {
+        "path": "/webhook/payment/solana",
+        "method": "POST",
+        "description": "Solana payment webhook",
+        "services": ["heroku"],
+        "authentication": "payment_secret"
+      }
+    }
+  },
+  "callback_endpoints": {
+    "telegram": {
+      "payment": {
+        "path": "/callback/telegram/payment",
+        "method": "POST",
+        "description": "Payment confirmation callback",
+        "services": ["vercel", "heroku"],
+        "authentication": "callback_secret"
+      },
+      "wallet": {
+        "path": "/callback/telegram/wallet",
+        "method": "POST",
+        "description": "Wallet operation callback",
+        "services": ["vercel", "heroku"],
+        "authentication": "callback_secret"
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "development": {
+    "name": "Development",
+    "description": "Entorno de desarrollo local",
+    "urls": {
+      "frontend": "http://localhost:3000",
+      "api": "http://localhost:3001",
+      "bot": "http://localhost:3002",
+      "database": "postgresql://panas:panas_password@localhost:5432/panas_token_dev",
+      "redis": "redis://localhost:6379"
+    },
+    "services": {
+      "telegram": {
+        "enabled": true,
+        "webhook_url": "https://your-ngrok-url.ngrok.io/webhook/telegram",
+        "polling": true
+      },
+      "vercel": {
+        "enabled": false,
+        "preview": true
+      },
+      "heroku": {
+        "enabled": false,
+        "local": true
+      },
+      "fastapi": {
+        "enabled": true,
+        "url": "http://localhost:8000"
+      },
+      "hostinger": {
+        "enabled": false
+      }
+    },
+    "features": {
+      "debug": true,
+      "logging": "debug",
+      "hot_reload": true,
+      "mock_services": true
+    }
+  },
+  "staging": {
+    "name": "Staging",
+    "description": "Entorno de pruebas y validación",
+    "urls": {
+      "frontend": "https://panas-staging.vercel.app",
+      "api": "https://panacea-staging.herokuapp.com",
+      "bot": "https://panacea-staging.herokuapp.com/bot",
+      "database": "postgresql://staging_user:staging_pass@staging-db.herokuapp.com:5432/panas_token_staging",
+      "redis": "redis://staging-redis.herokuapp.com:6379"
+    },
+    "services": {
+      "telegram": {
+        "enabled": true,
+        "webhook_url": "https://panacea-staging.herokuapp.com/webhook/telegram",
+        "polling": false
+      },
+      "vercel": {
+        "enabled": true,
+        "preview": true
+      },
+      "heroku": {
+        "enabled": true,
+        "local": false
+      },
+      "fastapi": {
+        "enabled": true,
+        "url": "https://panacea-fastapi-staging.herokuapp.com"
+      },
+      "hostinger": {
+        "enabled": false
+      }
+    },
+    "features": {
+      "debug": true,
+      "logging": "info",
+      "hot_reload": false,
+      "mock_services": false
+    }
+  },
+  "production": {
+    "name": "Production",
+    "description": "Entorno de producción",
+    "urls": {
+      "frontend": "https://www.panas.app",
+      "api": "https://api-panacea-638dc550fab6.herokuapp.com",
+      "bot": "https://api-panacea-638dc550fab6.herokuapp.com/bot",
+      "database": "postgresql://prod_user:prod_pass@prod-db.herokuapp.com:5432/panas_token_prod",
+      "redis": "redis://prod-redis.herokuapp.com:6379"
+    },
+    "services": {
+      "telegram": {
+        "enabled": true,
+        "webhook_url": "https://api-panacea-638dc550fab6.herokuapp.com/webhook/telegram",
+        "polling": false
+      },
+      "vercel": {
+        "enabled": true,
+        "preview": false
+      },
+      "heroku": {
+        "enabled": true,
+        "local": false
+      },
+      "fastapi": {
+        "enabled": true,
+        "url": "https://panacea-fastapi.herokuapp.com"
+      },
+      "hostinger": {
+        "enabled": true,
+        "url": "https://panacea-icono.org"
+      }
+    },
+    "features": {
+      "debug": false,
+      "logging": "warn",
+      "hot_reload": false,
+      "mock_services": false,
+      "monitoring": true,
+      "analytics": true
+    }
+  }
+}

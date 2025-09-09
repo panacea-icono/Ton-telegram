@@ -1,0 +1,60 @@
+{
+  "telegram": {
+    "base_url": "https://www.panas.app/webhook/telegram",
+    "endpoints": {
+      "main_bot": "/main",
+      "paysupport_bot": "/paysupport",
+      "echo_bot": "/echo",
+      "publisher_bot": "/publisher",
+      "ai_bot": "/ai",
+      "ton_wallet_bot": "/ton-wallet",
+      "multi_wallet_bot": "/multi-wallet"
+    },
+    "callbacks": {
+      "payment_confirmation": "/callback/payment",
+      "wallet_operation": "/callback/wallet",
+      "ai_response": "/callback/ai",
+      "user_registration": "/callback/register",
+      "medical_consultation": "/callback/medical"
+    }
+  },
+  "vercel": {
+    "base_url": "https://www.panas.app/api",
+    "endpoints": {
+      "health": "/health",
+      "analytics": "/analytics",
+      "wallets": "/wallets",
+      "bots": "/bots",
+      "ai": "/ai"
+    }
+  },
+  "heroku": {
+    "base_url": "https://api-panacea-638dc550fab6.herokuapp.com",
+    "endpoints": {
+      "health": "/api/health",
+      "wallets": "/api/wallets",
+      "transactions": "/api/transactions",
+      "users": "/api/users",
+      "medical": "/api/medical"
+    }
+  },
+  "fastapi": {
+    "base_url": "https://panacea-fastapi.herokuapp.com",
+    "endpoints": {
+      "health": "/api/health",
+      "docs": "/docs",
+      "wallets": "/api/wallets",
+      "ai": "/api/ai",
+      "analytics": "/api/analytics"
+    }
+  },
+  "hostinger": {
+    "base_url": "https://panacea-icono.org",
+    "endpoints": {
+      "main": "/",
+      "api": "/api",
+      "docs": "/docs",
+      "status": "/status"
+    }
+  }
+}

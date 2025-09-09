@@ -1,0 +1,124 @@
+{
+  "ci_cd": {
+    "github_actions": {
+      "main_workflow": {
+        "file": ".github/workflows/ci-cd.yml",
+        "triggers": ["push", "pull_request"],
+        "branches": ["main", "develop"],
+        "jobs": ["test", "build", "deploy"],
+        "description": "Main CI/CD pipeline"
+      },
+      "telegram_bots": {
+        "file": ".github/workflows/telegram-bots.yml",
+        "triggers": ["push"],
+        "branches": ["main"],
+        "jobs": ["validate_bots", "deploy_bots"],
+        "description": "Telegram bots deployment"
+      },
+      "docker_build": {
+        "file": ".github/workflows/docker-build.yml",
+        "triggers": ["push", "release"],
+        "branches": ["main"],
+        "jobs": ["build_docker", "push_docker"],
+        "description": "Docker images build and push"
+      },
+      "vercel_deploy": {
+        "file": ".github/workflows/vercel-deploy.yml",
+        "triggers": ["push"],
+        "branches": ["main", "develop"],
+        "jobs": ["deploy_vercel"],
+        "description": "Vercel deployment"
+      }
+    }
+  },
+  "deployment": {
+    "vercel": {
+      "frontend": {
+        "project": "panas-token",
+        "framework": "create-react-app",
+        "build_command": "npm run build",
+        "output_directory": "build",
+        "environment": "production"
+      },
+      "api": {
+        "project": "panas-token-api",
+        "framework": "node",
+        "build_command": "npm run build",
+        "output_directory": "dist",
+        "environment": "production"
+      }
+    },
+    "heroku": {
+      "main_api": {
+        "app_name": "api-panacea-638dc550fab6",
+        "stack": "heroku-22",
+        "buildpacks": ["heroku/nodejs"],
+        "environment": "production"
+      },
+      "fibonacci": {
+        "app_name": "fibonacci-b33f2f33a8ad",
+        "stack": "heroku-22",
+        "buildpacks": ["heroku/nodejs"],
+        "environment": "production"
+      },
+      "kuchiuyas": {
+        "app_name": "kuchiuyas-algorand-d0bd2e62d823",
+        "stack": "heroku-22",
+        "buildpacks": ["heroku/nodejs"],
+        "environment": "production"
+      },
+      "backend_developer": {
+        "app_name": "backend-developer-d160b40c29bc",
+        "stack": "heroku-22",
+        "buildpacks": ["heroku/nodejs"],
+        "environment": "production"
+      }
+    },
+    "docker": {
+      "registry": "ghcr.io/panacea-icono",
+      "images": [
+        "panas-token-ecosystem",
+        "panas-token-frontend",
+        "panas-token-api",
+        "panas-token-bot"
+      ]
+    }
+  },
+  "monitoring": {
+    "health_checks": {
+      "endpoints": [
+        "https://www.panas.app/api/health",
+        "https://api-panacea-638dc550fab6.herokuapp.com/api/health",
+        "https://panacea-fastapi.herokuapp.com/api/health"
+      ],
+      "interval": "5m",
+      "timeout": "30s"
+    },
+    "alerts": {
+      "email": "repositorios.panacea@gmail.com",
+      "telegram": "@drtapiavargas_of",
+      "thresholds": {
+        "response_time": "5s",
+        "error_rate": "5%",
+        "uptime": "99%"
+      }
+    }
+  },
+  "testing": {
+    "unit_tests": {
+      "command": "npm test",
+      "coverage_threshold": 70,
+      "files": "tests/unit/**/*.test.js"
+    },
+    "integration_tests": {
+      "command": "npm run test:integration",
+      "coverage_threshold": 60,
+      "files": "tests/integration/**/*.test.js"
+    },
+    "e2e_tests": {
+      "command": "npm run test:e2e",
+      "coverage_threshold": 50,
+      "files": "tests/e2e/**/*.test.js"
+    }
+  }
+}
