@@ -12,17 +12,54 @@ const cors = require('cors');
 const app = express();
 
 // Middleware
-app.use(cors());
-app.use(express.json());
+const corsOptions = {
+  origin: process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : ['http://localhost:3000', 'https://t.me'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+};
+
+app.use(cors(corsOptions));
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true }));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
-    service: 'panacea-api',
+    service: 'panacea-ton-wallet-api',
     version: '1.0.0',
     timestamp: new Date().toISOString(),
     environment: process.env.NODE_ENV || 'development'
+  });
+});
+
+// API Documentation endpoint
+app.get('/api', (req, res) => {
+  res.json({
+    name: 'Panacea TON Wallet API',
+    version: '1.0.0',
+    description: 'API para el ecosistema Panacea TON Wallet',
+    endpoints: {
+      health: 'GET /api/health',
+      ton: {
+        balance: 'GET /api/ton/balance/:address',
+        transactions: 'GET /api/ton/transactions/:address',
+        send: 'POST /api/ton/send',
+        connect: 'POST /api/ton/connect'
+      },
+      solana: {
+        balance: 'GET /api/solana/balance/:address'
+      },
+      algorand: {
+        balance: 'GET /api/algorand/balance/:address'
+      },
+      bots: {
+        status: 'GET /api/bots/status'
+      },
+      analytics: 'GET /api/analytics'
+    },
+    timestamp: new Date().toISOString()
   });
 });
 
@@ -36,6 +73,80 @@ app.get('/api/ton/balance/:address', async (req, res) => {
       address,
       balance: '0.0',
       currency: 'TON',
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// TON Transaction History
+app.get('/api/ton/transactions/:address', async (req, res) => {
+  try {
+    const { address } = req.params;
+    const { limit = 10, offset = 0 } = req.query;
+
+    // Simular historial de transacciones TON
+    res.json({
+      address,
+      transactions: [],
+      total: 0,
+      limit: parseInt(limit),
+      offset: parseInt(offset),
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// TON Send Transaction (simulado)
+app.post('/api/ton/send', async (req, res) => {
+  try {
+    const { from, to, amount, message } = req.body;
+
+    if (!from || !to || !amount) {
+      return res.status(400).json({ 
+        error: 'Missing required fields: from, to, amount' 
+      });
+    }
+
+    // Simular envío de transacción TON
+    const txHash = 'ton_' + Math.random().toString(36).substr(2, 16);
+    
+    res.json({
+      success: true,
+      txHash,
+      from,
+      to,
+      amount,
+      message: message || '',
+      fee: '0.005',
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// TON Connect Integration
+app.post('/api/ton/connect', async (req, res) => {
+  try {
+    const { walletAddress, publicKey } = req.body;
+
+    if (!walletAddress) {
+      return res.status(400).json({ 
+        error: 'Missing wallet address' 
+      });
+    }
+
+    // Simular conexión TON Connect
+    res.json({
+      success: true,
+      walletAddress,
+      publicKey,
+      connected: true,
+      network: 'mainnet',
       timestamp: new Date().toISOString()
     });
   } catch (error) {
