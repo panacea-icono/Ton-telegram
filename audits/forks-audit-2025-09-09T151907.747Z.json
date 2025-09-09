@@ -1,0 +1,1865 @@
+{
+  "timestamp": "2025-09-09T15:19:07.747Z",
+  "gitmodules": {
+    "modules": [
+      {
+        "name": "apps/PANAS_PAY_APP",
+        "path": "apps/PANAS_PAY_APP",
+        "url": "https://github.com/panacea-icono/PANAS_PAY_APP.git",
+        "branch": "main"
+      },
+      {
+        "name": "apps/panas-app",
+        "path": "apps/panas-app",
+        "url": "https://github.com/panacea-icono/panas-app.git",
+        "branch": "main"
+      },
+      {
+        "name": "apps/Ton-telegram",
+        "path": "apps/Ton-telegram",
+        "url": "https://github.com/panacea-icono/Ton-telegram.git",
+        "branch": "main"
+      },
+      {
+        "name": "contracts/panacea_smart_contracts",
+        "path": "contracts/panacea_smart_contracts",
+        "url": "https://github.com/panacea-icono/panacea_smart_contracts.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/civitAI",
+        "path": "infra/civitAI",
+        "url": "https://github.com/panacea-icono/civitAI.git",
+        "branch": "master"
+      },
+      {
+        "name": "infra/fibonacci",
+        "path": "infra/fibonacci",
+        "url": "https://github.com/panacea-icono/fibonacci.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/FIBONACCI_LAB",
+        "path": "infra/FIBONACCI_LAB",
+        "url": "https://github.com/panacea-icono/FIBONACCI_LAB.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/fibonacci_maestro",
+        "path": "infra/fibonacci_maestro",
+        "url": "https://github.com/panacea-icono/fibonacci_maestro.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+        "path": "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+        "url": "https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/modelos_civitai",
+        "path": "infra/modelos_civitai",
+        "url": "https://github.com/https-panacea-icono-org/modelos_civitai.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+        "path": "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+        "url": "https://github.com/panacea-icono/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/privacidad_seguridad",
+        "path": "infra/privacidad_seguridad",
+        "url": "https://github.com/panacea-icono/privacidad_seguridad.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/repositorio-modular-fibonacci-ia-integrado",
+        "path": "infra/repositorio-modular-fibonacci-ia-integrado",
+        "url": "https://github.com/panacea-icono/repositorio-modular-fibonacci-ia-integrado.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/tutor_academico_CIRUGIA_I-II-III",
+        "path": "infra/tutor_academico_CIRUGIA_I-II-III",
+        "url": "https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/aiadult-platform",
+        "path": "labs/aiadult-platform",
+        "url": "https://github.com/panacea-icono/aiadult-platform.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/api_modelo_piloto",
+        "path": "labs/api_modelo_piloto",
+        "url": "https://github.com/panacea-icono/api_modelo_piloto.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/biblioteca-kuchiuya",
+        "path": "labs/biblioteca-kuchiuya",
+        "url": "https://github.com/panacea-icono/biblioteca-kuchiuya.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/CASA-RED-SRL",
+        "path": "labs/CASA-RED-SRL",
+        "url": "https://github.com/panacea-icono/CASA-RED-SRL.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/coca",
+        "path": "labs/coca",
+        "url": "https://github.com/panacea-icono/coca.git",
+        "branch": "master"
+      },
+      {
+        "name": "labs/codex-github",
+        "path": "labs/codex-github",
+        "url": "https://github.com/panacea-icono/codex-github.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/codex-main",
+        "path": "labs/codex-main",
+        "url": "https://github.com/panacea-icono/codex-main.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/Dr_dela_TV",
+        "path": "labs/Dr_dela_TV",
+        "url": "https://github.com/panacea-icono/Dr_dela_TV.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/dr_tv_gp",
+        "path": "labs/dr_tv_gp",
+        "url": "https://github.com/panacea-icono/dr_tv_gp.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/dr_tv_GPT",
+        "path": "labs/dr_tv_GPT",
+        "url": "https://github.com/panacea-icono/dr_tv_GPT.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/dr-de-la-tvr",
+        "path": "labs/dr-de-la-tvr",
+        "url": "https://github.com/panacea-icono/dr-de-la-tvr.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/dua_lipa_model_image_ia",
+        "path": "labs/dua_lipa_model_image_ia",
+        "url": "https://github.com/panacea-icono/dua_lipa_model_image_ia.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/gpt-local",
+        "path": "labs/gpt-local",
+        "url": "https://github.com/panacea-icono/gpt-local.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/GPT-MAESTRO-PANACEA",
+        "path": "labs/GPT-MAESTRO-PANACEA",
+        "url": "https://github.com/https-panacea-icono-org/GPT-MAESTRO-PANACEA.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/GPTApi",
+        "path": "labs/GPTApi",
+        "url": "https://github.com/panacea-icono/GPTApi.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/home",
+        "path": "labs/home",
+        "url": "https://github.com/panacea-icono/home.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/HUGGING_FACE",
+        "path": "labs/HUGGING_FACE",
+        "url": "https://github.com/panacea-icono/HUGGING_FACE.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/HUGGING_FACE",
+        "path": "labs/HUGGING_FACE",
+        "url": "https://github.com/https-panacea-icono-org/HUGGING_FACE.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/iaadult",
+        "path": "labs/iaadult",
+        "url": "https://github.com/panacea-icono/iaadult.git",
+        "branch": "examples"
+      },
+      {
+        "name": "labs/kuchiuyas",
+        "path": "labs/kuchiuyas",
+        "url": "https://github.com/panacea-icono/kuchiuyas.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/kuchiuyasM",
+        "path": "labs/kuchiuyasM",
+        "url": "https://github.com/panacea-icono/kuchiuyasM.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/macuquina_proyecto",
+        "path": "labs/macuquina_proyecto",
+        "url": "https://github.com/panacea-icono/macuquina_proyecto.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/Marilyn_Monroe",
+        "path": "labs/Marilyn_Monroe",
+        "url": "https://github.com/panacea-icono/Marilyn_Monroe.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/MEDIOS-REDES",
+        "path": "labs/MEDIOS-REDES",
+        "url": "https://github.com/panacea-icono/MEDIOS-REDES.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/MODELOS",
+        "path": "labs/MODELOS",
+        "url": "https://github.com/panacea-icono/MODELOS.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/nextjs-with-supabase",
+        "path": "labs/nextjs-with-supabase",
+        "url": "https://github.com/panacea-icono/nextjs-with-supabase.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/PANACEA_MD",
+        "path": "labs/PANACEA_MD",
+        "url": "https://github.com/panacea-icono/PANACEA_MD.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/PANACEA-API-CENTRAL-CODEX",
+        "path": "labs/PANACEA-API-CENTRAL-CODEX",
+        "url": "https://github.com/panacea-icono/PANACEA-API-CENTRAL-CODEX.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/PANACEA-GPT-I",
+        "path": "labs/PANACEA-GPT-I",
+        "url": "https://github.com/panacea-icono/PANACEA-GPT-I.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/panacea-icono",
+        "path": "labs/panacea-icono",
+        "url": "https://github.com/panacea-icono/panacea-icono.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/panas_multichain",
+        "path": "labs/panas_multichain",
+        "url": "https://github.com/panacea-icono/panas_multichain.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/panas_pay",
+        "path": "labs/panas_pay",
+        "url": "https://github.com/panacea-icono/panas_pay.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/panas-pay",
+        "path": "labs/panas-pay",
+        "url": "https://github.com/panacea-icono/panas-pay.git",
+        "branch": "master"
+      },
+      {
+        "name": "labs/Panas-Pay.M",
+        "path": "labs/Panas-Pay.M",
+        "url": "https://github.com/panacea-icono/Panas-Pay.M.git",
+        "branch": "master"
+      },
+      {
+        "name": "labs/REDES",
+        "path": "labs/REDES",
+        "url": "https://github.com/panacea-icono/REDES.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/Super-code-tasker",
+        "path": "labs/Super-code-tasker",
+        "url": "https://github.com/https-panacea-icono-org/Super-code-tasker.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/UNIVERSOLIFE",
+        "path": "labs/UNIVERSOLIFE",
+        "url": "https://github.com/panacea-icono/UNIVERSOLIFE.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/vite-react",
+        "path": "labs/vite-react",
+        "url": "https://github.com/panacea-icono/vite-react.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/voice",
+        "path": "labs/voice",
+        "url": "https://github.com/panacea-icono/voice.git",
+        "branch": "main"
+      },
+      {
+        "name": "tokens/panas_token",
+        "path": "tokens/panas_token",
+        "url": "https://github.com/panacea-icono/panas_token.git",
+        "branch": "main"
+      },
+      {
+        "name": "tokens/PANAS_TOKENIZER_SURGERY",
+        "path": "tokens/PANAS_TOKENIZER_SURGERY",
+        "url": "https://github.com/panacea-icono/PANAS_TOKENIZER_SURGERY.git",
+        "branch": "main"
+      },
+      {
+        "name": "tokens/PANAS-TOKEN",
+        "path": "tokens/PANAS-TOKEN",
+        "url": "https://github.com/panacea-icono/PANAS-TOKEN.git",
+        "branch": "main"
+      },
+      {
+        "name": "tokens/panas-token.M",
+        "path": "tokens/panas-token.M",
+        "url": "https://github.com/panacea-icono/panas-token.M.git",
+        "branch": "main"
+      },
+      {
+        "name": "tokens/TOKENIZER-NFT",
+        "path": "tokens/TOKENIZER-NFT",
+        "url": "https://github.com/panacea-icono/TOKENIZER-NFT.git",
+        "branch": "main"
+      }
+    ],
+    "total": 58
+  },
+  "submoduleStatus": {
+    "submodules": [],
+    "total": 0
+  },
+  "physicalDirectories": {
+    "existing": [],
+    "missing": [
+      {
+        "name": "apps/PANAS_PAY_APP",
+        "path": "apps/PANAS_PAY_APP",
+        "url": "https://github.com/panacea-icono/PANAS_PAY_APP.git",
+        "branch": "main"
+      },
+      {
+        "name": "apps/panas-app",
+        "path": "apps/panas-app",
+        "url": "https://github.com/panacea-icono/panas-app.git",
+        "branch": "main"
+      },
+      {
+        "name": "apps/Ton-telegram",
+        "path": "apps/Ton-telegram",
+        "url": "https://github.com/panacea-icono/Ton-telegram.git",
+        "branch": "main"
+      },
+      {
+        "name": "contracts/panacea_smart_contracts",
+        "path": "contracts/panacea_smart_contracts",
+        "url": "https://github.com/panacea-icono/panacea_smart_contracts.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/civitAI",
+        "path": "infra/civitAI",
+        "url": "https://github.com/panacea-icono/civitAI.git",
+        "branch": "master"
+      },
+      {
+        "name": "infra/fibonacci",
+        "path": "infra/fibonacci",
+        "url": "https://github.com/panacea-icono/fibonacci.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/FIBONACCI_LAB",
+        "path": "infra/FIBONACCI_LAB",
+        "url": "https://github.com/panacea-icono/FIBONACCI_LAB.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/fibonacci_maestro",
+        "path": "infra/fibonacci_maestro",
+        "url": "https://github.com/panacea-icono/fibonacci_maestro.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+        "path": "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+        "url": "https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/modelos_civitai",
+        "path": "infra/modelos_civitai",
+        "url": "https://github.com/https-panacea-icono-org/modelos_civitai.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+        "path": "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+        "url": "https://github.com/panacea-icono/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/privacidad_seguridad",
+        "path": "infra/privacidad_seguridad",
+        "url": "https://github.com/panacea-icono/privacidad_seguridad.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/repositorio-modular-fibonacci-ia-integrado",
+        "path": "infra/repositorio-modular-fibonacci-ia-integrado",
+        "url": "https://github.com/panacea-icono/repositorio-modular-fibonacci-ia-integrado.git",
+        "branch": "main"
+      },
+      {
+        "name": "infra/tutor_academico_CIRUGIA_I-II-III",
+        "path": "infra/tutor_academico_CIRUGIA_I-II-III",
+        "url": "https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/aiadult-platform",
+        "path": "labs/aiadult-platform",
+        "url": "https://github.com/panacea-icono/aiadult-platform.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/api_modelo_piloto",
+        "path": "labs/api_modelo_piloto",
+        "url": "https://github.com/panacea-icono/api_modelo_piloto.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/biblioteca-kuchiuya",
+        "path": "labs/biblioteca-kuchiuya",
+        "url": "https://github.com/panacea-icono/biblioteca-kuchiuya.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/CASA-RED-SRL",
+        "path": "labs/CASA-RED-SRL",
+        "url": "https://github.com/panacea-icono/CASA-RED-SRL.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/coca",
+        "path": "labs/coca",
+        "url": "https://github.com/panacea-icono/coca.git",
+        "branch": "master"
+      },
+      {
+        "name": "labs/codex-github",
+        "path": "labs/codex-github",
+        "url": "https://github.com/panacea-icono/codex-github.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/codex-main",
+        "path": "labs/codex-main",
+        "url": "https://github.com/panacea-icono/codex-main.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/Dr_dela_TV",
+        "path": "labs/Dr_dela_TV",
+        "url": "https://github.com/panacea-icono/Dr_dela_TV.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/dr_tv_gp",
+        "path": "labs/dr_tv_gp",
+        "url": "https://github.com/panacea-icono/dr_tv_gp.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/dr_tv_GPT",
+        "path": "labs/dr_tv_GPT",
+        "url": "https://github.com/panacea-icono/dr_tv_GPT.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/dr-de-la-tvr",
+        "path": "labs/dr-de-la-tvr",
+        "url": "https://github.com/panacea-icono/dr-de-la-tvr.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/dua_lipa_model_image_ia",
+        "path": "labs/dua_lipa_model_image_ia",
+        "url": "https://github.com/panacea-icono/dua_lipa_model_image_ia.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/gpt-local",
+        "path": "labs/gpt-local",
+        "url": "https://github.com/panacea-icono/gpt-local.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/GPT-MAESTRO-PANACEA",
+        "path": "labs/GPT-MAESTRO-PANACEA",
+        "url": "https://github.com/https-panacea-icono-org/GPT-MAESTRO-PANACEA.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/GPTApi",
+        "path": "labs/GPTApi",
+        "url": "https://github.com/panacea-icono/GPTApi.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/home",
+        "path": "labs/home",
+        "url": "https://github.com/panacea-icono/home.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/HUGGING_FACE",
+        "path": "labs/HUGGING_FACE",
+        "url": "https://github.com/panacea-icono/HUGGING_FACE.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/HUGGING_FACE",
+        "path": "labs/HUGGING_FACE",
+        "url": "https://github.com/https-panacea-icono-org/HUGGING_FACE.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/iaadult",
+        "path": "labs/iaadult",
+        "url": "https://github.com/panacea-icono/iaadult.git",
+        "branch": "examples"
+      },
+      {
+        "name": "labs/kuchiuyas",
+        "path": "labs/kuchiuyas",
+        "url": "https://github.com/panacea-icono/kuchiuyas.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/kuchiuyasM",
+        "path": "labs/kuchiuyasM",
+        "url": "https://github.com/panacea-icono/kuchiuyasM.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/macuquina_proyecto",
+        "path": "labs/macuquina_proyecto",
+        "url": "https://github.com/panacea-icono/macuquina_proyecto.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/Marilyn_Monroe",
+        "path": "labs/Marilyn_Monroe",
+        "url": "https://github.com/panacea-icono/Marilyn_Monroe.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/MEDIOS-REDES",
+        "path": "labs/MEDIOS-REDES",
+        "url": "https://github.com/panacea-icono/MEDIOS-REDES.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/MODELOS",
+        "path": "labs/MODELOS",
+        "url": "https://github.com/panacea-icono/MODELOS.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/nextjs-with-supabase",
+        "path": "labs/nextjs-with-supabase",
+        "url": "https://github.com/panacea-icono/nextjs-with-supabase.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/PANACEA_MD",
+        "path": "labs/PANACEA_MD",
+        "url": "https://github.com/panacea-icono/PANACEA_MD.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/PANACEA-API-CENTRAL-CODEX",
+        "path": "labs/PANACEA-API-CENTRAL-CODEX",
+        "url": "https://github.com/panacea-icono/PANACEA-API-CENTRAL-CODEX.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/PANACEA-GPT-I",
+        "path": "labs/PANACEA-GPT-I",
+        "url": "https://github.com/panacea-icono/PANACEA-GPT-I.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/panacea-icono",
+        "path": "labs/panacea-icono",
+        "url": "https://github.com/panacea-icono/panacea-icono.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/panas_multichain",
+        "path": "labs/panas_multichain",
+        "url": "https://github.com/panacea-icono/panas_multichain.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/panas_pay",
+        "path": "labs/panas_pay",
+        "url": "https://github.com/panacea-icono/panas_pay.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/panas-pay",
+        "path": "labs/panas-pay",
+        "url": "https://github.com/panacea-icono/panas-pay.git",
+        "branch": "master"
+      },
+      {
+        "name": "labs/Panas-Pay.M",
+        "path": "labs/Panas-Pay.M",
+        "url": "https://github.com/panacea-icono/Panas-Pay.M.git",
+        "branch": "master"
+      },
+      {
+        "name": "labs/REDES",
+        "path": "labs/REDES",
+        "url": "https://github.com/panacea-icono/REDES.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/Super-code-tasker",
+        "path": "labs/Super-code-tasker",
+        "url": "https://github.com/https-panacea-icono-org/Super-code-tasker.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/UNIVERSOLIFE",
+        "path": "labs/UNIVERSOLIFE",
+        "url": "https://github.com/panacea-icono/UNIVERSOLIFE.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/vite-react",
+        "path": "labs/vite-react",
+        "url": "https://github.com/panacea-icono/vite-react.git",
+        "branch": "main"
+      },
+      {
+        "name": "labs/voice",
+        "path": "labs/voice",
+        "url": "https://github.com/panacea-icono/voice.git",
+        "branch": "main"
+      },
+      {
+        "name": "tokens/panas_token",
+        "path": "tokens/panas_token",
+        "url": "https://github.com/panacea-icono/panas_token.git",
+        "branch": "main"
+      },
+      {
+        "name": "tokens/PANAS_TOKENIZER_SURGERY",
+        "path": "tokens/PANAS_TOKENIZER_SURGERY",
+        "url": "https://github.com/panacea-icono/PANAS_TOKENIZER_SURGERY.git",
+        "branch": "main"
+      },
+      {
+        "name": "tokens/PANAS-TOKEN",
+        "path": "tokens/PANAS-TOKEN",
+        "url": "https://github.com/panacea-icono/PANAS-TOKEN.git",
+        "branch": "main"
+      },
+      {
+        "name": "tokens/panas-token.M",
+        "path": "tokens/panas-token.M",
+        "url": "https://github.com/panacea-icono/panas-token.M.git",
+        "branch": "main"
+      },
+      {
+        "name": "tokens/TOKENIZER-NFT",
+        "path": "tokens/TOKENIZER-NFT",
+        "url": "https://github.com/panacea-icono/TOKENIZER-NFT.git",
+        "branch": "main"
+      }
+    ],
+    "unexpected": [
+      {
+        "path": "apps/ton-connect-app",
+        "isGitRepo": false,
+        "isEmpty": false
+      },
+      {
+        "path": "tokens/gs-token",
+        "isGitRepo": false,
+        "isEmpty": false
+      },
+      {
+        "path": "tokens/kuchi-token",
+        "isGitRepo": false,
+        "isEmpty": false
+      },
+      {
+        "path": "tokens/panas-token",
+        "isGitRepo": false,
+        "isEmpty": false
+      },
+      {
+        "path": "tokens/vaser-token",
+        "isGitRepo": false,
+        "isEmpty": false
+      },
+      {
+        "path": "contracts/algorand",
+        "isGitRepo": false,
+        "isEmpty": false
+      },
+      {
+        "path": "contracts/bsc",
+        "isGitRepo": false,
+        "isEmpty": false
+      },
+      {
+        "path": "contracts/solana",
+        "isGitRepo": false,
+        "isEmpty": false
+      },
+      {
+        "path": "contracts/ton",
+        "isGitRepo": false,
+        "isEmpty": false
+      }
+    ]
+  },
+  "remoteConnectivity": [
+    {
+      "name": "apps/PANAS_PAY_APP",
+      "path": "apps/PANAS_PAY_APP",
+      "url": "https://github.com/panacea-icono/PANAS_PAY_APP.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "dependabot/npm_and_yarn/frontend/npm_and_yarn-c78fb3b8c0",
+        "main"
+      ]
+    },
+    {
+      "name": "apps/panas-app",
+      "path": "apps/panas-app",
+      "url": "https://github.com/panacea-icono/panas-app.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/panas-app.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "apps/Ton-telegram",
+      "path": "apps/Ton-telegram",
+      "url": "https://github.com/panacea-icono/Ton-telegram.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "copilot/add-panacea-ton-wallet-integration",
+        "copilot/audit-connections-forks-modulations",
+        "copilot/create-modulation-integration-scripts",
+        "copilot/deploy-panacea-ton-wallet-vercell",
+        "copilot/fix-25f4b663-5b36-4fa1-835c-b030e1dadcde",
+        "copilot/fix-31f36627-27a8-4fa7-ad41-5595a92b2a31",
+        "copilot/fix-fe201304-8d26-496f-abd6-bdf22d02b4fb",
+        "copilot/integrate-panas-app-with-ton-telegram",
+        "copilot/position-logo-gift-video",
+        "copilot/update-website-content-panans-app",
+        "dependabot/github_actions/actions/checkout-5",
+        "dependabot/github_actions/actions/setup-node-5",
+        "dependabot/github_actions/actions/upload-artifact-4",
+        "dependabot/github_actions/codecov/codecov-action-5",
+        "dependabot/github_actions/github/codeql-action-3",
+        "dependabot/npm_and_yarn/node-telegram-bot-api-0.66.0",
+        "dependabot/npm_and_yarn/npm_and_yarn-0d7ef37a24",
+        "dependabot/npm_and_yarn/sharp-0.34.3",
+        "dependabot/npm_and_yarn/solana/spl-token-0.4.14",
+        "main"
+      ]
+    },
+    {
+      "name": "contracts/panacea_smart_contracts",
+      "path": "contracts/panacea_smart_contracts",
+      "url": "https://github.com/panacea-icono/panacea_smart_contracts.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/panacea_smart_contracts.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "infra/civitAI",
+      "path": "infra/civitAI",
+      "url": "https://github.com/panacea-icono/civitAI.git",
+      "branch": "master",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/civitAI.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "infra/fibonacci",
+      "path": "infra/fibonacci",
+      "url": "https://github.com/panacea-icono/fibonacci.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/fibonacci.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "infra/FIBONACCI_LAB",
+      "path": "infra/FIBONACCI_LAB",
+      "url": "https://github.com/panacea-icono/FIBONACCI_LAB.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "cursor/optimize-codebase-for-performance-2b27",
+        "dependabot/npm_and_yarn/npm_and_yarn-1c42ae1690",
+        "dependabot/pip/pip-81350e123e",
+        "main"
+      ]
+    },
+    {
+      "name": "infra/fibonacci_maestro",
+      "path": "infra/fibonacci_maestro",
+      "url": "https://github.com/panacea-icono/fibonacci_maestro.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "name": "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+      "path": "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+      "url": "https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "copilot/fix-a85329ec-0ace-4dde-af87-6c1c36ec0605",
+        "copilot/fix-fd109943-6158-43cb-b8fe-ffb9fcfe2722",
+        "dependabot/npm_and_yarn/panas-pay-front/panas-pay/projects/panas-pay-frontend/npm_and_yarn-83b25f1103",
+        "main"
+      ]
+    },
+    {
+      "name": "infra/modelos_civitai",
+      "path": "infra/modelos_civitai",
+      "url": "https://github.com/https-panacea-icono-org/modelos_civitai.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/https-panacea-icono-org/modelos_civitai.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+      "path": "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+      "url": "https://github.com/panacea-icono/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "infra/privacidad_seguridad",
+      "path": "infra/privacidad_seguridad",
+      "url": "https://github.com/panacea-icono/privacidad_seguridad.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "name": "infra/repositorio-modular-fibonacci-ia-integrado",
+      "path": "infra/repositorio-modular-fibonacci-ia-integrado",
+      "url": "https://github.com/panacea-icono/repositorio-modular-fibonacci-ia-integrado.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "name": "infra/tutor_academico_CIRUGIA_I-II-III",
+      "path": "infra/tutor_academico_CIRUGIA_I-II-III",
+      "url": "https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/aiadult-platform",
+      "path": "labs/aiadult-platform",
+      "url": "https://github.com/panacea-icono/aiadult-platform.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/aiadult-platform.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/api_modelo_piloto",
+      "path": "labs/api_modelo_piloto",
+      "url": "https://github.com/panacea-icono/api_modelo_piloto.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "name": "labs/biblioteca-kuchiuya",
+      "path": "labs/biblioteca-kuchiuya",
+      "url": "https://github.com/panacea-icono/biblioteca-kuchiuya.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "dependabot/pip/pip-1193993df8",
+        "main",
+        "master"
+      ]
+    },
+    {
+      "name": "labs/CASA-RED-SRL",
+      "path": "labs/CASA-RED-SRL",
+      "url": "https://github.com/panacea-icono/CASA-RED-SRL.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/CASA-RED-SRL.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/coca",
+      "path": "labs/coca",
+      "url": "https://github.com/panacea-icono/coca.git",
+      "branch": "master",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "master"
+      ]
+    },
+    {
+      "name": "labs/codex-github",
+      "path": "labs/codex-github",
+      "url": "https://github.com/panacea-icono/codex-github.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/codex-github.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/codex-main",
+      "path": "labs/codex-main",
+      "url": "https://github.com/panacea-icono/codex-main.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "name": "labs/Dr_dela_TV",
+      "path": "labs/Dr_dela_TV",
+      "url": "https://github.com/panacea-icono/Dr_dela_TV.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "name": "labs/dr_tv_gp",
+      "path": "labs/dr_tv_gp",
+      "url": "https://github.com/panacea-icono/dr_tv_gp.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "name": "labs/dr_tv_GPT",
+      "path": "labs/dr_tv_GPT",
+      "url": "https://github.com/panacea-icono/dr_tv_GPT.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "dependabot/npm_and_yarn/npm_and_yarn-13e1184c15",
+        "main"
+      ]
+    },
+    {
+      "name": "labs/dr-de-la-tvr",
+      "path": "labs/dr-de-la-tvr",
+      "url": "https://github.com/panacea-icono/dr-de-la-tvr.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/dr-de-la-tvr.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/dua_lipa_model_image_ia",
+      "path": "labs/dua_lipa_model_image_ia",
+      "url": "https://github.com/panacea-icono/dua_lipa_model_image_ia.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/dua_lipa_model_image_ia.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/gpt-local",
+      "path": "labs/gpt-local",
+      "url": "https://github.com/panacea-icono/gpt-local.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "name": "labs/GPT-MAESTRO-PANACEA",
+      "path": "labs/GPT-MAESTRO-PANACEA",
+      "url": "https://github.com/https-panacea-icono-org/GPT-MAESTRO-PANACEA.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/https-panacea-icono-org/GPT-MAESTRO-PANACEA.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/GPTApi",
+      "path": "labs/GPTApi",
+      "url": "https://github.com/panacea-icono/GPTApi.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "name": "labs/home",
+      "path": "labs/home",
+      "url": "https://github.com/panacea-icono/home.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/home.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/HUGGING_FACE",
+      "path": "labs/HUGGING_FACE",
+      "url": "https://github.com/panacea-icono/HUGGING_FACE.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/HUGGING_FACE.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/HUGGING_FACE",
+      "path": "labs/HUGGING_FACE",
+      "url": "https://github.com/https-panacea-icono-org/HUGGING_FACE.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/https-panacea-icono-org/HUGGING_FACE.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/iaadult",
+      "path": "labs/iaadult",
+      "url": "https://github.com/panacea-icono/iaadult.git",
+      "branch": "examples",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "codex/infra-setup",
+        "examples",
+        "main",
+        "master"
+      ]
+    },
+    {
+      "name": "labs/kuchiuyas",
+      "path": "labs/kuchiuyas",
+      "url": "https://github.com/panacea-icono/kuchiuyas.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "name": "labs/kuchiuyasM",
+      "path": "labs/kuchiuyasM",
+      "url": "https://github.com/panacea-icono/kuchiuyasM.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "name": "labs/macuquina_proyecto",
+      "path": "labs/macuquina_proyecto",
+      "url": "https://github.com/panacea-icono/macuquina_proyecto.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/macuquina_proyecto.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/Marilyn_Monroe",
+      "path": "labs/Marilyn_Monroe",
+      "url": "https://github.com/panacea-icono/Marilyn_Monroe.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/Marilyn_Monroe.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/MEDIOS-REDES",
+      "path": "labs/MEDIOS-REDES",
+      "url": "https://github.com/panacea-icono/MEDIOS-REDES.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "name": "labs/MODELOS",
+      "path": "labs/MODELOS",
+      "url": "https://github.com/panacea-icono/MODELOS.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "name": "labs/nextjs-with-supabase",
+      "path": "labs/nextjs-with-supabase",
+      "url": "https://github.com/panacea-icono/nextjs-with-supabase.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/nextjs-with-supabase.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/PANACEA_MD",
+      "path": "labs/PANACEA_MD",
+      "url": "https://github.com/panacea-icono/PANACEA_MD.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/PANACEA_MD.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/PANACEA-API-CENTRAL-CODEX",
+      "path": "labs/PANACEA-API-CENTRAL-CODEX",
+      "url": "https://github.com/panacea-icono/PANACEA-API-CENTRAL-CODEX.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "name": "labs/PANACEA-GPT-I",
+      "path": "labs/PANACEA-GPT-I",
+      "url": "https://github.com/panacea-icono/PANACEA-GPT-I.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/PANACEA-GPT-I.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/panacea-icono",
+      "path": "labs/panacea-icono",
+      "url": "https://github.com/panacea-icono/panacea-icono.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "copilot/fix-190164fa-8726-4efa-8d3d-7ebe7bda5104",
+        "copilot/fix-306c48eb-62ba-4f7d-a626-b781fd286b9b",
+        "copilot/fix-3edf90d4-7dd9-4274-95f4-8b1049cfc966",
+        "copilot/fix-4a3e035c-7fb3-4117-8d9e-5b1a9b44a911",
+        "copilot/fix-6b1cc5d8-668b-42d8-8c8b-3316dff77137",
+        "copilot/fix-70532582-3e4b-4f87-b3af-8728cea15b4d",
+        "copilot/fix-7b406f40-1b28-46b4-869e-b63784e48372",
+        "copilot/fix-7d1faffe-9217-4166-b85e-7271e6a65365",
+        "copilot/fix-7e26bcfc-5951-4353-8488-b78e802cf436",
+        "copilot/fix-8148121b-8ab9-41d0-8dbf-d0545f0f86e3",
+        "copilot/fix-826c7324-03e2-452c-b6f0-bef5250810bb",
+        "copilot/fix-936360c6-9311-4b52-a319-a21e7f86aa76",
+        "copilot/fix-c0120d93-9c4f-4200-bd1c-19bee18f7bc1",
+        "copilot/fix-e686c398-7298-44b4-8708-5dc8fb06031b",
+        "copilot/fix-ea50d1b0-daa2-47a2-9891-903a1ff6f760",
+        "copilot/fix-ff0cb201-329b-4589-bd54-27e47fc26c18",
+        "fix-detached",
+        "main"
+      ]
+    },
+    {
+      "name": "labs/panas_multichain",
+      "path": "labs/panas_multichain",
+      "url": "https://github.com/panacea-icono/panas_multichain.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/panas_multichain.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/panas_pay",
+      "path": "labs/panas_pay",
+      "url": "https://github.com/panacea-icono/panas_pay.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/panas_pay.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/panas-pay",
+      "path": "labs/panas-pay",
+      "url": "https://github.com/panacea-icono/panas-pay.git",
+      "branch": "master",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "master"
+      ]
+    },
+    {
+      "name": "labs/Panas-Pay.M",
+      "path": "labs/Panas-Pay.M",
+      "url": "https://github.com/panacea-icono/Panas-Pay.M.git",
+      "branch": "master",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/Panas-Pay.M.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/REDES",
+      "path": "labs/REDES",
+      "url": "https://github.com/panacea-icono/REDES.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/REDES.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/Super-code-tasker",
+      "path": "labs/Super-code-tasker",
+      "url": "https://github.com/https-panacea-icono-org/Super-code-tasker.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/https-panacea-icono-org/Super-code-tasker.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/UNIVERSOLIFE",
+      "path": "labs/UNIVERSOLIFE",
+      "url": "https://github.com/panacea-icono/UNIVERSOLIFE.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "dependabot/npm_and_yarn/projects/UNIVERSOLIFE/npm_and_yarn-5e6fba671e",
+        "main"
+      ]
+    },
+    {
+      "name": "labs/vite-react",
+      "path": "labs/vite-react",
+      "url": "https://github.com/panacea-icono/vite-react.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/vite-react.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "labs/voice",
+      "path": "labs/voice",
+      "url": "https://github.com/panacea-icono/voice.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "codex/encontrar-y-corregir-un-fallo-en-la-base-de-código",
+        "main"
+      ]
+    },
+    {
+      "name": "tokens/panas_token",
+      "path": "tokens/panas_token",
+      "url": "https://github.com/panacea-icono/panas_token.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/panas_token.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "tokens/PANAS_TOKENIZER_SURGERY",
+      "path": "tokens/PANAS_TOKENIZER_SURGERY",
+      "url": "https://github.com/panacea-icono/PANAS_TOKENIZER_SURGERY.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/PANAS_TOKENIZER_SURGERY.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "tokens/PANAS-TOKEN",
+      "path": "tokens/PANAS-TOKEN",
+      "url": "https://github.com/panacea-icono/PANAS-TOKEN.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "name": "tokens/panas-token.M",
+      "path": "tokens/panas-token.M",
+      "url": "https://github.com/panacea-icono/panas-token.M.git",
+      "branch": "main",
+      "accessible": false,
+      "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/panas-token.M.git/'\n",
+      "branches": []
+    },
+    {
+      "name": "tokens/TOKENIZER-NFT",
+      "path": "tokens/TOKENIZER-NFT",
+      "url": "https://github.com/panacea-icono/TOKENIZER-NFT.git",
+      "branch": "main",
+      "accessible": true,
+      "error": null,
+      "branches": [
+        "main"
+      ]
+    }
+  ],
+  "forkAnalysis": {
+    "forks": [
+      {
+        "name": "infra/modelos_civitai",
+        "path": "infra/modelos_civitai",
+        "url": "https://github.com/https-panacea-icono-org/modelos_civitai.git",
+        "branch": "main",
+        "owner": "https-panacea-icono-org",
+        "repo": "modelos_civitai",
+        "type": "potential-fork"
+      },
+      {
+        "name": "labs/GPT-MAESTRO-PANACEA",
+        "path": "labs/GPT-MAESTRO-PANACEA",
+        "url": "https://github.com/https-panacea-icono-org/GPT-MAESTRO-PANACEA.git",
+        "branch": "main",
+        "owner": "https-panacea-icono-org",
+        "repo": "GPT-MAESTRO-PANACEA",
+        "type": "potential-fork"
+      },
+      {
+        "name": "labs/HUGGING_FACE",
+        "path": "labs/HUGGING_FACE",
+        "url": "https://github.com/https-panacea-icono-org/HUGGING_FACE.git",
+        "branch": "main",
+        "owner": "https-panacea-icono-org",
+        "repo": "HUGGING_FACE",
+        "type": "potential-fork"
+      },
+      {
+        "name": "labs/Super-code-tasker",
+        "path": "labs/Super-code-tasker",
+        "url": "https://github.com/https-panacea-icono-org/Super-code-tasker.git",
+        "branch": "main",
+        "owner": "https-panacea-icono-org",
+        "repo": "Super-code-tasker",
+        "type": "potential-fork"
+      }
+    ],
+    "orgRepos": [
+      {
+        "name": "apps/PANAS_PAY_APP",
+        "path": "apps/PANAS_PAY_APP",
+        "url": "https://github.com/panacea-icono/PANAS_PAY_APP.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "PANAS_PAY_APP"
+      },
+      {
+        "name": "apps/panas-app",
+        "path": "apps/panas-app",
+        "url": "https://github.com/panacea-icono/panas-app.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "panas-app"
+      },
+      {
+        "name": "apps/Ton-telegram",
+        "path": "apps/Ton-telegram",
+        "url": "https://github.com/panacea-icono/Ton-telegram.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "Ton-telegram"
+      },
+      {
+        "name": "contracts/panacea_smart_contracts",
+        "path": "contracts/panacea_smart_contracts",
+        "url": "https://github.com/panacea-icono/panacea_smart_contracts.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "panacea_smart_contracts"
+      },
+      {
+        "name": "infra/civitAI",
+        "path": "infra/civitAI",
+        "url": "https://github.com/panacea-icono/civitAI.git",
+        "branch": "master",
+        "owner": "panacea-icono",
+        "repo": "civitAI"
+      },
+      {
+        "name": "infra/fibonacci",
+        "path": "infra/fibonacci",
+        "url": "https://github.com/panacea-icono/fibonacci.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "fibonacci"
+      },
+      {
+        "name": "infra/FIBONACCI_LAB",
+        "path": "infra/FIBONACCI_LAB",
+        "url": "https://github.com/panacea-icono/FIBONACCI_LAB.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "FIBONACCI_LAB"
+      },
+      {
+        "name": "infra/fibonacci_maestro",
+        "path": "infra/fibonacci_maestro",
+        "url": "https://github.com/panacea-icono/fibonacci_maestro.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "fibonacci_maestro"
+      },
+      {
+        "name": "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+        "path": "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+        "url": "https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "FIBONACCI-FINAL-MODULOS-API-MAESTRO"
+      },
+      {
+        "name": "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+        "path": "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+        "url": "https://github.com/panacea-icono/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK"
+      },
+      {
+        "name": "infra/privacidad_seguridad",
+        "path": "infra/privacidad_seguridad",
+        "url": "https://github.com/panacea-icono/privacidad_seguridad.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "privacidad_seguridad"
+      },
+      {
+        "name": "infra/repositorio-modular-fibonacci-ia-integrado",
+        "path": "infra/repositorio-modular-fibonacci-ia-integrado",
+        "url": "https://github.com/panacea-icono/repositorio-modular-fibonacci-ia-integrado.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "repositorio-modular-fibonacci-ia-integrado"
+      },
+      {
+        "name": "infra/tutor_academico_CIRUGIA_I-II-III",
+        "path": "infra/tutor_academico_CIRUGIA_I-II-III",
+        "url": "https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "tutor_academico_CIRUGIA_I-II-III"
+      },
+      {
+        "name": "labs/aiadult-platform",
+        "path": "labs/aiadult-platform",
+        "url": "https://github.com/panacea-icono/aiadult-platform.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "aiadult-platform"
+      },
+      {
+        "name": "labs/api_modelo_piloto",
+        "path": "labs/api_modelo_piloto",
+        "url": "https://github.com/panacea-icono/api_modelo_piloto.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "api_modelo_piloto"
+      },
+      {
+        "name": "labs/biblioteca-kuchiuya",
+        "path": "labs/biblioteca-kuchiuya",
+        "url": "https://github.com/panacea-icono/biblioteca-kuchiuya.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "biblioteca-kuchiuya"
+      },
+      {
+        "name": "labs/CASA-RED-SRL",
+        "path": "labs/CASA-RED-SRL",
+        "url": "https://github.com/panacea-icono/CASA-RED-SRL.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "CASA-RED-SRL"
+      },
+      {
+        "name": "labs/coca",
+        "path": "labs/coca",
+        "url": "https://github.com/panacea-icono/coca.git",
+        "branch": "master",
+        "owner": "panacea-icono",
+        "repo": "coca"
+      },
+      {
+        "name": "labs/codex-github",
+        "path": "labs/codex-github",
+        "url": "https://github.com/panacea-icono/codex-github.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "codex-github"
+      },
+      {
+        "name": "labs/codex-main",
+        "path": "labs/codex-main",
+        "url": "https://github.com/panacea-icono/codex-main.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "codex-main"
+      },
+      {
+        "name": "labs/Dr_dela_TV",
+        "path": "labs/Dr_dela_TV",
+        "url": "https://github.com/panacea-icono/Dr_dela_TV.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "Dr_dela_TV"
+      },
+      {
+        "name": "labs/dr_tv_gp",
+        "path": "labs/dr_tv_gp",
+        "url": "https://github.com/panacea-icono/dr_tv_gp.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "dr_tv_gp"
+      },
+      {
+        "name": "labs/dr_tv_GPT",
+        "path": "labs/dr_tv_GPT",
+        "url": "https://github.com/panacea-icono/dr_tv_GPT.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "dr_tv_GPT"
+      },
+      {
+        "name": "labs/dr-de-la-tvr",
+        "path": "labs/dr-de-la-tvr",
+        "url": "https://github.com/panacea-icono/dr-de-la-tvr.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "dr-de-la-tvr"
+      },
+      {
+        "name": "labs/dua_lipa_model_image_ia",
+        "path": "labs/dua_lipa_model_image_ia",
+        "url": "https://github.com/panacea-icono/dua_lipa_model_image_ia.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "dua_lipa_model_image_ia"
+      },
+      {
+        "name": "labs/gpt-local",
+        "path": "labs/gpt-local",
+        "url": "https://github.com/panacea-icono/gpt-local.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "gpt-local"
+      },
+      {
+        "name": "labs/GPTApi",
+        "path": "labs/GPTApi",
+        "url": "https://github.com/panacea-icono/GPTApi.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "GPTApi"
+      },
+      {
+        "name": "labs/home",
+        "path": "labs/home",
+        "url": "https://github.com/panacea-icono/home.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "home"
+      },
+      {
+        "name": "labs/HUGGING_FACE",
+        "path": "labs/HUGGING_FACE",
+        "url": "https://github.com/panacea-icono/HUGGING_FACE.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "HUGGING_FACE"
+      },
+      {
+        "name": "labs/iaadult",
+        "path": "labs/iaadult",
+        "url": "https://github.com/panacea-icono/iaadult.git",
+        "branch": "examples",
+        "owner": "panacea-icono",
+        "repo": "iaadult"
+      },
+      {
+        "name": "labs/kuchiuyas",
+        "path": "labs/kuchiuyas",
+        "url": "https://github.com/panacea-icono/kuchiuyas.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "kuchiuyas"
+      },
+      {
+        "name": "labs/kuchiuyasM",
+        "path": "labs/kuchiuyasM",
+        "url": "https://github.com/panacea-icono/kuchiuyasM.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "kuchiuyasM"
+      },
+      {
+        "name": "labs/macuquina_proyecto",
+        "path": "labs/macuquina_proyecto",
+        "url": "https://github.com/panacea-icono/macuquina_proyecto.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "macuquina_proyecto"
+      },
+      {
+        "name": "labs/Marilyn_Monroe",
+        "path": "labs/Marilyn_Monroe",
+        "url": "https://github.com/panacea-icono/Marilyn_Monroe.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "Marilyn_Monroe"
+      },
+      {
+        "name": "labs/MEDIOS-REDES",
+        "path": "labs/MEDIOS-REDES",
+        "url": "https://github.com/panacea-icono/MEDIOS-REDES.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "MEDIOS-REDES"
+      },
+      {
+        "name": "labs/MODELOS",
+        "path": "labs/MODELOS",
+        "url": "https://github.com/panacea-icono/MODELOS.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "MODELOS"
+      },
+      {
+        "name": "labs/nextjs-with-supabase",
+        "path": "labs/nextjs-with-supabase",
+        "url": "https://github.com/panacea-icono/nextjs-with-supabase.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "nextjs-with-supabase"
+      },
+      {
+        "name": "labs/PANACEA_MD",
+        "path": "labs/PANACEA_MD",
+        "url": "https://github.com/panacea-icono/PANACEA_MD.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "PANACEA_MD"
+      },
+      {
+        "name": "labs/PANACEA-API-CENTRAL-CODEX",
+        "path": "labs/PANACEA-API-CENTRAL-CODEX",
+        "url": "https://github.com/panacea-icono/PANACEA-API-CENTRAL-CODEX.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "PANACEA-API-CENTRAL-CODEX"
+      },
+      {
+        "name": "labs/PANACEA-GPT-I",
+        "path": "labs/PANACEA-GPT-I",
+        "url": "https://github.com/panacea-icono/PANACEA-GPT-I.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "PANACEA-GPT-I"
+      },
+      {
+        "name": "labs/panacea-icono",
+        "path": "labs/panacea-icono",
+        "url": "https://github.com/panacea-icono/panacea-icono.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "panacea-icono"
+      },
+      {
+        "name": "labs/panas_multichain",
+        "path": "labs/panas_multichain",
+        "url": "https://github.com/panacea-icono/panas_multichain.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "panas_multichain"
+      },
+      {
+        "name": "labs/panas_pay",
+        "path": "labs/panas_pay",
+        "url": "https://github.com/panacea-icono/panas_pay.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "panas_pay"
+      },
+      {
+        "name": "labs/panas-pay",
+        "path": "labs/panas-pay",
+        "url": "https://github.com/panacea-icono/panas-pay.git",
+        "branch": "master",
+        "owner": "panacea-icono",
+        "repo": "panas-pay"
+      },
+      {
+        "name": "labs/Panas-Pay.M",
+        "path": "labs/Panas-Pay.M",
+        "url": "https://github.com/panacea-icono/Panas-Pay.M.git",
+        "branch": "master",
+        "owner": "panacea-icono",
+        "repo": "Panas-Pay.M"
+      },
+      {
+        "name": "labs/REDES",
+        "path": "labs/REDES",
+        "url": "https://github.com/panacea-icono/REDES.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "REDES"
+      },
+      {
+        "name": "labs/UNIVERSOLIFE",
+        "path": "labs/UNIVERSOLIFE",
+        "url": "https://github.com/panacea-icono/UNIVERSOLIFE.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "UNIVERSOLIFE"
+      },
+      {
+        "name": "labs/vite-react",
+        "path": "labs/vite-react",
+        "url": "https://github.com/panacea-icono/vite-react.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "vite-react"
+      },
+      {
+        "name": "labs/voice",
+        "path": "labs/voice",
+        "url": "https://github.com/panacea-icono/voice.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "voice"
+      },
+      {
+        "name": "tokens/panas_token",
+        "path": "tokens/panas_token",
+        "url": "https://github.com/panacea-icono/panas_token.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "panas_token"
+      },
+      {
+        "name": "tokens/PANAS_TOKENIZER_SURGERY",
+        "path": "tokens/PANAS_TOKENIZER_SURGERY",
+        "url": "https://github.com/panacea-icono/PANAS_TOKENIZER_SURGERY.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "PANAS_TOKENIZER_SURGERY"
+      },
+      {
+        "name": "tokens/PANAS-TOKEN",
+        "path": "tokens/PANAS-TOKEN",
+        "url": "https://github.com/panacea-icono/PANAS-TOKEN.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "PANAS-TOKEN"
+      },
+      {
+        "name": "tokens/panas-token.M",
+        "path": "tokens/panas-token.M",
+        "url": "https://github.com/panacea-icono/panas-token.M.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "panas-token.M"
+      },
+      {
+        "name": "tokens/TOKENIZER-NFT",
+        "path": "tokens/TOKENIZER-NFT",
+        "url": "https://github.com/panacea-icono/TOKENIZER-NFT.git",
+        "branch": "main",
+        "owner": "panacea-icono",
+        "repo": "TOKENIZER-NFT"
+      }
+    ]
+  }
+}

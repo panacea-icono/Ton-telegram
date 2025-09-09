@@ -1,0 +1,4753 @@
+{
+  "timestamp": "2025-09-09T15:23:21.147Z",
+  "summary": {
+    "totalChecks": 6,
+    "passedChecks": 6,
+    "failedChecks": 0,
+    "warningChecks": 0
+  },
+  "audits": {
+    "basic": {
+      "status": "completed",
+      "timestamp": "2025-09-09T15:23:21.179Z"
+    },
+    "integrations": {
+      "status": "completed",
+      "timestamp": "2025-09-09T15:23:21.180Z"
+    },
+    "github": {
+      "status": "completed",
+      "timestamp": "2025-09-09T15:23:21.181Z"
+    },
+    "connections": {
+      "timestamp": "2025-09-09T15:23:21.182Z",
+      "environment": {
+        "database": {
+          "postgres": false,
+          "redis": false
+        },
+        "blockchains": {
+          "ton": false,
+          "solana": false,
+          "algorand": false,
+          "bsc": false
+        },
+        "external": {
+          "github": false,
+          "telegram": false,
+          "vercel": false,
+          "heroku": false
+        }
+      },
+      "connectivity": {
+        "blockchains": [
+          {
+            "name": "TON Mainnet",
+            "status": "error",
+            "responseTime": 19,
+            "message": "getaddrinfo ENOTFOUND toncenter.com"
+          },
+          {
+            "name": "TON Testnet",
+            "status": "error",
+            "responseTime": 8,
+            "message": "getaddrinfo ENOTFOUND testnet.toncenter.com"
+          },
+          {
+            "name": "Solana Mainnet",
+            "status": "error",
+            "responseTime": 7,
+            "message": "getaddrinfo ENOTFOUND api.mainnet-beta.solana.com"
+          },
+          {
+            "name": "Solana Devnet",
+            "status": "error",
+            "responseTime": 8,
+            "message": "getaddrinfo ENOTFOUND api.devnet.solana.com"
+          },
+          {
+            "name": "Algorand Mainnet",
+            "status": "error",
+            "responseTime": 7,
+            "message": "getaddrinfo ENOTFOUND mainnet-api.algonode.cloud"
+          },
+          {
+            "name": "BSC Mainnet",
+            "status": "error",
+            "responseTime": 7,
+            "message": "getaddrinfo ENOTFOUND bsc-dataseed.binance.org"
+          }
+        ],
+        "apis": [
+          {
+            "name": "GitHub API",
+            "status": "success",
+            "code": 403,
+            "responseTime": 49,
+            "message": "HTTP 403"
+          },
+          {
+            "name": "Telegram Bot API",
+            "status": "error",
+            "responseTime": 4,
+            "message": "getaddrinfo ENOTFOUND api.telegram.org"
+          },
+          {
+            "name": "CoinGecko API",
+            "status": "error",
+            "responseTime": 11,
+            "message": "getaddrinfo ENOTFOUND api.coingecko.com"
+          },
+          {
+            "name": "Vercel API",
+            "status": "error",
+            "responseTime": 10,
+            "message": "getaddrinfo ENOTFOUND api.vercel.com"
+          }
+        ],
+        "hosting": [
+          {
+            "name": "Vercel Edge Network",
+            "status": "error",
+            "responseTime": 13,
+            "message": "getaddrinfo ENOTFOUND vercel.com"
+          },
+          {
+            "name": "Heroku Platform",
+            "status": "error",
+            "responseTime": 14,
+            "message": "getaddrinfo ENOTFOUND api.heroku.com"
+          },
+          {
+            "name": "HuggingFace Hub",
+            "status": "error",
+            "responseTime": 17,
+            "message": "getaddrinfo ENOTFOUND huggingface.co"
+          }
+        ]
+      },
+      "localPorts": {
+        "activePorts": []
+      }
+    },
+    "forks": {
+      "timestamp": "2025-09-09T15:23:21.290Z",
+      "gitmodules": {
+        "modules": [
+          {
+            "name": "apps/PANAS_PAY_APP",
+            "path": "apps/PANAS_PAY_APP",
+            "url": "https://github.com/panacea-icono/PANAS_PAY_APP.git",
+            "branch": "main"
+          },
+          {
+            "name": "apps/panas-app",
+            "path": "apps/panas-app",
+            "url": "https://github.com/panacea-icono/panas-app.git",
+            "branch": "main"
+          },
+          {
+            "name": "apps/Ton-telegram",
+            "path": "apps/Ton-telegram",
+            "url": "https://github.com/panacea-icono/Ton-telegram.git",
+            "branch": "main"
+          },
+          {
+            "name": "contracts/panacea_smart_contracts",
+            "path": "contracts/panacea_smart_contracts",
+            "url": "https://github.com/panacea-icono/panacea_smart_contracts.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/civitAI",
+            "path": "infra/civitAI",
+            "url": "https://github.com/panacea-icono/civitAI.git",
+            "branch": "master"
+          },
+          {
+            "name": "infra/fibonacci",
+            "path": "infra/fibonacci",
+            "url": "https://github.com/panacea-icono/fibonacci.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/FIBONACCI_LAB",
+            "path": "infra/FIBONACCI_LAB",
+            "url": "https://github.com/panacea-icono/FIBONACCI_LAB.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/fibonacci_maestro",
+            "path": "infra/fibonacci_maestro",
+            "url": "https://github.com/panacea-icono/fibonacci_maestro.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+            "path": "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+            "url": "https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/modelos_civitai",
+            "path": "infra/modelos_civitai",
+            "url": "https://github.com/https-panacea-icono-org/modelos_civitai.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+            "path": "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+            "url": "https://github.com/panacea-icono/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/privacidad_seguridad",
+            "path": "infra/privacidad_seguridad",
+            "url": "https://github.com/panacea-icono/privacidad_seguridad.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/repositorio-modular-fibonacci-ia-integrado",
+            "path": "infra/repositorio-modular-fibonacci-ia-integrado",
+            "url": "https://github.com/panacea-icono/repositorio-modular-fibonacci-ia-integrado.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/tutor_academico_CIRUGIA_I-II-III",
+            "path": "infra/tutor_academico_CIRUGIA_I-II-III",
+            "url": "https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/aiadult-platform",
+            "path": "labs/aiadult-platform",
+            "url": "https://github.com/panacea-icono/aiadult-platform.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/api_modelo_piloto",
+            "path": "labs/api_modelo_piloto",
+            "url": "https://github.com/panacea-icono/api_modelo_piloto.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/biblioteca-kuchiuya",
+            "path": "labs/biblioteca-kuchiuya",
+            "url": "https://github.com/panacea-icono/biblioteca-kuchiuya.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/CASA-RED-SRL",
+            "path": "labs/CASA-RED-SRL",
+            "url": "https://github.com/panacea-icono/CASA-RED-SRL.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/coca",
+            "path": "labs/coca",
+            "url": "https://github.com/panacea-icono/coca.git",
+            "branch": "master"
+          },
+          {
+            "name": "labs/codex-github",
+            "path": "labs/codex-github",
+            "url": "https://github.com/panacea-icono/codex-github.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/codex-main",
+            "path": "labs/codex-main",
+            "url": "https://github.com/panacea-icono/codex-main.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/Dr_dela_TV",
+            "path": "labs/Dr_dela_TV",
+            "url": "https://github.com/panacea-icono/Dr_dela_TV.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/dr_tv_gp",
+            "path": "labs/dr_tv_gp",
+            "url": "https://github.com/panacea-icono/dr_tv_gp.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/dr_tv_GPT",
+            "path": "labs/dr_tv_GPT",
+            "url": "https://github.com/panacea-icono/dr_tv_GPT.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/dr-de-la-tvr",
+            "path": "labs/dr-de-la-tvr",
+            "url": "https://github.com/panacea-icono/dr-de-la-tvr.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/dua_lipa_model_image_ia",
+            "path": "labs/dua_lipa_model_image_ia",
+            "url": "https://github.com/panacea-icono/dua_lipa_model_image_ia.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/gpt-local",
+            "path": "labs/gpt-local",
+            "url": "https://github.com/panacea-icono/gpt-local.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/GPT-MAESTRO-PANACEA",
+            "path": "labs/GPT-MAESTRO-PANACEA",
+            "url": "https://github.com/https-panacea-icono-org/GPT-MAESTRO-PANACEA.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/GPTApi",
+            "path": "labs/GPTApi",
+            "url": "https://github.com/panacea-icono/GPTApi.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/home",
+            "path": "labs/home",
+            "url": "https://github.com/panacea-icono/home.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/HUGGING_FACE",
+            "path": "labs/HUGGING_FACE",
+            "url": "https://github.com/panacea-icono/HUGGING_FACE.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/HUGGING_FACE",
+            "path": "labs/HUGGING_FACE",
+            "url": "https://github.com/https-panacea-icono-org/HUGGING_FACE.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/iaadult",
+            "path": "labs/iaadult",
+            "url": "https://github.com/panacea-icono/iaadult.git",
+            "branch": "examples"
+          },
+          {
+            "name": "labs/kuchiuyas",
+            "path": "labs/kuchiuyas",
+            "url": "https://github.com/panacea-icono/kuchiuyas.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/kuchiuyasM",
+            "path": "labs/kuchiuyasM",
+            "url": "https://github.com/panacea-icono/kuchiuyasM.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/macuquina_proyecto",
+            "path": "labs/macuquina_proyecto",
+            "url": "https://github.com/panacea-icono/macuquina_proyecto.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/Marilyn_Monroe",
+            "path": "labs/Marilyn_Monroe",
+            "url": "https://github.com/panacea-icono/Marilyn_Monroe.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/MEDIOS-REDES",
+            "path": "labs/MEDIOS-REDES",
+            "url": "https://github.com/panacea-icono/MEDIOS-REDES.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/MODELOS",
+            "path": "labs/MODELOS",
+            "url": "https://github.com/panacea-icono/MODELOS.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/nextjs-with-supabase",
+            "path": "labs/nextjs-with-supabase",
+            "url": "https://github.com/panacea-icono/nextjs-with-supabase.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/PANACEA_MD",
+            "path": "labs/PANACEA_MD",
+            "url": "https://github.com/panacea-icono/PANACEA_MD.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/PANACEA-API-CENTRAL-CODEX",
+            "path": "labs/PANACEA-API-CENTRAL-CODEX",
+            "url": "https://github.com/panacea-icono/PANACEA-API-CENTRAL-CODEX.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/PANACEA-GPT-I",
+            "path": "labs/PANACEA-GPT-I",
+            "url": "https://github.com/panacea-icono/PANACEA-GPT-I.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/panacea-icono",
+            "path": "labs/panacea-icono",
+            "url": "https://github.com/panacea-icono/panacea-icono.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/panas_multichain",
+            "path": "labs/panas_multichain",
+            "url": "https://github.com/panacea-icono/panas_multichain.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/panas_pay",
+            "path": "labs/panas_pay",
+            "url": "https://github.com/panacea-icono/panas_pay.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/panas-pay",
+            "path": "labs/panas-pay",
+            "url": "https://github.com/panacea-icono/panas-pay.git",
+            "branch": "master"
+          },
+          {
+            "name": "labs/Panas-Pay.M",
+            "path": "labs/Panas-Pay.M",
+            "url": "https://github.com/panacea-icono/Panas-Pay.M.git",
+            "branch": "master"
+          },
+          {
+            "name": "labs/REDES",
+            "path": "labs/REDES",
+            "url": "https://github.com/panacea-icono/REDES.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/Super-code-tasker",
+            "path": "labs/Super-code-tasker",
+            "url": "https://github.com/https-panacea-icono-org/Super-code-tasker.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/UNIVERSOLIFE",
+            "path": "labs/UNIVERSOLIFE",
+            "url": "https://github.com/panacea-icono/UNIVERSOLIFE.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/vite-react",
+            "path": "labs/vite-react",
+            "url": "https://github.com/panacea-icono/vite-react.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/voice",
+            "path": "labs/voice",
+            "url": "https://github.com/panacea-icono/voice.git",
+            "branch": "main"
+          },
+          {
+            "name": "tokens/panas_token",
+            "path": "tokens/panas_token",
+            "url": "https://github.com/panacea-icono/panas_token.git",
+            "branch": "main"
+          },
+          {
+            "name": "tokens/PANAS_TOKENIZER_SURGERY",
+            "path": "tokens/PANAS_TOKENIZER_SURGERY",
+            "url": "https://github.com/panacea-icono/PANAS_TOKENIZER_SURGERY.git",
+            "branch": "main"
+          },
+          {
+            "name": "tokens/PANAS-TOKEN",
+            "path": "tokens/PANAS-TOKEN",
+            "url": "https://github.com/panacea-icono/PANAS-TOKEN.git",
+            "branch": "main"
+          },
+          {
+            "name": "tokens/panas-token.M",
+            "path": "tokens/panas-token.M",
+            "url": "https://github.com/panacea-icono/panas-token.M.git",
+            "branch": "main"
+          },
+          {
+            "name": "tokens/TOKENIZER-NFT",
+            "path": "tokens/TOKENIZER-NFT",
+            "url": "https://github.com/panacea-icono/TOKENIZER-NFT.git",
+            "branch": "main"
+          }
+        ],
+        "total": 58
+      },
+      "submoduleStatus": {
+        "submodules": [],
+        "total": 0
+      },
+      "physicalDirectories": {
+        "existing": [],
+        "missing": [
+          {
+            "name": "apps/PANAS_PAY_APP",
+            "path": "apps/PANAS_PAY_APP",
+            "url": "https://github.com/panacea-icono/PANAS_PAY_APP.git",
+            "branch": "main"
+          },
+          {
+            "name": "apps/panas-app",
+            "path": "apps/panas-app",
+            "url": "https://github.com/panacea-icono/panas-app.git",
+            "branch": "main"
+          },
+          {
+            "name": "apps/Ton-telegram",
+            "path": "apps/Ton-telegram",
+            "url": "https://github.com/panacea-icono/Ton-telegram.git",
+            "branch": "main"
+          },
+          {
+            "name": "contracts/panacea_smart_contracts",
+            "path": "contracts/panacea_smart_contracts",
+            "url": "https://github.com/panacea-icono/panacea_smart_contracts.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/civitAI",
+            "path": "infra/civitAI",
+            "url": "https://github.com/panacea-icono/civitAI.git",
+            "branch": "master"
+          },
+          {
+            "name": "infra/fibonacci",
+            "path": "infra/fibonacci",
+            "url": "https://github.com/panacea-icono/fibonacci.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/FIBONACCI_LAB",
+            "path": "infra/FIBONACCI_LAB",
+            "url": "https://github.com/panacea-icono/FIBONACCI_LAB.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/fibonacci_maestro",
+            "path": "infra/fibonacci_maestro",
+            "url": "https://github.com/panacea-icono/fibonacci_maestro.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+            "path": "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+            "url": "https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/modelos_civitai",
+            "path": "infra/modelos_civitai",
+            "url": "https://github.com/https-panacea-icono-org/modelos_civitai.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+            "path": "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+            "url": "https://github.com/panacea-icono/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/privacidad_seguridad",
+            "path": "infra/privacidad_seguridad",
+            "url": "https://github.com/panacea-icono/privacidad_seguridad.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/repositorio-modular-fibonacci-ia-integrado",
+            "path": "infra/repositorio-modular-fibonacci-ia-integrado",
+            "url": "https://github.com/panacea-icono/repositorio-modular-fibonacci-ia-integrado.git",
+            "branch": "main"
+          },
+          {
+            "name": "infra/tutor_academico_CIRUGIA_I-II-III",
+            "path": "infra/tutor_academico_CIRUGIA_I-II-III",
+            "url": "https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/aiadult-platform",
+            "path": "labs/aiadult-platform",
+            "url": "https://github.com/panacea-icono/aiadult-platform.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/api_modelo_piloto",
+            "path": "labs/api_modelo_piloto",
+            "url": "https://github.com/panacea-icono/api_modelo_piloto.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/biblioteca-kuchiuya",
+            "path": "labs/biblioteca-kuchiuya",
+            "url": "https://github.com/panacea-icono/biblioteca-kuchiuya.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/CASA-RED-SRL",
+            "path": "labs/CASA-RED-SRL",
+            "url": "https://github.com/panacea-icono/CASA-RED-SRL.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/coca",
+            "path": "labs/coca",
+            "url": "https://github.com/panacea-icono/coca.git",
+            "branch": "master"
+          },
+          {
+            "name": "labs/codex-github",
+            "path": "labs/codex-github",
+            "url": "https://github.com/panacea-icono/codex-github.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/codex-main",
+            "path": "labs/codex-main",
+            "url": "https://github.com/panacea-icono/codex-main.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/Dr_dela_TV",
+            "path": "labs/Dr_dela_TV",
+            "url": "https://github.com/panacea-icono/Dr_dela_TV.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/dr_tv_gp",
+            "path": "labs/dr_tv_gp",
+            "url": "https://github.com/panacea-icono/dr_tv_gp.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/dr_tv_GPT",
+            "path": "labs/dr_tv_GPT",
+            "url": "https://github.com/panacea-icono/dr_tv_GPT.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/dr-de-la-tvr",
+            "path": "labs/dr-de-la-tvr",
+            "url": "https://github.com/panacea-icono/dr-de-la-tvr.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/dua_lipa_model_image_ia",
+            "path": "labs/dua_lipa_model_image_ia",
+            "url": "https://github.com/panacea-icono/dua_lipa_model_image_ia.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/gpt-local",
+            "path": "labs/gpt-local",
+            "url": "https://github.com/panacea-icono/gpt-local.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/GPT-MAESTRO-PANACEA",
+            "path": "labs/GPT-MAESTRO-PANACEA",
+            "url": "https://github.com/https-panacea-icono-org/GPT-MAESTRO-PANACEA.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/GPTApi",
+            "path": "labs/GPTApi",
+            "url": "https://github.com/panacea-icono/GPTApi.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/home",
+            "path": "labs/home",
+            "url": "https://github.com/panacea-icono/home.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/HUGGING_FACE",
+            "path": "labs/HUGGING_FACE",
+            "url": "https://github.com/panacea-icono/HUGGING_FACE.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/HUGGING_FACE",
+            "path": "labs/HUGGING_FACE",
+            "url": "https://github.com/https-panacea-icono-org/HUGGING_FACE.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/iaadult",
+            "path": "labs/iaadult",
+            "url": "https://github.com/panacea-icono/iaadult.git",
+            "branch": "examples"
+          },
+          {
+            "name": "labs/kuchiuyas",
+            "path": "labs/kuchiuyas",
+            "url": "https://github.com/panacea-icono/kuchiuyas.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/kuchiuyasM",
+            "path": "labs/kuchiuyasM",
+            "url": "https://github.com/panacea-icono/kuchiuyasM.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/macuquina_proyecto",
+            "path": "labs/macuquina_proyecto",
+            "url": "https://github.com/panacea-icono/macuquina_proyecto.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/Marilyn_Monroe",
+            "path": "labs/Marilyn_Monroe",
+            "url": "https://github.com/panacea-icono/Marilyn_Monroe.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/MEDIOS-REDES",
+            "path": "labs/MEDIOS-REDES",
+            "url": "https://github.com/panacea-icono/MEDIOS-REDES.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/MODELOS",
+            "path": "labs/MODELOS",
+            "url": "https://github.com/panacea-icono/MODELOS.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/nextjs-with-supabase",
+            "path": "labs/nextjs-with-supabase",
+            "url": "https://github.com/panacea-icono/nextjs-with-supabase.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/PANACEA_MD",
+            "path": "labs/PANACEA_MD",
+            "url": "https://github.com/panacea-icono/PANACEA_MD.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/PANACEA-API-CENTRAL-CODEX",
+            "path": "labs/PANACEA-API-CENTRAL-CODEX",
+            "url": "https://github.com/panacea-icono/PANACEA-API-CENTRAL-CODEX.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/PANACEA-GPT-I",
+            "path": "labs/PANACEA-GPT-I",
+            "url": "https://github.com/panacea-icono/PANACEA-GPT-I.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/panacea-icono",
+            "path": "labs/panacea-icono",
+            "url": "https://github.com/panacea-icono/panacea-icono.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/panas_multichain",
+            "path": "labs/panas_multichain",
+            "url": "https://github.com/panacea-icono/panas_multichain.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/panas_pay",
+            "path": "labs/panas_pay",
+            "url": "https://github.com/panacea-icono/panas_pay.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/panas-pay",
+            "path": "labs/panas-pay",
+            "url": "https://github.com/panacea-icono/panas-pay.git",
+            "branch": "master"
+          },
+          {
+            "name": "labs/Panas-Pay.M",
+            "path": "labs/Panas-Pay.M",
+            "url": "https://github.com/panacea-icono/Panas-Pay.M.git",
+            "branch": "master"
+          },
+          {
+            "name": "labs/REDES",
+            "path": "labs/REDES",
+            "url": "https://github.com/panacea-icono/REDES.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/Super-code-tasker",
+            "path": "labs/Super-code-tasker",
+            "url": "https://github.com/https-panacea-icono-org/Super-code-tasker.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/UNIVERSOLIFE",
+            "path": "labs/UNIVERSOLIFE",
+            "url": "https://github.com/panacea-icono/UNIVERSOLIFE.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/vite-react",
+            "path": "labs/vite-react",
+            "url": "https://github.com/panacea-icono/vite-react.git",
+            "branch": "main"
+          },
+          {
+            "name": "labs/voice",
+            "path": "labs/voice",
+            "url": "https://github.com/panacea-icono/voice.git",
+            "branch": "main"
+          },
+          {
+            "name": "tokens/panas_token",
+            "path": "tokens/panas_token",
+            "url": "https://github.com/panacea-icono/panas_token.git",
+            "branch": "main"
+          },
+          {
+            "name": "tokens/PANAS_TOKENIZER_SURGERY",
+            "path": "tokens/PANAS_TOKENIZER_SURGERY",
+            "url": "https://github.com/panacea-icono/PANAS_TOKENIZER_SURGERY.git",
+            "branch": "main"
+          },
+          {
+            "name": "tokens/PANAS-TOKEN",
+            "path": "tokens/PANAS-TOKEN",
+            "url": "https://github.com/panacea-icono/PANAS-TOKEN.git",
+            "branch": "main"
+          },
+          {
+            "name": "tokens/panas-token.M",
+            "path": "tokens/panas-token.M",
+            "url": "https://github.com/panacea-icono/panas-token.M.git",
+            "branch": "main"
+          },
+          {
+            "name": "tokens/TOKENIZER-NFT",
+            "path": "tokens/TOKENIZER-NFT",
+            "url": "https://github.com/panacea-icono/TOKENIZER-NFT.git",
+            "branch": "main"
+          }
+        ],
+        "unexpected": [
+          {
+            "path": "apps/ton-connect-app",
+            "isGitRepo": false,
+            "isEmpty": false
+          },
+          {
+            "path": "tokens/gs-token",
+            "isGitRepo": false,
+            "isEmpty": false
+          },
+          {
+            "path": "tokens/kuchi-token",
+            "isGitRepo": false,
+            "isEmpty": false
+          },
+          {
+            "path": "tokens/panas-token",
+            "isGitRepo": false,
+            "isEmpty": false
+          },
+          {
+            "path": "tokens/vaser-token",
+            "isGitRepo": false,
+            "isEmpty": false
+          },
+          {
+            "path": "contracts/algorand",
+            "isGitRepo": false,
+            "isEmpty": false
+          },
+          {
+            "path": "contracts/bsc",
+            "isGitRepo": false,
+            "isEmpty": false
+          },
+          {
+            "path": "contracts/solana",
+            "isGitRepo": false,
+            "isEmpty": false
+          },
+          {
+            "path": "contracts/ton",
+            "isGitRepo": false,
+            "isEmpty": false
+          }
+        ]
+      },
+      "remoteConnectivity": [
+        {
+          "name": "apps/PANAS_PAY_APP",
+          "path": "apps/PANAS_PAY_APP",
+          "url": "https://github.com/panacea-icono/PANAS_PAY_APP.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "dependabot/npm_and_yarn/frontend/npm_and_yarn-c78fb3b8c0",
+            "main"
+          ]
+        },
+        {
+          "name": "apps/panas-app",
+          "path": "apps/panas-app",
+          "url": "https://github.com/panacea-icono/panas-app.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/panas-app.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "apps/Ton-telegram",
+          "path": "apps/Ton-telegram",
+          "url": "https://github.com/panacea-icono/Ton-telegram.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "copilot/add-panacea-ton-wallet-integration",
+            "copilot/audit-connections-forks-modulations",
+            "copilot/create-modulation-integration-scripts",
+            "copilot/deploy-panacea-ton-wallet-vercell",
+            "copilot/fix-25f4b663-5b36-4fa1-835c-b030e1dadcde",
+            "copilot/fix-31f36627-27a8-4fa7-ad41-5595a92b2a31",
+            "copilot/fix-fe201304-8d26-496f-abd6-bdf22d02b4fb",
+            "copilot/integrate-panas-app-with-ton-telegram",
+            "copilot/position-logo-gift-video",
+            "copilot/update-website-content-panans-app",
+            "dependabot/github_actions/actions/checkout-5",
+            "dependabot/github_actions/actions/setup-node-5",
+            "dependabot/github_actions/actions/upload-artifact-4",
+            "dependabot/github_actions/codecov/codecov-action-5",
+            "dependabot/github_actions/github/codeql-action-3",
+            "dependabot/npm_and_yarn/node-telegram-bot-api-0.66.0",
+            "dependabot/npm_and_yarn/npm_and_yarn-0d7ef37a24",
+            "dependabot/npm_and_yarn/sharp-0.34.3",
+            "dependabot/npm_and_yarn/solana/spl-token-0.4.14",
+            "main"
+          ]
+        },
+        {
+          "name": "contracts/panacea_smart_contracts",
+          "path": "contracts/panacea_smart_contracts",
+          "url": "https://github.com/panacea-icono/panacea_smart_contracts.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/panacea_smart_contracts.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "infra/civitAI",
+          "path": "infra/civitAI",
+          "url": "https://github.com/panacea-icono/civitAI.git",
+          "branch": "master",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/civitAI.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "infra/fibonacci",
+          "path": "infra/fibonacci",
+          "url": "https://github.com/panacea-icono/fibonacci.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/fibonacci.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "infra/FIBONACCI_LAB",
+          "path": "infra/FIBONACCI_LAB",
+          "url": "https://github.com/panacea-icono/FIBONACCI_LAB.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "cursor/optimize-codebase-for-performance-2b27",
+            "dependabot/npm_and_yarn/npm_and_yarn-1c42ae1690",
+            "dependabot/pip/pip-81350e123e",
+            "main"
+          ]
+        },
+        {
+          "name": "infra/fibonacci_maestro",
+          "path": "infra/fibonacci_maestro",
+          "url": "https://github.com/panacea-icono/fibonacci_maestro.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "main"
+          ]
+        },
+        {
+          "name": "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+          "path": "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+          "url": "https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "copilot/fix-a85329ec-0ace-4dde-af87-6c1c36ec0605",
+            "copilot/fix-fd109943-6158-43cb-b8fe-ffb9fcfe2722",
+            "dependabot/npm_and_yarn/panas-pay-front/panas-pay/projects/panas-pay-frontend/npm_and_yarn-83b25f1103",
+            "main"
+          ]
+        },
+        {
+          "name": "infra/modelos_civitai",
+          "path": "infra/modelos_civitai",
+          "url": "https://github.com/https-panacea-icono-org/modelos_civitai.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/https-panacea-icono-org/modelos_civitai.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+          "path": "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+          "url": "https://github.com/panacea-icono/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "infra/privacidad_seguridad",
+          "path": "infra/privacidad_seguridad",
+          "url": "https://github.com/panacea-icono/privacidad_seguridad.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "main"
+          ]
+        },
+        {
+          "name": "infra/repositorio-modular-fibonacci-ia-integrado",
+          "path": "infra/repositorio-modular-fibonacci-ia-integrado",
+          "url": "https://github.com/panacea-icono/repositorio-modular-fibonacci-ia-integrado.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "main"
+          ]
+        },
+        {
+          "name": "infra/tutor_academico_CIRUGIA_I-II-III",
+          "path": "infra/tutor_academico_CIRUGIA_I-II-III",
+          "url": "https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/aiadult-platform",
+          "path": "labs/aiadult-platform",
+          "url": "https://github.com/panacea-icono/aiadult-platform.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/aiadult-platform.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/api_modelo_piloto",
+          "path": "labs/api_modelo_piloto",
+          "url": "https://github.com/panacea-icono/api_modelo_piloto.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "main"
+          ]
+        },
+        {
+          "name": "labs/biblioteca-kuchiuya",
+          "path": "labs/biblioteca-kuchiuya",
+          "url": "https://github.com/panacea-icono/biblioteca-kuchiuya.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "dependabot/pip/pip-1193993df8",
+            "main",
+            "master"
+          ]
+        },
+        {
+          "name": "labs/CASA-RED-SRL",
+          "path": "labs/CASA-RED-SRL",
+          "url": "https://github.com/panacea-icono/CASA-RED-SRL.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/CASA-RED-SRL.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/coca",
+          "path": "labs/coca",
+          "url": "https://github.com/panacea-icono/coca.git",
+          "branch": "master",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "master"
+          ]
+        },
+        {
+          "name": "labs/codex-github",
+          "path": "labs/codex-github",
+          "url": "https://github.com/panacea-icono/codex-github.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/codex-github.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/codex-main",
+          "path": "labs/codex-main",
+          "url": "https://github.com/panacea-icono/codex-main.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "main"
+          ]
+        },
+        {
+          "name": "labs/Dr_dela_TV",
+          "path": "labs/Dr_dela_TV",
+          "url": "https://github.com/panacea-icono/Dr_dela_TV.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "main"
+          ]
+        },
+        {
+          "name": "labs/dr_tv_gp",
+          "path": "labs/dr_tv_gp",
+          "url": "https://github.com/panacea-icono/dr_tv_gp.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "main"
+          ]
+        },
+        {
+          "name": "labs/dr_tv_GPT",
+          "path": "labs/dr_tv_GPT",
+          "url": "https://github.com/panacea-icono/dr_tv_GPT.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "dependabot/npm_and_yarn/npm_and_yarn-13e1184c15",
+            "main"
+          ]
+        },
+        {
+          "name": "labs/dr-de-la-tvr",
+          "path": "labs/dr-de-la-tvr",
+          "url": "https://github.com/panacea-icono/dr-de-la-tvr.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/dr-de-la-tvr.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/dua_lipa_model_image_ia",
+          "path": "labs/dua_lipa_model_image_ia",
+          "url": "https://github.com/panacea-icono/dua_lipa_model_image_ia.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/dua_lipa_model_image_ia.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/gpt-local",
+          "path": "labs/gpt-local",
+          "url": "https://github.com/panacea-icono/gpt-local.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "main"
+          ]
+        },
+        {
+          "name": "labs/GPT-MAESTRO-PANACEA",
+          "path": "labs/GPT-MAESTRO-PANACEA",
+          "url": "https://github.com/https-panacea-icono-org/GPT-MAESTRO-PANACEA.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/https-panacea-icono-org/GPT-MAESTRO-PANACEA.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/GPTApi",
+          "path": "labs/GPTApi",
+          "url": "https://github.com/panacea-icono/GPTApi.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "main"
+          ]
+        },
+        {
+          "name": "labs/home",
+          "path": "labs/home",
+          "url": "https://github.com/panacea-icono/home.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/home.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/HUGGING_FACE",
+          "path": "labs/HUGGING_FACE",
+          "url": "https://github.com/panacea-icono/HUGGING_FACE.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/HUGGING_FACE.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/HUGGING_FACE",
+          "path": "labs/HUGGING_FACE",
+          "url": "https://github.com/https-panacea-icono-org/HUGGING_FACE.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/https-panacea-icono-org/HUGGING_FACE.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/iaadult",
+          "path": "labs/iaadult",
+          "url": "https://github.com/panacea-icono/iaadult.git",
+          "branch": "examples",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "codex/infra-setup",
+            "examples",
+            "main",
+            "master"
+          ]
+        },
+        {
+          "name": "labs/kuchiuyas",
+          "path": "labs/kuchiuyas",
+          "url": "https://github.com/panacea-icono/kuchiuyas.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "main"
+          ]
+        },
+        {
+          "name": "labs/kuchiuyasM",
+          "path": "labs/kuchiuyasM",
+          "url": "https://github.com/panacea-icono/kuchiuyasM.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "main"
+          ]
+        },
+        {
+          "name": "labs/macuquina_proyecto",
+          "path": "labs/macuquina_proyecto",
+          "url": "https://github.com/panacea-icono/macuquina_proyecto.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/macuquina_proyecto.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/Marilyn_Monroe",
+          "path": "labs/Marilyn_Monroe",
+          "url": "https://github.com/panacea-icono/Marilyn_Monroe.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/Marilyn_Monroe.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/MEDIOS-REDES",
+          "path": "labs/MEDIOS-REDES",
+          "url": "https://github.com/panacea-icono/MEDIOS-REDES.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "main"
+          ]
+        },
+        {
+          "name": "labs/MODELOS",
+          "path": "labs/MODELOS",
+          "url": "https://github.com/panacea-icono/MODELOS.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "main"
+          ]
+        },
+        {
+          "name": "labs/nextjs-with-supabase",
+          "path": "labs/nextjs-with-supabase",
+          "url": "https://github.com/panacea-icono/nextjs-with-supabase.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/nextjs-with-supabase.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/PANACEA_MD",
+          "path": "labs/PANACEA_MD",
+          "url": "https://github.com/panacea-icono/PANACEA_MD.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/PANACEA_MD.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/PANACEA-API-CENTRAL-CODEX",
+          "path": "labs/PANACEA-API-CENTRAL-CODEX",
+          "url": "https://github.com/panacea-icono/PANACEA-API-CENTRAL-CODEX.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "main"
+          ]
+        },
+        {
+          "name": "labs/PANACEA-GPT-I",
+          "path": "labs/PANACEA-GPT-I",
+          "url": "https://github.com/panacea-icono/PANACEA-GPT-I.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/PANACEA-GPT-I.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/panacea-icono",
+          "path": "labs/panacea-icono",
+          "url": "https://github.com/panacea-icono/panacea-icono.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "copilot/fix-190164fa-8726-4efa-8d3d-7ebe7bda5104",
+            "copilot/fix-306c48eb-62ba-4f7d-a626-b781fd286b9b",
+            "copilot/fix-3edf90d4-7dd9-4274-95f4-8b1049cfc966",
+            "copilot/fix-4a3e035c-7fb3-4117-8d9e-5b1a9b44a911",
+            "copilot/fix-6b1cc5d8-668b-42d8-8c8b-3316dff77137",
+            "copilot/fix-70532582-3e4b-4f87-b3af-8728cea15b4d",
+            "copilot/fix-7b406f40-1b28-46b4-869e-b63784e48372",
+            "copilot/fix-7d1faffe-9217-4166-b85e-7271e6a65365",
+            "copilot/fix-7e26bcfc-5951-4353-8488-b78e802cf436",
+            "copilot/fix-8148121b-8ab9-41d0-8dbf-d0545f0f86e3",
+            "copilot/fix-826c7324-03e2-452c-b6f0-bef5250810bb",
+            "copilot/fix-936360c6-9311-4b52-a319-a21e7f86aa76",
+            "copilot/fix-c0120d93-9c4f-4200-bd1c-19bee18f7bc1",
+            "copilot/fix-e686c398-7298-44b4-8708-5dc8fb06031b",
+            "copilot/fix-ea50d1b0-daa2-47a2-9891-903a1ff6f760",
+            "copilot/fix-ff0cb201-329b-4589-bd54-27e47fc26c18",
+            "fix-detached",
+            "main"
+          ]
+        },
+        {
+          "name": "labs/panas_multichain",
+          "path": "labs/panas_multichain",
+          "url": "https://github.com/panacea-icono/panas_multichain.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/panas_multichain.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/panas_pay",
+          "path": "labs/panas_pay",
+          "url": "https://github.com/panacea-icono/panas_pay.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/panas_pay.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/panas-pay",
+          "path": "labs/panas-pay",
+          "url": "https://github.com/panacea-icono/panas-pay.git",
+          "branch": "master",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "master"
+          ]
+        },
+        {
+          "name": "labs/Panas-Pay.M",
+          "path": "labs/Panas-Pay.M",
+          "url": "https://github.com/panacea-icono/Panas-Pay.M.git",
+          "branch": "master",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/Panas-Pay.M.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/REDES",
+          "path": "labs/REDES",
+          "url": "https://github.com/panacea-icono/REDES.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/REDES.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/Super-code-tasker",
+          "path": "labs/Super-code-tasker",
+          "url": "https://github.com/https-panacea-icono-org/Super-code-tasker.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/https-panacea-icono-org/Super-code-tasker.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/UNIVERSOLIFE",
+          "path": "labs/UNIVERSOLIFE",
+          "url": "https://github.com/panacea-icono/UNIVERSOLIFE.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "dependabot/npm_and_yarn/projects/UNIVERSOLIFE/npm_and_yarn-5e6fba671e",
+            "main"
+          ]
+        },
+        {
+          "name": "labs/vite-react",
+          "path": "labs/vite-react",
+          "url": "https://github.com/panacea-icono/vite-react.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/vite-react.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "labs/voice",
+          "path": "labs/voice",
+          "url": "https://github.com/panacea-icono/voice.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "codex/encontrar-y-corregir-un-fallo-en-la-base-de-código",
+            "main"
+          ]
+        },
+        {
+          "name": "tokens/panas_token",
+          "path": "tokens/panas_token",
+          "url": "https://github.com/panacea-icono/panas_token.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/panas_token.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "tokens/PANAS_TOKENIZER_SURGERY",
+          "path": "tokens/PANAS_TOKENIZER_SURGERY",
+          "url": "https://github.com/panacea-icono/PANAS_TOKENIZER_SURGERY.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/PANAS_TOKENIZER_SURGERY.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "tokens/PANAS-TOKEN",
+          "path": "tokens/PANAS-TOKEN",
+          "url": "https://github.com/panacea-icono/PANAS-TOKEN.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "main"
+          ]
+        },
+        {
+          "name": "tokens/panas-token.M",
+          "path": "tokens/panas-token.M",
+          "url": "https://github.com/panacea-icono/panas-token.M.git",
+          "branch": "main",
+          "accessible": false,
+          "error": "remote: Invalid username or token. Password authentication is not supported for Git operations.\nfatal: Authentication failed for 'https://github.com/panacea-icono/panas-token.M.git/'\n",
+          "branches": []
+        },
+        {
+          "name": "tokens/TOKENIZER-NFT",
+          "path": "tokens/TOKENIZER-NFT",
+          "url": "https://github.com/panacea-icono/TOKENIZER-NFT.git",
+          "branch": "main",
+          "accessible": true,
+          "error": null,
+          "branches": [
+            "main"
+          ]
+        }
+      ],
+      "forkAnalysis": {
+        "forks": [
+          {
+            "name": "infra/modelos_civitai",
+            "path": "infra/modelos_civitai",
+            "url": "https://github.com/https-panacea-icono-org/modelos_civitai.git",
+            "branch": "main",
+            "owner": "https-panacea-icono-org",
+            "repo": "modelos_civitai",
+            "type": "potential-fork"
+          },
+          {
+            "name": "labs/GPT-MAESTRO-PANACEA",
+            "path": "labs/GPT-MAESTRO-PANACEA",
+            "url": "https://github.com/https-panacea-icono-org/GPT-MAESTRO-PANACEA.git",
+            "branch": "main",
+            "owner": "https-panacea-icono-org",
+            "repo": "GPT-MAESTRO-PANACEA",
+            "type": "potential-fork"
+          },
+          {
+            "name": "labs/HUGGING_FACE",
+            "path": "labs/HUGGING_FACE",
+            "url": "https://github.com/https-panacea-icono-org/HUGGING_FACE.git",
+            "branch": "main",
+            "owner": "https-panacea-icono-org",
+            "repo": "HUGGING_FACE",
+            "type": "potential-fork"
+          },
+          {
+            "name": "labs/Super-code-tasker",
+            "path": "labs/Super-code-tasker",
+            "url": "https://github.com/https-panacea-icono-org/Super-code-tasker.git",
+            "branch": "main",
+            "owner": "https-panacea-icono-org",
+            "repo": "Super-code-tasker",
+            "type": "potential-fork"
+          }
+        ],
+        "orgRepos": [
+          {
+            "name": "apps/PANAS_PAY_APP",
+            "path": "apps/PANAS_PAY_APP",
+            "url": "https://github.com/panacea-icono/PANAS_PAY_APP.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "PANAS_PAY_APP"
+          },
+          {
+            "name": "apps/panas-app",
+            "path": "apps/panas-app",
+            "url": "https://github.com/panacea-icono/panas-app.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "panas-app"
+          },
+          {
+            "name": "apps/Ton-telegram",
+            "path": "apps/Ton-telegram",
+            "url": "https://github.com/panacea-icono/Ton-telegram.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "Ton-telegram"
+          },
+          {
+            "name": "contracts/panacea_smart_contracts",
+            "path": "contracts/panacea_smart_contracts",
+            "url": "https://github.com/panacea-icono/panacea_smart_contracts.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "panacea_smart_contracts"
+          },
+          {
+            "name": "infra/civitAI",
+            "path": "infra/civitAI",
+            "url": "https://github.com/panacea-icono/civitAI.git",
+            "branch": "master",
+            "owner": "panacea-icono",
+            "repo": "civitAI"
+          },
+          {
+            "name": "infra/fibonacci",
+            "path": "infra/fibonacci",
+            "url": "https://github.com/panacea-icono/fibonacci.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "fibonacci"
+          },
+          {
+            "name": "infra/FIBONACCI_LAB",
+            "path": "infra/FIBONACCI_LAB",
+            "url": "https://github.com/panacea-icono/FIBONACCI_LAB.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "FIBONACCI_LAB"
+          },
+          {
+            "name": "infra/fibonacci_maestro",
+            "path": "infra/fibonacci_maestro",
+            "url": "https://github.com/panacea-icono/fibonacci_maestro.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "fibonacci_maestro"
+          },
+          {
+            "name": "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+            "path": "infra/FIBONACCI-FINAL-MODULOS-API-MAESTRO",
+            "url": "https://github.com/panacea-icono/FIBONACCI-FINAL-MODULOS-API-MAESTRO.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "FIBONACCI-FINAL-MODULOS-API-MAESTRO"
+          },
+          {
+            "name": "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+            "path": "infra/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK",
+            "url": "https://github.com/panacea-icono/PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "PANACEA-ICONO-SOCIEDAD-ANONIMA--BANK"
+          },
+          {
+            "name": "infra/privacidad_seguridad",
+            "path": "infra/privacidad_seguridad",
+            "url": "https://github.com/panacea-icono/privacidad_seguridad.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "privacidad_seguridad"
+          },
+          {
+            "name": "infra/repositorio-modular-fibonacci-ia-integrado",
+            "path": "infra/repositorio-modular-fibonacci-ia-integrado",
+            "url": "https://github.com/panacea-icono/repositorio-modular-fibonacci-ia-integrado.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "repositorio-modular-fibonacci-ia-integrado"
+          },
+          {
+            "name": "infra/tutor_academico_CIRUGIA_I-II-III",
+            "path": "infra/tutor_academico_CIRUGIA_I-II-III",
+            "url": "https://github.com/panacea-icono/tutor_academico_CIRUGIA_I-II-III.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "tutor_academico_CIRUGIA_I-II-III"
+          },
+          {
+            "name": "labs/aiadult-platform",
+            "path": "labs/aiadult-platform",
+            "url": "https://github.com/panacea-icono/aiadult-platform.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "aiadult-platform"
+          },
+          {
+            "name": "labs/api_modelo_piloto",
+            "path": "labs/api_modelo_piloto",
+            "url": "https://github.com/panacea-icono/api_modelo_piloto.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "api_modelo_piloto"
+          },
+          {
+            "name": "labs/biblioteca-kuchiuya",
+            "path": "labs/biblioteca-kuchiuya",
+            "url": "https://github.com/panacea-icono/biblioteca-kuchiuya.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "biblioteca-kuchiuya"
+          },
+          {
+            "name": "labs/CASA-RED-SRL",
+            "path": "labs/CASA-RED-SRL",
+            "url": "https://github.com/panacea-icono/CASA-RED-SRL.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "CASA-RED-SRL"
+          },
+          {
+            "name": "labs/coca",
+            "path": "labs/coca",
+            "url": "https://github.com/panacea-icono/coca.git",
+            "branch": "master",
+            "owner": "panacea-icono",
+            "repo": "coca"
+          },
+          {
+            "name": "labs/codex-github",
+            "path": "labs/codex-github",
+            "url": "https://github.com/panacea-icono/codex-github.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "codex-github"
+          },
+          {
+            "name": "labs/codex-main",
+            "path": "labs/codex-main",
+            "url": "https://github.com/panacea-icono/codex-main.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "codex-main"
+          },
+          {
+            "name": "labs/Dr_dela_TV",
+            "path": "labs/Dr_dela_TV",
+            "url": "https://github.com/panacea-icono/Dr_dela_TV.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "Dr_dela_TV"
+          },
+          {
+            "name": "labs/dr_tv_gp",
+            "path": "labs/dr_tv_gp",
+            "url": "https://github.com/panacea-icono/dr_tv_gp.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "dr_tv_gp"
+          },
+          {
+            "name": "labs/dr_tv_GPT",
+            "path": "labs/dr_tv_GPT",
+            "url": "https://github.com/panacea-icono/dr_tv_GPT.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "dr_tv_GPT"
+          },
+          {
+            "name": "labs/dr-de-la-tvr",
+            "path": "labs/dr-de-la-tvr",
+            "url": "https://github.com/panacea-icono/dr-de-la-tvr.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "dr-de-la-tvr"
+          },
+          {
+            "name": "labs/dua_lipa_model_image_ia",
+            "path": "labs/dua_lipa_model_image_ia",
+            "url": "https://github.com/panacea-icono/dua_lipa_model_image_ia.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "dua_lipa_model_image_ia"
+          },
+          {
+            "name": "labs/gpt-local",
+            "path": "labs/gpt-local",
+            "url": "https://github.com/panacea-icono/gpt-local.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "gpt-local"
+          },
+          {
+            "name": "labs/GPTApi",
+            "path": "labs/GPTApi",
+            "url": "https://github.com/panacea-icono/GPTApi.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "GPTApi"
+          },
+          {
+            "name": "labs/home",
+            "path": "labs/home",
+            "url": "https://github.com/panacea-icono/home.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "home"
+          },
+          {
+            "name": "labs/HUGGING_FACE",
+            "path": "labs/HUGGING_FACE",
+            "url": "https://github.com/panacea-icono/HUGGING_FACE.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "HUGGING_FACE"
+          },
+          {
+            "name": "labs/iaadult",
+            "path": "labs/iaadult",
+            "url": "https://github.com/panacea-icono/iaadult.git",
+            "branch": "examples",
+            "owner": "panacea-icono",
+            "repo": "iaadult"
+          },
+          {
+            "name": "labs/kuchiuyas",
+            "path": "labs/kuchiuyas",
+            "url": "https://github.com/panacea-icono/kuchiuyas.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "kuchiuyas"
+          },
+          {
+            "name": "labs/kuchiuyasM",
+            "path": "labs/kuchiuyasM",
+            "url": "https://github.com/panacea-icono/kuchiuyasM.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "kuchiuyasM"
+          },
+          {
+            "name": "labs/macuquina_proyecto",
+            "path": "labs/macuquina_proyecto",
+            "url": "https://github.com/panacea-icono/macuquina_proyecto.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "macuquina_proyecto"
+          },
+          {
+            "name": "labs/Marilyn_Monroe",
+            "path": "labs/Marilyn_Monroe",
+            "url": "https://github.com/panacea-icono/Marilyn_Monroe.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "Marilyn_Monroe"
+          },
+          {
+            "name": "labs/MEDIOS-REDES",
+            "path": "labs/MEDIOS-REDES",
+            "url": "https://github.com/panacea-icono/MEDIOS-REDES.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "MEDIOS-REDES"
+          },
+          {
+            "name": "labs/MODELOS",
+            "path": "labs/MODELOS",
+            "url": "https://github.com/panacea-icono/MODELOS.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "MODELOS"
+          },
+          {
+            "name": "labs/nextjs-with-supabase",
+            "path": "labs/nextjs-with-supabase",
+            "url": "https://github.com/panacea-icono/nextjs-with-supabase.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "nextjs-with-supabase"
+          },
+          {
+            "name": "labs/PANACEA_MD",
+            "path": "labs/PANACEA_MD",
+            "url": "https://github.com/panacea-icono/PANACEA_MD.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "PANACEA_MD"
+          },
+          {
+            "name": "labs/PANACEA-API-CENTRAL-CODEX",
+            "path": "labs/PANACEA-API-CENTRAL-CODEX",
+            "url": "https://github.com/panacea-icono/PANACEA-API-CENTRAL-CODEX.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "PANACEA-API-CENTRAL-CODEX"
+          },
+          {
+            "name": "labs/PANACEA-GPT-I",
+            "path": "labs/PANACEA-GPT-I",
+            "url": "https://github.com/panacea-icono/PANACEA-GPT-I.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "PANACEA-GPT-I"
+          },
+          {
+            "name": "labs/panacea-icono",
+            "path": "labs/panacea-icono",
+            "url": "https://github.com/panacea-icono/panacea-icono.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "panacea-icono"
+          },
+          {
+            "name": "labs/panas_multichain",
+            "path": "labs/panas_multichain",
+            "url": "https://github.com/panacea-icono/panas_multichain.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "panas_multichain"
+          },
+          {
+            "name": "labs/panas_pay",
+            "path": "labs/panas_pay",
+            "url": "https://github.com/panacea-icono/panas_pay.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "panas_pay"
+          },
+          {
+            "name": "labs/panas-pay",
+            "path": "labs/panas-pay",
+            "url": "https://github.com/panacea-icono/panas-pay.git",
+            "branch": "master",
+            "owner": "panacea-icono",
+            "repo": "panas-pay"
+          },
+          {
+            "name": "labs/Panas-Pay.M",
+            "path": "labs/Panas-Pay.M",
+            "url": "https://github.com/panacea-icono/Panas-Pay.M.git",
+            "branch": "master",
+            "owner": "panacea-icono",
+            "repo": "Panas-Pay.M"
+          },
+          {
+            "name": "labs/REDES",
+            "path": "labs/REDES",
+            "url": "https://github.com/panacea-icono/REDES.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "REDES"
+          },
+          {
+            "name": "labs/UNIVERSOLIFE",
+            "path": "labs/UNIVERSOLIFE",
+            "url": "https://github.com/panacea-icono/UNIVERSOLIFE.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "UNIVERSOLIFE"
+          },
+          {
+            "name": "labs/vite-react",
+            "path": "labs/vite-react",
+            "url": "https://github.com/panacea-icono/vite-react.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "vite-react"
+          },
+          {
+            "name": "labs/voice",
+            "path": "labs/voice",
+            "url": "https://github.com/panacea-icono/voice.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "voice"
+          },
+          {
+            "name": "tokens/panas_token",
+            "path": "tokens/panas_token",
+            "url": "https://github.com/panacea-icono/panas_token.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "panas_token"
+          },
+          {
+            "name": "tokens/PANAS_TOKENIZER_SURGERY",
+            "path": "tokens/PANAS_TOKENIZER_SURGERY",
+            "url": "https://github.com/panacea-icono/PANAS_TOKENIZER_SURGERY.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "PANAS_TOKENIZER_SURGERY"
+          },
+          {
+            "name": "tokens/PANAS-TOKEN",
+            "path": "tokens/PANAS-TOKEN",
+            "url": "https://github.com/panacea-icono/PANAS-TOKEN.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "PANAS-TOKEN"
+          },
+          {
+            "name": "tokens/panas-token.M",
+            "path": "tokens/panas-token.M",
+            "url": "https://github.com/panacea-icono/panas-token.M.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "panas-token.M"
+          },
+          {
+            "name": "tokens/TOKENIZER-NFT",
+            "path": "tokens/TOKENIZER-NFT",
+            "url": "https://github.com/panacea-icono/TOKENIZER-NFT.git",
+            "branch": "main",
+            "owner": "panacea-icono",
+            "repo": "TOKENIZER-NFT"
+          }
+        ]
+      }
+    },
+    "modulations": {
+      "timestamp": "2025-09-09T15:23:26.359Z",
+      "fileStructure": {
+        "config": [
+          {
+            "path": "jest.config.js",
+            "fullPath": "/home/runner/work/Ton-telegram/Ton-telegram/jest.config.js",
+            "size": 1666,
+            "lastModified": "2025-09-09T15:10:31.957Z"
+          },
+          {
+            "path": "package.json",
+            "fullPath": "/home/runner/work/Ton-telegram/Ton-telegram/package.json",
+            "size": 12493,
+            "lastModified": "2025-09-09T15:22:09.305Z"
+          }
+        ],
+        "documentation": [
+          {
+            "path": "CHANGELOG.md",
+            "fullPath": "/home/runner/work/Ton-telegram/Ton-telegram/CHANGELOG.md",
+            "size": 3140,
+            "lastModified": "2025-09-09T15:10:31.944Z"
+          },
+          {
+            "path": "README.md",
+            "fullPath": "/home/runner/work/Ton-telegram/Ton-telegram/README.md",
+            "size": 19266,
+            "lastModified": "2025-09-09T15:10:31.946Z"
+          }
+        ],
+        "infrastructure": [
+          {
+            "path": "docker-compose.prod.yml",
+            "fullPath": "/home/runner/work/Ton-telegram/Ton-telegram/docker-compose.prod.yml",
+            "size": 3749,
+            "lastModified": "2025-09-09T15:10:31.950Z"
+          },
+          {
+            "path": "docker-compose.yml",
+            "fullPath": "/home/runner/work/Ton-telegram/Ton-telegram/docker-compose.yml",
+            "size": 4898,
+            "lastModified": "2025-09-09T15:10:31.950Z"
+          },
+          {
+            "path": "vercel.json",
+            "fullPath": "/home/runner/work/Ton-telegram/Ton-telegram/vercel.json",
+            "size": 925,
+            "lastModified": "2025-09-09T15:10:31.963Z"
+          }
+        ],
+        "scripts": [],
+        "source": [],
+        "frontend": [],
+        "backend": [],
+        "contracts": [],
+        "tests": []
+      },
+      "packageFiles": [
+        {
+          "path": "api/package.json",
+          "fullPath": "/home/runner/work/Ton-telegram/Ton-telegram/api/package.json",
+          "content": {
+            "name": "panacea-api",
+            "version": "1.0.0",
+            "description": "Panacea Icono SA - API para Vercel",
+            "main": "index.js",
+            "scripts": {
+              "start": "node index.js",
+              "dev": "nodemon index.js",
+              "test": "jest"
+            },
+            "dependencies": {
+              "express": "^4.18.2",
+              "cors": "^2.8.5"
+            },
+            "devDependencies": {
+              "nodemon": "^3.0.1",
+              "jest": "^29.7.0"
+            },
+            "engines": {
+              "node": ">=18.0.0"
+            },
+            "keywords": [
+              "panacea",
+              "api",
+              "vercel",
+              "blockchain",
+              "telegram",
+              "medical"
+            ],
+            "author": "Dr. Ignacio Tapia Vargas - Panacea Icono SA",
+            "license": "MIT"
+          },
+          "dependencies": [
+            "express",
+            "cors"
+          ],
+          "devDependencies": [
+            "nodemon",
+            "jest"
+          ],
+          "scripts": [
+            "start",
+            "dev",
+            "test"
+          ]
+        },
+        {
+          "path": "apps/ton-connect-app/package.json",
+          "fullPath": "/home/runner/work/Ton-telegram/Ton-telegram/apps/ton-connect-app/package.json",
+          "content": {
+            "name": "ton-connect-app",
+            "private": true,
+            "version": "0.1.0",
+            "scripts": {
+              "dev": "next dev",
+              "build": "next build",
+              "start": "next start",
+              "lint": "next lint"
+            },
+            "dependencies": {
+              "@tonconnect/ui-react": "^2.2.0",
+              "next": "^14.2.11",
+              "react": "^18.3.1",
+              "react-dom": "^18.3.1"
+            },
+            "devDependencies": {
+              "@types/node": "^20.14.9",
+              "@types/react": "^18.3.3",
+              "typescript": "^5.5.4"
+            }
+          },
+          "dependencies": [
+            "@tonconnect/ui-react",
+            "next",
+            "react",
+            "react-dom"
+          ],
+          "devDependencies": [
+            "@types/node",
+            "@types/react",
+            "typescript"
+          ],
+          "scripts": [
+            "dev",
+            "build",
+            "start",
+            "lint"
+          ]
+        },
+        {
+          "path": "backend/router/package.json",
+          "fullPath": "/home/runner/work/Ton-telegram/Ton-telegram/backend/router/package.json",
+          "content": {
+            "name": "panas-backend-router",
+            "private": true,
+            "version": "0.1.0",
+            "main": "index.js",
+            "scripts": {
+              "dev": "node index.js"
+            }
+          },
+          "dependencies": [],
+          "devDependencies": [],
+          "scripts": [
+            "dev"
+          ]
+        },
+        {
+          "path": "frontend/dashboard/package.json",
+          "fullPath": "/home/runner/work/Ton-telegram/Ton-telegram/frontend/dashboard/package.json",
+          "content": {
+            "name": "panas-token-dashboard",
+            "version": "1.0.0",
+            "description": "Dashboard React para el ecosistema Panas Token",
+            "private": true,
+            "dependencies": {
+              "@headlessui/react": "^1.7.15",
+              "@testing-library/jest-dom": "^5.16.4",
+              "@testing-library/react": "^13.3.0",
+              "@testing-library/user-event": "^13.5.0",
+              "autoprefixer": "^10.4.14",
+              "axios": "^1.4.0",
+              "clsx": "^1.2.1",
+              "lucide-react": "^0.263.1",
+              "postcss": "^8.4.24",
+              "react": "^18.2.0",
+              "react-dom": "^18.2.0",
+              "react-router-dom": "^6.3.0",
+              "react-scripts": "5.0.1",
+              "recharts": "^2.5.0",
+              "tailwindcss": "^3.3.0",
+              "web-vitals": "^2.1.4"
+            },
+            "scripts": {
+              "start": "react-scripts start",
+              "build": "react-scripts build",
+              "test": "react-scripts test",
+              "eject": "react-scripts eject",
+              "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+              "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+              "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md}",
+              "analyze": "npm run build && npx bundle-analyzer build/static/js/*.js"
+            },
+            "eslintConfig": {
+              "extends": [
+                "react-app",
+                "react-app/jest"
+              ]
+            },
+            "browserslist": {
+              "production": [
+                ">0.2%",
+                "not dead",
+                "not op_mini all"
+              ],
+              "development": [
+                "last 1 chrome version",
+                "last 1 firefox version",
+                "last 1 safari version"
+              ]
+            },
+            "devDependencies": {
+              "@tailwindcss/forms": "^0.5.10",
+              "@tailwindcss/typography": "^0.5.16",
+              "eslint": "^8.42.0",
+              "prettier": "^2.8.8",
+              "webpack-bundle-analyzer": "^4.9.0"
+            },
+            "proxy": "http://localhost:3001"
+          },
+          "dependencies": [
+            "@headlessui/react",
+            "@testing-library/jest-dom",
+            "@testing-library/react",
+            "@testing-library/user-event",
+            "autoprefixer",
+            "axios",
+            "clsx",
+            "lucide-react",
+            "postcss",
+            "react",
+            "react-dom",
+            "react-router-dom",
+            "react-scripts",
+            "recharts",
+            "tailwindcss",
+            "web-vitals"
+          ],
+          "devDependencies": [
+            "@tailwindcss/forms",
+            "@tailwindcss/typography",
+            "eslint",
+            "prettier",
+            "webpack-bundle-analyzer"
+          ],
+          "scripts": [
+            "start",
+            "build",
+            "test",
+            "eject",
+            "lint",
+            "lint:fix",
+            "format",
+            "analyze"
+          ]
+        },
+        {
+          "path": "frontend/telegram-bot/package.json",
+          "fullPath": "/home/runner/work/Ton-telegram/Ton-telegram/frontend/telegram-bot/package.json",
+          "content": {
+            "name": "panas-telegram-bot",
+            "private": true,
+            "version": "0.1.0",
+            "main": "bot.js",
+            "scripts": {
+              "dev": "node bot.js"
+            }
+          },
+          "dependencies": [],
+          "devDependencies": [],
+          "scripts": [
+            "dev"
+          ]
+        },
+        {
+          "path": "package.json",
+          "fullPath": "/home/runner/work/Ton-telegram/Ton-telegram/package.json",
+          "content": {
+            "name": "panas-token-ecosystem",
+            "version": "1.0.2",
+            "description": "Ecosistema multichain Panas Token - Panacea | Icono SA",
+            "main": "index.js",
+            "scripts": {
+              "setup": "./setup.sh",
+              "start": "node scripts/start-all.js",
+              "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run dev:bot\"",
+              "dev:backend": "cd backend/router && npm run dev",
+              "dev:frontend": "cd frontend/dashboard && npm start",
+              "dev:bot": "cd frontend/telegram-bot && npm run dev",
+              "build:backend": "cd backend/router && npm run build",
+              "build:frontend": "cd frontend/dashboard && npm run build",
+              "frontend:start": "cd frontend/dashboard && npm start",
+              "frontend:build": "cd frontend/dashboard && npm run build",
+              "frontend:test": "cd frontend/dashboard && npm test",
+              "frontend:lint": "cd frontend/dashboard && npm run lint",
+              "vercel:deploy": "node scripts/deploy/vercel-deploy.js",
+              "vercel:install": "npm install -g vercel",
+              "vercel:login": "vercel login",
+              "vercel:link": "vercel link",
+              "vercel:env": "vercel env pull .env.vercel",
+              "ecosystem:manage": "node scripts/ecosystem-manager.js",
+              "webhooks:start": "node scripts/webhooks/webhook-manager.js",
+              "env:list": "node scripts/environments/environment-manager.js list",
+              "env:switch": "node scripts/environments/environment-manager.js switch",
+              "env:status": "node scripts/environments/environment-manager.js status",
+              "env:deploy": "node scripts/environments/environment-manager.js deploy",
+              "workflows:list": "node scripts/workflows/workflow-manager.js list",
+              "workflows:run": "node scripts/workflows/workflow-manager.js run",
+              "workflows:test": "node scripts/workflows/workflow-manager.js test",
+              "workflows:monitor": "node scripts/workflows/workflow-manager.js monitor",
+              "integration:check": "node scripts/integration/run-integration-check.js",
+              "start:all": "node scripts/ecosystem-manager.js start:all",
+              "stop:all": "node scripts/ecosystem-manager.js stop:all",
+              "restart:all": "node scripts/ecosystem-manager.js restart:all",
+              "status:all": "node scripts/ecosystem-manager.js status:all",
+              "deploy:all": "node scripts/ecosystem-manager.js deploy:all",
+              "frontend:docker": "cd frontend/dashboard && docker-compose up -d",
+              "test": "jest",
+              "test:watch": "jest --watch",
+              "test:coverage": "jest --coverage",
+              "test:unit": "jest tests/unit",
+              "test:integration": "jest tests/integration",
+              "test:e2e": "jest tests/e2e",
+              "test:ci": "jest --ci --coverage --watchAll=false",
+              "lint": "eslint . --ext .js,.ts,.tsx,.jsx",
+              "lint:fix": "eslint . --ext .js,.ts,.tsx,.jsx --fix",
+              "format": "prettier --write .",
+              "format:check": "prettier --check .",
+              "docker:build": "docker-compose build",
+              "docker:up": "docker-compose up -d",
+              "docker:down": "docker-compose down",
+              "docker:logs": "docker-compose logs -f",
+              "submodules:init": "git submodule init",
+              "submodules:update": "git submodule update --remote --recursive",
+              "submodules:status": "git submodule status",
+              "clean": "rm -rf node_modules && find . -name 'node_modules' -type d -exec rm -rf {} +",
+              "install:all": "npm install && npm run submodules:update && npm run install:submodules",
+              "install:submodules": "find . -name 'package.json' -not -path './node_modules/*' -execdir npm install \\;",
+              "health": "node scripts/health-check.js",
+              "github:repos:list": "node scripts/github-repos-manager.js list",
+              "github:repos:json": "node scripts/github-repos-manager.js json",
+              "github:repos:clone": "node scripts/github-repos-manager.js clone",
+              "github:repos:submodules": "node scripts/github-repos-manager.js submodules",
+              "github:token:check": "node scripts/github-token-verify.js",
+              "org:structure": "node scripts/org-structure.js",
+              "org:sync": "node scripts/github-org-sync.js",
+              "github:releases:plan": "node scripts/github-release-orchestrator.js plan",
+              "github:releases:apply": "node scripts/github-release-orchestrator.js apply",
+              "github:readme:plan": "node scripts/github-readme-sync.js plan",
+              "github:readme:apply": "node scripts/github-readme-sync.js apply",
+              "packages:plan": "node scripts/github-packages-plan.js",
+              "packages:readme:plan": "node scripts/github-readme-packages-sync.js plan",
+              "packages:readme:apply": "node scripts/github-readme-packages-sync.js apply",
+              "telegram:id": "node scripts/bots/get-my-id.js --once",
+              "env:validate": "node scripts/validate-local-env.js",
+              "telegram:compliance:check": "node scripts/telegram-compliance-check.js",
+              "bots:start": "node scripts/bots/orchestrator.js",
+              "bots:validate": "node scripts/bots/validate-bots.js",
+              "audit:run": "node scripts/audits/run-audit.js",
+              "audit:github": "node scripts/audits/github-repos-audit.js",
+              "audit:integrations": "node scripts/audits/integrations-audit.js",
+              "audit:connections": "node scripts/audits/connections-audit.js",
+              "audit:forks": "node scripts/audits/forks-audit.js",
+              "audit:modulations": "node scripts/audits/modulations-audit.js",
+              "audit:comprehensive": "node scripts/audits/comprehensive-audit.js",
+              "audit:scheduler": "node scripts/audits/audit-scheduler.js",
+              "audit:scheduler:start": "node scripts/audits/audit-scheduler.js start",
+              "audit:scheduler:trends": "node scripts/audits/audit-scheduler.js trends",
+              "audit:all": "npm run audit:comprehensive",
+              "deploy:vercel": "node scripts/hosting/deploy.js vercel",
+              "deploy:heroku": "./scripts/deploy/deploy.sh -p heroku",
+              "deploy:hf": "node scripts/hosting/deploy.js hf",
+              "deploy:hostinger": "node scripts/hosting/deploy.js hostinger",
+              "deploy:staging": "node scripts/deploy.js --env=staging",
+              "deploy:production": "node scripts/deploy.js --env=production",
+              "deploy:docker": "./scripts/deploy/deploy.sh -p docker",
+              "deploy:local": "./scripts/deploy/deploy.sh -p local",
+              "build": "echo 'Building panas-token-ecosystem...' && mkdir -p dist && cp -r scripts dist/ && cp -r config dist/ && cp -r docker dist/ && cp package.json dist/ && cp README.md dist/",
+              "build:dev": "NODE_ENV=development npm run build",
+              "build:prod": "NODE_ENV=production npm run build",
+              "build:docker": "./scripts/deploy/build.sh -p docker",
+              "build:all": "./scripts/deploy/build.sh -p all",
+              "debug": "./scripts/debug/debug.sh",
+              "debug:system": "./scripts/debug/debug.sh -t system",
+              "debug:app": "./scripts/debug/debug.sh -t app",
+              "debug:bots": "./scripts/debug/debug.sh -t bots",
+              "debug:verbose": "./scripts/debug/debug.sh -v",
+              "docker:restart": "docker-compose restart",
+              "docker:clean": "docker system prune -f",
+              "heroku:deploy": "git push heroku main",
+              "heroku:logs": "heroku logs --tail",
+              "heroku:restart": "heroku ps:restart",
+              "heroku:config": "heroku config",
+              "worker": "node scripts/worker.js",
+              "migrate": "node scripts/migrate.js",
+              "publish:packages": "node scripts/publish-packages.js",
+              "publish:version": "node scripts/publish-packages.js",
+              "publish:patch": "node scripts/publish-packages.js patch",
+              "publish:minor": "node scripts/publish-packages.js minor",
+              "publish:major": "node scripts/publish-packages.js major",
+              "release:create": "git tag -a v$(node -p \"require('./package.json').version\") -m \"Release v$(node -p \"require('./package.json').version\")\" && git push origin v$(node -p \"require('./package.json').version\")",
+              "release:push": "git push origin --tags",
+              "docker:build:release": "docker build -t panas-token-ecosystem:$(node -p \"require('./package.json').version\") . && docker build -t panas-token-ecosystem:latest .",
+              "docker:tag:release": "docker tag panas-token-ecosystem:$(node -p \"require('./package.json').version\") ghcr.io/panacea-icono/panas-token-ecosystem:$(node -p \"require('./package.json').version\") && docker tag panas-token-ecosystem:latest ghcr.io/panacea-icono/panas-token-ecosystem:latest",
+              "docker:push:release": "docker push ghcr.io/panacea-icono/panas-token-ecosystem:$(node -p \"require('./package.json').version\") && docker push ghcr.io/panacea-icono/panas-token-ecosystem:latest",
+              "generate:changelog": "node scripts/generate-changelog.js",
+              "changelog": "node scripts/generate-changelog.js"
+            },
+            "keywords": [
+              "blockchain",
+              "multichain",
+              "ton",
+              "solana",
+              "algorand",
+              "bsc",
+              "telegram",
+              "wallet",
+              "defi",
+              "panacea",
+              "panas-token",
+              "medical-payments",
+              "nf-domains"
+            ],
+            "author": "Panacea | Icono SA <info@iconosa.com>",
+            "license": "MIT",
+            "repository": {
+              "type": "git",
+              "url": "https://github.com/panacea-icono/Ton-telegram.git"
+            },
+            "bugs": {
+              "url": "https://github.com/panacea-icono/Ton-telegram/issues"
+            },
+            "homepage": "https://github.com/panacea-icono/Ton-telegram#readme",
+            "engines": {
+              "node": ">=18.0.0",
+              "npm": ">=8.0.0"
+            },
+            "dependencies": {
+              "@huggingface/inference": "^4.7.1",
+              "@solana/spl-token": "^0.3.9",
+              "@solana/web3.js": "^1.98.4",
+              "@ton/crypto": "^3.0.0",
+              "@ton/ton": "^13.0.0",
+              "@tonconnect/sdk": "^3.2.0",
+              "@tonconnect/ui-react": "^2.2.0",
+              "@types/bcryptjs": "^2.4.6",
+              "@types/compression": "^1.7.5",
+              "@types/cors": "^2.8.17",
+              "@types/express": "^4.17.21",
+              "@types/jsonwebtoken": "^9.0.5",
+              "@types/morgan": "^1.9.9",
+              "@types/multer": "^1.4.11",
+              "@types/node": "^20.10.4",
+              "@types/pg": "^8.10.9",
+              "algosdk": "^2.11.0",
+              "axios": "^1.6.2",
+              "bcryptjs": "^2.4.3",
+              "bitcoinjs-lib": "^6.1.7",
+              "compression": "^1.7.4",
+              "concurrently": "^8.2.2",
+              "cors": "^2.8.5",
+              "cron": "^3.1.6",
+              "cross-env": "^7.0.3",
+              "dotenv": "^16.3.1",
+              "eslint": "^8.55.0",
+              "eslint-config-prettier": "^9.1.0",
+              "eslint-plugin-prettier": "^5.0.1",
+              "ethers": "^6.8.1",
+              "express": "^4.18.2",
+              "express-rate-limit": "^7.1.5",
+              "helmet": "^7.1.0",
+              "husky": "^8.0.3",
+              "joi": "^17.11.0",
+              "jsonwebtoken": "^9.0.2",
+              "lint-staged": "^15.2.0",
+              "mongoose": "^8.0.3",
+              "morgan": "^1.10.0",
+              "multer": "^1.4.5-lts.1",
+              "node-cron": "^3.0.3",
+              "node-telegram-bot-api": "^0.64.0",
+              "nodemailer": "^6.9.7",
+              "nodemon": "^3.0.2",
+              "pg": "^8.11.3",
+              "prettier": "^3.1.0",
+              "rate-limiter-flexible": "^4.0.1",
+              "redis": "^4.6.10",
+              "sharp": "^0.32.6",
+              "socket.io": "^4.7.4",
+              "swagger-jsdoc": "^6.2.8",
+              "swagger-ui-express": "^5.0.0",
+              "tonweb": "^0.0.66",
+              "ts-node": "^10.9.1",
+              "typescript": "^5.3.3",
+              "web3": "^4.3.0",
+              "winston": "^3.11.0",
+              "winston-daily-rotate-file": "^4.7.1",
+              "ws": "^8.14.2"
+            },
+            "devDependencies": {
+              "@babel/core": "^7.28.4",
+              "@babel/preset-env": "^7.28.3",
+              "@babel/preset-react": "^7.27.1",
+              "@types/jest": "^30.0.0",
+              "@types/node-cron": "^3.0.11",
+              "@types/nodemailer": "^6.4.14",
+              "@types/supertest": "^6.0.3",
+              "@types/ws": "^8.5.10",
+              "@typescript-eslint/eslint-plugin": "^8.42.0",
+              "@typescript-eslint/parser": "^8.42.0",
+              "babel-jest": "^30.1.2",
+              "eslint-plugin-import": "^2.29.0",
+              "eslint-plugin-jsx-a11y": "^6.8.0",
+              "eslint-plugin-node": "^11.1.0",
+              "eslint-plugin-react": "^7.33.2",
+              "eslint-plugin-react-hooks": "^4.6.0",
+              "eslint-plugin-security": "^1.7.1",
+              "jest": "^30.1.3",
+              "jest-environment-node": "^29.7.0",
+              "openai": "^5.19.1",
+              "supertest": "^7.1.4",
+              "ts-jest": "^29.1.1"
+            },
+            "husky": {
+              "hooks": {
+                "pre-commit": "lint-staged",
+                "pre-push": "npm run test"
+              }
+            },
+            "lint-staged": {
+              "*.{js,ts,tsx,jsx}": [
+                "eslint --fix",
+                "prettier --write"
+              ],
+              "*.{json,md,yml,yaml}": [
+                "prettier --write"
+              ]
+            },
+            "prettier": {
+              "semi": true,
+              "trailingComma": "es5",
+              "singleQuote": true,
+              "printWidth": 80,
+              "tabWidth": 2,
+              "useTabs": false
+            },
+            "eslintConfig": {
+              "extends": [
+                "eslint:recommended",
+                "prettier"
+              ],
+              "plugins": [
+                "prettier"
+              ],
+              "rules": {
+                "prettier/prettier": "error",
+                "no-console": "warn",
+                "no-debugger": "error"
+              },
+              "env": {
+                "node": true,
+                "es2021": true,
+                "jest": true
+              }
+            },
+            "browserslist": {
+              "production": [
+                ">0.2%",
+                "not dead",
+                "not op_mini all"
+              ],
+              "development": [
+                "last 1 chrome version",
+                "last 1 firefox version",
+                "last 1 safari version"
+              ]
+            }
+          },
+          "dependencies": [
+            "@huggingface/inference",
+            "@solana/spl-token",
+            "@solana/web3.js",
+            "@ton/crypto",
+            "@ton/ton",
+            "@tonconnect/sdk",
+            "@tonconnect/ui-react",
+            "@types/bcryptjs",
+            "@types/compression",
+            "@types/cors",
+            "@types/express",
+            "@types/jsonwebtoken",
+            "@types/morgan",
+            "@types/multer",
+            "@types/node",
+            "@types/pg",
+            "algosdk",
+            "axios",
+            "bcryptjs",
+            "bitcoinjs-lib",
+            "compression",
+            "concurrently",
+            "cors",
+            "cron",
+            "cross-env",
+            "dotenv",
+            "eslint",
+            "eslint-config-prettier",
+            "eslint-plugin-prettier",
+            "ethers",
+            "express",
+            "express-rate-limit",
+            "helmet",
+            "husky",
+            "joi",
+            "jsonwebtoken",
+            "lint-staged",
+            "mongoose",
+            "morgan",
+            "multer",
+            "node-cron",
+            "node-telegram-bot-api",
+            "nodemailer",
+            "nodemon",
+            "pg",
+            "prettier",
+            "rate-limiter-flexible",
+            "redis",
+            "sharp",
+            "socket.io",
+            "swagger-jsdoc",
+            "swagger-ui-express",
+            "tonweb",
+            "ts-node",
+            "typescript",
+            "web3",
+            "winston",
+            "winston-daily-rotate-file",
+            "ws"
+          ],
+          "devDependencies": [
+            "@babel/core",
+            "@babel/preset-env",
+            "@babel/preset-react",
+            "@types/jest",
+            "@types/node-cron",
+            "@types/nodemailer",
+            "@types/supertest",
+            "@types/ws",
+            "@typescript-eslint/eslint-plugin",
+            "@typescript-eslint/parser",
+            "babel-jest",
+            "eslint-plugin-import",
+            "eslint-plugin-jsx-a11y",
+            "eslint-plugin-node",
+            "eslint-plugin-react",
+            "eslint-plugin-react-hooks",
+            "eslint-plugin-security",
+            "jest",
+            "jest-environment-node",
+            "openai",
+            "supertest",
+            "ts-jest"
+          ],
+          "scripts": [
+            "setup",
+            "start",
+            "dev",
+            "dev:backend",
+            "dev:frontend",
+            "dev:bot",
+            "build:backend",
+            "build:frontend",
+            "frontend:start",
+            "frontend:build",
+            "frontend:test",
+            "frontend:lint",
+            "vercel:deploy",
+            "vercel:install",
+            "vercel:login",
+            "vercel:link",
+            "vercel:env",
+            "ecosystem:manage",
+            "webhooks:start",
+            "env:list",
+            "env:switch",
+            "env:status",
+            "env:deploy",
+            "workflows:list",
+            "workflows:run",
+            "workflows:test",
+            "workflows:monitor",
+            "integration:check",
+            "start:all",
+            "stop:all",
+            "restart:all",
+            "status:all",
+            "deploy:all",
+            "frontend:docker",
+            "test",
+            "test:watch",
+            "test:coverage",
+            "test:unit",
+            "test:integration",
+            "test:e2e",
+            "test:ci",
+            "lint",
+            "lint:fix",
+            "format",
+            "format:check",
+            "docker:build",
+            "docker:up",
+            "docker:down",
+            "docker:logs",
+            "submodules:init",
+            "submodules:update",
+            "submodules:status",
+            "clean",
+            "install:all",
+            "install:submodules",
+            "health",
+            "github:repos:list",
+            "github:repos:json",
+            "github:repos:clone",
+            "github:repos:submodules",
+            "github:token:check",
+            "org:structure",
+            "org:sync",
+            "github:releases:plan",
+            "github:releases:apply",
+            "github:readme:plan",
+            "github:readme:apply",
+            "packages:plan",
+            "packages:readme:plan",
+            "packages:readme:apply",
+            "telegram:id",
+            "env:validate",
+            "telegram:compliance:check",
+            "bots:start",
+            "bots:validate",
+            "audit:run",
+            "audit:github",
+            "audit:integrations",
+            "audit:connections",
+            "audit:forks",
+            "audit:modulations",
+            "audit:comprehensive",
+            "audit:scheduler",
+            "audit:scheduler:start",
+            "audit:scheduler:trends",
+            "audit:all",
+            "deploy:vercel",
+            "deploy:heroku",
+            "deploy:hf",
+            "deploy:hostinger",
+            "deploy:staging",
+            "deploy:production",
+            "deploy:docker",
+            "deploy:local",
+            "build",
+            "build:dev",
+            "build:prod",
+            "build:docker",
+            "build:all",
+            "debug",
+            "debug:system",
+            "debug:app",
+            "debug:bots",
+            "debug:verbose",
+            "docker:restart",
+            "docker:clean",
+            "heroku:deploy",
+            "heroku:logs",
+            "heroku:restart",
+            "heroku:config",
+            "worker",
+            "migrate",
+            "publish:packages",
+            "publish:version",
+            "publish:patch",
+            "publish:minor",
+            "publish:major",
+            "release:create",
+            "release:push",
+            "docker:build:release",
+            "docker:tag:release",
+            "docker:push:release",
+            "generate:changelog",
+            "changelog"
+          ]
+        }
+      ],
+      "directoryAnalysis": {
+        "structure": {
+          "apps": {
+            "exists": true,
+            "subdirectories": [
+              {
+                "name": "ton-connect-app",
+                "path": "apps/ton-connect-app",
+                "fileCount": 15,
+                "totalSize": 34502,
+                "largestFiles": [
+                  {
+                    "path": "apps/ton-connect-app/.gitignore",
+                    "size": 8,
+                    "lastModified": "2025-09-09T15:10:31.948Z"
+                  },
+                  {
+                    "path": "apps/ton-connect-app/README.md",
+                    "size": 1095,
+                    "lastModified": "2025-09-09T15:10:31.948Z"
+                  },
+                  {
+                    "path": "apps/ton-connect-app/app/globals.css",
+                    "size": 1858,
+                    "lastModified": "2025-09-09T15:10:31.948Z"
+                  },
+                  {
+                    "path": "apps/ton-connect-app/app/layout.tsx",
+                    "size": 654,
+                    "lastModified": "2025-09-09T15:10:31.948Z"
+                  },
+                  {
+                    "path": "apps/ton-connect-app/app/page.tsx",
+                    "size": 1326,
+                    "lastModified": "2025-09-09T15:10:31.948Z"
+                  },
+                  {
+                    "path": "apps/ton-connect-app/app/tonconnect-manifest.json/route.ts",
+                    "size": 653,
+                    "lastModified": "2025-09-09T15:10:31.948Z"
+                  },
+                  {
+                    "path": "apps/ton-connect-app/components/MediaPlaceholders.tsx",
+                    "size": 960,
+                    "lastModified": "2025-09-09T15:10:31.949Z"
+                  },
+                  {
+                    "path": "apps/ton-connect-app/components/TonConnectProvider.tsx",
+                    "size": 773,
+                    "lastModified": "2025-09-09T15:10:31.949Z"
+                  },
+                  {
+                    "path": "apps/ton-connect-app/components/WalletActions.tsx",
+                    "size": 2432,
+                    "lastModified": "2025-09-09T15:10:31.949Z"
+                  },
+                  {
+                    "path": "apps/ton-connect-app/next-env.d.ts",
+                    "size": 202,
+                    "lastModified": "2025-09-09T15:10:31.949Z"
+                  },
+                  {
+                    "path": "apps/ton-connect-app/next.config.js",
+                    "size": 422,
+                    "lastModified": "2025-09-09T15:10:31.949Z"
+                  },
+                  {
+                    "path": "apps/ton-connect-app/package-lock.json",
+                    "size": 22942,
+                    "lastModified": "2025-09-09T15:10:31.949Z"
+                  },
+                  {
+                    "path": "apps/ton-connect-app/package.json",
+                    "size": 449,
+                    "lastModified": "2025-09-09T15:10:31.949Z"
+                  },
+                  {
+                    "path": "apps/ton-connect-app/tsconfig.json",
+                    "size": 578,
+                    "lastModified": "2025-09-09T15:10:31.949Z"
+                  },
+                  {
+                    "path": "apps/ton-connect-app/vercel.json",
+                    "size": 150,
+                    "lastModified": "2025-09-09T15:10:31.949Z"
+                  }
+                ]
+              }
+            ],
+            "files": [],
+            "totalFiles": 15,
+            "totalSize": 34502,
+            "emptyDirectories": 0,
+            "largestFiles": [
+              {
+                "path": "apps/ton-connect-app/package-lock.json",
+                "size": 22942,
+                "lastModified": "2025-09-09T15:10:31.949Z"
+              },
+              {
+                "path": "apps/ton-connect-app/components/WalletActions.tsx",
+                "size": 2432,
+                "lastModified": "2025-09-09T15:10:31.949Z"
+              },
+              {
+                "path": "apps/ton-connect-app/app/globals.css",
+                "size": 1858,
+                "lastModified": "2025-09-09T15:10:31.948Z"
+              },
+              {
+                "path": "apps/ton-connect-app/app/page.tsx",
+                "size": 1326,
+                "lastModified": "2025-09-09T15:10:31.948Z"
+              },
+              {
+                "path": "apps/ton-connect-app/README.md",
+                "size": 1095,
+                "lastModified": "2025-09-09T15:10:31.948Z"
+              },
+              {
+                "path": "apps/ton-connect-app/components/MediaPlaceholders.tsx",
+                "size": 960,
+                "lastModified": "2025-09-09T15:10:31.949Z"
+              },
+              {
+                "path": "apps/ton-connect-app/components/TonConnectProvider.tsx",
+                "size": 773,
+                "lastModified": "2025-09-09T15:10:31.949Z"
+              },
+              {
+                "path": "apps/ton-connect-app/app/layout.tsx",
+                "size": 654,
+                "lastModified": "2025-09-09T15:10:31.948Z"
+              },
+              {
+                "path": "apps/ton-connect-app/app/tonconnect-manifest.json/route.ts",
+                "size": 653,
+                "lastModified": "2025-09-09T15:10:31.948Z"
+              },
+              {
+                "path": "apps/ton-connect-app/tsconfig.json",
+                "size": 578,
+                "lastModified": "2025-09-09T15:10:31.949Z"
+              }
+            ]
+          },
+          "backend": {
+            "exists": true,
+            "subdirectories": [
+              {
+                "name": "router",
+                "path": "backend/router",
+                "fileCount": 3,
+                "totalSize": 826,
+                "largestFiles": [
+                  {
+                    "path": "backend/router/README.md",
+                    "size": 109,
+                    "lastModified": "2025-09-09T15:10:31.949Z"
+                  },
+                  {
+                    "path": "backend/router/index.js",
+                    "size": 570,
+                    "lastModified": "2025-09-09T15:10:31.949Z"
+                  },
+                  {
+                    "path": "backend/router/package.json",
+                    "size": 147,
+                    "lastModified": "2025-09-09T15:10:31.950Z"
+                  }
+                ]
+              },
+              {
+                "name": "ton-connect",
+                "path": "backend/ton-connect",
+                "fileCount": 1,
+                "totalSize": 114,
+                "largestFiles": [
+                  {
+                    "path": "backend/ton-connect/README.md",
+                    "size": 114,
+                    "lastModified": "2025-09-09T15:10:31.950Z"
+                  }
+                ]
+              }
+            ],
+            "files": [],
+            "totalFiles": 4,
+            "totalSize": 940,
+            "emptyDirectories": 0,
+            "largestFiles": [
+              {
+                "path": "backend/router/index.js",
+                "size": 570,
+                "lastModified": "2025-09-09T15:10:31.949Z"
+              },
+              {
+                "path": "backend/router/package.json",
+                "size": 147,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "path": "backend/ton-connect/README.md",
+                "size": 114,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "path": "backend/router/README.md",
+                "size": 109,
+                "lastModified": "2025-09-09T15:10:31.949Z"
+              }
+            ]
+          },
+          "frontend": {
+            "exists": true,
+            "subdirectories": [
+              {
+                "name": "dashboard",
+                "path": "frontend/dashboard",
+                "fileCount": 28,
+                "totalSize": 910272,
+                "largestFiles": [
+                  {
+                    "path": "frontend/dashboard/.env.example",
+                    "size": 290,
+                    "lastModified": "2025-09-09T15:10:31.952Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/Dockerfile",
+                    "size": 532,
+                    "lastModified": "2025-09-09T15:10:31.952Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/README.md",
+                    "size": 5098,
+                    "lastModified": "2025-09-09T15:10:31.952Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/docker-compose.yml",
+                    "size": 498,
+                    "lastModified": "2025-09-09T15:10:31.952Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/nginx.conf",
+                    "size": 2205,
+                    "lastModified": "2025-09-09T15:10:31.952Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/package-lock.json",
+                    "size": 797090,
+                    "lastModified": "2025-09-09T15:10:31.956Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/package.json",
+                    "size": 1637,
+                    "lastModified": "2025-09-09T15:10:31.956Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/postcss.config.js",
+                    "size": 82,
+                    "lastModified": "2025-09-09T15:10:31.956Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/server.js",
+                    "size": 375,
+                    "lastModified": "2025-09-09T15:10:31.956Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/App.js",
+                    "size": 1021,
+                    "lastModified": "2025-09-09T15:10:31.956Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/components/ActivityChart.js",
+                    "size": 2286,
+                    "lastModified": "2025-09-09T15:10:31.956Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/components/BotCard.js",
+                    "size": 2404,
+                    "lastModified": "2025-09-09T15:10:31.956Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/components/Header.js",
+                    "size": 2259,
+                    "lastModified": "2025-09-09T15:10:31.956Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/components/Layout.js",
+                    "size": 819,
+                    "lastModified": "2025-09-09T15:10:31.956Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/components/MultiWallet.js",
+                    "size": 14362,
+                    "lastModified": "2025-09-09T15:10:31.956Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/components/Sidebar.js",
+                    "size": 4353,
+                    "lastModified": "2025-09-09T15:10:31.956Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/components/StatsCard.js",
+                    "size": 1397,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/components/TONWallet.js",
+                    "size": 10409,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/index.css",
+                    "size": 3767,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/index.js",
+                    "size": 254,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/pages/Analytics.js",
+                    "size": 12442,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/pages/Bots.js",
+                    "size": 8552,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/pages/Dashboard.js",
+                    "size": 5448,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/pages/Settings.js",
+                    "size": 15826,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/services/BotContext.js",
+                    "size": 4610,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/src/services/botService.js",
+                    "size": 9182,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/tailwind.config.js",
+                    "size": 2322,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  },
+                  {
+                    "path": "frontend/dashboard/vercel.json",
+                    "size": 752,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  }
+                ]
+              },
+              {
+                "name": "telegram-bot",
+                "path": "frontend/telegram-bot",
+                "fileCount": 3,
+                "totalSize": 1562,
+                "largestFiles": [
+                  {
+                    "path": "frontend/telegram-bot/README.md",
+                    "size": 116,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  },
+                  {
+                    "path": "frontend/telegram-bot/bot.js",
+                    "size": 1305,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  },
+                  {
+                    "path": "frontend/telegram-bot/package.json",
+                    "size": 141,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  }
+                ]
+              }
+            ],
+            "files": [],
+            "totalFiles": 31,
+            "totalSize": 911834,
+            "emptyDirectories": 0,
+            "largestFiles": [
+              {
+                "path": "frontend/dashboard/package-lock.json",
+                "size": 797090,
+                "lastModified": "2025-09-09T15:10:31.956Z"
+              },
+              {
+                "path": "frontend/dashboard/src/pages/Settings.js",
+                "size": 15826,
+                "lastModified": "2025-09-09T15:10:31.957Z"
+              },
+              {
+                "path": "frontend/dashboard/src/components/MultiWallet.js",
+                "size": 14362,
+                "lastModified": "2025-09-09T15:10:31.956Z"
+              },
+              {
+                "path": "frontend/dashboard/src/pages/Analytics.js",
+                "size": 12442,
+                "lastModified": "2025-09-09T15:10:31.957Z"
+              },
+              {
+                "path": "frontend/dashboard/src/components/TONWallet.js",
+                "size": 10409,
+                "lastModified": "2025-09-09T15:10:31.957Z"
+              },
+              {
+                "path": "frontend/dashboard/src/services/botService.js",
+                "size": 9182,
+                "lastModified": "2025-09-09T15:10:31.957Z"
+              },
+              {
+                "path": "frontend/dashboard/src/pages/Bots.js",
+                "size": 8552,
+                "lastModified": "2025-09-09T15:10:31.957Z"
+              },
+              {
+                "path": "frontend/dashboard/src/pages/Dashboard.js",
+                "size": 5448,
+                "lastModified": "2025-09-09T15:10:31.957Z"
+              },
+              {
+                "path": "frontend/dashboard/README.md",
+                "size": 5098,
+                "lastModified": "2025-09-09T15:10:31.952Z"
+              },
+              {
+                "path": "frontend/dashboard/src/services/BotContext.js",
+                "size": 4610,
+                "lastModified": "2025-09-09T15:10:31.957Z"
+              }
+            ]
+          },
+          "contracts": {
+            "exists": true,
+            "subdirectories": [
+              {
+                "name": "algorand",
+                "path": "contracts/algorand",
+                "fileCount": 1,
+                "totalSize": 113,
+                "largestFiles": [
+                  {
+                    "path": "contracts/algorand/README.md",
+                    "size": 113,
+                    "lastModified": "2025-09-09T15:10:31.950Z"
+                  }
+                ]
+              },
+              {
+                "name": "bsc",
+                "path": "contracts/bsc",
+                "fileCount": 1,
+                "totalSize": 108,
+                "largestFiles": [
+                  {
+                    "path": "contracts/bsc/README.md",
+                    "size": 108,
+                    "lastModified": "2025-09-09T15:10:31.950Z"
+                  }
+                ]
+              },
+              {
+                "name": "solana",
+                "path": "contracts/solana",
+                "fileCount": 1,
+                "totalSize": 111,
+                "largestFiles": [
+                  {
+                    "path": "contracts/solana/README.md",
+                    "size": 111,
+                    "lastModified": "2025-09-09T15:10:31.950Z"
+                  }
+                ]
+              },
+              {
+                "name": "ton",
+                "path": "contracts/ton",
+                "fileCount": 1,
+                "totalSize": 108,
+                "largestFiles": [
+                  {
+                    "path": "contracts/ton/README.md",
+                    "size": 108,
+                    "lastModified": "2025-09-09T15:10:31.950Z"
+                  }
+                ]
+              }
+            ],
+            "files": [],
+            "totalFiles": 4,
+            "totalSize": 440,
+            "emptyDirectories": 0,
+            "largestFiles": [
+              {
+                "path": "contracts/algorand/README.md",
+                "size": 113,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "path": "contracts/solana/README.md",
+                "size": 111,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "path": "contracts/bsc/README.md",
+                "size": 108,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "path": "contracts/ton/README.md",
+                "size": 108,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              }
+            ]
+          },
+          "tokens": {
+            "exists": true,
+            "subdirectories": [
+              {
+                "name": "gs-token",
+                "path": "tokens/gs-token",
+                "fileCount": 1,
+                "totalSize": 110,
+                "largestFiles": [
+                  {
+                    "path": "tokens/gs-token/README.md",
+                    "size": 110,
+                    "lastModified": "2025-09-09T15:10:31.963Z"
+                  }
+                ]
+              },
+              {
+                "name": "kuchi-token",
+                "path": "tokens/kuchi-token",
+                "fileCount": 1,
+                "totalSize": 113,
+                "largestFiles": [
+                  {
+                    "path": "tokens/kuchi-token/README.md",
+                    "size": 113,
+                    "lastModified": "2025-09-09T15:10:31.963Z"
+                  }
+                ]
+              },
+              {
+                "name": "panas-token",
+                "path": "tokens/panas-token",
+                "fileCount": 1,
+                "totalSize": 113,
+                "largestFiles": [
+                  {
+                    "path": "tokens/panas-token/README.md",
+                    "size": 113,
+                    "lastModified": "2025-09-09T15:10:31.963Z"
+                  }
+                ]
+              },
+              {
+                "name": "vaser-token",
+                "path": "tokens/vaser-token",
+                "fileCount": 1,
+                "totalSize": 113,
+                "largestFiles": [
+                  {
+                    "path": "tokens/vaser-token/README.md",
+                    "size": 113,
+                    "lastModified": "2025-09-09T15:10:31.963Z"
+                  }
+                ]
+              }
+            ],
+            "files": [],
+            "totalFiles": 4,
+            "totalSize": 449,
+            "emptyDirectories": 0,
+            "largestFiles": [
+              {
+                "path": "tokens/kuchi-token/README.md",
+                "size": 113,
+                "lastModified": "2025-09-09T15:10:31.963Z"
+              },
+              {
+                "path": "tokens/panas-token/README.md",
+                "size": 113,
+                "lastModified": "2025-09-09T15:10:31.963Z"
+              },
+              {
+                "path": "tokens/vaser-token/README.md",
+                "size": 113,
+                "lastModified": "2025-09-09T15:10:31.963Z"
+              },
+              {
+                "path": "tokens/gs-token/README.md",
+                "size": 110,
+                "lastModified": "2025-09-09T15:10:31.963Z"
+              }
+            ]
+          },
+          "scripts": {
+            "exists": true,
+            "subdirectories": [
+              {
+                "name": "audits",
+                "path": "scripts/audits",
+                "fileCount": 8,
+                "totalSize": 88532,
+                "largestFiles": [
+                  {
+                    "path": "scripts/audits/audit-scheduler.js",
+                    "size": 13565,
+                    "lastModified": "2025-09-09T15:21:58.154Z"
+                  },
+                  {
+                    "path": "scripts/audits/comprehensive-audit.js",
+                    "size": 14390,
+                    "lastModified": "2025-09-09T15:18:27.795Z"
+                  },
+                  {
+                    "path": "scripts/audits/connections-audit.js",
+                    "size": 11304,
+                    "lastModified": "2025-09-09T15:15:08.025Z"
+                  },
+                  {
+                    "path": "scripts/audits/forks-audit.js",
+                    "size": 16486,
+                    "lastModified": "2025-09-09T15:16:12.836Z"
+                  },
+                  {
+                    "path": "scripts/audits/github-repos-audit.js",
+                    "size": 2919,
+                    "lastModified": "2025-09-09T15:10:31.959Z"
+                  },
+                  {
+                    "path": "scripts/audits/integrations-audit.js",
+                    "size": 3344,
+                    "lastModified": "2025-09-09T15:10:31.959Z"
+                  },
+                  {
+                    "path": "scripts/audits/modulations-audit.js",
+                    "size": 23085,
+                    "lastModified": "2025-09-09T15:17:32.585Z"
+                  },
+                  {
+                    "path": "scripts/audits/run-audit.js",
+                    "size": 3439,
+                    "lastModified": "2025-09-09T15:10:31.959Z"
+                  }
+                ]
+              },
+              {
+                "name": "bots",
+                "path": "scripts/bots",
+                "fileCount": 10,
+                "totalSize": 98004,
+                "largestFiles": [
+                  {
+                    "path": "scripts/bots/build-telegram-report.js",
+                    "size": 3580,
+                    "lastModified": "2025-09-09T15:10:31.959Z"
+                  },
+                  {
+                    "path": "scripts/bots/export-telegram-inventory.js",
+                    "size": 2251,
+                    "lastModified": "2025-09-09T15:10:31.959Z"
+                  },
+                  {
+                    "path": "scripts/bots/get-my-id-lite.js",
+                    "size": 6252,
+                    "lastModified": "2025-09-09T15:10:31.959Z"
+                  },
+                  {
+                    "path": "scripts/bots/get-my-id.js",
+                    "size": 2523,
+                    "lastModified": "2025-09-09T15:10:31.959Z"
+                  },
+                  {
+                    "path": "scripts/bots/modules/ai_huggingface.js",
+                    "size": 19455,
+                    "lastModified": "2025-09-09T15:10:31.959Z"
+                  },
+                  {
+                    "path": "scripts/bots/modules/multi_wallet.js",
+                    "size": 20890,
+                    "lastModified": "2025-09-09T15:10:31.959Z"
+                  },
+                  {
+                    "path": "scripts/bots/modules/ton_wallet.js",
+                    "size": 13025,
+                    "lastModified": "2025-09-09T15:10:31.959Z"
+                  },
+                  {
+                    "path": "scripts/bots/orchestrator.js",
+                    "size": 12857,
+                    "lastModified": "2025-09-09T15:10:31.959Z"
+                  },
+                  {
+                    "path": "scripts/bots/telegram-hub.js",
+                    "size": 13818,
+                    "lastModified": "2025-09-09T15:10:31.960Z"
+                  },
+                  {
+                    "path": "scripts/bots/validate-bots.js",
+                    "size": 3353,
+                    "lastModified": "2025-09-09T15:10:31.960Z"
+                  }
+                ]
+              },
+              {
+                "name": "debug",
+                "path": "scripts/debug",
+                "fileCount": 1,
+                "totalSize": 9356,
+                "largestFiles": [
+                  {
+                    "path": "scripts/debug/debug.sh",
+                    "size": 9356,
+                    "lastModified": "2025-09-09T15:10:31.960Z"
+                  }
+                ]
+              },
+              {
+                "name": "environments",
+                "path": "scripts/environments",
+                "fileCount": 1,
+                "totalSize": 13740,
+                "largestFiles": [
+                  {
+                    "path": "scripts/environments/environment-manager.js",
+                    "size": 13740,
+                    "lastModified": "2025-09-09T15:10:31.960Z"
+                  }
+                ]
+              },
+              {
+                "name": "hosting",
+                "path": "scripts/hosting",
+                "fileCount": 1,
+                "totalSize": 2169,
+                "largestFiles": [
+                  {
+                    "path": "scripts/hosting/deploy.js",
+                    "size": 2169,
+                    "lastModified": "2025-09-09T15:10:31.961Z"
+                  }
+                ]
+              },
+              {
+                "name": "integration",
+                "path": "scripts/integration",
+                "fileCount": 2,
+                "totalSize": 24299,
+                "largestFiles": [
+                  {
+                    "path": "scripts/integration/ecosystem-integrator.js",
+                    "size": 22722,
+                    "lastModified": "2025-09-09T15:10:31.961Z"
+                  },
+                  {
+                    "path": "scripts/integration/run-integration-check.js",
+                    "size": 1577,
+                    "lastModified": "2025-09-09T15:10:31.961Z"
+                  }
+                ]
+              },
+              {
+                "name": "webhooks",
+                "path": "scripts/webhooks",
+                "fileCount": 1,
+                "totalSize": 16233,
+                "largestFiles": [
+                  {
+                    "path": "scripts/webhooks/webhook-manager.js",
+                    "size": 16233,
+                    "lastModified": "2025-09-09T15:10:31.962Z"
+                  }
+                ]
+              },
+              {
+                "name": "workflows",
+                "path": "scripts/workflows",
+                "fileCount": 1,
+                "totalSize": 13361,
+                "largestFiles": [
+                  {
+                    "path": "scripts/workflows/workflow-manager.js",
+                    "size": 13361,
+                    "lastModified": "2025-09-09T15:10:31.962Z"
+                  }
+                ]
+              }
+            ],
+            "files": [
+              {
+                "name": "api-integration.js",
+                "path": "scripts/api-integration.js",
+                "size": 3295,
+                "lastModified": "2025-09-09T15:10:31.959Z"
+              },
+              {
+                "name": "ecosystem-manager.js",
+                "path": "scripts/ecosystem-manager.js",
+                "size": 9553,
+                "lastModified": "2025-09-09T15:10:31.960Z"
+              },
+              {
+                "name": "generate-changelog.js",
+                "path": "scripts/generate-changelog.js",
+                "size": 7884,
+                "lastModified": "2025-09-09T15:10:31.960Z"
+              },
+              {
+                "name": "github-master-readme.js",
+                "path": "scripts/github-master-readme.js",
+                "size": 3618,
+                "lastModified": "2025-09-09T15:10:31.960Z"
+              },
+              {
+                "name": "github-org-sync.js",
+                "path": "scripts/github-org-sync.js",
+                "size": 4290,
+                "lastModified": "2025-09-09T15:10:31.960Z"
+              },
+              {
+                "name": "github-packages-plan.js",
+                "path": "scripts/github-packages-plan.js",
+                "size": 2951,
+                "lastModified": "2025-09-09T15:10:31.960Z"
+              },
+              {
+                "name": "github-readme-packages-sync.js",
+                "path": "scripts/github-readme-packages-sync.js",
+                "size": 4493,
+                "lastModified": "2025-09-09T15:10:31.960Z"
+              },
+              {
+                "name": "github-readme-sync.js",
+                "path": "scripts/github-readme-sync.js",
+                "size": 5342,
+                "lastModified": "2025-09-09T15:10:31.960Z"
+              },
+              {
+                "name": "github-release-orchestrator.js",
+                "path": "scripts/github-release-orchestrator.js",
+                "size": 6339,
+                "lastModified": "2025-09-09T15:10:31.960Z"
+              },
+              {
+                "name": "github-repos-fetcher.js",
+                "path": "scripts/github-repos-fetcher.js",
+                "size": 17597,
+                "lastModified": "2025-09-09T15:10:31.960Z"
+              },
+              {
+                "name": "github-repos-manager.js",
+                "path": "scripts/github-repos-manager.js",
+                "size": 16444,
+                "lastModified": "2025-09-09T15:10:31.960Z"
+              },
+              {
+                "name": "github-token-verify.js",
+                "path": "scripts/github-token-verify.js",
+                "size": 6171,
+                "lastModified": "2025-09-09T15:10:31.961Z"
+              },
+              {
+                "name": "health-check.js",
+                "path": "scripts/health-check.js",
+                "size": 13341,
+                "lastModified": "2025-09-09T15:10:31.961Z"
+              },
+              {
+                "name": "init-submodules.sh",
+                "path": "scripts/init-submodules.sh",
+                "size": 4682,
+                "lastModified": "2025-09-09T15:10:31.961Z"
+              },
+              {
+                "name": "migrate.js",
+                "path": "scripts/migrate.js",
+                "size": 7500,
+                "lastModified": "2025-09-09T15:10:31.961Z"
+              },
+              {
+                "name": "org-structure.js",
+                "path": "scripts/org-structure.js",
+                "size": 3773,
+                "lastModified": "2025-09-09T15:10:31.961Z"
+              },
+              {
+                "name": "panacea-repos-generator.js",
+                "path": "scripts/panacea-repos-generator.js",
+                "size": 20277,
+                "lastModified": "2025-09-09T15:10:31.961Z"
+              },
+              {
+                "name": "publish-packages.js",
+                "path": "scripts/publish-packages.js",
+                "size": 11603,
+                "lastModified": "2025-09-09T15:10:31.961Z"
+              },
+              {
+                "name": "secure-encrypt.js",
+                "path": "scripts/secure-encrypt.js",
+                "size": 10188,
+                "lastModified": "2025-09-09T15:10:31.961Z"
+              },
+              {
+                "name": "setup-ecosystem.sh",
+                "path": "scripts/setup-ecosystem.sh",
+                "size": 3723,
+                "lastModified": "2025-09-09T15:10:31.961Z"
+              },
+              {
+                "name": "setup-heroku-apis.js",
+                "path": "scripts/setup-heroku-apis.js",
+                "size": 18498,
+                "lastModified": "2025-09-09T15:10:31.961Z"
+              },
+              {
+                "name": "start-all.js",
+                "path": "scripts/start-all.js",
+                "size": 11666,
+                "lastModified": "2025-09-09T15:10:31.961Z"
+              },
+              {
+                "name": "telegram-compliance-check.js",
+                "path": "scripts/telegram-compliance-check.js",
+                "size": 1624,
+                "lastModified": "2025-09-09T15:10:31.961Z"
+              },
+              {
+                "name": "update-main-readme.js",
+                "path": "scripts/update-main-readme.js",
+                "size": 5046,
+                "lastModified": "2025-09-09T15:10:31.961Z"
+              },
+              {
+                "name": "update-repos-from-github.js",
+                "path": "scripts/update-repos-from-github.js",
+                "size": 14974,
+                "lastModified": "2025-09-09T15:10:31.962Z"
+              },
+              {
+                "name": "update-with-real-data.js",
+                "path": "scripts/update-with-real-data.js",
+                "size": 20100,
+                "lastModified": "2025-09-09T15:10:31.962Z"
+              },
+              {
+                "name": "validate-local-env.js",
+                "path": "scripts/validate-local-env.js",
+                "size": 5375,
+                "lastModified": "2025-09-09T15:10:31.962Z"
+              },
+              {
+                "name": "wallet-manager.js",
+                "path": "scripts/wallet-manager.js",
+                "size": 8699,
+                "lastModified": "2025-09-09T15:10:31.962Z"
+              },
+              {
+                "name": "worker.js",
+                "path": "scripts/worker.js",
+                "size": 5007,
+                "lastModified": "2025-09-09T15:10:31.962Z"
+              }
+            ],
+            "totalFiles": 54,
+            "totalSize": 519747,
+            "emptyDirectories": 0,
+            "largestFiles": [
+              {
+                "path": "scripts/audits/modulations-audit.js",
+                "size": 23085,
+                "lastModified": "2025-09-09T15:17:32.585Z"
+              },
+              {
+                "path": "scripts/integration/ecosystem-integrator.js",
+                "size": 22722,
+                "lastModified": "2025-09-09T15:10:31.961Z"
+              },
+              {
+                "path": "scripts/bots/modules/multi_wallet.js",
+                "size": 20890,
+                "lastModified": "2025-09-09T15:10:31.959Z"
+              },
+              {
+                "name": "panacea-repos-generator.js",
+                "path": "scripts/panacea-repos-generator.js",
+                "size": 20277,
+                "lastModified": "2025-09-09T15:10:31.961Z"
+              },
+              {
+                "name": "update-with-real-data.js",
+                "path": "scripts/update-with-real-data.js",
+                "size": 20100,
+                "lastModified": "2025-09-09T15:10:31.962Z"
+              },
+              {
+                "path": "scripts/bots/modules/ai_huggingface.js",
+                "size": 19455,
+                "lastModified": "2025-09-09T15:10:31.959Z"
+              },
+              {
+                "name": "setup-heroku-apis.js",
+                "path": "scripts/setup-heroku-apis.js",
+                "size": 18498,
+                "lastModified": "2025-09-09T15:10:31.961Z"
+              },
+              {
+                "name": "github-repos-fetcher.js",
+                "path": "scripts/github-repos-fetcher.js",
+                "size": 17597,
+                "lastModified": "2025-09-09T15:10:31.960Z"
+              },
+              {
+                "path": "scripts/audits/forks-audit.js",
+                "size": 16486,
+                "lastModified": "2025-09-09T15:16:12.836Z"
+              },
+              {
+                "name": "github-repos-manager.js",
+                "path": "scripts/github-repos-manager.js",
+                "size": 16444,
+                "lastModified": "2025-09-09T15:10:31.960Z"
+              }
+            ]
+          },
+          "tests": {
+            "exists": true,
+            "subdirectories": [
+              {
+                "name": "e2e",
+                "path": "tests/e2e",
+                "fileCount": 1,
+                "totalSize": 11827,
+                "largestFiles": [
+                  {
+                    "path": "tests/e2e/complete-workflow.test.js",
+                    "size": 11827,
+                    "lastModified": "2025-09-09T15:10:31.962Z"
+                  }
+                ]
+              },
+              {
+                "name": "fixtures",
+                "path": "tests/fixtures",
+                "fileCount": 2,
+                "totalSize": 8869,
+                "largestFiles": [
+                  {
+                    "path": "tests/fixtures/bot-config.json",
+                    "size": 3963,
+                    "lastModified": "2025-09-09T15:10:31.962Z"
+                  },
+                  {
+                    "path": "tests/fixtures/telegram-messages.json",
+                    "size": 4906,
+                    "lastModified": "2025-09-09T15:10:31.962Z"
+                  }
+                ]
+              },
+              {
+                "name": "helpers",
+                "path": "tests/helpers",
+                "fileCount": 1,
+                "totalSize": 7715,
+                "largestFiles": [
+                  {
+                    "path": "tests/helpers/test-utils.js",
+                    "size": 7715,
+                    "lastModified": "2025-09-09T15:10:31.963Z"
+                  }
+                ]
+              },
+              {
+                "name": "integration",
+                "path": "tests/integration",
+                "fileCount": 2,
+                "totalSize": 19020,
+                "largestFiles": [
+                  {
+                    "path": "tests/integration/ci-cd-pipeline.test.js",
+                    "size": 8307,
+                    "lastModified": "2025-09-09T15:10:31.963Z"
+                  },
+                  {
+                    "path": "tests/integration/telegram-bots.test.js",
+                    "size": 10713,
+                    "lastModified": "2025-09-09T15:10:31.963Z"
+                  }
+                ]
+              },
+              {
+                "name": "unit",
+                "path": "tests/unit",
+                "fileCount": 3,
+                "totalSize": 22465,
+                "largestFiles": [
+                  {
+                    "path": "tests/unit/bot-orchestrator.test.js",
+                    "size": 7335,
+                    "lastModified": "2025-09-09T15:10:31.963Z"
+                  },
+                  {
+                    "path": "tests/unit/package-publisher.test.js",
+                    "size": 9321,
+                    "lastModified": "2025-09-09T15:10:31.963Z"
+                  },
+                  {
+                    "path": "tests/unit/telegram-bot.test.js",
+                    "size": 5809,
+                    "lastModified": "2025-09-09T15:10:31.963Z"
+                  }
+                ]
+              }
+            ],
+            "files": [
+              {
+                "name": "setup.js",
+                "path": "tests/setup.js",
+                "size": 3787,
+                "lastModified": "2025-09-09T15:10:31.963Z"
+              }
+            ],
+            "totalFiles": 10,
+            "totalSize": 73683,
+            "emptyDirectories": 0,
+            "largestFiles": [
+              {
+                "path": "tests/e2e/complete-workflow.test.js",
+                "size": 11827,
+                "lastModified": "2025-09-09T15:10:31.962Z"
+              },
+              {
+                "path": "tests/integration/telegram-bots.test.js",
+                "size": 10713,
+                "lastModified": "2025-09-09T15:10:31.963Z"
+              },
+              {
+                "path": "tests/unit/package-publisher.test.js",
+                "size": 9321,
+                "lastModified": "2025-09-09T15:10:31.963Z"
+              },
+              {
+                "path": "tests/integration/ci-cd-pipeline.test.js",
+                "size": 8307,
+                "lastModified": "2025-09-09T15:10:31.963Z"
+              },
+              {
+                "path": "tests/helpers/test-utils.js",
+                "size": 7715,
+                "lastModified": "2025-09-09T15:10:31.963Z"
+              },
+              {
+                "path": "tests/unit/bot-orchestrator.test.js",
+                "size": 7335,
+                "lastModified": "2025-09-09T15:10:31.963Z"
+              },
+              {
+                "path": "tests/unit/telegram-bot.test.js",
+                "size": 5809,
+                "lastModified": "2025-09-09T15:10:31.963Z"
+              },
+              {
+                "path": "tests/fixtures/telegram-messages.json",
+                "size": 4906,
+                "lastModified": "2025-09-09T15:10:31.962Z"
+              },
+              {
+                "path": "tests/fixtures/bot-config.json",
+                "size": 3963,
+                "lastModified": "2025-09-09T15:10:31.962Z"
+              },
+              {
+                "name": "setup.js",
+                "path": "tests/setup.js",
+                "size": 3787,
+                "lastModified": "2025-09-09T15:10:31.963Z"
+              }
+            ]
+          },
+          "docs": {
+            "exists": true,
+            "subdirectories": [
+              {
+                "name": "api",
+                "path": "docs/api",
+                "fileCount": 1,
+                "totalSize": 103,
+                "largestFiles": [
+                  {
+                    "path": "docs/api/README.md",
+                    "size": 103,
+                    "lastModified": "2025-09-09T15:10:31.951Z"
+                  }
+                ]
+              },
+              {
+                "name": "releases",
+                "path": "docs/releases",
+                "fileCount": 5,
+                "totalSize": 56537,
+                "largestFiles": [
+                  {
+                    "path": "docs/releases/MANIFEST.json",
+                    "size": 14237,
+                    "lastModified": "2025-09-09T15:10:31.951Z"
+                  },
+                  {
+                    "path": "docs/releases/PACKAGES_MANIFEST.json",
+                    "size": 14695,
+                    "lastModified": "2025-09-09T15:10:31.951Z"
+                  },
+                  {
+                    "path": "docs/releases/PACKAGES_PLAN.md",
+                    "size": 20412,
+                    "lastModified": "2025-09-09T15:10:31.951Z"
+                  },
+                  {
+                    "path": "docs/releases/README_SYNC_PLAN.md",
+                    "size": 1859,
+                    "lastModified": "2025-09-09T15:10:31.951Z"
+                  },
+                  {
+                    "path": "docs/releases/RELEASES_PLAN.md",
+                    "size": 5334,
+                    "lastModified": "2025-09-09T15:10:31.951Z"
+                  }
+                ]
+              },
+              {
+                "name": "telegram",
+                "path": "docs/telegram",
+                "fileCount": 2,
+                "totalSize": 6641,
+                "largestFiles": [
+                  {
+                    "path": "docs/telegram/privacy-policy.md",
+                    "size": 2958,
+                    "lastModified": "2025-09-09T15:10:31.952Z"
+                  },
+                  {
+                    "path": "docs/telegram/telegram-bot-compliance.md",
+                    "size": 3683,
+                    "lastModified": "2025-09-09T15:10:31.952Z"
+                  }
+                ]
+              }
+            ],
+            "files": [
+              {
+                "name": "API-ENDPOINTS.md",
+                "path": "docs/API-ENDPOINTS.md",
+                "size": 8301,
+                "lastModified": "2025-09-09T15:10:31.951Z"
+              },
+              {
+                "name": "AUDIT-GUIDE.md",
+                "path": "docs/AUDIT-GUIDE.md",
+                "size": 8731,
+                "lastModified": "2025-09-09T15:23:13.586Z"
+              },
+              {
+                "name": "REPOS-STRUCTURE.md",
+                "path": "docs/REPOS-STRUCTURE.md",
+                "size": 8076,
+                "lastModified": "2025-09-09T15:10:31.951Z"
+              },
+              {
+                "name": "REPOSITORIES.md",
+                "path": "docs/REPOSITORIES.md",
+                "size": 38284,
+                "lastModified": "2025-09-09T15:10:31.951Z"
+              },
+              {
+                "name": "auditoria-proyecto-v2.txt",
+                "path": "docs/auditoria-proyecto-v2.txt",
+                "size": 8365,
+                "lastModified": "2025-09-09T15:10:31.951Z"
+              },
+              {
+                "name": "auditoria-proyecto.txt",
+                "path": "docs/auditoria-proyecto.txt",
+                "size": 13231,
+                "lastModified": "2025-09-09T15:10:31.951Z"
+              },
+              {
+                "name": "clone-all-repos.sh",
+                "path": "docs/clone-all-repos.sh",
+                "size": 10817,
+                "lastModified": "2025-09-09T15:10:31.951Z"
+              },
+              {
+                "name": "ecosystem-config.env",
+                "path": "docs/ecosystem-config.env",
+                "size": 1711,
+                "lastModified": "2025-09-09T15:10:31.951Z"
+              },
+              {
+                "name": "git-submodules.txt",
+                "path": "docs/git-submodules.txt",
+                "size": 8885,
+                "lastModified": "2025-09-09T15:10:31.951Z"
+              },
+              {
+                "name": "repositories.json",
+                "path": "docs/repositories.json",
+                "size": 45224,
+                "lastModified": "2025-09-09T15:10:31.952Z"
+              }
+            ],
+            "totalFiles": 18,
+            "totalSize": 214906,
+            "emptyDirectories": 0,
+            "largestFiles": [
+              {
+                "name": "repositories.json",
+                "path": "docs/repositories.json",
+                "size": 45224,
+                "lastModified": "2025-09-09T15:10:31.952Z"
+              },
+              {
+                "name": "REPOSITORIES.md",
+                "path": "docs/REPOSITORIES.md",
+                "size": 38284,
+                "lastModified": "2025-09-09T15:10:31.951Z"
+              },
+              {
+                "path": "docs/releases/PACKAGES_PLAN.md",
+                "size": 20412,
+                "lastModified": "2025-09-09T15:10:31.951Z"
+              },
+              {
+                "path": "docs/releases/PACKAGES_MANIFEST.json",
+                "size": 14695,
+                "lastModified": "2025-09-09T15:10:31.951Z"
+              },
+              {
+                "path": "docs/releases/MANIFEST.json",
+                "size": 14237,
+                "lastModified": "2025-09-09T15:10:31.951Z"
+              },
+              {
+                "name": "auditoria-proyecto.txt",
+                "path": "docs/auditoria-proyecto.txt",
+                "size": 13231,
+                "lastModified": "2025-09-09T15:10:31.951Z"
+              },
+              {
+                "name": "clone-all-repos.sh",
+                "path": "docs/clone-all-repos.sh",
+                "size": 10817,
+                "lastModified": "2025-09-09T15:10:31.951Z"
+              },
+              {
+                "name": "git-submodules.txt",
+                "path": "docs/git-submodules.txt",
+                "size": 8885,
+                "lastModified": "2025-09-09T15:10:31.951Z"
+              },
+              {
+                "name": "AUDIT-GUIDE.md",
+                "path": "docs/AUDIT-GUIDE.md",
+                "size": 8731,
+                "lastModified": "2025-09-09T15:23:13.586Z"
+              },
+              {
+                "name": "auditoria-proyecto-v2.txt",
+                "path": "docs/auditoria-proyecto-v2.txt",
+                "size": 8365,
+                "lastModified": "2025-09-09T15:10:31.951Z"
+              }
+            ]
+          },
+          "infrastructure": {
+            "exists": true,
+            "subdirectories": [
+              {
+                "name": "ci-cd",
+                "path": "infrastructure/ci-cd",
+                "fileCount": 1,
+                "totalSize": 115,
+                "largestFiles": [
+                  {
+                    "path": "infrastructure/ci-cd/README.md",
+                    "size": 115,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  }
+                ]
+              },
+              {
+                "name": "docker",
+                "path": "infrastructure/docker",
+                "fileCount": 1,
+                "totalSize": 116,
+                "largestFiles": [
+                  {
+                    "path": "infrastructure/docker/README.md",
+                    "size": 116,
+                    "lastModified": "2025-09-09T15:10:31.957Z"
+                  }
+                ]
+              }
+            ],
+            "files": [],
+            "totalFiles": 2,
+            "totalSize": 231,
+            "emptyDirectories": 0,
+            "largestFiles": [
+              {
+                "path": "infrastructure/docker/README.md",
+                "size": 116,
+                "lastModified": "2025-09-09T15:10:31.957Z"
+              },
+              {
+                "path": "infrastructure/ci-cd/README.md",
+                "size": 115,
+                "lastModified": "2025-09-09T15:10:31.957Z"
+              }
+            ]
+          },
+          "config": {
+            "exists": true,
+            "subdirectories": [],
+            "files": [
+              {
+                "name": ".env.local.template",
+                "path": "config/.env.local.template",
+                "size": 1406,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": ".env.schema",
+                "path": "config/.env.schema",
+                "size": 6457,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": "bots.config.json.example",
+                "path": "config/bots.config.json.example",
+                "size": 447,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": "bots.config.schema.json",
+                "path": "config/bots.config.schema.json",
+                "size": 1135,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": "docker-compose.yml",
+                "path": "config/docker-compose.yml",
+                "size": 1916,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": "endpoints.config.json",
+                "path": "config/endpoints.config.json",
+                "size": 5099,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": "environments.config.json",
+                "path": "config/environments.config.json",
+                "size": 3226,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": "telegram-bots.schema.env",
+                "path": "config/telegram-bots.schema.env",
+                "size": 1005,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": "webhooks.config.json",
+                "path": "config/webhooks.config.json",
+                "size": 1526,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": "workflows.config.json",
+                "path": "config/workflows.config.json",
+                "size": 3481,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              }
+            ],
+            "totalFiles": 10,
+            "totalSize": 25698,
+            "emptyDirectories": 0,
+            "largestFiles": [
+              {
+                "name": ".env.schema",
+                "path": "config/.env.schema",
+                "size": 6457,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": "endpoints.config.json",
+                "path": "config/endpoints.config.json",
+                "size": 5099,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": "workflows.config.json",
+                "path": "config/workflows.config.json",
+                "size": 3481,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": "environments.config.json",
+                "path": "config/environments.config.json",
+                "size": 3226,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": "docker-compose.yml",
+                "path": "config/docker-compose.yml",
+                "size": 1916,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": "webhooks.config.json",
+                "path": "config/webhooks.config.json",
+                "size": 1526,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": ".env.local.template",
+                "path": "config/.env.local.template",
+                "size": 1406,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": "bots.config.schema.json",
+                "path": "config/bots.config.schema.json",
+                "size": 1135,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": "telegram-bots.schema.env",
+                "path": "config/telegram-bots.schema.env",
+                "size": 1005,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              },
+              {
+                "name": "bots.config.json.example",
+                "path": "config/bots.config.json.example",
+                "size": 447,
+                "lastModified": "2025-09-09T15:10:31.950Z"
+              }
+            ]
+          }
+        },
+        "metrics": {
+          "totalDirectories": 31,
+          "totalFiles": 152,
+          "totalSize": 1782430,
+          "emptyDirectories": 0,
+          "largestFiles": [
+            {
+              "path": "frontend/dashboard/package-lock.json",
+              "size": 797090,
+              "lastModified": "2025-09-09T15:10:31.956Z"
+            },
+            {
+              "name": "repositories.json",
+              "path": "docs/repositories.json",
+              "size": 45224,
+              "lastModified": "2025-09-09T15:10:31.952Z"
+            },
+            {
+              "name": "REPOSITORIES.md",
+              "path": "docs/REPOSITORIES.md",
+              "size": 38284,
+              "lastModified": "2025-09-09T15:10:31.951Z"
+            },
+            {
+              "path": "scripts/audits/modulations-audit.js",
+              "size": 23085,
+              "lastModified": "2025-09-09T15:17:32.585Z"
+            },
+            {
+              "path": "apps/ton-connect-app/package-lock.json",
+              "size": 22942,
+              "lastModified": "2025-09-09T15:10:31.949Z"
+            },
+            {
+              "path": "scripts/integration/ecosystem-integrator.js",
+              "size": 22722,
+              "lastModified": "2025-09-09T15:10:31.961Z"
+            },
+            {
+              "path": "scripts/bots/modules/multi_wallet.js",
+              "size": 20890,
+              "lastModified": "2025-09-09T15:10:31.959Z"
+            },
+            {
+              "path": "docs/releases/PACKAGES_PLAN.md",
+              "size": 20412,
+              "lastModified": "2025-09-09T15:10:31.951Z"
+            },
+            {
+              "name": "panacea-repos-generator.js",
+              "path": "scripts/panacea-repos-generator.js",
+              "size": 20277,
+              "lastModified": "2025-09-09T15:10:31.961Z"
+            },
+            {
+              "name": "update-with-real-data.js",
+              "path": "scripts/update-with-real-data.js",
+              "size": 20100,
+              "lastModified": "2025-09-09T15:10:31.962Z"
+            },
+            {
+              "path": "scripts/bots/modules/ai_huggingface.js",
+              "size": 19455,
+              "lastModified": "2025-09-09T15:10:31.959Z"
+            },
+            {
+              "name": "setup-heroku-apis.js",
+              "path": "scripts/setup-heroku-apis.js",
+              "size": 18498,
+              "lastModified": "2025-09-09T15:10:31.961Z"
+            },
+            {
+              "name": "github-repos-fetcher.js",
+              "path": "scripts/github-repos-fetcher.js",
+              "size": 17597,
+              "lastModified": "2025-09-09T15:10:31.960Z"
+            },
+            {
+              "path": "scripts/audits/forks-audit.js",
+              "size": 16486,
+              "lastModified": "2025-09-09T15:16:12.836Z"
+            },
+            {
+              "name": "github-repos-manager.js",
+              "path": "scripts/github-repos-manager.js",
+              "size": 16444,
+              "lastModified": "2025-09-09T15:10:31.960Z"
+            },
+            {
+              "path": "frontend/dashboard/src/pages/Settings.js",
+              "size": 15826,
+              "lastModified": "2025-09-09T15:10:31.957Z"
+            },
+            {
+              "path": "docs/releases/PACKAGES_MANIFEST.json",
+              "size": 14695,
+              "lastModified": "2025-09-09T15:10:31.951Z"
+            },
+            {
+              "path": "frontend/dashboard/src/components/MultiWallet.js",
+              "size": 14362,
+              "lastModified": "2025-09-09T15:10:31.956Z"
+            },
+            {
+              "path": "docs/releases/MANIFEST.json",
+              "size": 14237,
+              "lastModified": "2025-09-09T15:10:31.951Z"
+            },
+            {
+              "name": "auditoria-proyecto.txt",
+              "path": "docs/auditoria-proyecto.txt",
+              "size": 13231,
+              "lastModified": "2025-09-09T15:10:31.951Z"
+            }
+          ]
+        }
+      },
+      "dependencyAnalysis": {
+        "internal": [],
+        "external": [
+          {
+            "name": "express",
+            "count": 2
+          },
+          {
+            "name": "cors",
+            "count": 2
+          },
+          {
+            "name": "nodemon",
+            "count": 2
+          },
+          {
+            "name": "jest",
+            "count": 2
+          },
+          {
+            "name": "@tonconnect/ui-react",
+            "count": 2
+          },
+          {
+            "name": "react",
+            "count": 2
+          },
+          {
+            "name": "react-dom",
+            "count": 2
+          },
+          {
+            "name": "@types/node",
+            "count": 2
+          },
+          {
+            "name": "typescript",
+            "count": 2
+          },
+          {
+            "name": "axios",
+            "count": 2
+          },
+          {
+            "name": "eslint",
+            "count": 2
+          },
+          {
+            "name": "prettier",
+            "count": 2
+          },
+          {
+            "name": "next",
+            "count": 1
+          },
+          {
+            "name": "@types/react",
+            "count": 1
+          },
+          {
+            "name": "@headlessui/react",
+            "count": 1
+          },
+          {
+            "name": "@testing-library/jest-dom",
+            "count": 1
+          },
+          {
+            "name": "@testing-library/react",
+            "count": 1
+          },
+          {
+            "name": "@testing-library/user-event",
+            "count": 1
+          },
+          {
+            "name": "autoprefixer",
+            "count": 1
+          },
+          {
+            "name": "clsx",
+            "count": 1
+          }
+        ],
+        "conflicts": [
+          {
+            "dependency": "nodemon",
+            "versions": [
+              "^3.0.1",
+              "^3.0.2"
+            ],
+            "usages": [
+              {
+                "package": "api/package.json",
+                "version": "^3.0.1"
+              },
+              {
+                "package": "package.json",
+                "version": "^3.0.2"
+              }
+            ]
+          },
+          {
+            "dependency": "jest",
+            "versions": [
+              "^29.7.0",
+              "^30.1.3"
+            ],
+            "usages": [
+              {
+                "package": "api/package.json",
+                "version": "^29.7.0"
+              },
+              {
+                "package": "package.json",
+                "version": "^30.1.3"
+              }
+            ]
+          },
+          {
+            "dependency": "react",
+            "versions": [
+              "^18.3.1",
+              "^18.2.0"
+            ],
+            "usages": [
+              {
+                "package": "apps/ton-connect-app/package.json",
+                "version": "^18.3.1"
+              },
+              {
+                "package": "frontend/dashboard/package.json",
+                "version": "^18.2.0"
+              }
+            ]
+          },
+          {
+            "dependency": "react-dom",
+            "versions": [
+              "^18.3.1",
+              "^18.2.0"
+            ],
+            "usages": [
+              {
+                "package": "apps/ton-connect-app/package.json",
+                "version": "^18.3.1"
+              },
+              {
+                "package": "frontend/dashboard/package.json",
+                "version": "^18.2.0"
+              }
+            ]
+          },
+          {
+            "dependency": "@types/node",
+            "versions": [
+              "^20.14.9",
+              "^20.10.4"
+            ],
+            "usages": [
+              {
+                "package": "apps/ton-connect-app/package.json",
+                "version": "^20.14.9"
+              },
+              {
+                "package": "package.json",
+                "version": "^20.10.4"
+              }
+            ]
+          },
+          {
+            "dependency": "typescript",
+            "versions": [
+              "^5.5.4",
+              "^5.3.3"
+            ],
+            "usages": [
+              {
+                "package": "apps/ton-connect-app/package.json",
+                "version": "^5.5.4"
+              },
+              {
+                "package": "package.json",
+                "version": "^5.3.3"
+              }
+            ]
+          },
+          {
+            "dependency": "axios",
+            "versions": [
+              "^1.4.0",
+              "^1.6.2"
+            ],
+            "usages": [
+              {
+                "package": "frontend/dashboard/package.json",
+                "version": "^1.4.0"
+              },
+              {
+                "package": "package.json",
+                "version": "^1.6.2"
+              }
+            ]
+          },
+          {
+            "dependency": "eslint",
+            "versions": [
+              "^8.42.0",
+              "^8.55.0"
+            ],
+            "usages": [
+              {
+                "package": "frontend/dashboard/package.json",
+                "version": "^8.42.0"
+              },
+              {
+                "package": "package.json",
+                "version": "^8.55.0"
+              }
+            ]
+          },
+          {
+            "dependency": "prettier",
+            "versions": [
+              "^2.8.8",
+              "^3.1.0"
+            ],
+            "usages": [
+              {
+                "package": "frontend/dashboard/package.json",
+                "version": "^2.8.8"
+              },
+              {
+                "package": "package.json",
+                "version": "^3.1.0"
+              }
+            ]
+          }
+        ],
+        "unused": []
+      },
+      "configAnalysis": {
+        "typescript": [],
+        "eslint": {
+          "found": false
+        },
+        "jest": {
+          "file": "jest.config.js",
+          "exists": true
+        },
+        "docker": [
+          {
+            "file": "docker-compose.yml",
+            "size": 4898
+          }
+        ],
+        "github": {
+          "workflows": [
+            "ci-cd.yml",
+            "docker-build.yml",
+            "release.yml",
+            "telegram-bots.yml",
+            "vercel-deploy.yml"
+          ],
+          "templates": []
+        }
+      }
+    }
+  }
+}

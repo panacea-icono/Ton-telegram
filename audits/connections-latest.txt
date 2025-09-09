@@ -1,0 +1,80 @@
+# Auditoría de Conexiones — 2025-09-09T15:18:51.883Z
+
+## Resumen Ejecutivo
+- Total endpoints verificados: 13
+- Conexiones exitosas: 1/13
+- Tasa de éxito: 7.7%
+
+## Configuración de Conexiones
+### Base de Datos
+- PostgreSQL: ❌
+- Redis: ❌
+
+### Blockchains
+- TON: ❌
+- Solana: ❌
+- Algorand: ❌
+- BSC: ❌
+
+### APIs Externas
+- GitHub: ❌
+- Telegram: ❌
+- Vercel: ❌
+- Heroku: ❌
+
+## Blockchains
+- ❌ **TON Mainnet**: getaddrinfo ENOTFOUND toncenter.com (18ms)
+- ❌ **TON Testnet**: getaddrinfo ENOTFOUND testnet.toncenter.com (7ms)
+- ❌ **Solana Mainnet**: getaddrinfo ENOTFOUND api.mainnet-beta.solana.com (6ms)
+- ❌ **Solana Devnet**: getaddrinfo ENOTFOUND api.devnet.solana.com (9ms)
+- ❌ **Algorand Mainnet**: getaddrinfo ENOTFOUND mainnet-api.algonode.cloud (9ms)
+- ❌ **BSC Mainnet**: getaddrinfo ENOTFOUND bsc-dataseed.binance.org (8ms)
+
+## Apis
+- ✅ **GitHub API**: HTTP 403 (173ms)
+- ❌ **Telegram Bot API**: getaddrinfo ENOTFOUND api.telegram.org (8ms)
+- ❌ **CoinGecko API**: getaddrinfo ENOTFOUND api.coingecko.com (15ms)
+- ❌ **Vercel API**: getaddrinfo ENOTFOUND api.vercel.com (14ms)
+
+## Hosting
+- ❌ **Vercel Edge Network**: getaddrinfo ENOTFOUND vercel.com (4ms)
+- ❌ **Heroku Platform**: getaddrinfo ENOTFOUND api.heroku.com (5ms)
+- ❌ **HuggingFace Hub**: getaddrinfo ENOTFOUND huggingface.co (5ms)
+
+## Puertos Locales
+- No se detectaron puertos comunes activos
+
+## Recomendaciones
+### Conexiones Fallidas
+- **TON Mainnet**: getaddrinfo ENOTFOUND toncenter.com
+- **TON Testnet**: getaddrinfo ENOTFOUND testnet.toncenter.com
+- **Solana Mainnet**: getaddrinfo ENOTFOUND api.mainnet-beta.solana.com
+- **Solana Devnet**: getaddrinfo ENOTFOUND api.devnet.solana.com
+- **Algorand Mainnet**: getaddrinfo ENOTFOUND mainnet-api.algonode.cloud
+- **BSC Mainnet**: getaddrinfo ENOTFOUND bsc-dataseed.binance.org
+- **Telegram Bot API**: getaddrinfo ENOTFOUND api.telegram.org
+- **CoinGecko API**: getaddrinfo ENOTFOUND api.coingecko.com
+- **Vercel API**: getaddrinfo ENOTFOUND api.vercel.com
+- **Vercel Edge Network**: getaddrinfo ENOTFOUND vercel.com
+- **Heroku Platform**: getaddrinfo ENOTFOUND api.heroku.com
+- **HuggingFace Hub**: getaddrinfo ENOTFOUND huggingface.co
+
+### Variables de Entorno Faltantes
+Configure las siguientes variables para habilitar conexiones:
+- DATABASE_POSTGRES
+- DATABASE_REDIS
+- BLOCKCHAINS_TON
+- BLOCKCHAINS_SOLANA
+- BLOCKCHAINS_ALGORAND
+- BLOCKCHAINS_BSC
+- EXTERNAL_GITHUB
+- EXTERNAL_TELEGRAM
+- EXTERNAL_VERCEL
+- EXTERNAL_HEROKU
+
+### Acciones Sugeridas
+- Verificar conectividad de red si hay fallos en APIs públicas
+- Configurar variables de entorno faltantes según env.example
+- Implementar health checks automatizados para servicios críticos
+- Considerar timeouts y reintentos para conexiones blockchain
+- Documentar dependencias externas y sus SLAs

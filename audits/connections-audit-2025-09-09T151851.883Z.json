@@ -1,0 +1,111 @@
+{
+  "timestamp": "2025-09-09T15:18:51.883Z",
+  "environment": {
+    "database": {
+      "postgres": false,
+      "redis": false
+    },
+    "blockchains": {
+      "ton": false,
+      "solana": false,
+      "algorand": false,
+      "bsc": false
+    },
+    "external": {
+      "github": false,
+      "telegram": false,
+      "vercel": false,
+      "heroku": false
+    }
+  },
+  "connectivity": {
+    "blockchains": [
+      {
+        "name": "TON Mainnet",
+        "status": "error",
+        "responseTime": 18,
+        "message": "getaddrinfo ENOTFOUND toncenter.com"
+      },
+      {
+        "name": "TON Testnet",
+        "status": "error",
+        "responseTime": 7,
+        "message": "getaddrinfo ENOTFOUND testnet.toncenter.com"
+      },
+      {
+        "name": "Solana Mainnet",
+        "status": "error",
+        "responseTime": 6,
+        "message": "getaddrinfo ENOTFOUND api.mainnet-beta.solana.com"
+      },
+      {
+        "name": "Solana Devnet",
+        "status": "error",
+        "responseTime": 9,
+        "message": "getaddrinfo ENOTFOUND api.devnet.solana.com"
+      },
+      {
+        "name": "Algorand Mainnet",
+        "status": "error",
+        "responseTime": 9,
+        "message": "getaddrinfo ENOTFOUND mainnet-api.algonode.cloud"
+      },
+      {
+        "name": "BSC Mainnet",
+        "status": "error",
+        "responseTime": 8,
+        "message": "getaddrinfo ENOTFOUND bsc-dataseed.binance.org"
+      }
+    ],
+    "apis": [
+      {
+        "name": "GitHub API",
+        "status": "success",
+        "code": 403,
+        "responseTime": 173,
+        "message": "HTTP 403"
+      },
+      {
+        "name": "Telegram Bot API",
+        "status": "error",
+        "responseTime": 8,
+        "message": "getaddrinfo ENOTFOUND api.telegram.org"
+      },
+      {
+        "name": "CoinGecko API",
+        "status": "error",
+        "responseTime": 15,
+        "message": "getaddrinfo ENOTFOUND api.coingecko.com"
+      },
+      {
+        "name": "Vercel API",
+        "status": "error",
+        "responseTime": 14,
+        "message": "getaddrinfo ENOTFOUND api.vercel.com"
+      }
+    ],
+    "hosting": [
+      {
+        "name": "Vercel Edge Network",
+        "status": "error",
+        "responseTime": 4,
+        "message": "getaddrinfo ENOTFOUND vercel.com"
+      },
+      {
+        "name": "Heroku Platform",
+        "status": "error",
+        "responseTime": 5,
+        "message": "getaddrinfo ENOTFOUND api.heroku.com"
+      },
+      {
+        "name": "HuggingFace Hub",
+        "status": "error",
+        "responseTime": 5,
+        "message": "getaddrinfo ENOTFOUND huggingface.co"
+      }
+    ]
+  },
+  "localPorts": {
+    "activePorts": []
+  }
+}

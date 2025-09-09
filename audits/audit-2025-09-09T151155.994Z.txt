@@ -1,4 +1,4 @@
-# Auditoría Rápida — 2025-09-09T15:23:21.150Z
+# Auditoría Rápida — 2025-09-09T15:11:55.994Z
 
 ## Estado general
 - Pruebas automatizadas: pendientes (no hay tests)

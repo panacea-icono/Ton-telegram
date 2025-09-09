@@ -222,6 +222,22 @@ npm run submodules:update  # Actualizar submódulos
 npm run submodules:status  # Estado de submódulos
 ```
 
+### Auditorías del Sistema
+
+```bash
+# Auditoría integral (conexiones, forks, modulaciones)
+npm run audit:all
+
+# Auditorías específicas
+npm run audit:connections   # Conectividad de red y APIs
+npm run audit:forks        # Estado de submódulos Git
+npm run audit:modulations  # Arquitectura modular y dependencias
+
+# Programación automática
+npm run audit:scheduler:start  # Auditorías automáticas programadas
+npm run audit:scheduler:trends # Ver tendencias históricas
+```
+
 ### Utilidades
 
 ```bash
@@ -463,6 +479,7 @@ Asegúrate de configurar las siguientes variables para producción:
 
 ### Guías Adicionales
 
+- [Guía de Auditorías](docs/AUDIT-GUIDE.md)
 - [Guía de Desarrollo](docs/development.md)
 - [Guía de Despliegue](docs/deployment.md)
 - [Guía de Contribución](docs/contributing.md)
