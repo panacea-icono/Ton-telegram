@@ -239,7 +239,7 @@ const Settings = () => {
           value={settings.api.webhookUrl}
           onChange={(e) => handleSettingChange('api', 'webhookUrl', e.target.value)}
           className="input"
-          placeholder="https://your-domain.com/webhook"
+          placeholder="https://panans.app/webhook"
         />
       </div>
     </div>

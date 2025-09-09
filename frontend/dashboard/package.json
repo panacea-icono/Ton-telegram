@@ -2,6 +2,7 @@
   "name": "panas-token-dashboard",
   "version": "1.0.0",
   "description": "Dashboard React para el ecosistema Panas Token",
+  "homepage": "https://panans.app",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.15",

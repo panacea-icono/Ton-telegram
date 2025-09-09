@@ -15,7 +15,7 @@ class TelegramHub {
   constructor() {
     this.bot = null;
     this.services = {
-      vercel: 'https://www.panas.app',
+      vercel: 'https://panans.app',
       heroku: 'https://api-panacea-638dc550fab6.herokuapp.com',
       fastapi: 'https://panacea-fastapi.herokuapp.com',
       hostinger: 'https://panacea-icono.org',

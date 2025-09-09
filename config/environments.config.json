@@ -81,7 +81,7 @@
     "name": "Production",
     "description": "Entorno de producción",
     "urls": {
-      "frontend": "https://www.panas.app",
+      "frontend": "https://panans.app",
       "api": "https://api-panacea-638dc550fab6.herokuapp.com",
       "bot": "https://api-panacea-638dc550fab6.herokuapp.com/bot",
       "database": "postgresql://prod_user:prod_pass@prod-db.herokuapp.com:5432/panas_token_prod",

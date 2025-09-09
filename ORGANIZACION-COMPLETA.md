@@ -70,7 +70,7 @@ El ecosistema Panacea está **completamente organizado** con callbacks, webhooks
 - **Features**: Testing, Validation, Preview
 
 ### 🚀 Production
-- **Frontend**: `https://www.panas.app`
+- **Frontend**: `https://panans.app`
 - **API**: `https://api-panacea-638dc550fab6.herokuapp.com`
 - **Database**: `postgresql://prod_user:prod_pass@prod-db.herokuapp.com:5432/panas_token_prod`
 - **Features**: Monitoring, Analytics, High Performance
