@@ -126,6 +126,11 @@ class WebhookManager {
     this.app.post('/webhook/telegram/multi-wallet', (req, res) => {
       this.handleTelegramWebhook(req, res, 'multi-wallet');
     });
+
+    // Panas-App integration webhook
+    this.app.post('/webhook/panas-app', (req, res) => {
+      this.handlePanasAppWebhook(req, res);
+    });
   }
 
   setupPaymentWebhooks() {
@@ -329,6 +334,63 @@ class WebhookManager {
       console.error(`Error handling ${callbackType} callback:`, error);
       res.status(500).json({ error: 'Internal server error' });
     }
+  }
+
+  async handlePanasAppWebhook(req, res) {
+    try {
+      console.log('[PANAS-APP] Received webhook:', req.body);
+      
+      // Verificar autenticación básica
+      const authHeader = req.headers['x-panas-app-auth'];
+      if (!authHeader) {
+        return res.status(401).json({ error: 'Missing authentication header' });
+      }
+
+      const eventType = req.headers['x-event-type'] || req.body.eventType;
+      const data = req.body;
+
+      // Procesar según el tipo de evento
+      switch (eventType) {
+        case 'tokenization':
+          await this.processPanasAppTokenization(data);
+          break;
+        case 'wallet_update':
+          await this.processPanasAppWalletUpdate(data);
+          break;
+        case 'sync':
+          await this.processPanasAppSync(data);
+          break;
+        default:
+          console.log(`[PANAS-APP] Unknown event type: ${eventType}`);
+      }
+
+      res.json({ 
+        status: 'success', 
+        message: 'Webhook processed successfully',
+        eventType 
+      });
+    } catch (error) {
+      console.error('[PANAS-APP] Error handling webhook:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  }
+
+  async processPanasAppTokenization(data) {
+    console.log('[PANAS-APP] Processing tokenization event:', data);
+    // Integrar con los módulos TON wallet existentes
+    // TODO: Implementar lógica de tokenización
+  }
+
+  async processPanasAppWalletUpdate(data) {
+    console.log('[PANAS-APP] Processing wallet update event:', data);
+    // Sincronizar con el sistema de wallets TON
+    // TODO: Implementar sincronización de wallets
+  }
+
+  async processPanasAppSync(data) {
+    console.log('[PANAS-APP] Processing sync event:', data);
+    // Realizar sincronización completa
+    // TODO: Implementar sincronización bidireccional
   }
 
   async handleWalletBalance(req, res, blockchain) {

@@ -1,0 +1,12 @@
+{
+  "name": "panas-app",
+  "status": "pending",
+  "description": "Tokenization app modulada por Ton-telegram",
+  "integrationEndpoints": {
+    "tokenization": "/api/tokenization",
+    "wallet": "/api/wallet",
+    "sync": "/api/sync"
+  },
+  "requiredBy": "ton-telegram",
+  "lastCheck": "2025-09-09T15:18:36.250Z"
+}

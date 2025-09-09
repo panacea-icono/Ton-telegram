@@ -313,6 +313,27 @@ git submodule update --recursive --remote
 git submodule update --remote --recursive
 ```
 
+#### Integración con Panas-App
+
+El repositorio `panas-app` está configurado como submódulo modular de `Ton-telegram`, permitiendo gestión integrada de la tokenización:
+
+```bash
+# Comandos de integración panas-app
+npm run panas-app:init      # Inicializar integración
+npm run panas-app:sync      # Sincronizar datos
+npm run panas-app:health    # Verificar estado
+npm run panas-app:config    # Ver configuración
+
+# Webhooks de integración
+POST /webhook/panas-app     # Endpoint para eventos de panas-app
+```
+
+**Estado de la integración:**
+- ✅ Configuración de integración creada
+- ✅ Webhook endpoint configurado
+- ✅ Comandos de gestión disponibles
+- ⏳ Pendiente: Inicialización del submódulo panas-app
+
 ---
 
 ## 🐳 Docker
