@@ -1,0 +1,18 @@
+# robots.txt for Panacea TON Wallet
+
+User-agent: *
+Allow: /
+Allow: /static/
+Allow: /manifest.json
+
+# Security sensitive paths
+Disallow: /api/
+Disallow: /.env
+Disallow: /config/
+Disallow: /private/
+
+# Sitemap
+Sitemap: https://panacea-ton-wallet.vercel.app/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "panacea-dashboard",
+  "name": "panacea-ton-wallet",
   "builds": [
     {
       "src": "package.json",
@@ -12,8 +12,20 @@
   ],
   "routes": [
     {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/manifest.json"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "/index.html"
     }
   ],
   "env": {

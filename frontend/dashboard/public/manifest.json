@@ -1,0 +1,54 @@
+{
+  "short_name": "Panacea TON",
+  "name": "Panacea TON Wallet - Ecosistema Multichain",
+  "description": "Ecosistema de pagos médicos descentralizado con soporte multichain (TON, Solana, Algorand, BSC) e integración directa con Telegram Wallet",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#667eea",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["finance", "productivity", "business"],
+  "lang": "es",
+  "dir": "ltr",
+  "shortcuts": [
+    {
+      "name": "TON Wallet",
+      "short_name": "TON",
+      "description": "Acceso directo a la billetera TON",
+      "url": "/?wallet=ton",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Multi-Wallet",
+      "short_name": "Multi",
+      "description": "Gestionar múltiples billeteras",
+      "url": "/?page=multiwallet",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://panacea-ton-wallet.vercel.app/"
+    }
+  ],
+  "prefer_related_applications": false
+}
