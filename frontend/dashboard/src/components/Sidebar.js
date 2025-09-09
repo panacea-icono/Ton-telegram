@@ -8,11 +8,11 @@ import {
   Shield,
   Users,
   Wallet,
-  X,
-  Zap
+  X
 } from 'lucide-react';
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import Logo from './Logo';
 
 const Sidebar = ({ isOpen, onClose }) => {
   const location = useLocation();
@@ -50,7 +50,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <Zap className="h-8 w-8 text-primary-600" />
+                <Logo size="md" />
               </div>
               <div className="ml-3">
                 <h1 className="text-lg font-semibold text-gray-900">Panas Token</h1>

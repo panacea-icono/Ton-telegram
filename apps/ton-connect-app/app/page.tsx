@@ -22,10 +22,12 @@ export default function Home() {
       </section>
 
       <section className="card media">
-        <h2>Medios: Imágenes y GIFs</h2>
-        <p>Espacios reservados para tu contenido visual. Reemplaza los archivos en <code>/public</code> o edita las URLs.</p>
+        <h2>Medios: Logo, Regalos (GIFs) y Video Logo</h2>
+        <p>Espacios para tu contenido visual: logo principal, animaciones de regalo y video logo. Reemplaza los archivos en <code>/public</code>.</p>
         <MediaPlaceholders />
-        <div className="ph-hint">Sugerencia: coloca archivos en <code>apps/ton-connect-app/public</code> por ejemplo: <code>hero.jpg</code>, <code>gif1.gif</code>, <code>gif2.gif</code>.</div>
+        <div className="ph-hint">
+          Archivos esperados: <code>hero.jpg</code> (imagen principal), <code>gift1.gif</code>, <code>gift2.gif</code> (regalos animados), <code>video-logo.mp4</code> (logo en video)
+        </div>
       </section>
 
       <footer className="footer">
