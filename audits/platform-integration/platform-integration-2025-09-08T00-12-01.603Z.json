@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-09-08T00:12:01.603Z",
+  "summary": {
+    "totalPlatforms": 16,
+    "connectedPlatforms": 0,
+    "failedPlatforms": 4,
+    "lastFullCheck": "2025-09-08T00:12:01.603Z"
+  },
+  "platforms": {
+    "blockchain": {
+      "ton": {
+        "name": "TON Blockchain",
+        "status": "failed",
+        "health": {
+          "lastCheck": "2025-09-08T00:12:01.593Z",
+          "responseTime": null,
+          "isHealthy": false,
+          "error": "Request error: getaddrinfo ENOTFOUND toncenter.com"
+        },
+        "configured": false
+      },
+      "solana": {
+        "name": "Solana",
+        "status": "failed",
+        "health": {
+          "lastCheck": "2025-09-08T00:12:01.596Z",
+          "responseTime": null,
+          "isHealthy": false,
+          "error": "Request error: getaddrinfo ENOTFOUND api.mainnet-beta.solana.com"
+        },
+        "configured": false
+      },
+      "algorand": {
+        "name": "Algorand",
+        "status": "failed",
+        "health": {
+          "lastCheck": "2025-09-08T00:12:01.599Z",
+          "responseTime": null,
+          "isHealthy": false,
+          "error": "Request error: getaddrinfo ENOTFOUND mainnet-api.algonode.cloud"
+        },
+        "configured": false
+      },
+      "bsc": {
+        "name": "Binance Smart Chain",
+        "status": "failed",
+        "health": {
+          "lastCheck": "2025-09-08T00:12:01.602Z",
+          "responseTime": null,
+          "isHealthy": false,
+          "error": "Request error: getaddrinfo ENOTFOUND bsc-dataseed.binance.org"
+        },
+        "configured": false
+      }
+    },
+    "social": {
+      "telegram": {
+        "name": "Telegram",
+        "status": "not_configured",
+        "health": null,
+        "configured": false
+      },
+      "twitter": {
+        "name": "Twitter/X",
+        "status": "not_configured",
+        "health": null,
+        "configured": false
+      },
+      "discord": {
+        "name": "Discord",
+        "status": "not_configured",
+        "health": null,
+        "configured": false
+      },
+      "whatsapp": {
+        "name": "WhatsApp Business",
+        "status": "not_configured",
+        "health": null,
+        "configured": false
+      }
+    },
+    "hosting": {
+      "heroku": {
+        "name": "Heroku",
+        "status": "not_configured",
+        "health": null,
+        "configured": false
+      },
+      "vercel": {
+        "name": "Vercel",
+        "status": "not_configured",
+        "health": null,
+        "configured": false
+      },
+      "huggingface": {
+        "name": "Hugging Face",
+        "status": "not_configured",
+        "health": null,
+        "configured": false
+      }
+    },
+    "ai": {
+      "openai": {
+        "name": "OpenAI",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      },
+      "huggingface": {
+        "name": "Hugging Face Inference",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      }
+    },
+    "database": {
+      "postgresql": {
+        "name": "PostgreSQL",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      },
+      "redis": {
+        "name": "Redis",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      },
+      "mongodb": {
+        "name": "MongoDB",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      }
+    }
+  },
+  "recommendations": [
+    {
+      "platform": "TON Blockchain",
+      "issue": "Conexión fallida",
+      "action": "Verificar credenciales y conectividad"
+    },
+    {
+      "platform": "Solana",
+      "issue": "Conexión fallida",
+      "action": "Verificar credenciales y conectividad"
+    },
+    {
+      "platform": "Algorand",
+      "issue": "Conexión fallida",
+      "action": "Verificar credenciales y conectividad"
+    },
+    {
+      "platform": "Binance Smart Chain",
+      "issue": "Conexión fallida",
+      "action": "Verificar credenciales y conectividad"
+    },
+    {
+      "platform": "Telegram",
+      "issue": "No configurado",
+      "action": "Configurar credenciales en variables de entorno"
+    },
+    {
+      "platform": "Twitter/X",
+      "issue": "No configurado",
+      "action": "Configurar credenciales en variables de entorno"
+    },
+    {
+      "platform": "Discord",
+      "issue": "No configurado",
+      "action": "Configurar credenciales en variables de entorno"
+    },
+    {
+      "platform": "WhatsApp Business",
+      "issue": "No configurado",
+      "action": "Configurar credenciales en variables de entorno"
+    },
+    {
+      "platform": "Heroku",
+      "issue": "No configurado",
+      "action": "Configurar credenciales en variables de entorno"
+    },
+    {
+      "platform": "Vercel",
+      "issue": "No configurado",
+      "action": "Configurar credenciales en variables de entorno"
+    },
+    {
+      "platform": "Hugging Face",
+      "issue": "No configurado",
+      "action": "Configurar credenciales en variables de entorno"
+    }
+  ]
+}

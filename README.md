@@ -79,6 +79,63 @@ Convertirse en el **hub de pagos médicos global** con identidad digital legible
    npm run dev
    ```
 
+5. **Verificar integración de plataformas**
+
+   ```bash
+   # Verificar conectividad de todas las plataformas
+   npm run platforms:check
+   
+   # Health check completo del sistema
+   npm run health
+   
+   # Validar funcionamiento de integración
+   npm run platforms:validate
+   ```
+
+## 🔗 Sistema de Integración de Plataformas
+
+Este proyecto incluye un **sistema de integración unificado** que gestiona múltiples plataformas:
+
+### Plataformas Integradas
+
+- **🔗 Blockchains**: TON, Solana, Algorand, BSC
+- **📱 Redes Sociales**: Telegram, Twitter, Discord, WhatsApp
+- **☁️ Hosting**: Heroku, Vercel, Hugging Face
+- **🤖 IA**: OpenAI, Hugging Face Inference
+- **🗄️ Bases de Datos**: PostgreSQL, Redis, MongoDB
+
+### Comandos de Integración
+
+```bash
+# Verificar estado de plataformas
+npm run platforms:check
+
+# Iniciar API unificada
+npm run platforms:manager
+
+# Validar sistema completo
+npm run platforms:validate
+
+# Health check con integración
+npm run health
+```
+
+### API REST Unificada
+
+```bash
+# Iniciar servidor de API (puerto 3333)
+npm run platforms:api
+
+# Endpoints disponibles:
+GET  /api/v1/health              # Estado del sistema
+POST /api/v1/blockchain/:op      # Operaciones blockchain
+POST /api/v1/social/:op          # Operaciones sociales
+POST /api/v1/cross-platform/:op # Operaciones cross-platform
+GET  /api/v1/metrics             # Métricas agregadas
+```
+
+Ver documentación completa: [📖 docs/PLATFORM-INTEGRATION.md](docs/PLATFORM-INTEGRATION.md)
+
 ### Estructura del Proyecto
 
 ```text

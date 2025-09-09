@@ -283,7 +283,7 @@ function showResults(serviceResults, networkResults) {
 }
 
 // Función para mostrar resumen
-function showSummary(serviceResults, networkResults) {
+function showSummary(serviceResults, networkResults, platformIntegration = null) {
   const healthyServices = serviceResults.filter((r) => r.healthy).length;
   const totalServices = serviceResults.length;
   const healthyNetworks = networkResults.filter((r) => r.healthy).length;
@@ -292,9 +292,15 @@ function showSummary(serviceResults, networkResults) {
   console.log('\n' + colors.cyan + '📈 Resumen:' + colors.reset);
   console.log(`Servicios: ${healthyServices}/${totalServices} saludables`);
   console.log(`Red: ${healthyNetworks}/${totalNetworks} conectados`);
+  
+  if (platformIntegration) {
+    console.log(`Plataformas: ${platformIntegration.connectedPlatforms}/${platformIntegration.totalPlatforms} integradas`);
+  }
 
-  const overallHealth =
-    (healthyServices + healthyNetworks) / (totalServices + totalNetworks);
+  const overallHealth = platformIntegration 
+    ? (healthyServices + healthyNetworks + platformIntegration.connectedPlatforms) / (totalServices + totalNetworks + platformIntegration.totalPlatforms)
+    : (healthyServices + healthyNetworks) / (totalServices + totalNetworks);
+    
   const healthPercentage = Math.round(overallHealth * 100);
 
   if (healthPercentage >= 90) {
@@ -307,11 +313,11 @@ function showSummary(serviceResults, networkResults) {
 }
 
 // Función para mostrar recomendaciones
-function showRecommendations(serviceResults, networkResults) {
+function showRecommendations(serviceResults, networkResults, platformIntegration = null) {
   const unhealthyServices = serviceResults.filter((r) => !r.healthy);
   const unhealthyNetworks = networkResults.filter((r) => !r.healthy);
 
-  if (unhealthyServices.length > 0 || unhealthyNetworks.length > 0) {
+  if (unhealthyServices.length > 0 || unhealthyNetworks.length > 0 || (platformIntegration && platformIntegration.recommendations.length > 0)) {
     console.log('\n' + colors.yellow + '💡 Recomendaciones:' + colors.reset);
 
     unhealthyServices.forEach((service) => {
@@ -325,9 +331,18 @@ function showRecommendations(serviceResults, networkResults) {
       console.log(`- Verificar conectividad a: ${network.url}`);
     });
 
+    // Agregar recomendaciones de integración de plataformas
+    if (platformIntegration && platformIntegration.recommendations.length > 0) {
+      console.log('\n🔗 Integración de Plataformas:');
+      platformIntegration.recommendations.forEach((rec) => {
+        console.log(`- ${rec.platform}: ${rec.action}`);
+      });
+    }
+
     console.log('\nComandos útiles:');
     console.log('- npm run dev (iniciar servicios)');
     console.log('- npm run docker:up (iniciar con Docker)');
+    console.log('- npm run platforms:check (verificar plataformas)');
     console.log('- npm run logs (ver logs)');
   }
 }
@@ -416,10 +431,41 @@ async function main() {
     networkResults.push(...(await checkNetworkConnectivity()));
   }
 
+  // Verificar integración de plataformas
+  let platformIntegration = null;
+  try {
+    const { PlatformIntegrationOrchestrator } = require('./platform-integration-orchestrator');
+    const orchestrator = new PlatformIntegrationOrchestrator();
+    
+    info('Verificando integración de plataformas...');
+    await orchestrator.checkAllPlatforms();
+    
+    const report = orchestrator.generateIntegrationReport();
+    platformIntegration = {
+      connectedPlatforms: report.summary.connectedPlatforms,
+      totalPlatforms: report.summary.totalPlatforms,
+      integrationPercentage: Math.round((report.summary.connectedPlatforms / report.summary.totalPlatforms) * 100),
+      recommendations: report.recommendations,
+    };
+    
+    console.log('\n🔗 Estado de Integración de Plataformas:');
+    console.log(`Plataformas conectadas: ${platformIntegration.connectedPlatforms}/${platformIntegration.totalPlatforms}`);
+    
+    if (platformIntegration.integrationPercentage >= 70) {
+      success(`Integración: ${platformIntegration.integrationPercentage}% - Buena conectividad`);
+    } else if (platformIntegration.integrationPercentage >= 50) {
+      warning(`Integración: ${platformIntegration.integrationPercentage}% - Conectividad moderada`);
+    } else {
+      error(`Integración: ${platformIntegration.integrationPercentage}% - Baja conectividad`);
+    }
+  } catch (err) {
+    warning(`No se pudo verificar integración de plataformas: ${err.message}`);
+  }
+
   // Mostrar resultados
   showResults(serviceResults, networkResults);
-  showSummary(serviceResults, networkResults);
-  showRecommendations(serviceResults, networkResults);
+  showSummary(serviceResults, networkResults, platformIntegration);
+  showRecommendations(serviceResults, networkResults, platformIntegration);
 
   // Exit code basado en salud general
   const healthyServices = serviceResults.filter((r) => r.healthy).length;

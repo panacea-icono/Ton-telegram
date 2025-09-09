@@ -1,0 +1,134 @@
+{
+  "timestamp": "2025-09-08T00:15:04.295Z",
+  "summary": {
+    "totalPlatforms": 16,
+    "connectedPlatforms": 0,
+    "failedPlatforms": 0,
+    "lastFullCheck": "2025-09-08T00:15:04.295Z"
+  },
+  "platforms": {
+    "blockchain": {
+      "ton": {
+        "name": "TON Blockchain",
+        "status": "disconnected",
+        "health": {
+          "lastCheck": null,
+          "responseTime": null,
+          "isHealthy": false
+        },
+        "configured": false
+      },
+      "solana": {
+        "name": "Solana",
+        "status": "disconnected",
+        "health": {
+          "lastCheck": null,
+          "responseTime": null,
+          "isHealthy": false
+        },
+        "configured": false
+      },
+      "algorand": {
+        "name": "Algorand",
+        "status": "disconnected",
+        "health": {
+          "lastCheck": null,
+          "responseTime": null,
+          "isHealthy": false
+        },
+        "configured": false
+      },
+      "bsc": {
+        "name": "Binance Smart Chain",
+        "status": "disconnected",
+        "health": {
+          "lastCheck": null,
+          "responseTime": null,
+          "isHealthy": false
+        },
+        "configured": false
+      }
+    },
+    "social": {
+      "telegram": {
+        "name": "Telegram",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      },
+      "twitter": {
+        "name": "Twitter/X",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      },
+      "discord": {
+        "name": "Discord",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      },
+      "whatsapp": {
+        "name": "WhatsApp Business",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      }
+    },
+    "hosting": {
+      "heroku": {
+        "name": "Heroku",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      },
+      "vercel": {
+        "name": "Vercel",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      },
+      "huggingface": {
+        "name": "Hugging Face",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      }
+    },
+    "ai": {
+      "openai": {
+        "name": "OpenAI",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      },
+      "huggingface": {
+        "name": "Hugging Face Inference",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      }
+    },
+    "database": {
+      "postgresql": {
+        "name": "PostgreSQL",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      },
+      "redis": {
+        "name": "Redis",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      },
+      "mongodb": {
+        "name": "MongoDB",
+        "status": "disconnected",
+        "health": null,
+        "configured": false
+      }
+    }
+  },
+  "recommendations": []
+}
