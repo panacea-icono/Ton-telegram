@@ -90,6 +90,12 @@ class TelegramHub {
       const chatId = msg.chat.id;
       this.sendDockerStatus(chatId);
     });
+
+    // Comando para Panas-App
+    this.bot.onText(/\/panasapp/, (msg) => {
+      const chatId = msg.chat.id;
+      this.sendPanasAppStatus(chatId);
+    });
   }
 
   setupWebhooks() {
@@ -128,6 +134,11 @@ class TelegramHub {
 • Multi-Wallet: /wallets
 • Solana: /wallets
 • Algorand: /wallets
+
+📱 *Apps & Tokenización*
+• Panas-App: /panasapp
+• Tokenización: /panasapp
+• App Status: /panasapp
 
 🐳 *Contenedores & DevOps*
 • Docker: /docker
@@ -387,6 +398,53 @@ ${dockerStatus.builds ? `📊 Último build: ${dockerStatus.lastBuild}` : ''}
       await this.bot.sendMessage(chatId, message, { parse_mode: 'Markdown' });
     } catch (error) {
       await this.bot.sendMessage(chatId, `❌ Error verificando Docker: ${error.message}`);
+    }
+  }
+
+  async sendPanasAppStatus(chatId) {
+    try {
+      // Cargar el integrador de panas-app
+      const PanasAppIntegrator = require('../integration/panas-app-integrator');
+      const integrator = new PanasAppIntegrator();
+      const health = await integrator.checkIntegrationHealth();
+
+      const message = `
+📱 *PANAS-APP STATUS*
+
+*Estado de Integración:*
+${health.status === 'healthy' ? '✅' : '⚠️'} Estado: ${health.status}
+${health.panasAppAvailable ? '✅' : '❌'} Panas-App disponible
+${health.configExists ? '✅' : '❌'} Configuración cargada
+
+*Información del Módulo:*
+• Tipo: ${health.config?.moduleType || 'submodule'}
+• Descripción: ${health.config?.description || 'Tokenization app'}
+• Última verificación: ${health.lastCheck}
+
+*Endpoints de Integración:*
+${health.config?.integrationEndpoints ? Object.entries(health.config.integrationEndpoints)
+  .map(([key, value]) => `• ${key}: ${value}`)
+  .join('\n') : '• Endpoints no configurados'}
+
+*Configuración:*
+${health.config?.integrationSettings?.autoSync ? '✅' : '❌'} Auto-sync
+${health.config?.integrationSettings?.webhooksEnabled ? '✅' : '❌'} Webhooks
+• Intervalo sync: ${health.config?.integrationSettings?.syncInterval || 'N/A'}s
+
+*Comandos Disponibles:*
+/panasapp_sync - Sincronizar manualmente
+/panasapp_config - Ver configuración completa
+/panasapp_health - Verificar estado detallado
+
+*Repositorio:*
+🔗 ${health.config?.repositoryUrl || 'https://github.com/panacea-icono/panas-app.git'}
+
+${health.status === 'waiting' ? '⏳ *Esperando inicialización del submodule panas-app*' : ''}
+`;
+
+      await this.bot.sendMessage(chatId, message, { parse_mode: 'Markdown' });
+    } catch (error) {
+      await this.bot.sendMessage(chatId, `❌ Error verificando Panas-App: ${error.message}`);
     }
   }
 
