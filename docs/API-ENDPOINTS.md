@@ -27,7 +27,7 @@
 ### Bot Hub Central
 ```
 Endpoint: https://t.me/panacea_icono_bot
-Webhook: https://www.panas.app/webhook/telegram
+Webhook: https://panans.app/webhook/telegram
 ```
 
 #### Callbacks Disponibles
@@ -77,7 +77,7 @@ Webhook: https://www.panas.app/webhook/telegram
 
 ### Webhook Principal
 ```
-URL: https://www.panas.app/webhook/telegram
+URL: https://panans.app/webhook/telegram
 Method: POST
 Content-Type: application/json
 ```
@@ -117,7 +117,7 @@ https://api-panacea-638dc550fab6.herokuapp.com/webhook/telegram
 https://panacea-fastapi.herokuapp.com/webhook/telegram
 
 // Webhook para Vercel
-https://www.panas.app/api/webhook/telegram
+https://panans.app/api/webhook/telegram
 ```
 
 ---
@@ -270,7 +270,7 @@ GET /api/wallets/export/:walletId
 
 ### Vercel Frontend
 ```
-Base URL: https://www.panas.app
+Base URL: https://panans.app
 ```
 
 #### Rutas Principales
@@ -321,7 +321,7 @@ POST /api/wallets/action
 ### Servicios Principales
 ```javascript
 // Vercel Frontend
-GET https://www.panas.app/api/health
+GET https://panans.app/api/health
 
 // Heroku API
 GET https://api-panacea-638dc550fab6.herokuapp.com/api/health

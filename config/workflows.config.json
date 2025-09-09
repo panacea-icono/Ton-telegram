@@ -87,7 +87,7 @@
   "monitoring": {
     "health_checks": {
       "endpoints": [
-        "https://www.panas.app/api/health",
+        "https://panans.app/api/health",
         "https://api-panacea-638dc550fab6.herokuapp.com/api/health",
         "https://panacea-fastapi.herokuapp.com/api/health"
       ],

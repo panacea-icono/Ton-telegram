@@ -21,7 +21,7 @@
   - API endpoints configurados
   - Variables de entorno configuradas
   - Despliegue automático
-- **URL**: https://www.panas.app
+- **URL**: https://panans.app
 
 #### 🚀 Heroku Backend
 - **Estado**: ✅ Configurado
@@ -116,7 +116,7 @@ GitHub ←→ CI/CD ←→ Monitoring ←→ AI Models
 ```
 
 ### URLs de Producción
-- **Frontend Principal**: https://www.panas.app
+- **Frontend Principal**: https://panans.app
 - **API Backend**: https://api-panacea-638dc550fab6.herokuapp.com
 - **FastAPI**: https://panacea-fastapi.herokuapp.com
 - **Telegram Bot**: https://t.me/panacea_icono_bot

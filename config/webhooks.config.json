@@ -1,6 +1,6 @@
 {
   "telegram": {
-    "base_url": "https://www.panas.app/webhook/telegram",
+    "base_url": "https://panans.app/webhook/telegram",
     "endpoints": {
       "main_bot": "/main",
       "paysupport_bot": "/paysupport",
@@ -19,7 +19,7 @@
     }
   },
   "vercel": {
-    "base_url": "https://www.panas.app/api",
+    "base_url": "https://panans.app/api",
     "endpoints": {
       "health": "/health",
       "analytics": "/analytics",
