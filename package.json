@@ -234,7 +234,7 @@
     "jest-environment-node": "^29.7.0",
     "openai": "^5.19.1",
     "supertest": "^7.1.4",
-    "ts-jest": "^29.1.1"
+    "ts-jest": "^29.4.4"
   },
   "husky": {
     "hooks": {
