@@ -152,7 +152,7 @@
     "npm": ">=8.0.0"
   },
   "dependencies": {
-    "@huggingface/inference": "^4.7.1",
+    "@huggingface/inference": "^4.8.0",
     "@solana/spl-token": "^0.3.9",
     "@solana/web3.js": "^1.98.4",
     "@ton/crypto": "^3.0.0",
