@@ -166,7 +166,7 @@
     "@types/jsonwebtoken": "^9.0.5",
     "@types/morgan": "^1.9.9",
     "@types/multer": "^1.4.11",
-    "@types/node": "^20.10.4",
+    "@types/node": "^20.19.22",
     "@types/pg": "^8.10.9",
     "algosdk": "^2.11.0",
     "axios": "^1.6.2",
